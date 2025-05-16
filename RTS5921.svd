@@ -777,5 +777,16 @@
 				</register>
       </registers>
     </peripheral>
+    <!-- EXTR_SPIC -->
+    <peripheral derivedFrom="INTR_SPIC">
+      <name>EXTR_SPIC</name>
+      <baseAddress>0x40001000</baseAddress>
+      <!-- Interrup -->
+      <interrupt>
+        <name>ESPIC</name>
+        <description>External SPIC Interrupt</description>
+        <value>10</value>
+      </interrupt>
+    </peripheral>
   </peripherals>
 </device>
