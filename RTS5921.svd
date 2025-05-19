@@ -2237,5 +2237,2448 @@
 				</register>
       </registers>
     </peripheral>
+
+    <!-- USB_OTG -->
+    <peripheral>
+      <!-- Description -->
+      <name>USB_OTG</name>
+      <version>1.00</version>
+      <description>USB OTG Controller</description>
+      <groupName>USB</groupName>
+      <headerStructName>USB</headerStructName>
+      <baseAddress>0x40040000</baseAddress>
+      <size>32</size>
+      <access>read-write</access>
+
+      <!-- Address Range -->
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+
+      <!-- Interrup -->
+      <interrupt>
+        <name>USB_OTG</name>
+        <description>USB OTG Interrupt</description>
+        <value>12</value>
+      </interrupt>
+
+			<registers>
+				<!-- GOTGCTL -->
+				<register>
+						<name>GOTGCTL</name>
+						<description>Control and Status Register</description>
+						<addressOffset>0x00</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- GOTGINT -->
+				<register>
+						<name>GOTGINT</name>
+						<description>Interrupt Register</description>
+						<addressOffset>0x04</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- GAHBCFG -->
+				<register>
+						<name>GAHBCFG</name>
+						<description>AHB Configuration Register</description>
+						<addressOffset>0x08</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- GUSBCFG -->
+				<register>
+						<name>GUSBCFG</name>
+						<description>USB Configuration Register</description>
+						<addressOffset>0x0C</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000A00</resetValue>
+				</register>
+
+				<!-- GRSTCTL -->
+				<register>
+						<name>GRSTCTL</name>
+						<description>Reset Register</description>
+						<addressOffset>0x10</addressOffset>
+						<size>32</size>
+						<access>write-only</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- GINTSTS -->
+				<register>
+						<name>GINTSTS</name>
+						<description>Interrupt Register</description>
+						<addressOffset>0x14</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x14000000</resetValue>
+				</register>
+
+				<!-- GINTMSK -->
+				<register>
+						<name>GINTMSK</name>
+						<description>Interrupt Mask Register</description>
+						<addressOffset>0x18</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x14000000</resetValue>
+				</register>
+
+				<!-- GRXSTSR -->
+				<register>
+						<name>GRXSTSR</name>
+						<description>Receive Status Debug Read Register</description>
+						<addressOffset>0x1C</addressOffset>
+						<size>32</size>
+						<access>read-only</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- GRXSTSP -->
+				<register>
+						<name>GRXSTSP</name>
+						<description>Receive Status Read/Pop Register</description>
+						<addressOffset>0x20</addressOffset>
+						<size>32</size>
+						<access>read-only</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- GRXFSIZ -->
+				<register>
+						<name>GRXFSIZ</name>
+						<description>Receive FIFO Size Register</description>
+						<addressOffset>0x24</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000200</resetValue>
+				</register>
+
+				<!-- GNPTXFSIZ -->
+				<register>
+						<name>GNPTXFSIZ</name>
+						<description>Non-periodic Transmit FIFO Size Register</description>
+						<addressOffset>0x28</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000400</resetValue>
+				</register>
+
+				<!-- GNPTXSTS -->
+				<register>
+						<name>GNPTXSTS</name>
+						<description>Non-periodic Transmit FIFO/Queue Status Register</description>
+						<addressOffset>0x2C</addressOffset>
+						<size>32</size>
+						<access>read-only</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- GI2CCTL -->
+				<register>
+						<name>GI2CCTL</name>
+						<description>I2C Access Register</description>
+						<addressOffset>0x30</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- GPVNDCTL -->
+				<register>
+						<name>GPVNDCTL</name>
+						<description>PHY Vendor Control Register</description>
+						<addressOffset>0x34</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- GGPIO -->
+				<register>
+						<name>GGPIO</name>
+						<description>General Purpose Input/Output Register</description>
+						<addressOffset>0x38</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- GUID -->
+				<register>
+						<name>GUID</name>
+						<description>User ID Register</description>
+						<addressOffset>0x3C</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- GSNPSID -->
+				<register>
+						<name>GSNPSID</name>
+						<description>Synopsys ID Register</description>
+						<addressOffset>0x40</addressOffset>
+						<size>32</size>
+						<access>read-only</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- GHWCFG1 -->
+				<register>
+						<name>GHWCFG1</name>
+						<description>User Hardware Configuration 1 Register</description>
+						<addressOffset>0x44</addressOffset>
+						<size>32</size>
+						<access>read-only</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- GHWCFG2 -->
+				<register>
+						<name>GHWCFG2</name>
+						<description>User Hardware Configuration 2 Register</description>
+						<addressOffset>0x48</addressOffset>
+						<size>32</size>
+						<access>read-only</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- GHWCFG3 -->
+				<register>
+						<name>GHWCFG3</name>
+						<description>User Hardware Configuration 3 Register</description>
+						<addressOffset>0x4C</addressOffset>
+						<size>32</size>
+						<access>read-only</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- GHWCFG4 -->
+				<register>
+						<name>GHWCFG4</name>
+						<description>User Hardware Configuration 4 Register</description>
+						<addressOffset>0x50</addressOffset>
+						<size>32</size>
+						<access>read-only</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- GLPMCFG -->
+				<register>
+						<name>GLPMCFG</name>
+						<description>LPM Config Register</description>
+						<addressOffset>0x54</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- GPWRDN -->
+				<register>
+						<name>GPWRDN</name>
+						<description>Global Power Down Register</description>
+						<addressOffset>0x58</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- GDFIFOCFG -->
+				<register>
+						<name>GDFIFOCFG</name>
+						<description>Global DFIFO Configuration Register</description>
+						<addressOffset>0x5C</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- GADPCTL -->
+				<register>
+						<name>GADPCTL</name>
+						<description>ADP Timer, Control and Status Register</description>
+						<addressOffset>0x60</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- GREFCLK -->
+				<register>
+						<name>GREFCLK</name>
+						<description>ref_clk Control Register</description>
+						<addressOffset>0x64</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- GINTMSK2 -->
+				<register>
+						<name>GINTMSK2</name>
+						<description>Interrupt Mask Register 2</description>
+						<addressOffset>0x68</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- GINTSTS2 -->
+				<register>
+						<name>GINTSTS2</name>
+						<description>Interrupt Register 2</description>
+						<addressOffset>0x6C</addressOffset>
+						<size>32</size>
+						<access>read-only</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- HPTXFSIZ -->
+				<register>
+						<name>HPTXFSIZ</name>
+						<description>Host Periodic Transmit FIFO Size Register</description>
+						<addressOffset>0x100</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DIEPTXF0 -->
+				<register>
+					<name>DIEPTXF0</name>
+					<description>Device IN Endpoint Transmit FIFO 0 Size Register</description>
+					<addressOffset>0x104</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DIEPTXF1 -->
+				<register>
+					<name>DIEPTXF1</name>
+					<description>Device IN Endpoint Transmit FIFO 1 Size Register</description>
+					<addressOffset>0x108</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DIEPTXF2 -->
+				<register>
+					<name>DIEPTXF2</name>
+					<description>Device IN Endpoint Transmit FIFO 2 Size Register</description>
+					<addressOffset>0x10C</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DIEPTXF3 -->
+				<register>
+					<name>DIEPTXF3</name>
+					<description>Device IN Endpoint Transmit FIFO 3 Size Register</description>
+					<addressOffset>0x110</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DIEPTXF4 -->
+				<register>
+					<name>DIEPTXF4</name>
+					<description>Device IN Endpoint Transmit FIFO 4 Size Register</description>
+					<addressOffset>0x114</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DIEPTXF5 -->
+				<register>
+					<name>DIEPTXF5</name>
+					<description>Device IN Endpoint Transmit FIFO 5 Size Register</description>
+					<addressOffset>0x118</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DIEPTXF6 -->
+				<register>
+					<name>DIEPTXF6</name>
+					<description>Device IN Endpoint Transmit FIFO 6 Size Register</description>
+					<addressOffset>0x11C</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DIEPTXF7 -->
+				<register>
+					<name>DIEPTXF7</name>
+					<description>Device IN Endpoint Transmit FIFO 7 Size Register</description>
+					<addressOffset>0x120</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DIEPTXF8 -->
+				<register>
+					<name>DIEPTXF8</name>
+					<description>Device IN Endpoint Transmit FIFO 8 Size Register</description>
+					<addressOffset>0x124</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DIEPTXF9 -->
+				<register>
+					<name>DIEPTXF9</name>
+					<description>Device IN Endpoint Transmit FIFO 9 Size Register</description>
+					<addressOffset>0x128</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DIEPTXF10 -->
+				<register>
+					<name>DIEPTXF10</name>
+					<description>Device IN Endpoint Transmit FIFO 10 Size Register</description>
+					<addressOffset>0x12C</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DIEPTXF11 -->
+				<register>
+					<name>DIEPTXF11</name>
+					<description>Device IN Endpoint Transmit FIFO 11 Size Register</description>
+					<addressOffset>0x130</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DIEPTXF12 -->
+				<register>
+					<name>DIEPTXF12</name>
+					<description>Device IN Endpoint Transmit FIFO 12 Size Register</description>
+					<addressOffset>0x134</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DIEPTXF13 -->
+				<register>
+					<name>DIEPTXF13</name>
+					<description>Device IN Endpoint Transmit FIFO 13 Size Register</description>
+					<addressOffset>0x138</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DIEPTXF14 -->
+				<register>
+					<name>DIEPTXF14</name>
+					<description>Device IN Endpoint Transmit FIFO 14 Size Register</description>
+					<addressOffset>0x13C</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DIEPTXF15 -->
+				<register>
+					<name>DIEPTXF15</name>
+					<description>Device IN Endpoint Transmit FIFO 15 Size Register</description>
+					<addressOffset>0x140</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- HCCHAR0: Host Channel Characteristics Register -->
+				<register>
+					<name>HCCHAR0</name>
+					<description>Host Channel 0 Characteristics Register</description>
+					<addressOffset>0x500</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- HCSPLT0: Host Channel Split Control Register -->
+				<register>
+					<name>HCSPLT0</name>
+					<description>Host Channel 0 Split Control Register</description>
+					<addressOffset>0x504</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- HCINT0: Host Channel Interrupt Register -->
+				<register>
+					<name>HCINT0</name>
+					<description>Host Channel 0 Interrupt Register</description>
+					<addressOffset>0x508</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- HCINTMSK0: Host Channel Interrupt Mask Register -->
+				<register>
+					<name>HCINTMSK0</name>
+					<description>Host Channel 0 Interrupt Mask Register</description>
+					<addressOffset>0x50C</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- HCTSIZ0: Host Channel Transfer Size Register -->
+				<register>
+					<name>HCTSIZ0</name>
+					<description>Host Channel 0 Transfer Size Register</description>
+					<addressOffset>0x510</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<!-- DCFG: Device Configuration Register -->
+				<register>
+					<name>DCFG</name>
+					<description>Device Configuration Register</description>
+					<addressOffset>0x800</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DCTL: Device Control Register -->
+				<register>
+					<name>DCTL</name>
+					<description>Device Control Register</description>
+					<addressOffset>0x804</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DSTS: Device Status Register -->
+				<register>
+					<name>DSTS</name>
+					<description>Device Status Register</description>
+					<addressOffset>0x808</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DIEPMSK: Device IN Endpoint Common Interrupt Mask Register -->
+				<register>
+					<name>DIEPMSK</name>
+					<description>Device IN Endpoint Common Interrupt Mask Register</description>
+					<addressOffset>0x810</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DOEPMSK: Device OUT Endpoint Common Interrupt Mask Register -->
+				<register>
+					<name>DOEPMSK</name>
+					<description>Device OUT Endpoint Common Interrupt Mask Register</description>
+					<addressOffset>0x814</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DAINT: Device All Endpoints Interrupt Register -->
+				<register>
+					<name>DAINT</name>
+					<description>Device All Endpoints Interrupt Register</description>
+					<addressOffset>0x818</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DAINTMSK: Device All Endpoints Interrupt Mask Register -->
+				<register>
+					<name>DAINTMSK</name>
+					<description>Device All Endpoints Interrupt Mask Register</description>
+					<addressOffset>0x81C</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DVBUSDIS: Device VBUS Discharge Time Register -->
+				<register>
+					<name>DVBUSDIS</name>
+					<description>Device VBUS Discharge Time Register</description>
+					<addressOffset>0x828</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DVBUSPULSE: Device VBUS Pulsing Time Register -->
+				<register>
+					<name>DVBUSPULSE</name>
+					<description>Device VBUS Pulsing Time Register</description>
+					<addressOffset>0x82C</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DTHRCTL: Device Threshold Control Register -->
+				<register>
+					<name>DTHRCTL</name>
+					<description>Device Threshold Control Register</description>
+					<addressOffset>0x830</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DIEPEMPMSK: Device IN Endpoint FIFO Empty Interrupt Mask Register -->
+				<register>
+					<name>DIEPEMPMSK</name>
+					<description>Device IN Endpoint FIFO Empty Interrupt Mask Register</description>
+					<addressOffset>0x834</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DEACHINT: Device Each Endpoints Interrupt Register -->
+				<register>
+					<name>DEACHINT</name>
+					<description>Device Each Endpoints Interrupt Register</description>
+					<addressOffset>0x838</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DEACHINTMSK: Device Each Endpoints Interrupt Mask Register -->
+				<register>
+					<name>DEACHINTMSK</name>
+					<description>Device Each Endpoints Interrupt Mask Register</description>
+					<addressOffset>0x83C</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DIEPEACHMSKi: Device Each IN Endpoint Interrupt Registers -->
+				<!-- For i = 0 to 15 -->
+				<register>
+					<name>DIEPEACHMSK0</name>
+					<description>Device Each IN Endpoint 0 Interrupt Register</description>
+					<addressOffset>0x840</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<register>
+					<name>DIEPEACHMSK1</name>
+					<description>Device Each IN Endpoint 1 Interrupt Register</description>
+					<addressOffset>0x844</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<register>
+					<name>DIEPEACHMSK2</name>
+					<description>Device Each IN Endpoint 2 Interrupt Register</description>
+					<addressOffset>0x848</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				
+				<register>
+					<name>DIEPEACHMSK3</name>
+					<description>Device Each IN Endpoint 3 Interrupt Register</description>
+					<addressOffset>0x84C</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				
+				<register>
+					<name>DIEPEACHMSK4</name>
+					<description>Device Each IN Endpoint 4 Interrupt Register</description>
+					<addressOffset>0x850</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<register>
+					<name>DIEPEACHMSK5</name>
+					<description>Device Each IN Endpoint 5 Interrupt Register</description>
+					<addressOffset>0x854</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<register>
+					<name>DIEPEACHMSK6</name>
+					<description>Device Each IN Endpoint 6 Interrupt Register</description>
+					<addressOffset>0x858</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<register>
+					<name>DIEPEACHMSK7</name>
+					<description>Device Each IN Endpoint 7 Interrupt Register</description>
+					<addressOffset>0x85C</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				
+				<register>
+					<name>DIEPEACHMSK8</name>
+					<description>Device Each IN Endpoint 8 Interrupt Register</description>
+					<addressOffset>0x860</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<register>
+					<name>DIEPEACHMSK9</name>
+					<description>Device Each IN Endpoint 9 Interrupt Register</description>
+					<addressOffset>0x864</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<register>
+					<name>DIEPEACHMSK10</name>
+					<description>Device Each IN Endpoint 10 Interrupt Register</description>
+					<addressOffset>0x868</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<register>
+					<name>DIEPEACHMSK11</name>
+					<description>Device Each IN Endpoint 11 Interrupt Register</description>
+					<addressOffset>0x86C</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<register>
+					<name>DIEPEACHMSK12</name>
+					<description>Device Each IN Endpoint 12 Interrupt Register</description>
+					<addressOffset>0x870</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<register>
+					<name>DIEPEACHMSK13</name>
+					<description>Device Each IN Endpoint 13 Interrupt Register</description>
+					<addressOffset>0x874</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<register>
+					<name>DIEPEACHMSK14</name>
+					<description>Device Each IN Endpoint 14 Interrupt Register</description>
+					<addressOffset>0x878</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<register>
+					<name>DIEPEACHMSK15</name>
+					<description>Device Each IN Endpoint 15 Interrupt Register</description>
+					<addressOffset>0x87C</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DOEPEACHMSKi: Device Each OUT Endpoint Interrupt Registers -->
+				<!-- For i = 0 to 15 -->
+				<register>
+					<name>DOEPEACHMSK0</name>
+					<description>Device Each OUT Endpoint 0 Interrupt Register</description>
+					<addressOffset>0x880</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<register>
+					<name>DOEPEACHMSK1</name>
+					<description>Device Each OUT Endpoint 1 Interrupt Register</description>
+					<addressOffset>0x884</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<register>
+					<name>DOEPEACHMSK2</name>
+					<description>Device Each OUT Endpoint 2 Interrupt Register</description>
+					<addressOffset>0x888</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<register>
+					<name>DOEPEACHMSK3</name>
+					<description>Device Each OUT Endpoint 3 Interrupt Register</description>
+					<addressOffset>0x88C</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<register>
+					<name>DOEPEACHMSK4</name>
+					<description>Device Each OUT Endpoint 4 Interrupt Register</description>
+					<addressOffset>0x890</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<register>
+					<name>DOEPEACHMSK5</name>
+					<description>Device Each OUT Endpoint 5 Interrupt Register</description>
+					<addressOffset>0x894</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<register>
+					<name>DOEPEACHMSK6</name>
+					<description>Device Each OUT Endpoint 6 Interrupt Register</description>
+					<addressOffset>0x898</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<register>
+					<name>DOEPEACHMSK7</name>
+					<description>Device Each OUT Endpoint 7 Interrupt Register</description>
+					<addressOffset>0x89C</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<register>
+					<name>DOEPEACHMSK8</name>
+					<description>Device Each OUT Endpoint 8 Interrupt Register</description>
+					<addressOffset>0x8A0</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<register>
+					<name>DOEPEACHMSK9</name>
+					<description>Device Each OUT Endpoint 9 Interrupt Register</description>
+					<addressOffset>0x8A4</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<register>
+					<name>DOEPEACHMSK10</name>
+					<description>Device Each OUT Endpoint 10 Interrupt Register</description>
+					<addressOffset>0x8A8</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<register>
+					<name>DOEPEACHMSK11</name>
+					<description>Device Each OUT Endpoint 11 Interrupt Register</description>
+					<addressOffset>0x8AC</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<register>
+					<name>DOEPEACHMSK12</name>
+					<description>Device Each OUT Endpoint 12 Interrupt Register</description>
+					<addressOffset>0x8B0</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<register>
+					<name>DOEPEACHMSK13</name>
+					<description>Device Each OUT Endpoint 13 Interrupt Register</description>
+					<addressOffset>0x8B4</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<register>
+					<name>DOEPEACHMSK14</name>
+					<description>Device Each OUT Endpoint 14 Interrupt Register</description>
+					<addressOffset>0x8B8</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<register>
+					<name>DOEPEACHMSK15</name>
+					<description>Device Each OUT Endpoint 15 Interrupt Register</description>
+					<addressOffset>0x8BC</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DIEPCTL: Device Control IN Endpoint Control Registers -->
+				<register>
+					<name>DIEPCTL0</name>
+					<description>Device Control IN Endpoint 0 Control Register</description>
+					<addressOffset>0x900</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPCTL1</name>
+					<description>Device Control IN Endpoint 1 Control Register</description>
+					<addressOffset>0x920</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPCTL2</name>
+					<description>Device Control IN Endpoint 2 Control Register</description>
+					<addressOffset>0x940</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPCTL3</name>
+					<description>Device Control IN Endpoint 3 Control Register</description>
+					<addressOffset>0x960</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPCTL4</name>
+					<description>Device Control IN Endpoint 4 Control Register</description>
+					<addressOffset>0x980</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPCTL5</name>
+					<description>Device Control IN Endpoint 5 Control Register</description>
+					<addressOffset>0x9A0</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPCTL6</name>
+					<description>Device Control IN Endpoint 6 Control Register</description>
+					<addressOffset>0x9C0</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPCTL7</name>
+					<description>Device Control IN Endpoint 7 Control Register</description>
+					<addressOffset>0x9E0</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPCTL8</name>
+					<description>Device Control IN Endpoint 8 Control Register</description>
+					<addressOffset>0xA00</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPCTL9</name>
+					<description>Device Control IN Endpoint 9 Control Register</description>
+					<addressOffset>0xA20</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPCTL10</name>
+					<description>Device Control IN Endpoint 10 Control Register</description>
+					<addressOffset>0xA40</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPCTL11</name>
+					<description>Device Control IN Endpoint 11 Control Register</description>
+					<addressOffset>0xA60</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPCTL12</name>
+					<description>Device Control IN Endpoint 12 Control Register</description>
+					<addressOffset>0xA80</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPCTL13</name>
+					<description>Device Control IN Endpoint 13 Control Register</description>
+					<addressOffset>0xAA0</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPCTL14</name>
+					<description>Device Control IN Endpoint 14 Control Register</description>
+					<addressOffset>0xAC0</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPCTL15</name>
+					<description>Device Control IN Endpoint 15 Control Register</description>
+					<addressOffset>0xAE0</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DIEPINT: Device IN Endpoint Interrupt Registers -->
+				<register>
+					<name>DIEPINT0</name>
+					<description>Device IN Endpoint 0 Interrupt Register</description>
+					<addressOffset>0x908</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPINT1</name>
+					<description>Device IN Endpoint 1 Interrupt Register</description>
+					<addressOffset>0x928</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPINT2</name>
+					<description>Device IN Endpoint 2 Interrupt Register</description>
+					<addressOffset>0x948</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPINT3</name>
+					<description>Device IN Endpoint 3 Interrupt Register</description>
+					<addressOffset>0x968</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPINT4</name>
+					<description>Device IN Endpoint 4 Interrupt Register</description>
+					<addressOffset>0x988</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPINT5</name>
+					<description>Device IN Endpoint 5 Interrupt Register</description>
+					<addressOffset>0x9A8</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPINT6</name>
+					<description>Device IN Endpoint 6 Interrupt Register</description>
+					<addressOffset>0x9C8</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPINT7</name>
+					<description>Device IN Endpoint 7 Interrupt Register</description>
+					<addressOffset>0x9E8</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPINT8</name>
+					<description>Device IN Endpoint 8 Interrupt Register</description>
+					<addressOffset>0xA08</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPINT9</name>
+					<description>Device IN Endpoint 9 Interrupt Register</description>
+					<addressOffset>0xA28</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPINT10</name>
+					<description>Device IN Endpoint 10 Interrupt Register</description>
+					<addressOffset>0xA48</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPINT11</name>
+					<description>Device IN Endpoint 11 Interrupt Register</description>
+					<addressOffset>0xA68</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPINT12</name>
+					<description>Device IN Endpoint 12 Interrupt Register</description>
+					<addressOffset>0xA88</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPINT13</name>
+					<description>Device IN Endpoint 13 Interrupt Register</description>
+					<addressOffset>0xAA8</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPINT14</name>
+					<description>Device IN Endpoint 14 Interrupt Register</description>
+					<addressOffset>0xAC8</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPINT15</name>
+					<description>Device IN Endpoint 15 Interrupt Register</description>
+					<addressOffset>0xAE8</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DIEPTSIZ: Device IN Endpoint Transfer Size Registers -->
+				<register>
+					<name>DIEPTSIZ0</name>
+					<description>Device IN Endpoint 0 Transfer Size Register</description>
+					<addressOffset>0x910</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPTSIZ1</name>
+					<description>Device IN Endpoint 1 Transfer Size Register</description>
+					<addressOffset>0x930</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPTSIZ2</name>
+					<description>Device IN Endpoint 2 Transfer Size Register</description>
+					<addressOffset>0x950</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPTSIZ3</name>
+					<description>Device IN Endpoint 3 Transfer Size Register</description>
+					<addressOffset>0x970</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPTSIZ4</name>
+					<description>Device IN Endpoint 4 Transfer Size Register</description>
+					<addressOffset>0x990</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPTSIZ5</name>
+					<description>Device IN Endpoint 5 Transfer Size Register</description>
+					<addressOffset>0x9B0</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPTSIZ6</name>
+					<description>Device IN Endpoint 6 Transfer Size Register</description>
+					<addressOffset>0x9D0</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPTSIZ7</name>
+					<description>Device IN Endpoint 7 Transfer Size Register</description>
+					<addressOffset>0x9F0</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPTSIZ8</name>
+					<description>Device IN Endpoint 8 Transfer Size Register</description>
+					<addressOffset>0xA10</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPTSIZ9</name>
+					<description>Device IN Endpoint 9 Transfer Size Register</description>
+					<addressOffset>0xA30</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPTSIZ10</name>
+					<description>Device IN Endpoint 10 Transfer Size Register</description>
+					<addressOffset>0xA50</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPTSIZ11</name>
+					<description>Device IN Endpoint 11 Transfer Size Register</description>
+					<addressOffset>0xA70</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPTSIZ12</name>
+					<description>Device IN Endpoint 12 Transfer Size Register</description>
+					<addressOffset>0xA90</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPTSIZ13</name>
+					<description>Device IN Endpoint 13 Transfer Size Register</description>
+					<addressOffset>0xAB0</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPTSIZ14</name>
+					<description>Device IN Endpoint 14 Transfer Size Register</description>
+					<addressOffset>0xAD0</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPTSIZ15</name>
+					<description>Device IN Endpoint 15 Transfer Size Register</description>
+					<addressOffset>0xAF0</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DIEPDMA: Device IN Endpoint DMA Address Registers -->
+				<register>
+					<name>DIEPDMA0</name>
+					<description>Device IN Endpoint 0 DMA Address Register</description>
+					<addressOffset>0x914</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPDMA1</name>
+					<description>Device IN Endpoint 1 DMA Address Register</description>
+					<addressOffset>0x934</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPDMA2</name>
+					<description>Device IN Endpoint 2 DMA Address Register</description>
+					<addressOffset>0x954</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPDMA3</name>
+					<description>Device IN Endpoint 3 DMA Address Register</description>
+					<addressOffset>0x974</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPDMA4</name>
+					<description>Device IN Endpoint 4 DMA Address Register</description>
+					<addressOffset>0x994</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPDMA5</name>
+					<description>Device IN Endpoint 5 DMA Address Register</description>
+					<addressOffset>0x9B4</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPDMA6</name>
+					<description>Device IN Endpoint 6 DMA Address Register</description>
+					<addressOffset>0x9D4</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPDMA7</name>
+					<description>Device IN Endpoint 7 DMA Address Register</description>
+					<addressOffset>0x9F4</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPDMA8</name>
+					<description>Device IN Endpoint 8 DMA Address Register</description>
+					<addressOffset>0xA14</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPDMA9</name>
+					<description>Device IN Endpoint 9 DMA Address Register</description>
+					<addressOffset>0xA34</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPDMA10</name>
+					<description>Device IN Endpoint 10 DMA Address Register</description>
+					<addressOffset>0xA54</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPDMA11</name>
+					<description>Device IN Endpoint 11 DMA Address Register</description>
+					<addressOffset>0xA74</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPDMA12</name>
+					<description>Device IN Endpoint 12 DMA Address Register</description>
+					<addressOffset>0xA94</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPDMA13</name>
+					<description>Device IN Endpoint 13 DMA Address Register</description>
+					<addressOffset>0xAB4</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPDMA14</name>
+					<description>Device IN Endpoint 14 DMA Address Register</description>
+					<addressOffset>0xAD4</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPDMA15</name>
+					<description>Device IN Endpoint 15 DMA Address Register</description>
+					<addressOffset>0xAF4</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DTXFSTS: Device IN Endpoint Transmit FIFO Status Registers -->
+				<register>
+					<name>DTXFSTS0</name>
+					<description>Device IN Endpoint 0 Transmit FIFO Status Register</description>
+					<addressOffset>0x918</addressOffset>
+					<size>32</size>
+					<access>read-only</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DTXFSTS1</name>
+					<description>Device IN Endpoint 1 Transmit FIFO Status Register</description>
+					<addressOffset>0x938</addressOffset>
+					<size>32</size>
+					<access>read-only</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DTXFSTS2</name>
+					<description>Device IN Endpoint 2 Transmit FIFO Status Register</description>
+					<addressOffset>0x958</addressOffset>
+					<size>32</size>
+					<access>read-only</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DTXFSTS3</name>
+					<description>Device IN Endpoint 3 Transmit FIFO Status Register</description>
+					<addressOffset>0x978</addressOffset>
+					<size>32</size>
+					<access>read-only</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DTXFSTS4</name>
+					<description>Device IN Endpoint 4 Transmit FIFO Status Register</description>
+					<addressOffset>0x998</addressOffset>
+					<size>32</size>
+					<access>read-only</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DTXFSTS5</name>
+					<description>Device IN Endpoint 5 Transmit FIFO Status Register</description>
+					<addressOffset>0x9B8</addressOffset>
+					<size>32</size>
+					<access>read-only</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DTXFSTS6</name>
+					<description>Device IN Endpoint 6 Transmit FIFO Status Register</description>
+					<addressOffset>0x9D8</addressOffset>
+					<size>32</size>
+					<access>read-only</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DTXFSTS7</name>
+					<description>Device IN Endpoint 7 Transmit FIFO Status Register</description>
+					<addressOffset>0x9F8</addressOffset>
+					<size>32</size>
+					<access>read-only</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DTXFSTS8</name>
+					<description>Device IN Endpoint 8 Transmit FIFO Status Register</description>
+					<addressOffset>0xA18</addressOffset>
+					<size>32</size>
+					<access>read-only</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DTXFSTS9</name>
+					<description>Device IN Endpoint 9 Transmit FIFO Status Register</description>
+					<addressOffset>0xA38</addressOffset>
+					<size>32</size>
+					<access>read-only</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DTXFSTS10</name>
+					<description>Device IN Endpoint 10 Transmit FIFO Status Register</description>
+					<addressOffset>0xA58</addressOffset>
+					<size>32</size>
+					<access>read-only</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DTXFSTS11</name>
+					<description>Device IN Endpoint 11 Transmit FIFO Status Register</description>
+					<addressOffset>0xA78</addressOffset>
+					<size>32</size>
+					<access>read-only</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DTXFSTS12</name>
+					<description>Device IN Endpoint 12 Transmit FIFO Status Register</description>
+					<addressOffset>0xA98</addressOffset>
+					<size>32</size>
+					<access>read-only</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DTXFSTS13</name>
+					<description>Device IN Endpoint 13 Transmit FIFO Status Register</description>
+					<addressOffset>0xAB8</addressOffset>
+					<size>32</size>
+					<access>read-only</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DTXFSTS14</name>
+					<description>Device IN Endpoint 14 Transmit FIFO Status Register</description>
+					<addressOffset>0xAD8</addressOffset>
+					<size>32</size>
+					<access>read-only</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DTXFSTS15</name>
+					<description>Device IN Endpoint 15 Transmit FIFO Status Register</description>
+					<addressOffset>0xAF8</addressOffset>
+					<size>32</size>
+					<access>read-only</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DIEPDMAB: Device IN Endpoint Buffer Address Registers -->
+				<register>
+					<name>DIEPDMAB0</name>
+					<description>Device IN Endpoint 0 Buffer Address Register</description>
+					<addressOffset>0x91C</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPDMAB1</name>
+					<description>Device IN Endpoint 1 Buffer Address Register</description>
+					<addressOffset>0x93C</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPDMAB2</name>
+					<description>Device IN Endpoint 2 Buffer Address Register</description>
+					<addressOffset>0x95C</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPDMAB3</name>
+					<description>Device IN Endpoint 3 Buffer Address Register</description>
+					<addressOffset>0x97C</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPDMAB4</name>
+					<description>Device IN Endpoint 4 Buffer Address Register</description>
+					<addressOffset>0x99C</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPDMAB5</name>
+					<description>Device IN Endpoint 5 Buffer Address Register</description>
+					<addressOffset>0x9BC</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPDMAB6</name>
+					<description>Device IN Endpoint 6 Buffer Address Register</description>
+					<addressOffset>0x9DC</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPDMAB7</name>
+					<description>Device IN Endpoint 7 Buffer Address Register</description>
+					<addressOffset>0x9FC</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPDMAB8</name>
+					<description>Device IN Endpoint 8 Buffer Address Register</description>
+					<addressOffset>0xA1C</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPDMAB9</name>
+					<description>Device IN Endpoint 9 Buffer Address Register</description>
+					<addressOffset>0xA3C</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPDMAB10</name>
+					<description>Device IN Endpoint 10 Buffer Address Register</description>
+					<addressOffset>0xA5C</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPDMAB11</name>
+					<description>Device IN Endpoint 11 Buffer Address Register</description>
+					<addressOffset>0xA7C</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPDMAB12</name>
+					<description>Device IN Endpoint 12 Buffer Address Register</description>
+					<addressOffset>0xA9C</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPDMAB13</name>
+					<description>Device IN Endpoint 13 Buffer Address Register</description>
+					<addressOffset>0xABC</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPDMAB14</name>
+					<description>Device IN Endpoint 14 Buffer Address Register</description>
+					<addressOffset>0xADC</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPDMAB15</name>
+					<description>Device IN Endpoint 15 Buffer Address Register</description>
+					<addressOffset>0xAFC</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+
+        	<!-- DOEPCTL: Device OUT Endpoint Control Registers -->
+	        <register>
+	            <name>DOEPCTL0</name>
+	            <description>Device Control OUT Endpoint 0 Control Register</description>
+	            <addressOffset>0xB00</addressOffset>
+	            <size>32</size>
+	            <access>read-write</access>
+	            <resetValue>0x00000000</resetValue>
+	        </register>
+	        <!-- DOEPINT: Device OUT Endpoint Interrupt Registers -->
+	        <register>
+	            <name>DOEPINT0</name>
+	            <description>Device OUT Endpoint 0 Interrupt Register</description>
+	            <addressOffset>0xB08</addressOffset>
+	            <size>32</size>
+	            <access>read-write</access>
+	            <resetValue>0x00000000</resetValue>
+	        </register>
+	        <!-- DOEPTSIZ: Device OUT Endpoint Transfer Size Registers -->
+	        <register>
+	            <name>DOEPTSIZ0</name>
+	            <description>Device OUT Endpoint 0 Transfer Size Register</description>
+	            <addressOffset>0xB10</addressOffset>
+	            <size>32</size>
+	            <access>read-write</access>
+	            <resetValue>0x00000000</resetValue>
+	        </register>
+	        <!-- DOEPDMA: Device OUT Endpoint DMA Address Registers -->
+	        <register>
+	            <name>DOEPDMA0</name>
+	            <description>Device OUT Endpoint 0 DMA Address Register</description>
+	            <addressOffset>0xB14</addressOffset>
+	            <size>32</size>
+	            <access>read-write</access>
+	            <resetValue>0x00000000</resetValue>
+	        </register>
+	        <!-- DOEPDMAB: Device OUT Endpoint DMA Buffer Address Registers -->
+	        <register>
+	            <name>DOEPDMAB0</name>
+	            <description>Device OUT Endpoint 0 DMA Buffer Address Register</description>
+	            <addressOffset>0xB1C</addressOffset>
+	            <size>32</size>
+	            <access>read-write</access>
+	            <resetValue>0x00000000</resetValue>
+	        </register>
+
+                <!-- Device Control OUT Endpoint Control Registers (DOEPCTL) for endpoints 1 to 16 -->
+                <register>
+                    <name>DOEPCTL1</name>
+                    <description>Device Control OUT Endpoint 1 Control Register</description>
+                    <addressOffset>0xB20</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPCTL2</name>
+                    <description>Device Control OUT Endpoint 2 Control Register</description>
+                    <addressOffset>0xB40</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPCTL3</name>
+                    <description>Device Control OUT Endpoint 3 Control Register</description>
+                    <addressOffset>0xB60</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPCTL4</name>
+                    <description>Device Control OUT Endpoint 4 Control Register</description>
+                    <addressOffset>0xB80</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPCTL5</name>
+                    <description>Device Control OUT Endpoint 5 Control Register</description>
+                    <addressOffset>0xBA0</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPCTL6</name>
+                    <description>Device Control OUT Endpoint 6 Control Register</description>
+                    <addressOffset>0xBC0</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPCTL7</name>
+                    <description>Device Control OUT Endpoint 7 Control Register</description>
+                    <addressOffset>0xBE0</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPCTL8</name>
+                    <description>Device Control OUT Endpoint 8 Control Register</description>
+                    <addressOffset>0xC00</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPCTL9</name>
+                    <description>Device Control OUT Endpoint 9 Control Register</description>
+                    <addressOffset>0xC20</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPCTL10</name>
+                    <description>Device Control OUT Endpoint 10 Control Register</description>
+                    <addressOffset>0xC40</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPCTL11</name>
+                    <description>Device Control OUT Endpoint 11 Control Register</description>
+                    <addressOffset>0xC60</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPCTL12</name>
+                    <description>Device Control OUT Endpoint 12 Control Register</description>
+                    <addressOffset>0xC80</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPCTL13</name>
+                    <description>Device Control OUT Endpoint 13 Control Register</description>
+                    <addressOffset>0xCA0</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPCTL14</name>
+                    <description>Device Control OUT Endpoint 14 Control Register</description>
+                    <addressOffset>0xCC0</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPCTL15</name>
+                    <description>Device Control OUT Endpoint 15 Control Register</description>
+                    <addressOffset>0xCE0</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPCTL16</name>
+                    <description>Device Control OUT Endpoint 16 Control Register</description>
+                    <addressOffset>0xD00</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <!-- Device OUT Endpoint Interrupt Registers (DOEPINT) for endpoints 1 to 16 -->
+                <register>
+                    <name>DOEPINT1</name>
+                    <description>Device OUT Endpoint 1 Interrupt Register</description>
+                    <addressOffset>0xB28</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPINT2</name>
+                    <description>Device OUT Endpoint 2 Interrupt Register</description>
+                    <addressOffset>0xB48</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPINT3</name>
+                    <description>Device OUT Endpoint 3 Interrupt Register</description>
+                    <addressOffset>0xB68</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPINT4</name>
+                    <description>Device OUT Endpoint 4 Interrupt Register</description>
+                    <addressOffset>0xB88</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPINT5</name>
+                    <description>Device OUT Endpoint 5 Interrupt Register</description>
+                    <addressOffset>0xBA8</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPINT6</name>
+                    <description>Device OUT Endpoint 6 Interrupt Register</description>
+                    <addressOffset>0xBC8</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPINT7</name>
+                    <description>Device OUT Endpoint 7 Interrupt Register</description>
+                    <addressOffset>0xBE8</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPINT8</name>
+                    <description>Device OUT Endpoint 8 Interrupt Register</description>
+                    <addressOffset>0xC08</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPINT9</name>
+                    <description>Device OUT Endpoint 9 Interrupt Register</description>
+                    <addressOffset>0xC28</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPINT10</name>
+                    <description>Device OUT Endpoint 10 Interrupt Register</description>
+                    <addressOffset>0xC48</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPINT11</name>
+                    <description>Device OUT Endpoint 11 Interrupt Register</description>
+                    <addressOffset>0xC68</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPINT12</name>
+                    <description>Device OUT Endpoint 12 Interrupt Register</description>
+                    <addressOffset>0xC88</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPINT13</name>
+                    <description>Device OUT Endpoint 13 Interrupt Register</description>
+                    <addressOffset>0xCA8</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPINT14</name>
+                    <description>Device OUT Endpoint 14 Interrupt Register</description>
+                    <addressOffset>0xCC8</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPINT15</name>
+                    <description>Device OUT Endpoint 15 Interrupt Register</description>
+                    <addressOffset>0xCE8</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPINT16</name>
+                    <description>Device OUT Endpoint 16 Interrupt Register</description>
+                    <addressOffset>0xD08</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <!-- Device OUT Endpoint Transfer Size Registers (DOEPTSIZ) for endpoints 1 to 16 -->
+                <register>
+                    <name>DOEPTSIZ1</name>
+                    <description>Device OUT Endpoint 1 Transfer Size Register</description>
+                    <addressOffset>0xB30</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPTSIZ2</name>
+                    <description>Device OUT Endpoint 2 Transfer Size Register</description>
+                    <addressOffset>0xB50</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPTSIZ3</name>
+                    <description>Device OUT Endpoint 3 Transfer Size Register</description>
+                    <addressOffset>0xB70</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPTSIZ4</name>
+                    <description>Device OUT Endpoint 4 Transfer Size Register</description>
+                    <addressOffset>0xB90</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPTSIZ5</name>
+                    <description>Device OUT Endpoint 5 Transfer Size Register</description>
+                    <addressOffset>0xBB0</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPTSIZ6</name>
+                    <description>Device OUT Endpoint 6 Transfer Size Register</description>
+                    <addressOffset>0xBD0</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPTSIZ7</name>
+                    <description>Device OUT Endpoint 7 Transfer Size Register</description>
+                    <addressOffset>0xBF0</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPTSIZ8</name>
+                    <description>Device OUT Endpoint 8 Transfer Size Register</description>
+                    <addressOffset>0xC10</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPTSIZ9</name>
+                    <description>Device OUT Endpoint 9 Transfer Size Register</description>
+                    <addressOffset>0xC30</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPTSIZ10</name>
+                    <description>Device OUT Endpoint 10 Transfer Size Register</description>
+                    <addressOffset>0xC50</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPTSIZ11</name>
+                    <description>Device OUT Endpoint 11 Transfer Size Register</description>
+                    <addressOffset>0xC70</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPTSIZ12</name>
+                    <description>Device OUT Endpoint 12 Transfer Size Register</description>
+                    <addressOffset>0xC90</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPTSIZ13</name>
+                    <description>Device OUT Endpoint 13 Transfer Size Register</description>
+                    <addressOffset>0xCB0</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPTSIZ14</name>
+                    <description>Device OUT Endpoint 14 Transfer Size Register</description>
+                    <addressOffset>0xCD0</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPTSIZ15</name>
+                    <description>Device OUT Endpoint 15 Transfer Size Register</description>
+                    <addressOffset>0xCF0</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPTSIZ16</name>
+                    <description>Device OUT Endpoint 16 Transfer Size Register</description>
+                    <addressOffset>0xD10</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+<!-- Device OUT Endpoint DMA Address Registers (DOEPDMA) for endpoints 1 to 16 -->
+                <register>
+                    <name>DOEPDMA1</name>
+                    <description>Device OUT Endpoint 1 DMA Address Register</description>
+                    <addressOffset>0xB34</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPDMA2</name>
+                    <description>Device OUT Endpoint 2 DMA Address Register</description>
+                    <addressOffset>0xB54</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPDMA3</name>
+                    <description>Device OUT Endpoint 3 DMA Address Register</description>
+                    <addressOffset>0xB74</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPDMA4</name>
+                    <description>Device OUT Endpoint 4 DMA Address Register</description>
+                    <addressOffset>0xB94</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPDMA5</name>
+                    <description>Device OUT Endpoint 5 DMA Address Register</description>
+                    <addressOffset>0xBB4</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPDMA6</name>
+                    <description>Device OUT Endpoint 6 DMA Address Register</description>
+                    <addressOffset>0xBD4</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPDMA7</name>
+                    <description>Device OUT Endpoint 7 DMA Address Register</description>
+                    <addressOffset>0xBF4</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPDMA8</name>
+                    <description>Device OUT Endpoint 8 DMA Address Register</description>
+                    <addressOffset>0xC14</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPDMA9</name>
+                    <description>Device OUT Endpoint 9 DMA Address Register</description>
+                    <addressOffset>0xC34</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPDMA10</name>
+                    <description>Device OUT Endpoint 10 DMA Address Register</description>
+                    <addressOffset>0xC54</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPDMA11</name>
+                    <description>Device OUT Endpoint 11 DMA Address Register</description>
+                    <addressOffset>0xC74</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPDMA12</name>
+                    <description>Device OUT Endpoint 12 DMA Address Register</description>
+                    <addressOffset>0xC94</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPDMA13</name>
+                    <description>Device OUT Endpoint 13 DMA Address Register</description>
+                    <addressOffset>0xCB4</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPDMA14</name>
+                    <description>Device OUT Endpoint 14 DMA Address Register</description>
+                    <addressOffset>0xCD4</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPDMA15</name>
+                    <description>Device OUT Endpoint 15 DMA Address Register</description>
+                    <addressOffset>0xCF4</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPDMA16</name>
+                    <description>Device OUT Endpoint 16 DMA Address Register</description>
+                    <addressOffset>0xD14</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+
+                <!-- Device OUT Endpoint Buffer Address Registers (DOEPDMAB) for endpoints 1 to 16 -->
+                <register>
+                    <name>DOEPDMAB1</name>
+                    <description>Device OUT Endpoint 1 Buffer Address Register</description>
+                    <addressOffset>0xB3C</addressOffset>
+                    <size>32</size>
+                    <access>read-only</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPDMAB2</name>
+                    <description>Device OUT Endpoint 2 Buffer Address Register</description>
+                    <addressOffset>0xB5C</addressOffset>
+                    <size>32</size>
+                    <access>read-only</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPDMAB3</name>
+                    <description>Device OUT Endpoint 3 Buffer Address Register</description>
+                    <addressOffset>0xB7C</addressOffset>
+                    <size>32</size>
+                    <access>read-only</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPDMAB4</name>
+                    <description>Device OUT Endpoint 4 Buffer Address Register</description>
+                    <addressOffset>0xB9C</addressOffset>
+                    <size>32</size>
+                    <access>read-only</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPDMAB5</name>
+                    <description>Device OUT Endpoint 5 Buffer Address Register</description>
+                    <addressOffset>0xBBC</addressOffset>
+                    <size>32</size>
+                    <access>read-only</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPDMAB6</name>
+                    <description>Device OUT Endpoint 6 Buffer Address Register</description>
+                    <addressOffset>0xBDC</addressOffset>
+                    <size>32</size>
+                    <access>read-only</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPDMAB7</name>
+                    <description>Device OUT Endpoint 7 Buffer Address Register</description>
+                    <addressOffset>0xBFC</addressOffset>
+                    <size>32</size>
+                    <access>read-only</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPDMAB8</name>
+                    <description>Device OUT Endpoint 8 Buffer Address Register</description>
+                    <addressOffset>0xC1C</addressOffset>
+                    <size>32</size>
+                    <access>read-only</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPDMAB9</name>
+                    <description>Device OUT Endpoint 9 Buffer Address Register</description>
+                    <addressOffset>0xC3C</addressOffset>
+                    <size>32</size>
+                    <access>read-only</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPDMAB10</name>
+                    <description>Device OUT Endpoint 10 Buffer Address Register</description>
+                    <addressOffset>0xC5C</addressOffset>
+                    <size>32</size>
+                    <access>read-only</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPDMAB11</name>
+                    <description>Device OUT Endpoint 11 Buffer Address Register</description>
+                    <addressOffset>0xC7C</addressOffset>
+                    <size>32</size>
+                    <access>read-only</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPDMAB12</name>
+                    <description>Device OUT Endpoint 12 Buffer Address Register</description>
+                    <addressOffset>0xC9C</addressOffset>
+                    <size>32</size>
+                    <access>read-only</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPDMAB13</name>
+                    <description>Device OUT Endpoint 13 Buffer Address Register</description>
+                    <addressOffset>0xCBC</addressOffset>
+                    <size>32</size>
+                    <access>read-only</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPDMAB14</name>
+                    <description>Device OUT Endpoint 14 Buffer Address Register</description>
+                    <addressOffset>0xCDC</addressOffset>
+                    <size>32</size>
+                    <access>read-only</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPDMAB15</name>
+                    <description>Device OUT Endpoint 15 Buffer Address Register</description>
+                    <addressOffset>0xCFC</addressOffset>
+                    <size>32</size>
+                    <access>read-only</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+                <register>
+                    <name>DOEPDMAB16</name>
+                    <description>Device OUT Endpoint 16 Buffer Address Register</description>
+                    <addressOffset>0xD1C</addressOffset>
+                    <size>32</size>
+                    <access>read-only</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+
+                <!-- Power and Clock Gating Control Register (PCGCCTL) -->
+                <register>
+                    <name>PCGCCTL</name>
+                    <description>Power and Clock Gating Control Register</description>
+                    <addressOffset>0xE00</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+				
+                <!-- Power and Clock Gating Control Register1 (PCGCCTL1) -->
+                <register>
+                    <name>PCGCCTL1</name>
+                    <description>Power and Clock Gating Control Register1</description>
+                    <addressOffset>0xE04</addressOffset>
+                    <size>32</size>
+                    <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
+                </register>
+  		</registers>
+  	</peripheral>
   </peripherals>
 </device>
