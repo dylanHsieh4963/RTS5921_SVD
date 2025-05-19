@@ -37,10 +37,10 @@
 
   <!-- Peripherals -->
   <peripherals>
-    <!-- INTR_SPIC -->
+    <!-- ITR_SPIC -->
     <peripheral>
       <!-- Description -->
-      <name>INTR_SPIC</name>
+      <name>ITR_SPIC</name>
       <version>1.00</version>
       <description>Realtek RXI-312 SPI Controller</description>
       <groupName>SPIC</groupName>
@@ -58,7 +58,7 @@
 
       <!-- Interrup -->
       <interrupt>
-        <name>ISPIC</name>
+        <name>ITR_SPIC</name>
         <description>Internal SPIC Interrupt</description>
         <value>9</value>
       </interrupt>
@@ -777,16 +777,1465 @@
 				</register>
       </registers>
     </peripheral>
-    <!-- EXTR_SPIC -->
-    <peripheral derivedFrom="INTR_SPIC">
-      <name>EXTR_SPIC</name>
+    <!-- ETR_SPIC -->
+    <peripheral derivedFrom="ITR_SPIC">
+      <name>ETR_SPIC</name>
       <baseAddress>0x40001000</baseAddress>
       <!-- Interrup -->
       <interrupt>
-        <name>ESPIC</name>
+        <name>ETR_SPIC</name>
         <description>External SPIC Interrupt</description>
         <value>10</value>
       </interrupt>
+    </peripheral>
+    <!-- DMAC -->
+    <peripheral>
+      <!-- Description -->
+      <name>DMA</name>
+      <version>1.00</version>
+      <description>Realtek RXI-350 DMA Controller</description>
+      <groupName>DMAC</groupName>
+      <headerStructName>DMAC</headerStructName>
+      <baseAddress>0x40002000</baseAddress>
+      <size>32</size>
+      <access>read-write</access>
+
+      <!-- Address Range -->
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+
+      <!-- Interrup -->
+      <interrupt>
+        <name>DMA</name>
+        <description>DMA Controller Interrupt</description>
+        <value>8</value>
+      </interrupt>
+
+      <!-- Registers -->
+      <registers>
+
+				<!-- SAR0 -->
+				<register>
+						<name>SAR0</name>
+						<description>Channel 0 Source Address Register</description>
+						<addressOffset>0x000</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- CURR_SAR0 -->
+				<register>
+						<name>CURR_SAR0</name>
+						<description>Channel 0 Current Source Address Register</description>
+						<addressOffset>0x004</addressOffset>
+						<size>32</size>
+						<access>read-only</access> <!-- Typically a current status register would be read-only -->
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DAR0 -->
+				<register>
+						<name>DAR0</name>
+						<description>Channel 0 Destination Address Register</description>
+						<addressOffset>0x008</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- CURR_DAR0 -->
+				<register>
+						<name>CURR_DAR0</name>
+						<description>Channel 0 Current Destination Address Register</description>
+						<addressOffset>0x00C</addressOffset>
+						<size>32</size>
+						<access>read-only</access> <!-- Typically a current status register would be read-only -->
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- LLP0_L -->
+				<register>
+						<name>LLP0_L</name>
+						<description>Channel 0 low-32bits Linked List Pointer Register</description>
+						<addressOffset>0x010</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- LLP0_H -->
+				<register>
+						<name>LLP0_H</name>
+						<description>Channel 0 high-32bits Linked List Pointer Register</description>
+						<addressOffset>0x014</addressOffset>
+						<size>32</size>
+						<access>read-write</access> <!-- Assuming writable for future use or ignore as reserved -->
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- CTL0_L -->
+				<register>
+						<name>CTL0_L</name>
+						<description>Channel 0 low-32bits Control Register</description>
+						<addressOffset>0x018</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0xFFFFFFFF</resetValue> <!-- Placeholder for configuration-dependent reset value -->
+				</register>
+
+				<!-- CTL0_H -->
+				<register>
+						<name>CTL0_H</name>
+						<description>Channel 0 high-32bits Control Register</description>
+						<addressOffset>0x01C</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0xFFFFFFFF</resetValue> <!-- Placeholder for configuration-dependent reset value -->
+				</register>
+
+				<!-- BLK_COUNTER_REG0 -->
+				<register>
+						<name>BLK_COUNTER_REG0</name>
+						<description>Channel 0 32bits Block Counter Register</description>
+						<addressOffset>0x020</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- REPEAT_PATTERN0 -->
+				<register>
+						<name>REPEAT_PATTERN0</name>
+						<description>Channel 0 32bits Memory Repeat Pattern Register</description>
+						<addressOffset>0x024</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- CFG0_L -->
+				<register>
+						<name>CFG0_L</name>
+						<description>Channel 0 low-32bits Configuration Register</description>
+						<addressOffset>0x040</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000E00</resetValue>
+				</register>
+
+				<!-- CFG0_H -->
+				<register>
+						<name>CFG0_H</name>
+						<description>Channel 0 high-32bits Configuration Register</description>
+						<addressOffset>0x044</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000008</resetValue>
+				</register>
+
+				<!-- SGR0_L -->
+				<register>
+						<name>SGR0_L</name>
+						<description>Channel 0 low-32bits Source Gather Register</description>
+						<addressOffset>0x048</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- SGR0_H -->
+				<register>
+						<name>SGR0_H</name>
+						<description>Channel 0 high-32bits Source Gather Register</description>
+						<addressOffset>0x04C</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00020000</resetValue>
+				</register>
+
+				<!-- DSR0_L -->
+				<register>
+						<name>DSR0_L</name>
+						<description>Channel 0 low-32bits Destination Scatter Register</description>
+						<addressOffset>0x050</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DSR0_H -->
+				<register>
+						<name>DSR0_H</name>
+						<description>Channel 0 high-32bits Destination Scatter Register</description>
+						<addressOffset>0x054</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00020000</resetValue>
+				</register>
+
+				<!-- Channel 1 Registers -->
+				<!-- SAR1 -->
+				<register>
+						<name>SAR1</name>
+						<description>Channel 1 Source Address Register</description>
+						<addressOffset>0x058</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- CURR_SAR1 -->
+				<register>
+						<name>CURR_SAR1</name>
+						<description>Channel 1 Current Source Address Register</description>
+						<addressOffset>0x05C</addressOffset>
+						<size>32</size>
+						<access>read-only</access> <!-- Typically a current status register would be read-only -->
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DAR1 -->
+				<register>
+						<name>DAR1</name>
+						<description>Channel 1 Destination Address Register</description>
+						<addressOffset>0x060</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- CURR_DAR1 -->
+				<register>
+						<name>CURR_DAR1</name>
+						<description>Channel 1 Current Destination Address Register</description>
+						<addressOffset>0x064</addressOffset>
+						<size>32</size>
+						<access>read-only</access> <!-- Assuming read-only similar to CURR_SAR1 -->
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- LLP1_L -->
+				<register>
+						<name>LLP1_L</name>
+						<description>Channel 1 low-32bits Linked List Pointer Register</description>
+						<addressOffset>0x068</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- LLP1_H -->
+				<register>
+						<name>LLP1_H</name>
+						<description>Channel 1 high-32bits Linked List Pointer Register</description>
+						<addressOffset>0x06C</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- CTL1_L -->
+				<register>
+						<name>CTL1_L</name>
+						<description>Channel 1 low-32bits Control Register</description>
+						<addressOffset>0x070</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0xFFFFFFFF</resetValue> <!-- Placeholder for configuration-dependent reset value -->
+				</register>
+
+				<!-- CTL1_H -->
+				<register>
+						<name>CTL1_H</name>
+						<description>Channel 1 high-32bits Control Register</description>
+						<addressOffset>0x074</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0xFFFFFFFF</resetValue> <!-- Placeholder for configuration-dependent reset value -->
+				</register>
+
+				<!-- BLK_COUNTER_REG1 -->
+				<register>
+						<name>BLK_COUNTER_REG1</name>
+						<description>Channel 1 32bits Block Counter Register</description>
+						<addressOffset>0x078</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- REPEAT_PATTERN1 -->
+				<register>
+						<name>REPEAT_PATTERN1</name>
+						<description>Channel 1 32bits Memory Repeat Pattern Register</description>
+						<addressOffset>0x07C</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+				
+				<!-- CFG1_L -->
+				<register>
+						<name>CFG1_L</name>
+						<description>Channel 1 low-32bits Configuration Register</description>
+						<addressOffset>0x098</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000E00</resetValue>
+				</register>
+
+				<!-- CFG1_H -->
+				<register>
+						<name>CFG1_H</name>
+						<description>Channel 1 high-32bits Configuration Register</description>
+						<addressOffset>0x09C</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000008</resetValue>
+				</register>
+
+				<!-- SGR1_L -->
+				<register>
+						<name>SGR1_L</name>
+						<description>Channel 1 low-32bits Source Gather Register</description>
+						<addressOffset>0x0A0</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- SGR1_H -->
+				<register>
+						<name>SGR1_H</name>
+						<description>Channel 1 high-32bits Source Gather Register</description>
+						<addressOffset>0x0A4</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00020000</resetValue>
+				</register>
+
+				<!-- DSR1_L -->
+				<register>
+						<name>DSR1_L</name>
+						<description>Channel 1 low-32bits Destination Scatter Register</description>
+						<addressOffset>0x0A8</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DSR1_H -->
+				<register>
+						<name>DSR1_H</name>
+						<description>Channel 1 high-32bits Destination Scatter Register</description>
+						<addressOffset>0x0AC</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- Channel 2 Registers -->
+				<!-- SAR2 -->
+				<register>
+						<name>SAR2</name>
+						<description>Channel 2 Source Address Register</description>
+						<addressOffset>0x0B0</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- CURR_SAR2 -->
+				<register>
+						<name>CURR_SAR2</name>
+						<description>Channel 2 Current Source Address Register</description>
+						<addressOffset>0x0B4</addressOffset>
+						<size>32</size>
+						<access>read-only</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DAR2 -->
+				<register>
+						<name>DAR2</name>
+						<description>Channel 2 Destination Address Register</description>
+						<addressOffset>0x0B8</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- CURR_DAR2 -->
+				<register>
+						<name>CURR_DAR2</name>
+						<description>Channel 2 Current Destination Address Register</description>
+						<addressOffset>0x0BC</addressOffset>
+						<size>32</size>
+						<access>read-only</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- LLP2_L -->
+				<register>
+						<name>LLP2_L</name>
+						<description>Channel 2 low-32bits Linked List Pointer Register</description>
+						<addressOffset>0x0C0</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- LLP2_H -->
+				<register>
+						<name>LLP2_H</name>
+						<description>Channel 2 high-32bits Linked List Pointer Register</description>
+						<addressOffset>0x0C4</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- CTL2_L -->
+				<register>
+						<name>CTL2_L</name>
+						<description>Channel 2 low-32bits Control Register</description>
+						<addressOffset>0x0C8</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0xFFFFFFFF</resetValue> <!-- Placeholder for configuration-dependent reset value -->
+				</register>
+
+				<!-- CTL2_H -->
+				<register>
+						<name>CTL2_H</name>
+						<description>Channel 2 high-32bits Control Register</description>
+						<addressOffset>0x0CC</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0xFFFFFFFF</resetValue> <!-- Placeholder for configuration-dependent reset value -->
+				</register>
+
+				<!-- BLK_COUNTER_REG2 -->
+				<register>
+						<name>BLK_COUNTER_REG2</name>
+						<description>Channel 2 32bits Block Counter Register</description>
+						<addressOffset>0x0D0</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- REPEAT_PATTERN2 -->
+				<register>
+						<name>REPEAT_PATTERN2</name>
+						<description>Channel 2 32bits Memory Repeat Pattern Register</description>
+						<addressOffset>0x0D4</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- CFG2_L -->
+				<register>
+						<name>CFG2_L</name>
+						<description>Channel 2 low-32bits Configuration Register</description>
+						<addressOffset>0x0F0</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000E00</resetValue>
+				</register>
+
+				<!-- CFG2_H -->
+				<register>
+						<name>CFG2_H</name>
+						<description>Channel 2 high-32bits Configuration Register</description>
+						<addressOffset>0x0F4</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000008</resetValue>
+				</register>
+
+				<!-- SGR2_L -->
+				<register>
+						<name>SGR2_L</name>
+						<description>Channel 2 low-32bits Source Gather Register</description>
+						<addressOffset>0x0F8</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- SGR2_H -->
+				<register>
+						<name>SGR2_H</name>
+						<description>Channel 2 high-32bits Source Gather Register</description>
+						<addressOffset>0x0FC</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00020000</resetValue>
+				</register>
+
+				<!-- DSR2_L -->
+				<register>
+						<name>DSR2_L</name>
+						<description>Channel 2 low-32bits Destination Scatter Register</description>
+						<addressOffset>0x100</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DSR2_H -->
+				<register>
+						<name>DSR2_H</name>
+						<description>Channel 2 high-32bits Destination Scatter Register</description>
+						<addressOffset>0x104</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- Channel 3 Registers -->
+				<!-- SAR3 -->
+				<register>
+						<name>SAR3</name>
+						<description>Channel 3 Source Address Register</description>
+						<addressOffset>0x108</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- CURR_SAR3 -->
+				<register>
+						<name>CURR_SAR3</name>
+						<description>Channel 3 Current Source Address Register</description>
+						<addressOffset>0x10C</addressOffset>
+						<size>32</size>
+						<access>read-only</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DAR3 -->
+				<register>
+						<name>DAR3</name>
+						<description>Channel 3 Destination Address Register</description>
+						<addressOffset>0x110</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- CURR_DAR3 -->
+				<register>
+						<name>CURR_DAR3</name>
+						<description>Channel 3 Current Destination Address Register</description>
+						<addressOffset>0x114</addressOffset>
+						<size>32</size>
+						<access>read-only</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- LLP3_L -->
+				<register>
+						<name>LLP3_L</name>
+						<description>Channel 3 low-32bits Linked List Pointer Register</description>
+						<addressOffset>0x118</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- LLP3_H -->
+				<register>
+						<name>LLP3_H</name>
+						<description>Channel 3 high-32bits Linked List Pointer Register</description>
+						<addressOffset>0x11C</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- CTL3_L -->
+				<register>
+						<name>CTL3_L</name>
+						<description>Channel 3 low-32bits Control Register</description>
+						<addressOffset>0x120</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0xFFFFFFFF</resetValue> <!-- Placeholder for configuration-dependent reset value -->
+				</register>
+
+				<!-- CTL3_H -->
+				<register>
+						<name>CTL3_H</name>
+						<description>Channel 3 high-32bits Control Register</description>
+						<addressOffset>0x124</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0xFFFFFFFF</resetValue> <!-- Placeholder for configuration-dependent reset value -->
+				</register>
+
+				<!-- BLK_COUNTER_REG3 -->
+				<register>
+						<name>BLK_COUNTER_REG3</name>
+						<description>Channel 3 32bits Block Counter Register</description>
+						<addressOffset>0x128</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- REPEAT_PATTERN3 -->
+				<register>
+						<name>REPEAT_PATTERN3</name>
+						<description>Channel 3 32bits Memory Repeat Pattern Register</description>
+						<addressOffset>0x12C</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- Channel 3 Configuration and Scatter-Gather Registers -->
+				<!-- CFG3_L -->
+				<register>
+						<name>CFG3_L</name>
+						<description>Channel 3 low-32bits Configuration Register</description>
+						<addressOffset>0x148</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000E00</resetValue>
+				</register>
+
+				<!-- CFG3_H -->
+				<register>
+						<name>CFG3_H</name>
+						<description>Channel 3 high-32bits Configuration Register</description>
+						<addressOffset>0x14C</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000008</resetValue>
+				</register>
+
+				<!-- SGR3_L -->
+				<register>
+						<name>SGR3_L</name>
+						<description>Channel 3 low-32bits Source Gather Register</description>
+						<addressOffset>0x150</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- SGR3_H -->
+				<register>
+						<name>SGR3_H</name>
+						<description>Channel 3 high-32bits Source Gather Register</description>
+						<addressOffset>0x154</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00020000</resetValue>
+				</register>
+
+				<!-- DSR3_L -->
+				<register>
+						<name>DSR3_L</name>
+						<description>Channel 3 low-32bits Destination Scatter Register</description>
+						<addressOffset>0x158</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DSR3_H -->
+				<register>
+						<name>DSR3_H</name>
+						<description>Channel 3 high-32bits Destination Scatter Register</description>
+						<addressOffset>0x15C</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- Channel 4 Registers -->
+				<!-- SAR4 -->
+				<register>
+						<name>SAR4</name>
+						<description>Channel 4 Source Address Register</description>
+						<addressOffset>0x160</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- CURR_SAR4 -->
+				<register>
+						<name>CURR_SAR4</name>
+						<description>Channel 4 Current Source Address Register</description>
+						<addressOffset>0x164</addressOffset>
+						<size>32</size>
+						<access>read-only</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DAR4 -->
+				<register>
+						<name>DAR4</name>
+						<description>Channel 4 Destination Address Register</description>
+						<addressOffset>0x168</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- CURR_DAR4 -->
+				<register>
+						<name>CURR_DAR4</name>
+						<description>Channel 4 Current Destination Address Register</description>
+						<addressOffset>0x16C</addressOffset>
+						<size>32</size>
+						<access>read-only</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- LLP4_L -->
+				<register>
+						<name>LLP4_L</name>
+						<description>Channel 4 low-32bits Linked List Pointer Register</description>
+						<addressOffset>0x170</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- LLP4_H -->
+				<register>
+						<name>LLP4_H</name>
+						<description>Channel 4 high-32bits Linked List Pointer Register</description>
+						<addressOffset>0x174</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- CTL4_L -->
+				<register>
+						<name>CTL4_L</name>
+						<description>Channel 4 low-32bits Control Register</description>
+						<addressOffset>0x178</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0xFFFFFFFF</resetValue> <!-- Placeholder for configuration-dependent reset value -->
+				</register>
+
+				<!-- CTL4_H -->
+				<register>
+						<name>CTL4_H</name>
+						<description>Channel 4 high-32bits Control Register</description>
+						<addressOffset>0x17C</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0xFFFFFFFF</resetValue> <!-- Placeholder for configuration-dependent reset value -->
+				</register>
+
+				<!-- BLK_COUNTER_REG4 -->
+				<register>
+						<name>BLK_COUNTER_REG4</name>
+						<description>Channel 4 32bits Block Counter Register</description>
+						<addressOffset>0x180</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- REPEAT_PATTERN4 -->
+				<register>
+						<name>REPEAT_PATTERN4</name>
+						<description>Channel 4 32bits Memory Repeat Pattern Register</description>
+						<addressOffset>0x184</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- CFG4_L -->
+				<register>
+						<name>CFG4_L</name>
+						<description>Channel 4 low-32bits Configuration Register</description>
+						<addressOffset>0x1A0</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000E00</resetValue>
+				</register>
+
+				<!-- CFG4_H -->
+				<register>
+						<name>CFG4_H</name>
+						<description>Channel 4 high-32bits Configuration Register</description>
+						<addressOffset>0x1A4</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000008</resetValue>
+				</register>
+
+				<!-- SGR4_L -->
+				<register>
+						<name>SGR4_L</name>
+						<description>Channel 4 low-32bits Source Gather Register</description>
+						<addressOffset>0x1A8</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- SGR4_H -->
+				<register>
+						<name>SGR4_H</name>
+						<description>Channel 4 high-32bits Source Gather Register</description>
+						<addressOffset>0x1AC</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00020000</resetValue>
+				</register>
+
+				<!-- DSR4_L -->
+				<register>
+						<name>DSR4_L</name>
+						<description>Channel 4 low-32bits Destination Scatter Register</description>
+						<addressOffset>0x1B0</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DSR4_H -->
+				<register>
+						<name>DSR4_H</name>
+						<description>Channel 4 high-32bits Destination Scatter Register</description>
+						<addressOffset>0x1B4</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- Channel 5 Registers -->
+				<!-- SAR5 -->
+				<register>
+						<name>SAR5</name>
+						<description>Channel 5 Source Address Register</description>
+						<addressOffset>0x1B8</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- CURR_SAR5 -->
+				<register>
+						<name>CURR_SAR5</name>
+						<description>Channel 5 Current Source Address Register</description>
+						<addressOffset>0x1BC</addressOffset>
+						<size>32</size>
+						<access>read-only</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DAR5 -->
+				<register>
+						<name>DAR5</name>
+						<description>Channel 5 Destination Address Register</description>
+						<addressOffset>0x1C0</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- CURR_DAR5 -->
+				<register>
+						<name>CURR_DAR5</name>
+						<description>Channel 5 Current Destination Address Register</description>
+						<addressOffset>0x1C4</addressOffset>
+						<size>32</size>
+						<access>read-only</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- LLP5_L -->
+				<register>
+						<name>LLP5_L</name>
+						<description>Channel 5 low-32bits Linked List Pointer Register</description>
+						<addressOffset>0x1C8</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- LLP5_H -->
+				<register>
+						<name>LLP5_H</name>
+						<description>Channel 5 high-32bits Linked List Pointer Register</description>
+						<addressOffset>0x1CC</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- CTL5_L -->
+				<register>
+						<name>CTL5_L</name>
+						<description>Channel 5 low-32bits Control Register</description>
+						<addressOffset>0x1D0</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0xFFFFFFFF</resetValue> <!-- Placeholder for configuration-dependent reset value -->
+				</register>
+
+				<!-- CTL5_H -->
+				<register>
+						<name>CTL5_H</name>
+						<description>Channel 5 high-32bits Control Register</description>
+						<addressOffset>0x1D4</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0xFFFFFFFF</resetValue> <!-- Placeholder for configuration-dependent reset value -->
+				</register>
+
+				<!-- BLK_COUNTER_REG5 -->
+				<register>
+						<name>BLK_COUNTER_REG5</name>
+						<description>Channel 5 32bits Block Counter Register</description>
+						<addressOffset>0x1D8</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- Channel 5 Full Description -->
+				<register>
+						<name>REPEAT_PATTERN5</name>
+						<description>Channel 5 32bits Memory Repeat Pattern Register</description>
+						<addressOffset>0x1DC</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- CFG5_L -->
+				<register>
+						<name>CFG5_L</name>
+						<description>Channel 5 low-32bits Configuration Register</description>
+						<addressOffset>0x1F8</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000E00</resetValue>
+				</register>
+
+				<!-- CFG5_H -->
+				<register>
+						<name>CFG5_H</name>
+						<description>Channel 5 high-32bits Configuration Register</description>
+						<addressOffset>0x1FC</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000008</resetValue>
+				</register>
+
+				<!-- SGR5_L -->
+				<register>
+						<name>SGR5_L</name>
+						<description>Channel 5 low-32bits Source Gather Register</description>
+						<addressOffset>0x200</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- SGR5_H -->
+				<register>
+						<name>SGR5_H</name>
+						<description>Channel 5 high-32bits Source Gather Register</description>
+						<addressOffset>0x204</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00020000</resetValue>
+				</register>
+
+				<!-- DSR5_L -->
+				<register>
+						<name>DSR5_L</name>
+						<description>Channel 5 low-32bits Destination Scatter Register</description>
+						<addressOffset>0x208</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DSR5_H -->
+				<register>
+						<name>DSR5_H</name>
+						<description>Channel 5 high-32bits Destination Scatter Register</description>
+						<addressOffset>0x20C</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- SAR6 -->
+				<register>
+						<name>SAR6</name>
+						<description>Channel 6 Source Address Register</description>
+						<addressOffset>0x210</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- CURR_SAR6 -->
+				<register>
+						<name>CURR_SAR6</name>
+						<description>Channel 6 Current Source Address Register</description>
+						<addressOffset>0x214</addressOffset>
+						<size>32</size>
+						<access>read-only</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DAR6 -->
+				<register>
+						<name>DAR6</name>
+						<description>Channel 6 Destination Address Register</description>
+						<addressOffset>0x218</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<register>
+						<name>CURR_DAR6</name>
+						<description>Channel 6 Current Destination Address Register</description>
+						<addressOffset>0x21C</addressOffset>
+						<size>32</size>
+						<access>read-only</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<register>
+						<name>LLP6_L</name>
+						<description>Channel 6 low-32bits Linked List Pointer Register</description>
+						<addressOffset>0x220</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<register>
+						<name>LLP6_H</name>
+						<description>Channel 6 high-32bits Linked List Pointer Register</description>
+						<addressOffset>0x224</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<register>
+						<name>CTL6_L</name>
+						<description>Channel 6 low-32bits Control Register</description>
+						<addressOffset>0x228</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0xFFFFFFFF</resetValue> <!-- Configuration dependent -->
+				</register>
+
+				<register>
+						<name>CTL6_H</name>
+						<description>Channel 6 high-32bits Control Register</description>
+						<addressOffset>0x22C</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0xFFFFFFFF</resetValue> <!-- Configuration dependent -->
+				</register>
+
+				<register>
+						<name>BLK_COUNTER_REG6</name>
+						<description>Channel 6 32bits Block Counter Register</description>
+						<addressOffset>0x230</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<register>
+						<name>REPEAT_PATTERN6</name>
+						<description>Channel 6 32bits Memory Repeat Pattern Register</description>
+						<addressOffset>0x234</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+				
+				<!-- SAR7 -->
+				<register>
+						<name>SAR7</name>
+						<description>Channel 7 Source Address Register</description>
+						<addressOffset>0x268</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- CURR_SAR7 -->
+				<register>
+						<name>CURR_SAR7</name>
+						<description>Channel 7 Current Source Address Register</description>
+						<addressOffset>0x26C</addressOffset>
+						<size>32</size>
+						<access>read-only</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DAR7 -->
+				<register>
+						<name>DAR7</name>
+						<description>Channel 7 Destination Address Register</description>
+						<addressOffset>0x270</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- CURR_DAR7 -->
+				<register>
+						<name>CURR_DAR7</name>
+						<description>Channel 7 Current Destination Address Register</description>
+						<addressOffset>0x274</addressOffset>
+						<size>32</size>
+						<access>read-only</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- LLP7_L -->
+				<register>
+						<name>LLP7_L</name>
+						<description>Channel 7 low-32bits Linked List Pointer Register</description>
+						<addressOffset>0x278</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- LLP7_H -->
+				<register>
+						<name>LLP7_H</name>
+						<description>Channel 7 high-32bits Linked List Pointer Register</description>
+						<addressOffset>0x27C</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- CTL7_L -->
+				<register>
+						<name>CTL7_L</name>
+						<description>Channel 7 low-32bits Control Register</description>
+						<addressOffset>0x280</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0xFFFFFFFF</resetValue> <!-- Configuration dependent -->
+				</register>
+
+				<!-- CTL7_H -->
+				<register>
+						<name>CTL7_H</name>
+						<description>Channel 7 high-32bits Control Register</description>
+						<addressOffset>0x284</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0xFFFFFFFF</resetValue> <!-- Configuration dependent -->
+				</register>
+
+				<!-- BLK_COUNTER_REG7 -->
+				<register>
+						<name>BLK_COUNTER_REG7</name>
+						<description>Channel 7 32bits Block Counter Register</description>
+						<addressOffset>0x288</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- REPEAT_PATTERN7 -->
+				<register>
+						<name>REPEAT_PATTERN7</name>
+						<description>Channel 7 32bits Memory Repeat Pattern Register</description>
+						<addressOffset>0x28C</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- CFG7_L -->
+				<register>
+						<name>CFG7_L</name>
+						<description>Channel 7 low-32bits Configuration Register</description>
+						<addressOffset>0x2A8</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000E00</resetValue>
+				</register>
+
+				<!-- CFG7_H -->
+				<register>
+						<name>CFG7_H</name>
+						<description>Channel 7 high-32bits Configuration Register</description>
+						<addressOffset>0x2AC</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000008</resetValue>
+				</register>
+
+				<!-- SGR7_L -->
+				<register>
+						<name>SGR7_L</name>
+						<description>Channel 7 low-32bits Source Gather Register</description>
+						<addressOffset>0x2B0</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- SGR7_H -->
+				<register>
+						<name>SGR7_H</name>
+						<description>Channel 7 high-32bits Source Gather Register</description>
+						<addressOffset>0x2B4</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00020000</resetValue>
+				</register>
+
+				<!-- DSR7_L -->
+				<register>
+						<name>DSR7_L</name>
+						<description>Channel 7 low-32bits Destination Scatter Register</description>
+						<addressOffset>0x2B8</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DSR7_H -->
+				<register>
+						<name>DSR7_H</name>
+						<description>Channel 7 high-32bits Destination Scatter Register</description>
+						<addressOffset>0x2BC</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- RAWTFR_L -->
+				<register>
+						<name>RAWTFR_L</name>
+						<description>Raw Status for IntTfr Interrupt</description>
+						<addressOffset>0x2C0</addressOffset>
+						<size>32</size>
+						<access>read-only</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- RAWTFR_H -->
+				<register>
+						<name>RAWTFR_H</name>
+						<description>Raw Status for Blk Counter Register</description>
+						<addressOffset>0x2C4</addressOffset>
+						<size>32</size>
+						<access>read-only</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- RAWBLOCK_L -->
+				<register>
+						<name>RAWBLOCK_L</name>
+						<description>Raw Status for IntBlock Interrupt</description>
+						<addressOffset>0x2C8</addressOffset>
+						<size>32</size>
+						<access>read-only</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- RAWBLOCK_H -->
+				<register>
+						<name>RAWBLOCK_H</name>
+						<description>Raw Status for Int_1_2_Block if defined</description>
+						<addressOffset>0x2CC</addressOffset>
+						<size>32</size>
+						<access>read-only</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- RAWERR_L -->
+				<register>
+						<name>RAWERR_L</name>
+						<description>Raw Status for IntErr Interrupt (protocol error)</description>
+						<addressOffset>0x2D0</addressOffset>
+						<size>32</size>
+						<access>read-only</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- RAWERR_H -->
+				<register>
+						<name>RAWERR_H</name>
+						<description>Raw Status for non-secure access secure register error if defined</description>
+						<addressOffset>0x2E4</addressOffset>
+						<size>32</size>
+						<access>read-only</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- STATUSTFR_L -->
+				<register>
+						<name>STATUSTFR_L</name>
+						<description>Status for IntTfr Interrupt</description>
+						<addressOffset>0x2EC</addressOffset>
+						<size>32</size>
+						<access>read-only</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- STATUSTFR_H -->
+				<register>
+						<name>STATUSTFR_H</name>
+						<description>Status for Blk Counter Interrupt</description>
+						<addressOffset>0x2F0</addressOffset>
+						<size>32</size>
+						<access>read-only</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- STATUSBLOCK_L -->
+				<register>
+						<name>STATUSBLOCK_L</name>
+						<description>Status for IntBlock Interrupt</description>
+						<addressOffset>0x2F8</addressOffset>
+						<size>32</size>
+						<access>read-only</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- STATUSERR_L -->
+				<register>
+						<name>STATUSERR_L</name>
+						<description>Status for IntErr Interrupt (protocol error)</description>
+						<addressOffset>0x308</addressOffset>
+						<size>32</size>
+						<access>read-only</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- MASKTFR_L -->
+				<register>
+						<name>MASKTFR_L</name>
+						<description>Mask for IntTfr Interrupt</description>
+						<addressOffset>0x310</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- MASKTFR_H -->
+				<register>
+						<name>MASKTFR_H</name>
+						<description>Mask for Blk Counter Interrupt</description>
+						<addressOffset>0x314</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- MASKBLOCK_L -->
+				<register>
+						<name>MASKBLOCK_L</name>
+						<description>Mask for IntBlock Interrupt</description>
+						<addressOffset>0x318</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- MASKBLOCK_H -->
+				<register>
+						<name>MASKBLOCK_H</name>
+						<description>Mask for Int_1_2_Block if defined</description>
+						<addressOffset>0x31C</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+				
+				<!-- MASKERR_L -->
+				<register>
+						<name>MASKERR_L</name>
+						<description>Mask for IntErr Interrupt</description>
+						<addressOffset>0x330</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- MASKERR_H -->
+				<register>
+						<name>MASKERR_H</name>
+						<description>Mask for non-secure access secure register error if defined</description>
+						<addressOffset>0x334</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- STATUSINT_L -->
+				<register>
+						<name>STATUSINT_L</name>
+						<description>Combined Interrupt Status (Low) Register</description>
+						<addressOffset>0x360</addressOffset>
+						<size>32</size>
+						<access>read-only</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- STATUSINT_H -->
+				<register>
+						<name>STATUSINT_H</name>
+						<description>Combined Interrupt Status (High) Register</description>
+						<addressOffset>0x364</addressOffset>
+						<size>32</size>
+						<access>read-only</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- DMACFGREG -->
+				<register>
+						<name>DMACFGREG</name>
+						<description>DMA Configuration Register</description>
+						<addressOffset>0x398</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue> <!-- Depends on DMACFG_ALWAYS_ON -->
+				</register>
+
+				<!-- CHENREG -->
+				<register>
+						<name>CHENREG</name>
+						<description>DMA low-32bits Channel Enable Register</description>
+						<addressOffset>0x3A0</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+      </registers>
     </peripheral>
   </peripherals>
 </device>
