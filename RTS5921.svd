@@ -4509,5 +4509,928 @@
           </register>
       </registers>
     </peripheral>
+
+    <!-- UART -->
+    <peripheral>
+      <!-- Description -->
+      <name>UART</name>
+      <version>1.00</version>
+      <description>UART Controller</description>
+      <groupName>DW_UART</groupName>
+      <headerStructName>DW_UART</headerStructName>
+      <baseAddress>0x40100700</baseAddress>
+      <size>32</size>
+      <access>read-write</access>
+
+      <!-- Address Range -->
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x100</size>
+        <usage>registers</usage>
+      </addressBlock>
+
+      <!-- Interrup -->
+      <interrupt>
+        <name>UART</name>
+        <description>UART Interrupt</description>
+        <value>15</value>
+      </interrupt>
+
+      <!-- Registers -->
+      <registers>
+        <!-- RBR -->
+        <register>
+          <name>RBR</name>
+          <description>RECEIVE BUFFER REGISTER</description>
+          <addressOffset>0x00</addressOffset>
+          <size>32</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- THR -->
+        <register>
+          <name>THR</name>
+          <description>TRANSMIT HOLDING REGISTER</description>
+          <alternateRegister>RBR</alternateRegister>
+          <addressOffset>0x00</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- DLL -->
+        <register>
+          <name>DLL</name>
+          <description>DIVISOR LATCH LOW REGISTER</description>
+          <alternateRegister>RBR</alternateRegister>
+          <addressOffset>0x00</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- DLH -->
+        <register>
+          <name>DLH</name>
+          <description>DIVISOR LATCH HIGH REGISTER</description>
+          <addressOffset>0x04</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- IER -->
+        <register>
+          <name>IER</name>
+          <description>INTRRRUPT ENABLE REGISTER</description>
+          <addressOffset>0x04</addressOffset>
+          <alternateRegister>DLH</alternateRegister>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- ERBFI -->
+            <field>
+              <name>ERBFI</name>
+              <description>Enable Received Data Available Interrupt</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable received data available interrupt</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable received data available interrupt</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- ETBEI -->
+            <field>
+              <name>ETBEI</name>
+              <description>Enable Transmit Holding Register Empty Interrupt</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable transmit holding register empty interrupt</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable transmit holding register empty interrupt</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- ELSI -->
+            <field>
+              <name>ELSI</name>
+              <description>Enable Receiver Line Status Interrupt</description>
+              <bitRange>[2:2]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable receiver line status interrupt</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable receiver line status interrupt</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- EDSSI -->
+            <field>
+              <name>EDSSI</name>
+              <description>Enable Modem Status Interrupt</description>
+              <bitRange>[3:3]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable modem status interrupt</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable modem status interrupt</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- PTIME -->
+            <field>
+              <name>PTIME</name>
+              <description>Programmable THRE Interrupt Mode Enable</description>
+              <bitRange>[7:7]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable programmable THRE interrupt mode</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable programmable THRE interrupt mode</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <!-- IIR -->
+        <register>
+          <name>IIR</name>
+          <description>INTERRUPT IDENTIFICATION</description>
+          <addressOffset>0x08</addressOffset>
+          <size>32</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- IID -->
+            <field>
+              <name>IID</name>
+              <description>Interrupt ID</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>MODEM</name>
+                  <description>Modem status</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>HAVE_NO_INT</name>
+                  <description>No interrupt pending</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>THR_EMPTY</name>
+                  <description>THR empty</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RX_AVL</name>
+                  <description>Received data available</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>LINE_AVL</name>
+                  <description>Receiver line status</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BUSY_DET</name>
+                  <description>Busy detect</description>
+                  <value>7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CHAR_TO</name>
+                  <description>Character Timeout</description>
+                  <value>12</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>NOT_USED</name>
+                    <description>Reserved values. Do not use.</description>
+                    <isDefault>true</isDefault>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- FIFOSE -->
+            <field>
+              <name>FIFOSE</name>
+              <description>FIFOs Enabled</description>
+              <bitRange>[7:6]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>FIFOs is disabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>FIFOs is enabled</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                    <name>NOT_USED</name>
+                    <description>Reserved values. Do not use.</description>
+                    <isDefault>true</isDefault>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <!-- FCR -->
+        <register>
+          <name>FCR</name>
+          <description>FIFO CONTROL REGISTER</description>
+          <alternateRegister>IIR</alternateRegister>
+          <addressOffset>0x08</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- FIFOE -->
+            <field>
+              <name>FIFOE</name>
+              <description>FIFO Enabled</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable FIFOs</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable FIFOs</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- RFIFOR -->
+            <field>
+              <name>RFIFOR</name>
+              <description>Rx FIFO Reset</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_EFFECT</name>
+                  <description>No effect</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RESET</name>
+                  <description>Reset</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- XFIFOR -->
+            <field>
+              <name>XFIFOR</name>
+              <description>Tx FIFO Reset</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_EFFECT</name>
+                  <description>No effect</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RESET</name>
+                  <description>Reset</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- DMAM -->
+            <field>
+              <name>DMAM</name>
+              <description>DMA Mode</description>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>MODE0</name>
+                  <description>Mode0</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MODE1</name>
+                  <description>Mode1</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- TET -->
+            <field>
+              <name>TET</name>
+              <description>TX Empty Trigger Level</description>
+              <bitRange>[5:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>EMPTY</name>
+                  <description>FIFO Empty</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2xCHAR</name>
+                  <description>2xCHAR in FIFO</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>1/4</name>
+                  <description>1/4 full</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>1/2</name>
+                  <description>1/2 full</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- RCVR -->
+            <field>
+              <name>RCVR</name>
+              <description>Rx Trigger Level</description>
+              <bitRange>[7:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>1xCHAR</name>
+                  <description>1xCHAR in FIFO</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>1/4</name>
+                  <description>1/4 full</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>1/2</name>
+                  <description>1/2 full</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2less</name>
+                  <description>2 less than full</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <!-- LCR -->
+        <register>
+          <name>LCR</name>
+          <description>LINE CONTROL REGISTER</description>
+          <addressOffset>0x0C</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- DLS -->
+            <field>
+              <name>DLS</name>
+              <description>Data Length Select</description>
+              <bitRange>[1:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>5_BIT</name>
+                  <description>Data Length is 5-bit</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>6_BIT</name>
+                  <description>Data Length is 6-bit</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>7_BIT</name>
+                  <description>Data Length is 7-bit</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8_BIT</name>
+                  <description>Data Length is 8-bit</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- STOP -->
+            <field>
+              <name>STOP</name>
+              <description>Number of Stop Bits</description>
+              <bitRange>[2:2]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>1_BIT</name>
+                  <description>1 stop bit</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>1_5_BIT</name>
+                  <description>1.5 stop bits when DLS (LCR[1:0]) is 0, else 2 stop bit</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- PEN -->
+            <field>
+              <name>PEN</name>
+              <description>Parity Enable</description>
+              <bitRange>[3:3]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable parity</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable parity</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- EPS -->
+            <field>
+              <name>EPS</name>
+              <description>Even Parity Select</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ODD</name>
+                  <description>Odd parity</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>EVEN</name>
+                  <description>Even parity</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- STP -->
+            <field>
+              <name>STP</name>
+              <description>Stick Parity</description>
+              <bitRange>[5:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable stick parity</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable stick parity</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- BC -->
+            <field>
+              <name>BC</name>
+              <description>Break Control Bit</description>
+              <bitRange>[6:6]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable break control</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable break control</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- DLAB -->
+            <field>
+              <name>DLAB</name>
+              <description>Divisor Latch Access Bit</description>
+              <bitRange>[7:7]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable divisor latch access</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable divisor latch access</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <!-- LSR -->
+        <register>
+          <name>LSR</name>
+          <description>LINE STATUS REGISTER</description>
+          <addressOffset>0x14</addressOffset>
+          <size>32</size>
+          <access>read-only</access>
+          <resetValue>0x00000060</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- DR -->
+            <field>
+              <name>DR</name>
+              <description>Data Ready Bit</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOT_READY</name>
+                  <description>No data ready</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>READY</name>
+                  <description>Data ready</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- OE -->
+            <field>
+              <name>OE</name>
+              <description>Overrun Error bit</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_ERR</name>
+                  <description>No oerrun error</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ERR</name>
+                  <description>Overrun error</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- PE -->
+            <field>
+              <name>PE</name>
+              <description>Parity Error bit</description>
+              <bitRange>[2:2]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_ERR</name>
+                  <description>No parity error</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ERR</name>
+                  <description>Parity error</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- FE -->
+            <field>
+              <name>FE</name>
+              <description>Framing Error bit</description>
+              <bitRange>[3:3]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_ERR</name>
+                  <description>No framing error</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ERR</name>
+                  <description>framing error occrred</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- BI -->
+            <field>
+              <name>BI</name>
+              <description>Break Interrupt bit</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_ERR</name>
+                  <description>No break interrupt</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ERR</name>
+                  <description>Break interrupt occrred</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- THRE -->
+            <field>
+              <name>THRE</name>
+              <description>Transmit Holding Register Empty bit</description>
+              <bitRange>[5:5]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOT_EMPTY</name>
+                  <description>Transmit Holding Register is not empty</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>EMPTY</name>
+                  <description>Transmit Holding Register is empty</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- TEMT -->
+            <field>
+              <name>TEMT</name>
+              <description>Transmitter Empty Bit</description>
+              <bitRange>[6:6]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOT_EMPTY</name>
+                  <description>No transmitter empty</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>EMPTY</name>
+                  <description>Transmitter empty</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- RFE -->
+            <field>
+              <name>RFE</name>
+              <description>Receiver FIFO Error</description>
+              <bitRange>[7:7]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_ERR</name>
+                  <description>No receiver FIFO error</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ERR</name>
+                  <description>Receiver FIFO error occrred</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <!-- USR -->
+        <register>
+          <name>USR</name>
+          <description>UART Status Register</description>
+          <addressOffset>0x07C</addressOffset>
+          <size>32</size>
+          <access>read-only</access>
+          <resetValue>0x00000006</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- BUSY -->
+            <field>
+              <name>BUSY</name>
+              <description>UART Busy</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>IDLE</name>
+                  <description>UART idle or inactive</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BUSY</name>
+                  <description>UART is busy</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- TFNF -->
+            <field>
+              <name>TFNF</name>
+              <description>Transmit FIFO Not Full</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>FULL</name>
+                  <description>Transmit FIFO is full</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>NOT_FULL</name>
+                  <description>Transmit FIFO is not full</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- TFE -->
+            <field>
+              <name>TFE</name>
+              <description>Transmit FIFO Empty</description>
+              <bitRange>[2:2]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOT_EMPTY</name>
+                  <description>Transmit FIFO is not empty</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>EMPTY</name>
+                  <description>Transmit FIFO is empty</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- RFNE -->
+            <field>
+              <name>RFNE</name>
+              <description>Receive FIFO Not Empty</description>
+              <bitRange>[3:3]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>EMPTY</name>
+                  <description>Receive FIFO is empty</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>NOT_EMPTY</name>
+                  <description>Receive FIFO is not empty</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- RFF -->
+            <field>
+              <name>RFF</name>
+              <description>Receive FIFO Full</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOT_FULL</name>
+                  <description>Receive FIFO not full</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FULL</name>
+                  <description>Receive FIFO Full</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <!-- TFL -->
+        <register>
+          <name>TFL</name>
+          <description>UART TRANSMIT FIFO LEVEL</description>
+          <addressOffset>0x080</addressOffset>
+          <size>32</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- RFL -->
+        <register>
+          <name>RFL</name>
+          <description>UART RECEIVE FIFO LEVEL</description>
+          <addressOffset>0x084</addressOffset>
+          <size>32</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- SRR -->
+        <register>
+          <name>SRR</name>
+          <description>UART SOFTWARE RESET REGISTER</description>
+          <addressOffset>0x088</addressOffset>
+          <size>32</size>
+          <access>write-only</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- UR -->
+            <field>
+              <name>UR</name>
+              <description>UART Reset</description>
+              <bitRange>[0:0]</bitRange>
+              <access>write-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_EFFECT</name>
+                  <description>No effect</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RESET</name>
+                  <description>Reset</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- RFR -->
+            <field>
+              <name>RFR</name>
+              <description>RCVR FIFO Reset</description>
+              <bitRange>[1:1]</bitRange>
+              <access>write-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_EFFECT</name>
+                  <description>No effect</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RESET</name>
+                  <description>Reset</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- XFR -->
+            <field>
+              <name>XFR</name>
+              <description>XMIT FIFO Reset</description>
+              <bitRange>[2:2]</bitRange>
+              <access>write-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_EFFECT</name>
+                  <description>No effect</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RESET</name>
+                  <description>Reset</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+      </registers>
+    </peripheral>
+
   </peripherals>
 </device>
