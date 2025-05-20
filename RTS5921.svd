@@ -5432,5 +5432,2637 @@
       </registers>
     </peripheral>
 
+    <!-- I2C0 -->
+    <peripheral>
+      <!-- Description -->
+      <name>I2C0</name>
+      <version>1.00</version>
+      <description>DW I2C Controller</description>
+      <groupName>I2C</groupName>
+      <headerStructName>DW_I2C</headerStructName>
+      <baseAddress>0x40101000</baseAddress>
+      <size>32</size>
+      <access>read-write</access>
+
+      <!-- Address Range -->
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x200</size>
+        <usage>registers</usage>
+      </addressBlock>
+
+      <!-- Interrup -->
+      <interrupt>
+        <name>I2C0</name>
+        <description>I2C0 Interrupt</description>
+        <value>16</value>
+      </interrupt>
+
+>
+
+      <!-- Registers -->
+      <registers>
+        <!-- CON -->
+        <register>
+          <name>CON</name>
+          <description>CONTROL REGISTER</description>
+          <addressOffset>0x000</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- MATSER -->
+            <field>
+              <name>MATSER</name>
+              <description>Enable/Disable Master Mode</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Master mode is disabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Master mode is enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- SPEED -->
+            <field>
+              <name>SPEED</name>
+              <description>Speed Mode</description>
+              <bitRange>[2:1]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NONE</name>
+                  <description>Not defined</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>STANDARD</name>
+                  <description>Standard speed</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FAST</name>
+                  <description>Fast speed</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>HIGH</name>
+                  <description>High speed</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- SLV10BIT -->
+            <field>
+              <name>SLV10BIT</name>
+              <description>Slave Responds To 7-bit Or 10-bit Addresses</description>
+              <bitRange>[3:3]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>7_BIT</name>
+                  <description>Slave 7-bit addressing</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>10_BIT</name>
+                  <description>Slave 10-bit addressing</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- MST10BIT -->
+            <field>
+              <name>MST10BIT</name>
+              <description>Master Is 7-bit Or 10-bit Addressing Mode</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>7_BIT</name>
+                  <description>Master 7-bit addressing</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>10_BIT</name>
+                  <description>Master 10-bit addressing</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- RESTREN -->
+            <field>
+              <name>RESTREN</name>
+              <description>Enable/Disable Master Restart</description>
+              <bitRange>[5:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Master restart disabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Master restart enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- SLVDISABLE -->
+            <field>
+              <name>SLVDISABLE</name>
+              <description>Enable/Disable Slave Mode</description>
+              <bitRange>[6:6]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <description>Enable slave mode</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <description>Disable slave mode</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- STPDET -->
+            <field>
+              <name>STPDET</name>
+              <description>How Slave Issues Stop Detection Interrupt</description>
+              <bitRange>[7:7]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ALWAYS</name>
+                  <description>Slave issues stop detection interrupt always</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ADDRESSED</name>
+                  <description>Slave issues stop detection interrupt only if addressed</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- TXEMPTYCTRL -->
+            <field>
+              <name>TXEMPTYCTRL</name>
+              <description>Controls the Generation Of The Tx Empty Interrupt</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Default behaviour of tx empty interrupt</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Controlled generation of tx empty interrupt</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- RXFULLHLDC -->
+            <field>
+              <name>RXFULLHLDC</name>
+              <description>Hold the Bus When The Rx FIFO Is Full Or Not</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Overflow when RX FIFO is full</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Hold bus when RX FIFO is full</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- STPMSTACTIVE -->
+            <field>
+              <name>STPMSTACTIVE</name>
+              <description>How I2c Controller Issues The Stop Detection Interrupt</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Master issues the stop detection interrupt irrespective of whether master is active or not</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Master issues the stop detection interrupt only when master is active</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- BUSCLREN -->
+            <field>
+              <name>BUSCLREN</name>
+              <description>Enables the Bus Clear Feature</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Bus Clear Feature is enabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Bus Clear Feature is disabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <!-- TAR -->
+        <register>
+          <name>TAR</name>
+          <description>TARGET ADDRESS REGISTER</description>
+          <addressOffset>0x004</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- TAR -->
+            <field>
+              <name>TAR</name>
+              <description>Target Address For Any Master Transaction</description>
+              <bitRange>[9:0]</bitRange>
+              <access>read-write</access>
+            </field>
+            <!-- GCORSTR -->
+            <field>
+              <name>GCORSTR</name>
+              <description>Indicates Whether A General Call Or Start Byte Command</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>GEN_CALL</name>
+                  <description>General Call byte transmission</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>START</name>
+                  <description>START byte transmission</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- SPECIAL -->
+            <field>
+              <name>SPECIAL</name>
+              <description>Indicates Whether Software Performs A Device-id Or General Call Or Start Byte Command</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disables programming of GENERAL_CALL or START_BYTE transmission</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enables programming of GENERAL_CALL or START_BYTE transmission</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <!-- SAR -->
+        <register>
+          <name>SAR</name>
+          <description>SLAVE ADDRESS REGISTER</description>
+          <addressOffset>0x008</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- SAR -->
+            <field>
+              <name>SAR</name>
+              <description>Holds The Slave Address When The I2c Is Operating As A Slave</description>
+              <bitRange>[9:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <!-- DATACMD -->
+        <register>
+          <name>DATACMD</name>
+          <description>DATA BUFFER AND COMMAND REGISTER</description>
+          <addressOffset>0x010</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- DATA -->
+            <field>
+              <name>DATA</name>
+              <description>The Data To Be Transmitted Or Received On The I2C Bus</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+            <!-- CMD -->
+            <field>
+              <name>CMD</name>
+              <description>Controls Whether A Read Or A Write Is Performed</description>
+              <bitRange>[8:8]</bitRange>
+              <access>write-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>WRITE</name>
+                  <description>Master write command</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>READ</name>
+                  <description>Master read command</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- STOP -->
+            <field>
+              <name>STOP</name>
+              <description>Controls Whether A Stop Is Issued After The Byte Is Sent Or Received</description>
+              <bitRange>[9:9]</bitRange>
+              <access>write-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Do not issue STOP after this command</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Issue STOP after this command</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- RESTART -->
+            <field>
+              <name>RESTART</name>
+              <description>Controls Whether a RESTART Is Issued Before The Byte Is Sent Or Received</description>
+              <bitRange>[10:10]</bitRange>
+              <access>write-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Do not Issue RESTART before this command</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Issue RESTART before this command</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- FIRSTDATA -->
+            <field>
+              <name>FIRSTDATA</name>
+              <description>Indicates The First Data Byte Received After The Address Phase</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>Non sequential data byte received</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>Sequential data byte received</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <!-- SCLHCNT -->
+        <register>
+          <name>SCLHCNT</name>
+          <description>STANDARD SPEED I2C CLOCK SCL HIGH COUNT REGISTER</description>
+          <addressOffset>0x014</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- HCNT -->
+            <field>
+              <name>HCNT</name>
+              <description>Sets the SCL Clock High-period Count For Standard Speed</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <!-- SCLLCNT -->
+        <register>
+          <name>SCLLCNT</name>
+          <description>STANDARD SPEED I2C CLOCK SCL LOW COUNT REGISTER</description>
+          <addressOffset>0x018</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- LCNT -->
+            <field>
+              <name>LCNT</name>
+              <description>Sets the SCL Clock Low-period Count For Standard Speed</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <!-- FSSCLHCNT -->
+        <register>
+          <name>FSSCLHCNT</name>
+          <description>FAST MODE SCL HIGH COUNT REGISTER</description>
+          <addressOffset>0x01C</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- HCNT -->
+            <field>
+              <name>HCNT</name>
+              <description>Sets the SCL Clock High-period Count For Fast Speed</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <!-- FSSCLLCNT -->
+        <register>
+          <name>FSSCLLCNT</name>
+          <description>FAST MODE SCL LOW COUNT REGISTER</description>
+          <addressOffset>0x020</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- LCNT -->
+            <field>
+              <name>LCNT</name>
+              <description>Sets the SCL Clock Low-period Count For Fast Speed</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <!-- INTSTAT -->
+        <register>
+          <name>INTSTAT</name>
+          <description>I2C INTERRUPT STATUS REGISTER</description>
+          <addressOffset>0x02C</addressOffset>
+          <size>32</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- RXUNDER -->
+            <field>
+              <name>RXUNDER</name>
+              <description>RX_UNDER Interrupt</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>RX_UNDER interrupt is inactive</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>RX_UNDER interrupt is active</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- RXOVER -->
+            <field>
+              <name>RXOVER</name>
+              <description>RX_OVER Interrupt</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>RX_OVER interrupt is inactive</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>RX_OVER interrupt is active</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- RXFULL -->
+            <field>
+              <name>RXFULL</name>
+              <description>RX_FULL Interrupt</description>
+              <bitRange>[2:2]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>RX_FULL interrupt is inactive</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>RX_FULL interrupt is active</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- TXOVER -->
+            <field>
+              <name>TXOVER</name>
+              <description>TX_OVER Interrupt</description>
+              <bitRange>[3:3]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>TX_OVER interrupt is inactive</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>TX_OVER interrupt is active</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- TXEMPTY -->
+            <field>
+              <name>TXEMPTY</name>
+              <description>TX_EMPTY Interrupt</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>TX_EMPTY interrupt is inactive</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>TX_EMPTY interrupt is active</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- RDREQ -->
+            <field>
+              <name>RDREQ</name>
+              <description>RD_REQ interrupt</description>
+              <bitRange>[5:5]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>RD_REQ interrupt is inactive</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>RD_REQ interrupt is active</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- TXABRT -->
+            <field>
+              <name>TXABRT</name>
+              <description>TX_ABRT Interrupt</description>
+              <bitRange>[6:6]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>TX_ABRT interrupt is inactive</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>TX_ABRT interrupt is active</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- RXDONE -->
+            <field>
+              <name>RXDONE</name>
+              <description>RX_DONE Interrupt</description>
+              <bitRange>[7:7]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>RX_DONE interrupt is inactive</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>RX_DONE interrupt is active</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- ACTIVITY -->
+            <field>
+              <name>ACTIVITY</name>
+              <description>ACTIVITY Interrupt</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>ACTIVITY interrupt is inactive</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>ACTIVITY interrupt is active</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- STOPDET -->
+            <field>
+              <name>STOPDET</name>
+              <description>STOP_DET Interrupt</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>STOP_DET interrupt is inactive</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>STOP_DET interrupt is active</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- STARTDET -->
+            <field>
+              <name>STARTDET</name>
+              <description>START_DET Interrupt</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>START_DET interrupt is inactive</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>START_DET interrupt is active</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- GENCALL -->
+            <field>
+              <name>GENCALL</name>
+              <description>GEN_CALL Interrupt</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>GEN-CALL interrupt is inactive</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>GEN-CALL interrupt is active</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- RESTARTDET -->
+            <field>
+              <name>RESTARTDET</name>
+              <description>RESTART_DET Interrupt</description>
+              <bitRange>[12:12]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>RESTART_DET interrupt is inactive</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>RESTART_DET interrupt is active</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- MSTONHOLD -->
+            <field>
+              <name>MSTONHOLD</name>
+              <description>MASTER_ON_HOLD Interrupt</description>
+              <bitRange>[13:13]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>MASTER_ON_HOLD interrupt is inactive</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>MASTER_ON_HOLD interrupt is active</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- SCLSTUCKLOW -->
+            <field>
+              <name>SCLSTUCKLOW</name>
+              <description>SCL_STUCK_AT_LOW Interrupt</description>
+              <bitRange>[14:14]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>SCL_STUCK_AT_LOW interrupt is inactive</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>SCL_STUCK_AT_LOW interrupt is active</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- WRREQ -->
+            <field>
+              <name>WRREQ</name>
+              <description>WR_REQ Interrupt</description>
+              <bitRange>[15:15]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>WR_REQ interrupt is inactive</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>WR_REQ interrupt is active</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <!-- INTMASK -->
+        <register>
+          <name>INTMASK</name>
+          <description>INTERRUPT MASK REGISTER</description>
+          <addressOffset>0x030</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x000FFFFF</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- RXUNDERMSK -->
+            <field>
+              <name>RXUNDERMSK</name>
+              <description>RX_UNDER Interrupt Mask</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>UNMASKED</name>
+                  <description>RX_UNDER interrupt is unmasked</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MASKED</name>
+                  <description>RX_UNDER interrupt is masked</description>
+                  <value>0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- RXOVERMSK -->
+            <field>
+              <name>RXOVERMSK</name>
+              <description>RX_OVER Interrupt Mask</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>UNMASKED</name>
+                  <description>RX_OVER interrupt is unmasked</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MASKED</name>
+                  <description>RX_OVER interrupt is masked</description>
+                  <value>0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- RXFULLMSK -->
+            <field>
+              <name>RXFULLMSK</name>
+              <description>RX_FULL Interrupt Mask</description>
+              <bitRange>[2:2]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>UNMASKED</name>
+                  <description>RX_FULL interrupt is unmasked</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MASKED</name>
+                  <description>RX_FULL interrupt is masked</description>
+                  <value>0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- TXOVERMSK -->
+            <field>
+              <name>TXOVERMSK</name>
+              <description>TX_OVER Interrupt Mask</description>
+              <bitRange>[3:3]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>UNMASKED</name>
+                  <description>TX_OVER interrupt is unmasked</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MASKED</name>
+                  <description>TX_OVER interrupt is masked</description>
+                  <value>0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- TXEMPTYMSK -->
+            <field>
+              <name>TXEMPTYMSK</name>
+              <description>TX_EMPTY Interrupt Mask</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>UNMASKED</name>
+                  <description>TX_EMPTY interrupt is unmasked</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MASKED</name>
+                  <description>TX_EMPTY interrupt is masked</description>
+                  <value>0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- RDREQMSK -->
+            <field>
+              <name>RDREQMSK</name>
+              <description>RD_REQ Interrupt Mask</description>
+              <bitRange>[5:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>UNMASKED</name>
+                  <description>RD_REQ interrupt is unmasked</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MASKED</name>
+                  <description>RD_REQ interrupt is masked</description>
+                  <value>0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- TXABRTMSK -->
+            <field>
+              <name>TXABRTMSK</name>
+              <description>TX_ABRT Interrupt Mask</description>
+              <bitRange>[6:6]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>UNMASKED</name>
+                  <description>TX_ABRT interrupt is unmasked</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MASKED</name>
+                  <description>TX_ABRT interrupt is masked</description>
+                  <value>0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- RXDONEMSK -->
+            <field>
+              <name>RXDONEMSK</name>
+              <description>RX_DONE Interrupt Mask</description>
+              <bitRange>[7:7]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>UNMASKED</name>
+                  <description>RX_DONE interrupt is unmasked</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MASKED</name>
+                  <description>RX_DONE interrupt is masked</description>
+                  <value>0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- ACTIVITYMSK -->
+            <field>
+              <name>ACTIVITYMSK</name>
+              <description>ACTIVITY Interrupt Mask</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>UNMASKED</name>
+                  <description>ACTIVITY interrupt is unmasked</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MASKED</name>
+                  <description>ACTIVITY interrupt is masked</description>
+                  <value>0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- STOPDETMSK -->
+            <field>
+              <name>STOPDETMSK</name>
+              <description>STOP_DET Interrupt Mask</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>UNMASKED</name>
+                  <description>STOP_DET interrupt is unmasked</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MASKED</name>
+                  <description>STOP_DET interrupt is masked</description>
+                  <value>0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- STARTDETMSK -->
+            <field>
+              <name>STARTDETMSK</name>
+              <description>START_DET Interrupt Mask</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>UNMASKED</name>
+                  <description>START_DET interrupt is unmasked</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MASKED</name>
+                  <description>START_DET interrupt is masked</description>
+                  <value>0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- GENCALLMSK -->
+            <field>
+              <name>GENCALLMSK</name>
+              <description>GEN_CALL Interrupt Mask</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>UNMASKED</name>
+                  <description>GEN-CALL interrupt is unmasked</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MASKED</name>
+                  <description>GEN-CALL interrupt is masked</description>
+                  <value>0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- RESTARTDETMSK -->
+            <field>
+              <name>RESTARTDETMSK</name>
+              <description>RESTART_DET Interrupt Mask</description>
+              <bitRange>[12:12]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>UNMASKED</name>
+                  <description>RESTART_DET interrupt is unmasked</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MASKED</name>
+                  <description>RESTART_DET interrupt is masked</description>
+                  <value>0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- MSTONHOLDMSK -->
+            <field>
+              <name>MSTONHOLDMSK</name>
+              <description>MASTER_ON_HOLD Interrupt Mask</description>
+              <bitRange>[13:13]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>UNMASKED</name>
+                  <description>MASTER_ON_HOLD interrupt is unmasked</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MASKED</name>
+                  <description>MASTER_ON_HOLD interrupt is masked</description>
+                  <value>0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- SCLSTUCKLOWMSK -->
+            <field>
+              <name>SCLSTUCKLOWMSK</name>
+              <description>SCL_STUCK_AT_LOW Interrupt Mask</description>
+              <bitRange>[14:14]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>UNMASKED</name>
+                  <description>SCL_STUCK_AT_LOW interrupt is unmasked</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MASKED</name>
+                  <description>SCL_STUCK_AT_LOW interrupt is masked</description>
+                  <value>0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- WRREQMSK -->
+            <field>
+              <name>WRREQMSK</name>
+              <description>WR_REQ Interrupt Mask</description>
+              <bitRange>[15:15]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>UNMASKED</name>
+                  <description>WR_REQ interrupt is unmasked</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MASKED</name>
+                  <description>WR_REQ interrupt is masked</description>
+                  <value>0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <!-- RAWINTSTAT -->
+        <register>
+          <name>RAWINTSTAT</name>
+          <description>INTERRUPT STATUS REGISTER</description>
+          <addressOffset>0x034</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- RXUNDERRAW -->
+            <field>
+              <name>RXUNDERRAW</name>
+              <description>RX_UNDER Interrupt Status</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>RX_UNDER interrupt is inactive</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>RX_UNDER interrupt is active</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- RXOVERRAW -->
+            <field>
+              <name>RXOVERRAW</name>
+              <description>RX_UNDER Interrupt Status</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>RX_OVER interrupt is inactive</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>RX_OVER interrupt is active</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- RXFULLRAW -->
+            <field>
+              <name>RXFULLRAW</name>
+              <description>RX_UNDER Interrupt Status</description>
+              <bitRange>[2:2]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>RX_FULL interrupt is inactive</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>RX_FULL interrupt is active</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- TXOVERRAW -->
+            <field>
+              <name>TXOVERRAW</name>
+              <description>TX_OVER Interrupt Status</description>
+              <bitRange>[3:3]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>TX_OVER interrupt is inactive</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>TX_OVER interrupt is active</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- TXEMPTYRAW -->
+            <field>
+              <name>TXEMPTYRAW</name>
+              <description>TX_EMPTY Interrupt Status</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>TX_EMPTY interrupt is inactive</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>TX_EMPTY interrupt is active</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- RDREQRAW -->
+            <field>
+              <name>RDREQRAW</name>
+              <description>RD_REQ Interrupt Status</description>
+              <bitRange>[5:5]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>RD_REQ interrupt is inactive</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>RD_REQ interrupt is active</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- TXABRTv -->
+            <field>
+              <name>TXABRTRAW</name>
+              <description>TX_ABRT Interrupt Status</description>
+              <bitRange>[6:6]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>TX_ABRT interrupt is inactive</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>TX_ABRT interrupt is active</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- RXDONERAW -->
+            <field>
+              <name>RXDONERAW</name>
+              <description>RX_DONE Interrupt Status</description>
+              <bitRange>[7:7]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>RX_DONE interrupt is inactive</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>RX_DONE interrupt is active</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- ACTIVITYRAW -->
+            <field>
+              <name>ACTIVITYRAW</name>
+              <description>I2C Controller Activity</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>RAW_INTR_ACTIVITY interrupt is inactive</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>RAW_INTR_ACTIVITY interrupt is active</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- STOPDETRAW -->
+            <field>
+              <name>STOPDETRAW</name>
+              <description>STOP_DET Interrupt Status</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>STOP_DET interrupt is inactive</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>STOP_DET interrupt is active</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- STARTDETRAW -->
+            <field>
+              <name>STARTDETRAW</name>
+              <description>START_DET Interrupt Status</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>START_DET interrupt is inactive</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>START_DET interrupt is active</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- GENCALLRAW -->
+            <field>
+              <name>GENCALLRAW</name>
+              <description>GEN_CALL Interrupt Status</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>GEN-CALL interrupt is inactive</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>GEN-CALL interrupt is active</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- RESTARTDETRAW -->
+            <field>
+              <name>RESTARTDETRAW</name>
+              <description>RESTART_DET Interrupt Status</description>
+              <bitRange>[12:12]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>RESTART_DET interrupt is inactive</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>RESTART_DET interrupt is active</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- MSTONHOLDRAW -->
+            <field>
+              <name>MSTONHOLDRAW</name>
+              <description>MASTER_ON_HOLD Interrupt Status</description>
+              <bitRange>[13:13]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>MASTER_ON_HOLD interrupt is inactive</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>MASTER_ON_HOLD interrupt is active</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- SCLSTUCKLOWRAW -->
+            <field>
+              <name>SCLSTUCKLOWRAW</name>
+              <description>SCL_STUCK_AT_LOW Interrupt Status</description>
+              <bitRange>[14:14]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>SCL_STUCK_AT_LOW interrupt is inactive</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>SCL_STUCK_AT_LOW interrupt is active</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- WRREQRAW -->
+            <field>
+              <name>WRREQRAW</name>
+              <description>WR_REQ Interrupt Status</description>
+              <bitRange>[15:15]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>WR_REQ interrupt is inactive</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>WR_REQ interrupt is active</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <!-- RXTL -->
+        <register>
+          <name>RXTL</name>
+          <description>I2C RECEIVE FIFO THRESHOLD REGISTER</description>
+          <addressOffset>0x038</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- THRES -->
+            <field>
+              <name>THRES</name>
+              <description>Receive FIFO Threshold Level</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <!-- TXTL -->
+        <register>
+          <name>TXTL</name>
+          <description>I2C TRANSMIT FIFO THRESHOLD REGISTER</description>
+          <addressOffset>0x03C</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- THRES -->
+            <field>
+              <name>THRES</name>
+              <description>Transmit FIFO Threshold Level</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <!-- CLRINT -->
+        <register>
+          <name>CLRINT</name>
+          <description>CLEAR COMBINED AND INDIVIDUAL INTERRUPT REGISTER</description>
+          <addressOffset>0x040</addressOffset>
+          <size>32</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- CLRRXUNDER -->
+        <register>
+          <name>CLRRXUNDER</name>
+          <description>Clear RX_UNDER Interrupt</description>
+          <addressOffset>0x044</addressOffset>
+          <size>32</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- CLRRXOVER -->
+        <register>
+          <name>CLRRXOVER</name>
+          <description>Clear RX_OVER Interrupt Register</description>
+          <addressOffset>0x048</addressOffset>
+          <size>32</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- CLRTXOVER -->
+        <register>
+          <name>CLRTXOVER</name>
+          <description>Clear TX_OVER Interrupt Register</description>
+          <addressOffset>0x04c</addressOffset>
+          <size>32</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- CLRRDREQ -->
+        <register>
+          <name>CLRRDREQ</name>
+          <description>Clear RD_REQ Interrupt Register</description>
+          <addressOffset>0x050</addressOffset>
+          <size>32</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- CLRTXABRT -->
+        <register>
+          <name>CLRTXABRT</name>
+          <description>Clear TX_ABRT Interrupt Register</description>
+          <addressOffset>0x054</addressOffset>
+          <size>32</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- CLRRXDONE -->
+        <register>
+          <name>CLRRXDONE</name>
+          <description>Clear RX_DONE Interrupt Register</description>
+          <addressOffset>0x058</addressOffset>
+          <size>32</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- CLRACTIVITY -->
+        <register>
+          <name>CLRACTIVITY</name>
+          <description>Clear ACTIVITY Interrupt Register</description>
+          <addressOffset>0x05c</addressOffset>
+          <size>32</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- CLRSTOPDET -->
+        <register>
+          <name>CLRSTOPDET</name>
+          <description>Clear STOP_DET Interrupt Register</description>
+          <addressOffset>0x060</addressOffset>
+          <size>32</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- CLRSTARTDET -->
+        <register>
+          <name>CLRSTARTDET</name>
+          <description>Clear START_DET Interrupt Register</description>
+          <addressOffset>0x064</addressOffset>
+          <size>32</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- CLRGENCALL -->
+        <register>
+          <name>CLRGENCALL</name>
+          <description>Clear GEN_CALL Interrupt Register</description>
+          <addressOffset>0x068</addressOffset>
+          <size>32</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- ENABLE -->
+        <register>
+          <name>ENABLE</name>
+          <description>ENABLE REGISTER</description>
+          <addressOffset>0x06c</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- EN -->
+            <field>
+              <name>EN</name>
+              <description>Controls Whether The I2C Controller Is Enabled</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disables I2C controller</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable I2C controller</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- ABORT -->
+            <field>
+              <name>ABORT</name>
+              <description>Initiates The Transfer Abort</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>ABORT operation not in progress</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>ABORT operation in progress</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- TXCMDBLOCK -->
+            <field>
+              <name>TXCMDBLOCK</name>
+              <description>Blocks The Transmission Of Data On I2c Bus Or Not</description>
+              <bitRange>[2:2]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>The transmission of data starts on I2C bus automatically</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Blocks the transmission of data on I2C bus even if Tx FIFO has data to transmit</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- SDARECOVEN -->
+            <field>
+              <name>SDARECOVEN</name>
+              <description>Control Knob To Initiate The SDA Recovery Mechanism</description>
+              <bitRange>[3:3]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Master disabled the SDA stuck at low recovery mechanism</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Master initiates the SDA stuck at low recovery mechanism</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <!-- STATUS -->
+        <register>
+          <name>STATUS</name>
+          <description>I2C STATUS Register</description>
+          <addressOffset>0x070</addressOffset>
+          <size>32</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- ACTIVITY -->
+            <field>
+              <name>ACTIVITY</name>
+              <description>I2C Activity Status</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>I2C is idle</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>I2C is active</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- TFNF -->
+            <field>
+              <name>TFNF</name>
+              <description>Transmit FIFO Not Full</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>FULL</name>
+                  <description>Tx FIFO is full</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>NOTFULL</name>
+                  <description>Tx FIFO not full</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- TFE -->
+            <field>
+              <name>TFE</name>
+              <description>Transmit FIFO Completely Empty</description>
+              <bitRange>[2:2]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOTEMPTY</name>
+                  <description>Tx FIFO not empty</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>EMPTY</name>
+                  <description>Tx FIFO is empty</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- RFNE -->
+            <field>
+              <name>RFNE</name>
+              <description>Receive FIFO Not Empty</description>
+              <bitRange>[3:3]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>EMPTY</name>
+                  <description>Rx FIFO is empty</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>NOTEMPTY</name>
+                  <description>Rx FIFO not empty</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- RFF -->
+            <field>
+              <name>RFF</name>
+              <description>Receive FIFO Completely Full</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOTFULL</name>
+                  <description>Rx FIFO not full</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FULL</name>
+                  <description>Rx FIFO is full</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- MSTACTIVITY -->
+            <field>
+              <name>MSTACTIVITY</name>
+              <description>Master FSM Activity Status</description>
+              <bitRange>[5:5]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>IDLE</name>
+                  <description>Master is idle</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>Master not idle</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- SLVACTIVITY -->
+            <field>
+              <name>SLVACTIVITY</name>
+              <description>Slave FSM Activity Status</description>
+              <bitRange>[6:6]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>IDLE</name>
+                  <description>Slave is idle</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>Slave not idle</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- MSTHOLDTXEMPTY -->
+            <field>
+              <name>MSTHOLDTXEMPTY</name>
+              <description>Indicates The Bus Hold When The Master Holds The Bus Because Of The Tx FIFO Being Empty</description>
+              <bitRange>[7:7]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>Master holds the bus due to Tx FIFO is empty</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>Master is not holding the bus or Bus hold is not due to Tx FIFO is empty</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- MSTHOLDRXFULL -->
+            <field>
+              <name>MSTHOLDRXFULL</name>
+              <description>INdicates The Bus Hold In Master Mode Due To Rx FIFO Is Full And Additional Byte Has Been Received</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>Master is not holding the bus or Bus hold is not due to Rx FIFO is full</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>Master holds the bus due to Rx FIFO is full</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- SLVHOLDTXEMPTY -->
+            <field>
+              <name>SLVHOLDTXEMPTY</name>
+              <description>Indicates The Bus Hold In Slave Mode Due To Rx FIFO Is Full And Additional Byte Has Been Received</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>Slave is not holding the bus or Bus hold is not due to Rx FIFO is full</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>Slave holds the bus due to Rx FIFO is full</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- SLVHOLDRXFULL -->
+            <field>
+              <name>SLVHOLDRXFULL</name>
+              <description>Indicates The Bus Hold In Slave Mode Due To Rx FIFO Is Full And Additional Byte Has Been Received</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Inactive</name>
+                  <description>Slave is not holding the bus or Bus hold is not due to Rx FIFO is full</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Active</name>
+                  <description>Slave holds the bus due to Rx FIFO is full</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- SDANOTRECOV -->
+            <field>
+              <name>SDANOTRECOV</name>
+              <description>Indicates That SDA Stuck At Low Is Not Recovered After The Recovery Mechanism</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Inactive</name>
+                  <description>SDA Stuck at low is recovered after recovery mechanism</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Active</name>
+                  <description>SDA Stuck at low is not recovered after recovery mechanism</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <!-- TXFLR -->
+        <register>
+          <name>TXFLR</name>
+          <description>I2C TRANSMIT FIFO LEVEL REGISTER</description>
+          <addressOffset>0x074</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- RXFLR -->
+        <register>
+          <name>RXFLR</name>
+          <description>I2C RECEIVE FIFO LEVEL REGISTER</description>
+          <addressOffset>0x078</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- SDAHOLD -->
+        <register>
+          <name>SDAHOLD</name>
+          <description>I2C SDA HOLD TIME LENGTH REGISTER</description>
+          <addressOffset>0x07C</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- SDATXHOLD -->
+            <field>
+              <name>SDATXHOLD</name>
+              <description>Sets The Required SDA Hold Time In Units Of clk Period</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+            <!-- SDARXHOLD -->
+            <field>
+              <name>SDARXHOLD</name>
+              <description>Sets the required SDA hold time in units of I2C clk period</description>
+              <bitRange>[23:16]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <!-- TXABRTSRC -->
+        <register>
+          <name>TXABRTSRC</name>
+          <description>I2C TRANSMIT ABORT SOURCE REGISTER</description>
+          <addressOffset>0x080</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- ADDR7BNAK -->
+            <field>
+              <name>ADDR7BNAK</name>
+              <description>Indicates That The Master Is In 7-bit Addressing Mode And The Address Sent Was Not Acknowledged By Any Slave</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>This abort is not generated</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>This abort is generated because of NOACK for 7-bit address</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- ADDR10BNAK1 -->
+            <field>
+              <name>ADDR10BNAK1</name>
+              <description>Indicates That The Master Is In 10-bit Address Mode And The First 10-bit Address Byte Was Not Acknowledged By Any Slave</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>This abort is not generated</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>Byte 1 of 10Bit Address not ACKed by any slave</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- ADDR10BNACK2 -->
+            <field>
+              <name>ADDR10BNACK2</name>
+              <description>Indicates That The Master Is In 10-bit Address Mode And The Second 10-bit Address Byte Was Not Acknowledged By Any Slave</description>
+              <bitRange>[2:2]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>This abort is not generated</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>Byte 2 of 10Bit Address not ACKed by any slave</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- TXDATANAK -->
+            <field>
+              <name>TXDATANAK</name>
+              <description>Indicates The Master-mode Only Bit. When Themaster Receives An Acknowledgement For The Address</description>
+              <bitRange>[3:3]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NACK</name>
+                  <description>Transmitted data non-ACKed by addressed slave-scenario not present</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACK</name>
+                  <description>Transmitted data not ACKed by addressed slave</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- GCALLNAK -->
+            <field>
+              <name>GCALLNAK</name>
+              <description>Indicates That I2C Controller In Master Mode Has Sent A General Call And No Slave On The Bus Acknowledged The General Call</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NACK</name>
+                  <description>GCALL not ACKed by any slave-scenario not present</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACK</name>
+                  <description>GCALL not ACKed by any slave</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- GCALLREAD -->
+            <field>
+              <name>GCALLREAD</name>
+              <description>Indicates That Dw_apb_i2c In The Master Mode Has Sent A General Call But The User Programmed The Byte Following The General Call To Be A Read From The Bus</description>
+              <bitRange>[5:5]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NONABORT</name>
+                  <description>GCALL is followed by read from bus-scenario not present</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ABORT</name>
+                  <description>GCALL is followed by read from bus</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- HSACKDET -->
+            <field>
+              <name>HSACKDET</name>
+              <description>Indicates That The Master Is In High Speed Mode And The High Speed Master Code Was Acknowledged</description>
+              <bitRange>[6:6]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NACK</name>
+                  <description>HS Master code ACKed in HS Mode- scenario not present</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACK</name>
+                  <description>HS Master code ACKed in HS Mode</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- SBYTEACKET -->
+            <field>
+              <name>SBYTEACKET</name>
+              <description>Indicates That The Master Has Sent A START Byte And The START Byte Was Acknowledged</description>
+              <bitRange>[7:7]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NACK</name>
+                  <description>ACK detected for START byte- scenario not present</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACK</name>
+                  <description>ACK detected for START byte</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- HSNORSTRT -->
+            <field>
+              <name>HSNORSTRT</name>
+              <description>Indicates That The Restart Is Disabled</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NONABORT</name>
+                  <description>User trying to switch Master to HS mode when RESTART disabled- scenario not present</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ABORT</name>
+                  <description>User trying to switch Master to HS mode when RESTART disabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- SBYTENORSTRT -->
+            <field>
+              <name>SBYTENORSTRT</name>
+              <description>Indicates That The Restart Is Disabled</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NONABORT</name>
+                  <description>User trying to send START byte when RESTART disabled- scenario not present</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ABORT</name>
+                  <description>User trying to send START byte when RESTART disabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- ADDR10BRDNORSTRT -->
+            <field>
+              <name>ADDR10BRDNORSTRT</name>
+              <description>Indicates That The Restart Is Disabled</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NONABORT</name>
+                  <description>Master not trying to read in 10Bit addressing mode when RESTART disabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ABORT</name>
+                  <description>Master trying to read in 10Bit addressing mode when RESTART disabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- MASTERIDS -->
+            <field>
+              <name>MASTERIDS</name>
+              <description>Indicates That The User Tries To Initiate A Master Operation With The Master Mode Disabled</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NONABORT</name>
+                  <description>User initiating master operation when MASTER disabled- scenario not present</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ABORT</name>
+                  <description>User initiating master operation when MASTER disabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- ARBLOST -->
+            <field>
+              <name>ARBLOST</name>
+              <description>This Field Specifies That The Master Has Lost Arbitration</description>
+              <bitRange>[12:12]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOTLOST</name>
+                  <description>Master or Slave-Transmitter lost arbitration- scenario not present</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>LOST</name>
+                  <description>Master or Slave-Transmitter lost arbitration</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- SLVFLUSHTXFIFO -->
+            <field>
+              <name>SLVFLUSHTXFIFO</name>
+              <description>This Field Specifies That The Slave Has Received A Read Command And Some Data Exists In The TX FIFO</description>
+              <bitRange>[13:13]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NONABORT</name>
+                  <description>Slave flushes existing data in TX-FIFO upon getting read commandscenario not present</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ABORT</name>
+                  <description>Slave flushes existing data in TX-FIFO upon getting read command</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- SLVARBLOST -->
+            <field>
+              <name>SLVARBLOST</name>
+              <description>This Field Indicates That A Slave Has Lost The Bus While Transmitting Data To A Remote Master</description>
+              <bitRange>[14:14]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOTLOST</name>
+                  <description>Slave lost arbitration to remote master- scenario not present</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>LOST</name>
+                  <description>Slave lost arbitration to remote master</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- SLVRDINTX -->
+            <field>
+              <name>SLVRDINTX</name>
+              <description>When The Processor Side Responds To A Slave Mode Request For Data To Be Transmitted To A Remote Master And User Writes A 1 In Cmd (bit 8) Of Ic_data_cmd Register</description>
+              <bitRange>[15:15]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOTABORT</name>
+                  <description>Slave trying to transmit to remote master in read mode- scenario not present</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ABORT</name>
+                  <description>Slave trying to transmit to remote master in read mode</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- USRABRT -->
+            <field>
+              <name>USRABRT</name>
+              <description>This Is A Master-mode-only Bit. Master Has Detected The Transfer Abort</description>
+              <bitRange>[16:16]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOTABORT</name>
+                  <description>Transfer abort detected by master- scenario not present</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ABORT</name>
+                  <description>Transfer abort detected by master</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- SDASTUCKLOW -->
+            <field>
+              <name>SDASTUCKLOW</name>
+              <description>This Is A Master-mode-only Bit. Master Detects The SDA Stuck At Low</description>
+              <bitRange>[17:17]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOTABORT</name>
+                  <description>This abort is not generated</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ABORT</name>
+                  <description>This abort is generated because of SDA stuck at low</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- DEVNAK -->
+            <field>
+              <name>DEVNAK</name>
+              <description>Master Is Initiating The DEVICE_ID Transfer And The Device Id Sent Was Not Acknowledged By Any Slave</description>
+              <bitRange>[18:18]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOTABORT</name>
+                  <description>This abort is not generated</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ABORT</name>
+                  <description>This abort is generated because of NOACK for DEVICE-ID</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- DEVSLVADDRNAK -->
+            <field>
+              <name>DEVSLVADDRNAK</name>
+              <description>Master Is Initiating The DEVICE_ID Transfer And The Slave Address Sent Was Not Acknowledged By Any Slave</description>
+              <bitRange>[19:19]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOTABORT</name>
+                  <description>This abort is not generated</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ABORT</name>
+                  <description>This abort is generated because of NOACK for Slave address</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- DEVWRITE -->
+            <field>
+              <name>DEVWRITE</name>
+              <description>Master Is Initiating The DEVICE_ID Transfer And The Tx-FIFO Consists Of Write Commands</description>
+              <bitRange>[20:20]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOTABORT</name>
+                  <description>This abort is not generated</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ABORT</name>
+                  <description>This abort is generated because of NOACK for Slave address</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- TXFLUSHCNT -->
+            <field>
+              <name>TXFLUSHCNT</name>
+              <description>Indicates The Number Of Tx FIFO Data Commands Which Are Flushed Due To TX_ABRT Interrupt</description>
+              <bitRange>[31:23]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <!-- SLVDATANACKONLY -->
+        <register>
+          <name>SLVDATANACKONLY</name>
+          <description>GENERATE SLAVE DATA NACK REGISTER</description>
+          <addressOffset>0x084</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- NAK -->
+            <field>
+              <name>NAK</name>
+              <description>Generate Nack. This Nack Generation Only Occurs When I2C Controller Is A Slave-receiver</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Slave receiver generates NACK normally</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Slave receiver generates NACK upon data reception only</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <!-- SDASETUP -->
+        <register>
+          <name>SDASETUP</name>
+          <description>I2C SDA SETUP REGISTER</description>
+          <addressOffset>0x094</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- SETUP -->
+            <field>
+              <name>SETUP</name>
+              <description>SDA Setup (tSU:DAT)</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <!-- ACKGENCALL -->
+        <register>
+          <name>ACKGENCALL</name>
+          <description>I2C ACK GENERAL CALL REGISTER</description>
+          <addressOffset>0x098</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- ACK -->
+            <field>
+              <name>ACK</name>
+              <description>ACK General Call</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NACK</name>
+                  <description>Generate NACK for General Call</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACK</name>
+                  <description>Generate ACK for a General Call</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <!-- ENSTS -->
+        <register>
+          <name>ENSTS</name>
+          <description>I2C ENABLE STATUS REGISTER</description>
+          <addressOffset>0x09c</addressOffset>
+          <size>32</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- ENABLE -->
+            <field>
+              <name>ENABLE</name>
+              <description>IC Enable Status</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>I2C disabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>I2C enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- SLVDISBUSY -->
+            <field>
+              <name>SLVDISBUSY</name>
+              <description>Slave Disabled While Busy (Transmit, Receive)</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Slave is disabled when it is idle</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Slave is disabled when it is active</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- SLVRXDATALOST -->
+            <field>
+              <name>SLVRXDATALOST</name>
+              <description>Slave Received Data Lost</description>
+              <bitRange>[2:2]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Slave RX Data is not lost</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Slave RX Data is lost</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <!-- SPKLEN -->
+        <register>
+          <name>SPKLEN</name>
+          <description>I2C SS, FS OR FM+ RO UFM SPIKE SUPPRESSION LIMIT</description>
+          <addressOffset>0x0a0</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- LEN -->
+            <field>
+              <name>LEN</name>
+              <description>Sets the Duration, Measured In Clk Cycle</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <!-- CLRRESTARTDET -->
+        <register>
+          <name>CLRRESTARTDET</name>
+          <description>CLEAR RESTART_DET INTERRUPT REGISTER</description>
+          <addressOffset>0x0a8</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- SCLLOWTO -->
+        <register>
+          <name>SCLLOWTO</name>
+          <description>I2C SCL STUCK AT LOW TIMEOUT REGISTER</description>
+          <addressOffset>0x0ac</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- SDALOWTO -->
+        <register>
+          <name>SDALOWTO</name>
+          <description>I2C SDA STUCK AT LOW TIMEOUT REGISTER</description>
+          <addressOffset>0x0b0</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- CLRSCLSTUCKDET -->
+        <register>
+          <name>CLRSCLSTUCKDET</name>
+          <description>CLEAR SCL STUCK AT LOW DETECT INTERRUPT REGISTER</description>
+          <addressOffset>0x0b4</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+      </registers>
+    </peripheral>
+    
+    <!-- I2C1 -->
+    <peripheral derivedFrom="I2C0">
+      <name>I2C1</name>
+      <baseAddress>0x40101200</baseAddress>
+      <!-- Interrupt -->
+      <interrupt>
+        <name>I2C1</name>
+        <description>I2C1 Interrupt</description>
+        <value>17</value>
+      </interrupt>
+    </peripheral>
+
+    <!-- I2C2 -->
+    <peripheral derivedFrom="I2C0">
+      <name>I2C2</name>
+      <baseAddress>0x40101400</baseAddress>
+      <!-- Interrupt -->
+      <interrupt>
+        <name>I2C2</name>
+        <description>I2C2 Interrupt</description>
+        <value>18</value>
+      </interrupt>
+    </peripheral>
+
   </peripherals>
 </device>
