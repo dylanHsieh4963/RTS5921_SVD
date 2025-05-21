@@ -11,18 +11,18 @@
 	  The license belong to Realtek Semiconductor Corp. All the rights reserved.
   </licenseText>
 
-  <!-- CPU -->
-  <cpu>                                                           <!-- details about the cpu embedded in the device -->
-    <name>CM0</name>
+  <cpu>
+    <name>ARMV8MBL</name>
     <revision>r0p0</revision>
     <endian>little</endian>
-    <mpuPresent>false</mpuPresent>
+    <mpuPresent>true</mpuPresent>
     <fpuPresent>false</fpuPresent>
+    <vtorPresent>true</vtorPresent>
     <nvicPrioBits>3</nvicPrioBits>
     <vendorSystickConfig>false</vendorSystickConfig>
   </cpu>
 
-    <!-- byte addressable memory -->
+  <!-- byte addressable memory -->
   <addressUnitBits>8</addressUnitBits>
   <!-- bus width is 32 bits -->
   <width>32</width>
