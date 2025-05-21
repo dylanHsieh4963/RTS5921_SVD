@@ -4510,6 +4510,328 @@
       </registers>
     </peripheral>
 
+    <!-- SPIM -->
+    <peripheral>
+      <!-- Description -->
+      <name>SPIM</name>
+      <version>1.00</version>
+      <description>SPI Master Controller</description>
+      <groupName>DW_SPI</groupName>
+      <headerStructName>DW_SPI</headerStructName>
+      <baseAddress>0x40100300</baseAddress>
+      <size>32</size>
+      <access>read-write</access>
+
+      <!-- Address Range -->
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x100</size>
+        <usage>registers</usage>
+      </addressBlock>
+
+      <!-- Interrup -->
+      <interrupt>
+        <name>SPIM</name>
+        <description>SPI Master Interrupt</description>
+        <value>13</value>
+      </interrupt>
+
+      <registers>
+        <!-- CTRLR0 -->
+        <register>
+            <name>CTRLR0</name>
+            <description>Control Register 0</description>
+            <addressOffset>0x0</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+
+        <!-- CTRLR1 -->
+        <register>
+            <name>CTRLR1</name>
+            <description>Control Register 1</description>
+            <addressOffset>0x4</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+
+        <!-- SSIENR -->
+        <register>
+            <name>SSIENR</name>
+            <description>SSI Enable Register</description>
+            <addressOffset>0x8</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+
+        <!-- MWCR -->
+        <register>
+            <name>MWCR</name>
+            <description>Microwire Control Register</description>
+            <addressOffset>0xC</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+        
+        <!-- SER -->
+        <register>
+            <name>SER</name>
+            <description>Slave Enable Register</description>
+            <addressOffset>0x10</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+
+        <!-- BAUDR -->
+        <register>
+            <name>BAUDR</name>
+            <description>Baud Rate Register</description>
+            <addressOffset>0x14</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+       </register>
+
+        <!-- TXFTLR -->
+        <register>
+            <name>TXFTLR</name>
+            <description>Transmit FIFO Threshold Level Register</description>
+            <addressOffset>0x18</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+       </register>
+
+        <!-- RXFTLR -->
+        <register>
+            <name>RXFTLR</name>
+            <description>Receive FIFO Threshold Level Register</description>
+            <addressOffset>0x1C</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+
+        <!-- TXFLR -->
+        <register>
+            <name>TXFLR</name>
+            <description>Transmit FIFO Level Register</description>
+            <addressOffset>0x20</addressOffset>
+            <size>32</size>
+            <access>read-only</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+
+        <!-- RXFLR -->
+        <register>
+            <name>RXFLR</name>
+            <description>Receive FIFO Level Register</description>
+            <addressOffset>0x24</addressOffset>
+            <size>32</size>
+            <access>read-only</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+
+        <!-- SR -->
+        <register>
+            <name>SR</name>
+            <description>Status Register</description>
+            <addressOffset>0x28</addressOffset>
+            <size>32</size>
+            <access>read-only</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+
+        <!-- IMR -->
+        <register>
+            <name>IMR</name>
+            <description>Interrupt Mask Register</description>
+            <addressOffset>0x2C</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+
+        <!-- ISR -->
+        <register>
+            <name>ISR</name>
+            <description>Interrupt Status Register</description>
+            <addressOffset>0x30</addressOffset>
+            <size>32</size>
+            <access>read-only</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+
+        <!-- RISR -->
+        <register>
+            <name>RISR</name>
+            <description>Raw Interrupt Status Register</description>
+            <addressOffset>0x34</addressOffset>
+            <size>32</size>
+            <access>read-only</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+
+        <!-- TXOICR -->
+        <register>
+            <name>TXOICR</name>
+            <description>Transmit FIFO Overflow Interrupt Clear Register</description>
+            <addressOffset>0x38</addressOffset>
+            <size>32</size>
+            <access>write-only</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+
+        <!-- RXOICR -->
+        <register>
+            <name>RXOICR</name>
+            <description>Receive FIFO Overflow Interrupt Clear Register</description>
+            <addressOffset>0x3C</addressOffset>
+            <size>32</size>
+            <access>write-only</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+
+        <!-- RXUICR -->
+        <register>
+            <name>RXUICR</name>
+            <description>Receive FIFO Underflow Interrupt Clear Register</description>
+            <addressOffset>0x40</addressOffset>
+            <size>32</size>
+            <access>write-only</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+
+        <!-- MSTICR -->
+        <register>
+            <name>MSTICR</name>
+            <description>Multi-Master Interrupt Clear Register</description>
+            <addressOffset>0x44</addressOffset>
+            <size>32</size>
+            <access>write-only</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+
+        <!-- ICR -->
+        <register>
+            <name>ICR</name>
+            <description>Interrupt Clear Register</description>
+            <addressOffset>0x48</addressOffset>
+            <size>32</size>
+            <access>write-only</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+
+        <!-- DMACR -->
+        <register>
+            <name>DMACR</name>
+            <description>DMA Control Register</description>
+            <addressOffset>0x4C</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+
+        <!-- DMATDLR -->
+        <register>
+            <name>DMATDLR</name>
+            <description>DMA Transmit Data Level Register</description>
+            <addressOffset>0x50</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+
+        <!-- DMARDLR -->
+        <register>
+            <name>DMARDLR</name>
+            <description>DMA Receive Data Level Register</description>
+            <addressOffset>0x54</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+
+        <!-- IDR -->
+        <register>
+            <name>IDR</name>
+            <description>Identification Register</description>
+            <addressOffset>0x58</addressOffset>
+            <size>32</size>
+            <access>read-only</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+
+        <!-- SSI Version ID Register -->
+        <register>
+            <name>SSI_VERSION_ID</name>
+            <description>SSI Version ID Register</description>
+            <addressOffset>0x5C</addressOffset>
+            <size>32</size>
+            <access>read-only</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+
+        <!-- DR -->
+        <register>
+            <name>DR</name>
+            <description>Data Register</description>
+            <addressOffset>0x60</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+
+        <!-- RX_SAMPLE_DLY -->
+        <register>
+            <name>RX_SAMPLE_DLY</name>
+            <description>Receive Sample Delay Register</description>
+            <addressOffset>0xF0</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+
+        <!-- SPI_CTRLR0 -->
+        <register>
+            <name>SPI_CTRLR0</name>
+            <description>SPI Control Register</description>
+            <addressOffset>0xF4</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+
+        <!-- TXD_DRIVE_EDGE -->
+        <register>
+            <name>TXD_DRIVE_EDGE</name>
+            <description>Transmit Drive Edge Register</description>
+            <addressOffset>0xF8</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+      </registers>
+    </peripheral>
+
+    <!-- SPIS -->
+    <peripheral derivedFrom="SPIM">
+      <name>SPIS</name>
+      <baseAddress>0x40100400</baseAddress>
+
+      <!-- Interrupt -->
+      <interrupt>
+        <name>SPIS</name>
+        <description>SPI Slave Interrupt</description>
+        <value>14</value>
+      </interrupt>
+    </peripheral>
+
     <!-- UART -->
     <peripheral>
       <!-- Description -->
