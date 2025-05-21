@@ -1280,8 +1280,6 @@
                <name>RX_FIFO_ENTRY</name>
                <description>
                   Indicates the valid entry of RX FIFO if using SPIC_HAS_DMA (NO_MERGE_FIFO).
-                  It is an index of 2 and should be ≤ RX_FIFO_ABW.
-                  Example: if RX_FIFO entry is 32, RX_FIFO_ENTRY ≤ 5.
                </description>
                <bitRange>[11:8]</bitRange>
                <access>read-write</access>
@@ -1292,8 +1290,6 @@
                <name>FIFO_ENTRY</name>
                <description>
                   Indicates the valid entry of TX_FIFO if using SPIC_HAS_DMA (NO_MERGE_FIFO).
-                  Indicates the valid entry of the FIFO if using MERGE_FIFO. It is an index of 2 and should be ≤ FIFO_ABW.
-                  Example: if FIFO entry is 32, FIFO_ENTRY ≤ 5.
                </description>
                <bitRange>[7:4]</bitRange>
                <access>read-write</access>
@@ -1303,8 +1299,7 @@
             <field>
                <name>SEQ_EN</name>
                <description>
-                  Enables Data-Split Program/Read (FIFO size-independent Program and Read). Must disable this bit when Program and Read are finished.
-                  Note: If SEQ_EN function is set, SSIENR.ATCK_CMD should be disabled.
+                  Enables Data-Split Program/Read (FIFO size-independent Program and Read). 
                </description>
                <bitRange>[3:3]</bitRange>
                <access>read-write</access>
@@ -1315,8 +1310,6 @@
                <name>WPN_DNUM</name>
                <description>
                   Indicates whether WPn input pin of SPI Flash is connected to spi_sdata[2] or [3].
-                  0: Connected to spi_sdata[2].
-                  1: Connected to spi_sdata[3].
                </description>
                <bitRange>[2:2]</bitRange>
                <access>read-write</access>
@@ -1337,8 +1330,6 @@
                <name>SO_DNUM</name>
                <description>
                   Indicates whether SO input pin of SPI Flash is connected to spi_sout[0] or [1].
-                  0: Connected to spi_sout[0] (single-channel).
-                  1: Connected to spi_sout[1] (multi-channel, default).
                </description>
                <bitRange>[0:0]</bitRange>
                <access>read-write</access>
@@ -2006,7 +1997,178 @@
 						<size>32</size>
 						<access>read-write</access>
 						<resetValue>0xFFFFFFFF</resetValue> <!-- Placeholder for configuration-dependent reset value -->
+         <fields>
+            <!-- Undefined/Reserved Field [31:29] -->
+            <field>
+               <name>Undefined</name>
+               <description>Reserved</description>
+               <bitRange>[31:29]</bitRange>
+               <access>read-only</access>
+            </field>
+
+            <!-- LLP_SRC_EN Field -->
+            <field>
+               <name>LLP_SRC_EN</name>
+               <description>
+                  Enables block chaining on the source side if high and LLPx_L.LOC is non-zero.
+               </description>
+               <bitRange>[28:28]</bitRange>
+               <access>read-write</access>
+            </field>
+
+            <!-- LLP_DST_EN Field -->
+            <field>
+               <name>LLP_DST_EN</name>
+               <description>
+                  Enables block chaining on the destination side if high and LLPx_L.LOC is non-zero.
+               </description>
+               <bitRange>[27:27]</bitRange>
+               <access>read-write</access>
+            </field>
+
+            <!-- TT_FC Field -->
+            <field>
+               <name>TT_FC</name>
+               <description>
+                  Transfer Type and Flow Control. Supports multiple transfer types, with specific flow control.
+               </description>
+               <bitRange>[23:20]</bitRange>
+               <access>read-write</access>
+            </field>
+
+            <!-- DST_SCATTER_EN Field -->
+            <field>
+               <name>DST_SCATTER_EN</name>
+               <description>
+                  Enables scatter on the destination side if conditions in address control align.
+               </description>
+               <bitRange>[18:18]</bitRange>
+               <access>read-write</access>
+            </field>
+
+            <!-- SRC_GATHER_EN Field -->
+            <field>
+               <name>SRC_GATHER_EN</name>
+               <description>
+                  Enables gather on the source side if conditions in address control align.
+               </description>
+               <bitRange>[17:17]</bitRange>
+               <access>read-write</access>
+            </field>
+
+            <!-- SRC_MSIZE Field -->
+            <field>
+               <name>SRC_MSIZE</name>
+               <description>
+                  Number of data items per source burst transaction.
+               </description>
+               <bitRange>[16:14]</bitRange>
+               <access>read-write</access>
+            </field>
+
+            <!-- DEST_MSIZE Field -->
+            <field>
+               <name>DEST_MSIZE</name>
+               <description>
+                  Number of data items per destination burst transaction.
+               </description>
+               <bitRange>[13:11]</bitRange>
+               <access>read-write</access>
+            </field>
+
+            <!-- SINC Field -->
+            <field>
+               <name>SINC</name>
+               <description>
+                  Source Address Increment. Indicates increment behavior for source address.
+               </description>
+               <bitRange>[10:9]</bitRange>
+               <access>read-write</access>
+            </field>
+            
+            <!-- DINC Field -->
+            <field>
+               <name>DINC</name>
+               <description>
+                  Destination Address Increment. Indicates increment behavior for destination address.
+               </description>
+               <bitRange>[8:7]</bitRange>
+               <access>read-write</access>
+            </field>
+
+            <!-- SRC_TR_WIDTH Field -->
+            <field>
+               <name>SRC_TR_WIDTH</name>
+               <description>
+                  Source Transfer Width. Specifies width of data transfer from source.
+               </description>
+               <bitRange>[6:4]</bitRange>
+               <access>read-write</access>
+            </field>
+
+            <!-- DST_TR_WIDTH Field -->
+            <field>
+               <name>DST_TR_WIDTH</name>
+               <description>
+                  Destination Transfer Width. Specifies width of data transfer to destination.
+               </description>
+               <bitRange>[3:1]</bitRange>
+               <access>read-write</access>
+            </field>
+
+            <!-- INT_EN Field -->
+            <field>
+               <name>INT_EN</name>
+               <description>
+                  Interrupt Enable Bit. Globally enables interrupt sources for the channel.
+               </description>
+               <bitRange>[0:0]</bitRange>
+               <access>read-write</access>
+            </field>
+         </fields>
 				</register>
+
+        <register derivedFrom="CTL0_L">
+          <name>CTL1_L</name>
+          <description>Channel 1 low-32bits Control Register</description>
+          <addressOffset>0x070</addressOffset>
+        </register>
+
+        <register derivedFrom="CTL0_L">
+          <name>CTL2_L</name>
+          <description>Channel 2 low-32bits Control Register</description>
+          <addressOffset>0x0c8</addressOffset>
+        </register>
+
+        <register derivedFrom="CTL0_L">
+          <name>CTL3_L</name>
+          <description>Channel 3 low-32bits Control Register</description>
+          <addressOffset>0x120</addressOffset>
+        </register>
+
+        <register derivedFrom="CTL0_L">
+          <name>CTL4_L</name>
+          <description>Channel 4 low-32bits Control Register</description>
+          <addressOffset>0x178</addressOffset>
+        </register>
+
+        <register derivedFrom="CTL0_L">
+          <name>CTL5_L</name>
+          <description>Channel 5 low-32bits Control Register</description>
+          <addressOffset>0x1d0</addressOffset>
+        </register>
+
+        <register derivedFrom="CTL0_L">
+          <name>CTL6_L</name>
+          <description>Channel 6 low-32bits Control Register</description>
+          <addressOffset>0x228</addressOffset>
+        </register>
+
+        <register derivedFrom="CTL0_L">
+          <name>CTL7_L</name>
+          <description>Channel 7 low-32bits Control Register</description>
+          <addressOffset>0x280</addressOffset>
+        </register>
 
 				<!-- CTL0_H -->
 				<register>
@@ -2016,7 +2178,61 @@
 						<size>32</size>
 						<access>read-write</access>
 						<resetValue>0xFFFFFFFF</resetValue> <!-- Placeholder for configuration-dependent reset value -->
+          <fields>
+              <!-- BLOCK_TS Field -->
+              <field>
+                  <name>BLOCK_TS</name>
+                  <description>
+                      Block Transfer Size. Configures single transaction counts per block, subject to AXI beat mapping.
+                  </description>
+                  <bitRange>[31:0]</bitRange> <!-- Bit width needs determination based on design specifics -->
+                  <access>read-write</access>
+              </field>
+          </fields>
 				</register>
+
+        <!-- CTL1_H Register Derived from CTL0_H -->
+        <register derivedFrom="CTL0_H">
+            <name>CTL1_H</name>
+            <description>Channel 1 low-32bits Control Register</description>
+            <addressOffset>0x74</addressOffset>
+        </register>
+
+        <register derivedFrom="CTL0_H">
+            <name>CTL2_H</name>
+            <description>Channel 2 high-32bits Control Register</description>
+            <addressOffset>0x0CC</addressOffset>
+        </register>
+
+        <register derivedFrom="CTL0_H">
+            <name>CTL3_H</name>
+            <description>Channel 3 high-32bits Control Register</description>
+            <addressOffset>0x124</addressOffset>
+        </register>
+
+        <register derivedFrom="CTL0_H">
+            <name>CTL4_H</name>
+            <description>Channel 4 high-32bits Control Register</description>
+            <addressOffset>0x17C</addressOffset>
+        </register>
+
+        <register derivedFrom="CTL0_H">
+            <name>CTL5_H</name>
+            <description>Channel 5 high-32bits Control Register</description>
+            <addressOffset>0x1D4</addressOffset>
+        </register>
+
+        <register derivedFrom="CTL0_H">
+            <name>CTL6_H</name>
+            <description>Channel 6 high-32bits Control Register</description>
+            <addressOffset>0x22C</addressOffset>
+        </register>
+
+        <register derivedFrom="CTL0_H">
+            <name>CTL7_H</name>
+            <description>Channel 7 high-32bits Control Register</description>
+            <addressOffset>0x284</addressOffset>
+        </register>
 
 				<!-- BLK_COUNTER_REG0 -->
 				<register>
@@ -2046,7 +2262,171 @@
 						<size>32</size>
 						<access>read-write</access>
 						<resetValue>0x00000E00</resetValue>
+
+            <fields>
+                <!-- RELOAD_DST Field -->
+                <field>
+                    <name>RELOAD_DST</name>
+                    <description>
+                        Automatic Destination Reload. Reloads DARx register from its initial value at the end of every block for multi-block transfers.
+                    </description>
+                    <bitRange>[31:31]</bitRange>
+                    <access>read-write</access>
+                </field>
+
+                <!-- RELOAD_SRC Field -->
+                <field>
+                    <name>RELOAD_SRC</name>
+                    <description>
+                        Automatic Source Reload. Reloads SARx register from its initial value at the end of every block for multi-block transfers.
+                    </description>
+                    <bitRange>[30:30]</bitRange>
+                    <access>read-write</access>
+                </field>
+
+                <!-- SRC_HS_POL Field -->
+                <field>
+                    <name>SRC_HS_POL</name>
+                    <description>
+                        Source Handshaking Interface Polarity.
+                    </description>
+                    <bitRange>[19:19]</bitRange>
+                    <access>read-only</access>
+                </field>
+
+                <!-- DST_HS_POL Field -->
+                <field>
+                    <name>DST_HS_POL</name>
+                    <description>
+                        Destination Handshaking Interface Polarity.
+                    </description>
+                    <bitRange>[18:18]</bitRange>
+                    <access>read-only</access>
+                </field>
+
+                <!-- HS_SEL_SRC Field -->
+                <field>
+                    <name>HS_SEL_SRC</name>
+                    <description>
+                        Source Software or Hardware Handshaking Select.
+                    </description>
+                    <bitRange>[11:11]</bitRange>
+                    <access>read-write</access>
+                </field>
+
+                <!-- HS_SEL_DST Field -->
+                <field>
+                    <name>HS_SEL_DST</name>
+                    <description>
+                        Destination Software or Hardware Handshaking Select.
+                    </description>
+                    <bitRange>[10:10]</bitRange>
+                    <access>read-write</access>
+                </field>
+
+                <!-- FIFO_EMPTY Field -->
+                <field>
+                    <name>FIFO_EMPTY</name>
+                    <description>
+                        Indicates if there is data left in the channel FIFO.
+                    </description>
+                    <bitRange>[9:9]</bitRange>
+                </field>
+
+                <!-- CH_SUSP Field -->
+                <field>
+                    <name>CH_SUSP</name>
+                    <description>
+                        Channel Suspend. Suspends all DMA data transfers from the source until this bit is cleared.
+                    </description>
+                    <bitRange>[8:8]</bitRange>
+                    <access>read-write</access>
+                </field>
+
+                <!-- CH_PRIOR Field -->
+                <field>
+                    <name>CH_PRIOR</name>
+                    <description>
+                        Channel priority configuration.
+                    </description>
+                    <bitRange>[7:4]</bitRange>
+                    <access>read-write</access>
+                </field>
+
+                <!-- DST_PCTL_OVER Field -->
+                <field>
+                    <name>DST_PCTL_OVER</name>
+                    <description>
+                        DMA destination bus protocol finish indicator.
+                    </description>
+                    <bitRange>[2:2]</bitRange>
+                    <access>read-only</access>
+                </field>
+
+                <!-- SRC_PCTL_OVER Field -->
+                <field>
+                    <name>SRC_PCTL_OVER</name>
+                    <description>
+                        DMA Source bus protocol finish indicator.
+                    </description>
+                    <bitRange>[1:1]</bitRange>
+                    <access>read-only</access>
+                </field>
+
+                <!-- INACTIVE Field -->
+                <field>
+                    <name>INACTIVE</name>
+                    <description>
+                        Indicates if the channel is inactive.
+                    </description>
+                    <bitRange>[0:0]</bitRange>
+                    <access>read-only</access>
+                </field>
+            </fields>
 				</register>
+
+        <!-- Derived CFGx_L Registers -->
+        <register derivedFrom="CFG0_L">
+            <name>CFG1_L</name>
+            <description>Channel 1 low-32bits Configuration Register</description>
+            <addressOffset>0x098</addressOffset>
+        </register>
+
+        <register derivedFrom="CFG0_L">
+            <name>CFG2_L</name>
+            <description>Channel 2 low-32bits Configuration Register</description>
+            <addressOffset>0x0F0</addressOffset>
+        </register>
+
+        <register derivedFrom="CFG0_L">
+            <name>CFG3_L</name>
+            <description>Channel 3 low-32bits Configuration Register</description>
+            <addressOffset>0x148</addressOffset>
+        </register>
+        
+        <register derivedFrom="CFG0_L">
+            <name>CFG4_L</name>
+            <description>Channel 4 low-32bits Configuration Register</description>
+            <addressOffset>0x1A0</addressOffset>
+        </register>
+
+        <register derivedFrom="CFG0_L">
+            <name>CFG5_L</name>
+            <description>Channel 5 low-32bits Configuration Register</description>
+            <addressOffset>0x1F8</addressOffset>
+        </register>
+
+        <register derivedFrom="CFG0_L">
+            <name>CFG6_L</name>
+            <description>Channel 6 low-32bits Configuration Register</description>
+            <addressOffset>0x250</addressOffset>
+        </register>
+
+        <register derivedFrom="CFG0_L">
+            <name>CFG7_L</name>
+            <description>Channel 7 low-32bits Configuration Register</description>
+            <addressOffset>0x2A8</addressOffset>
+        </register>
 
 				<!-- CFG0_H -->
 				<register>
@@ -2056,7 +2436,182 @@
 						<size>32</size>
 						<access>read-write</access>
 						<resetValue>0x00000008</resetValue>
+            <fields>
+              <!-- Extended_DEST_PER3 Field -->
+              <field>
+                  <name>Extended_DEST_PER3</name>
+                  <description>
+                      Extended 6th bit of DEST_PER if hardware handshake interfaces are configured to (64, 128].
+                  </description>
+                  <bitRange>[20:20]</bitRange>
+                  <access>read-write</access>
+              </field>
+
+              <!-- Extended_SRC_PER3 Field -->
+              <field>
+                  <name>Extended_SRC_PER3</name>
+                  <description>
+                      Extended 6th bit of SRC_PER if hardware handshake interfaces are configured to (64, 128].
+                  </description>
+                  <bitRange>[19:19]</bitRange>
+                  <access>read-write</access>
+              </field>
+
+              <!-- Extended_DEST_PER2 Field -->
+              <field>
+                  <name>Extended_DEST_PER2</name>
+                  <description>
+                      Extended 5th bit of DEST_PER if hardware handshake interfaces are configured to (32, 128].
+                  </description>
+                  <bitRange>[18:18]</bitRange>
+                  <access>read-write</access>
+              </field>
+
+              <!-- Extended_SRC_PER2 Field -->
+              <field>
+                  <name>Extended_SRC_PER2</name>
+                  <description>
+                      Extended 5th bit of SRC_PER if hardware handshake interfaces are configured to (32, 128].
+                  </description>
+                  <bitRange>[17:17]</bitRange>
+                  <access>read-write</access>
+              </field>
+
+              <!-- Extended_DEST_PER1 Field -->
+              <field>
+                  <name>Extended_DEST_PER1</name>
+                  <description>
+                      Extended 4th bit of DEST_PER if hardware handshake interfaces are configured to (16, 128].
+                  </description>
+                  <bitRange>[16:16]</bitRange>
+                  <access>read-write</access>
+              </field>
+
+              <!-- Extended_SRC_PER1 Field -->
+              <field>
+                  <name>Extended_SRC_PER1</name>
+                  <description>
+                      Extended 4th bit of SRC_PER if hardware handshake interfaces are configured to (16, 128].
+                  </description>
+                  <bitRange>[15:15]</bitRange>
+                  <access>read-write</access>
+              </field>
+
+              <!-- DEST_PER Field -->
+              <field>
+                  <name>DEST_PER</name>
+                  <description>
+                      Assigns a hardware handshaking interface for the destination of channel x.
+                  </description>
+                  <bitRange>[14:11]</bitRange>
+                  <access>read-write</access>
+              </field>
+
+              <!-- SRC_PER Field -->
+              <field>
+                  <name>SRC_PER</name>
+                  <description>
+                      Assigns a hardware handshaking interface for the source of channel x.
+                  </description>
+                  <bitRange>[10:7]</bitRange>
+                  <access>read-write</access>
+              </field>
+
+              <!-- CONT_DAR Field -->
+              <field>
+                  <name>CONT_DAR</name>
+                  <description>
+                      Continuous for DAR between single block.
+                  </description>
+                  <bitRange>[6:6]</bitRange>
+                  <access>read-write</access>
+              </field>
+
+              <!-- CONT_SAR Field -->
+              <field>
+                  <name>CONT_SAR</name>
+                  <description>
+                      Continuous for SAR between single block.
+                  </description>
+                  <bitRange>[5:5]</bitRange>
+                  <access>read-write</access>
+              </field>
+
+              <!-- DIRECT_CTL_EN Field -->
+              <field>
+                  <name>DIRECT_CTL_EN</name>
+                  <description>
+                      Direct Control for channel enabling.
+                  </description>
+                  <bitRange>[4:4]</bitRange>
+                  <access>read-write</access>
+              </field>
+
+              <!-- PROTCTL Field -->
+              <field>
+                  <name>PROTCTL</name>
+                  <description>
+                      Protection Control bit for secure transfers.
+                  </description>
+                  <bitRange>[3:3]</bitRange>
+                  <access>read-write</access>
+              </field>
+
+              <!-- FCMODE Field -->
+              <field>
+                  <name>FCMODE</name>
+                  <description>
+                      Flow Control Mode.
+                  </description>
+                  <bitRange>[0:0]</bitRange>
+                  <access>read-write</access>
+              </field>
+          </fields>
 				</register>
+
+        <!-- Derived CFGx_H Registers -->
+        <register derivedFrom="CFG0_H">
+            <name>CFG1_H</name>
+            <description>Channel 1 high-32bits Configuration Register</description>
+            <addressOffset>0x09C</addressOffset>
+        </register>
+
+        <register derivedFrom="CFG0_H">
+            <name>CFG2_H</name>
+            <description>Channel 2 high-32bits Configuration Register</description>
+            <addressOffset>0x0F4</addressOffset>
+        </register>
+
+        <register derivedFrom="CFG0_H">
+            <name>CFG3_H</name>
+            <description>Channel 3 high-32bits Configuration Register</description>
+            <addressOffset>0x14C</addressOffset>
+        </register>
+
+        <register derivedFrom="CFG0_H">
+            <name>CFG4_H</name>
+            <description>Channel 4 high-32bits Configuration Register</description>
+            <addressOffset>0x1A4</addressOffset>
+        </register>
+
+        <register derivedFrom="CFG0_H">
+            <name>CFG5_H</name>
+            <description>Channel 5 high-32bits Configuration Register</description>
+            <addressOffset>0x1FC</addressOffset>
+        </register>
+
+        <register derivedFrom="CFG0_H">
+            <name>CFG6_H</name>
+            <description>Channel 6 high-32bits Configuration Register</description>
+            <addressOffset>0x254</addressOffset>
+        </register>
+
+        <register derivedFrom="CFG0_H">
+            <name>CFG7_H</name>
+            <description>Channel 7 high-32bits Configuration Register</description>
+            <addressOffset>0x2AC</addressOffset>
+        </register>
+
 
 				<!-- SGR0_L -->
 				<register>
@@ -2066,7 +2621,74 @@
 						<size>32</size>
 						<access>read-write</access>
 						<resetValue>0x00000000</resetValue>
-				</register>
+
+            <fields>
+                <!-- SGC Field -->
+                <field>
+                    <name>SGC</name>
+                    <description>
+                        Source gather count. Source contiguous transfer count between successive gather boundaries.
+                    </description>
+                    <bitRange>[31:20]</bitRange>
+                    <access>read-write</access>
+                </field>
+
+                <!-- SGI Field -->
+                <field>
+                    <name>SGI</name>
+                    <description>
+                        Source gather interval.
+                    </description>
+                    <bitRange>[19:0]</bitRange>
+                    <access>read-write</access>
+                </field>
+            </fields>
+        </register>
+
+
+        <!-- Derived SGRx_L Registers -->
+        <register derivedFrom="SGR0_L">
+            <name>SGR1_L</name>
+            <description>Channel 1 Source Gather Configuration Register</description>
+            <addressOffset>0x0A0</addressOffset>
+        </register>
+
+        <register derivedFrom="SGR0_L">
+            <name>SGR2_L</name>
+            <description>Channel 2 Source Gather Configuration Register</description>
+            <addressOffset>0x0F8</addressOffset>
+        </register>
+
+        <register derivedFrom="SGR0_L">
+            <name>SGR3_L</name>
+            <description>Channel 3 Source Gather Configuration Register</description>
+            <addressOffset>0x150</addressOffset>
+        </register>
+
+        <register derivedFrom="SGR0_L">
+            <name>SGR4_L</name>
+            <description>Channel 4 Source Gather Configuration Register</description>
+            <addressOffset>0x1A8</addressOffset>
+        </register>
+
+        <register derivedFrom="SGR0_L">
+            <name>SGR5_L</name>
+            <description>Channel 5 Source Gather Configuration Register</description>
+            <addressOffset>0x200</addressOffset>
+        </register>
+
+        <register derivedFrom="SGR0_L">
+            <name>SGR6_L</name>
+            <description>Channel 6 Source Gather Configuration Register</description>
+            <addressOffset>0x258</addressOffset>
+        </register>
+
+        <register derivedFrom="SGR0_L">
+            <name>SGR7_L</name>
+            <description>Channel 7 Source Gather Configuration Register</description>
+            <addressOffset>0x2B0</addressOffset>
+        </register>
+
 
 				<!-- SGR0_H -->
 				<register>
@@ -2076,7 +2698,72 @@
 						<size>32</size>
 						<access>read-write</access>
 						<resetValue>0x00020000</resetValue>
+
+            <fields>
+              <!-- BLOCK_TS_L Field -->
+              <field>
+                  <name>BLOCK_TS_L</name>
+                  <description>
+                      Low 16-bits of Block Transfer Size. Indicates the total number of single transactions per block transfer.
+                  </description>
+                  <bitRange>[31:16]</bitRange>
+                  <access>read</access>
+              </field>
+
+              <!-- SGSN Field -->
+              <field>
+                  <name>SGSN</name>
+                  <description>
+                      Source gather circular streaming number. Enables circular gather feature if set greater than 1.
+                  </description>
+                  <bitRange>[15:0]</bitRange>
+                  <access>read-write</access>
+              </field>
+          </fields>
 				</register>
+
+        <!-- Derived SGRx_H Registers -->
+        <register derivedFrom="SGR0_H">
+            <name>SGR1_H</name>
+            <description>Channel 1 Source Gather High Configuration Register</description>
+            <addressOffset>0x0A4</addressOffset>
+        </register>
+
+        <register derivedFrom="SGR0_H">
+            <name>SGR2_H</name>
+            <description>Channel 2 Source Gather High Configuration Register</description>
+            <addressOffset>0x0FC</addressOffset>
+        </register>
+
+        <register derivedFrom="SGR0_H">
+            <name>SGR3_H</name>
+            <description>Channel 3 Source Gather High Configuration Register</description>
+            <addressOffset>0x154</addressOffset>
+        </register>
+
+        <register derivedFrom="SGR0_H">
+            <name>SGR4_H</name>
+            <description>Channel 4 Source Gather High Configuration Register</description>
+            <addressOffset>0x1AC</addressOffset>
+        </register>
+
+        <register derivedFrom="SGR0_H">
+            <name>SGR5_H</name>
+            <description>Channel 5 Source Gather High Configuration Register</description>
+            <addressOffset>0x204</addressOffset>
+        </register>
+
+        <register derivedFrom="SGR0_H">
+            <name>SGR6_H</name>
+            <description>Channel 6 Source Gather High Configuration Register</description>
+            <addressOffset>0x25C</addressOffset>
+        </register>
+
+        <register derivedFrom="SGR0_H">
+            <name>SGR7_H</name>
+            <description>Channel 7 Source Gather High Configuration Register</description>
+            <addressOffset>0x2B4</addressOffset>
+        </register>
 
 				<!-- DSR0_L -->
 				<register>
@@ -2159,25 +2846,7 @@
 						<resetValue>0x00000000</resetValue>
 				</register>
 
-				<!-- CTL1_L -->
-				<register>
-						<name>CTL1_L</name>
-						<description>Channel 1 low-32bits Control Register</description>
-						<addressOffset>0x070</addressOffset>
-						<size>32</size>
-						<access>read-write</access>
-						<resetValue>0xFFFFFFFF</resetValue> <!-- Placeholder for configuration-dependent reset value -->
-				</register>
 
-				<!-- CTL1_H -->
-				<register>
-						<name>CTL1_H</name>
-						<description>Channel 1 high-32bits Control Register</description>
-						<addressOffset>0x074</addressOffset>
-						<size>32</size>
-						<access>read-write</access>
-						<resetValue>0xFFFFFFFF</resetValue> <!-- Placeholder for configuration-dependent reset value -->
-				</register>
 
 				<!-- BLK_COUNTER_REG1 -->
 				<register>
@@ -2197,46 +2866,6 @@
 						<size>32</size>
 						<access>read-write</access>
 						<resetValue>0x00000000</resetValue>
-				</register>
-				
-				<!-- CFG1_L -->
-				<register>
-						<name>CFG1_L</name>
-						<description>Channel 1 low-32bits Configuration Register</description>
-						<addressOffset>0x098</addressOffset>
-						<size>32</size>
-						<access>read-write</access>
-						<resetValue>0x00000E00</resetValue>
-				</register>
-
-				<!-- CFG1_H -->
-				<register>
-						<name>CFG1_H</name>
-						<description>Channel 1 high-32bits Configuration Register</description>
-						<addressOffset>0x09C</addressOffset>
-						<size>32</size>
-						<access>read-write</access>
-						<resetValue>0x00000008</resetValue>
-				</register>
-
-				<!-- SGR1_L -->
-				<register>
-						<name>SGR1_L</name>
-						<description>Channel 1 low-32bits Source Gather Register</description>
-						<addressOffset>0x0A0</addressOffset>
-						<size>32</size>
-						<access>read-write</access>
-						<resetValue>0x00000000</resetValue>
-				</register>
-
-				<!-- SGR1_H -->
-				<register>
-						<name>SGR1_H</name>
-						<description>Channel 1 high-32bits Source Gather Register</description>
-						<addressOffset>0x0A4</addressOffset>
-						<size>32</size>
-						<access>read-write</access>
-						<resetValue>0x00020000</resetValue>
 				</register>
 
 				<!-- DSR1_L -->
@@ -2320,25 +2949,6 @@
 						<resetValue>0x00000000</resetValue>
 				</register>
 
-				<!-- CTL2_L -->
-				<register>
-						<name>CTL2_L</name>
-						<description>Channel 2 low-32bits Control Register</description>
-						<addressOffset>0x0C8</addressOffset>
-						<size>32</size>
-						<access>read-write</access>
-						<resetValue>0xFFFFFFFF</resetValue> <!-- Placeholder for configuration-dependent reset value -->
-				</register>
-
-				<!-- CTL2_H -->
-				<register>
-						<name>CTL2_H</name>
-						<description>Channel 2 high-32bits Control Register</description>
-						<addressOffset>0x0CC</addressOffset>
-						<size>32</size>
-						<access>read-write</access>
-						<resetValue>0xFFFFFFFF</resetValue> <!-- Placeholder for configuration-dependent reset value -->
-				</register>
 
 				<!-- BLK_COUNTER_REG2 -->
 				<register>
@@ -2358,46 +2968,6 @@
 						<size>32</size>
 						<access>read-write</access>
 						<resetValue>0x00000000</resetValue>
-				</register>
-
-				<!-- CFG2_L -->
-				<register>
-						<name>CFG2_L</name>
-						<description>Channel 2 low-32bits Configuration Register</description>
-						<addressOffset>0x0F0</addressOffset>
-						<size>32</size>
-						<access>read-write</access>
-						<resetValue>0x00000E00</resetValue>
-				</register>
-
-				<!-- CFG2_H -->
-				<register>
-						<name>CFG2_H</name>
-						<description>Channel 2 high-32bits Configuration Register</description>
-						<addressOffset>0x0F4</addressOffset>
-						<size>32</size>
-						<access>read-write</access>
-						<resetValue>0x00000008</resetValue>
-				</register>
-
-				<!-- SGR2_L -->
-				<register>
-						<name>SGR2_L</name>
-						<description>Channel 2 low-32bits Source Gather Register</description>
-						<addressOffset>0x0F8</addressOffset>
-						<size>32</size>
-						<access>read-write</access>
-						<resetValue>0x00000000</resetValue>
-				</register>
-
-				<!-- SGR2_H -->
-				<register>
-						<name>SGR2_H</name>
-						<description>Channel 2 high-32bits Source Gather Register</description>
-						<addressOffset>0x0FC</addressOffset>
-						<size>32</size>
-						<access>read-write</access>
-						<resetValue>0x00020000</resetValue>
 				</register>
 
 				<!-- DSR2_L -->
@@ -2481,26 +3051,6 @@
 						<resetValue>0x00000000</resetValue>
 				</register>
 
-				<!-- CTL3_L -->
-				<register>
-						<name>CTL3_L</name>
-						<description>Channel 3 low-32bits Control Register</description>
-						<addressOffset>0x120</addressOffset>
-						<size>32</size>
-						<access>read-write</access>
-						<resetValue>0xFFFFFFFF</resetValue> <!-- Placeholder for configuration-dependent reset value -->
-				</register>
-
-				<!-- CTL3_H -->
-				<register>
-						<name>CTL3_H</name>
-						<description>Channel 3 high-32bits Control Register</description>
-						<addressOffset>0x124</addressOffset>
-						<size>32</size>
-						<access>read-write</access>
-						<resetValue>0xFFFFFFFF</resetValue> <!-- Placeholder for configuration-dependent reset value -->
-				</register>
-
 				<!-- BLK_COUNTER_REG3 -->
 				<register>
 						<name>BLK_COUNTER_REG3</name>
@@ -2519,47 +3069,6 @@
 						<size>32</size>
 						<access>read-write</access>
 						<resetValue>0x00000000</resetValue>
-				</register>
-
-				<!-- Channel 3 Configuration and Scatter-Gather Registers -->
-				<!-- CFG3_L -->
-				<register>
-						<name>CFG3_L</name>
-						<description>Channel 3 low-32bits Configuration Register</description>
-						<addressOffset>0x148</addressOffset>
-						<size>32</size>
-						<access>read-write</access>
-						<resetValue>0x00000E00</resetValue>
-				</register>
-
-				<!-- CFG3_H -->
-				<register>
-						<name>CFG3_H</name>
-						<description>Channel 3 high-32bits Configuration Register</description>
-						<addressOffset>0x14C</addressOffset>
-						<size>32</size>
-						<access>read-write</access>
-						<resetValue>0x00000008</resetValue>
-				</register>
-
-				<!-- SGR3_L -->
-				<register>
-						<name>SGR3_L</name>
-						<description>Channel 3 low-32bits Source Gather Register</description>
-						<addressOffset>0x150</addressOffset>
-						<size>32</size>
-						<access>read-write</access>
-						<resetValue>0x00000000</resetValue>
-				</register>
-
-				<!-- SGR3_H -->
-				<register>
-						<name>SGR3_H</name>
-						<description>Channel 3 high-32bits Source Gather Register</description>
-						<addressOffset>0x154</addressOffset>
-						<size>32</size>
-						<access>read-write</access>
-						<resetValue>0x00020000</resetValue>
 				</register>
 
 				<!-- DSR3_L -->
@@ -2643,26 +3152,6 @@
 						<resetValue>0x00000000</resetValue>
 				</register>
 
-				<!-- CTL4_L -->
-				<register>
-						<name>CTL4_L</name>
-						<description>Channel 4 low-32bits Control Register</description>
-						<addressOffset>0x178</addressOffset>
-						<size>32</size>
-						<access>read-write</access>
-						<resetValue>0xFFFFFFFF</resetValue> <!-- Placeholder for configuration-dependent reset value -->
-				</register>
-
-				<!-- CTL4_H -->
-				<register>
-						<name>CTL4_H</name>
-						<description>Channel 4 high-32bits Control Register</description>
-						<addressOffset>0x17C</addressOffset>
-						<size>32</size>
-						<access>read-write</access>
-						<resetValue>0xFFFFFFFF</resetValue> <!-- Placeholder for configuration-dependent reset value -->
-				</register>
-
 				<!-- BLK_COUNTER_REG4 -->
 				<register>
 						<name>BLK_COUNTER_REG4</name>
@@ -2681,46 +3170,6 @@
 						<size>32</size>
 						<access>read-write</access>
 						<resetValue>0x00000000</resetValue>
-				</register>
-
-				<!-- CFG4_L -->
-				<register>
-						<name>CFG4_L</name>
-						<description>Channel 4 low-32bits Configuration Register</description>
-						<addressOffset>0x1A0</addressOffset>
-						<size>32</size>
-						<access>read-write</access>
-						<resetValue>0x00000E00</resetValue>
-				</register>
-
-				<!-- CFG4_H -->
-				<register>
-						<name>CFG4_H</name>
-						<description>Channel 4 high-32bits Configuration Register</description>
-						<addressOffset>0x1A4</addressOffset>
-						<size>32</size>
-						<access>read-write</access>
-						<resetValue>0x00000008</resetValue>
-				</register>
-
-				<!-- SGR4_L -->
-				<register>
-						<name>SGR4_L</name>
-						<description>Channel 4 low-32bits Source Gather Register</description>
-						<addressOffset>0x1A8</addressOffset>
-						<size>32</size>
-						<access>read-write</access>
-						<resetValue>0x00000000</resetValue>
-				</register>
-
-				<!-- SGR4_H -->
-				<register>
-						<name>SGR4_H</name>
-						<description>Channel 4 high-32bits Source Gather Register</description>
-						<addressOffset>0x1AC</addressOffset>
-						<size>32</size>
-						<access>read-write</access>
-						<resetValue>0x00020000</resetValue>
 				</register>
 
 				<!-- DSR4_L -->
@@ -2804,26 +3253,6 @@
 						<resetValue>0x00000000</resetValue>
 				</register>
 
-				<!-- CTL5_L -->
-				<register>
-						<name>CTL5_L</name>
-						<description>Channel 5 low-32bits Control Register</description>
-						<addressOffset>0x1D0</addressOffset>
-						<size>32</size>
-						<access>read-write</access>
-						<resetValue>0xFFFFFFFF</resetValue> <!-- Placeholder for configuration-dependent reset value -->
-				</register>
-
-				<!-- CTL5_H -->
-				<register>
-						<name>CTL5_H</name>
-						<description>Channel 5 high-32bits Control Register</description>
-						<addressOffset>0x1D4</addressOffset>
-						<size>32</size>
-						<access>read-write</access>
-						<resetValue>0xFFFFFFFF</resetValue> <!-- Placeholder for configuration-dependent reset value -->
-				</register>
-
 				<!-- BLK_COUNTER_REG5 -->
 				<register>
 						<name>BLK_COUNTER_REG5</name>
@@ -2842,46 +3271,6 @@
 						<size>32</size>
 						<access>read-write</access>
 						<resetValue>0x00000000</resetValue>
-				</register>
-
-				<!-- CFG5_L -->
-				<register>
-						<name>CFG5_L</name>
-						<description>Channel 5 low-32bits Configuration Register</description>
-						<addressOffset>0x1F8</addressOffset>
-						<size>32</size>
-						<access>read-write</access>
-						<resetValue>0x00000E00</resetValue>
-				</register>
-
-				<!-- CFG5_H -->
-				<register>
-						<name>CFG5_H</name>
-						<description>Channel 5 high-32bits Configuration Register</description>
-						<addressOffset>0x1FC</addressOffset>
-						<size>32</size>
-						<access>read-write</access>
-						<resetValue>0x00000008</resetValue>
-				</register>
-
-				<!-- SGR5_L -->
-				<register>
-						<name>SGR5_L</name>
-						<description>Channel 5 low-32bits Source Gather Register</description>
-						<addressOffset>0x200</addressOffset>
-						<size>32</size>
-						<access>read-write</access>
-						<resetValue>0x00000000</resetValue>
-				</register>
-
-				<!-- SGR5_H -->
-				<register>
-						<name>SGR5_H</name>
-						<description>Channel 5 high-32bits Source Gather Register</description>
-						<addressOffset>0x204</addressOffset>
-						<size>32</size>
-						<access>read-write</access>
-						<resetValue>0x00020000</resetValue>
 				</register>
 
 				<!-- DSR5_L -->
@@ -2962,24 +3351,6 @@
 				</register>
 
 				<register>
-						<name>CTL6_L</name>
-						<description>Channel 6 low-32bits Control Register</description>
-						<addressOffset>0x228</addressOffset>
-						<size>32</size>
-						<access>read-write</access>
-						<resetValue>0xFFFFFFFF</resetValue> <!-- Configuration dependent -->
-				</register>
-
-				<register>
-						<name>CTL6_H</name>
-						<description>Channel 6 high-32bits Control Register</description>
-						<addressOffset>0x22C</addressOffset>
-						<size>32</size>
-						<access>read-write</access>
-						<resetValue>0xFFFFFFFF</resetValue> <!-- Configuration dependent -->
-				</register>
-
-				<register>
 						<name>BLK_COUNTER_REG6</name>
 						<description>Channel 6 32bits Block Counter Register</description>
 						<addressOffset>0x230</addressOffset>
@@ -3057,26 +3428,6 @@
 						<resetValue>0x00000000</resetValue>
 				</register>
 
-				<!-- CTL7_L -->
-				<register>
-						<name>CTL7_L</name>
-						<description>Channel 7 low-32bits Control Register</description>
-						<addressOffset>0x280</addressOffset>
-						<size>32</size>
-						<access>read-write</access>
-						<resetValue>0xFFFFFFFF</resetValue> <!-- Configuration dependent -->
-				</register>
-
-				<!-- CTL7_H -->
-				<register>
-						<name>CTL7_H</name>
-						<description>Channel 7 high-32bits Control Register</description>
-						<addressOffset>0x284</addressOffset>
-						<size>32</size>
-						<access>read-write</access>
-						<resetValue>0xFFFFFFFF</resetValue> <!-- Configuration dependent -->
-				</register>
-
 				<!-- BLK_COUNTER_REG7 -->
 				<register>
 						<name>BLK_COUNTER_REG7</name>
@@ -3095,46 +3446,6 @@
 						<size>32</size>
 						<access>read-write</access>
 						<resetValue>0x00000000</resetValue>
-				</register>
-
-				<!-- CFG7_L -->
-				<register>
-						<name>CFG7_L</name>
-						<description>Channel 7 low-32bits Configuration Register</description>
-						<addressOffset>0x2A8</addressOffset>
-						<size>32</size>
-						<access>read-write</access>
-						<resetValue>0x00000E00</resetValue>
-				</register>
-
-				<!-- CFG7_H -->
-				<register>
-						<name>CFG7_H</name>
-						<description>Channel 7 high-32bits Configuration Register</description>
-						<addressOffset>0x2AC</addressOffset>
-						<size>32</size>
-						<access>read-write</access>
-						<resetValue>0x00000008</resetValue>
-				</register>
-
-				<!-- SGR7_L -->
-				<register>
-						<name>SGR7_L</name>
-						<description>Channel 7 low-32bits Source Gather Register</description>
-						<addressOffset>0x2B0</addressOffset>
-						<size>32</size>
-						<access>read-write</access>
-						<resetValue>0x00000000</resetValue>
-				</register>
-
-				<!-- SGR7_H -->
-				<register>
-						<name>SGR7_H</name>
-						<description>Channel 7 high-32bits Source Gather Register</description>
-						<addressOffset>0x2B4</addressOffset>
-						<size>32</size>
-						<access>read-write</access>
-						<resetValue>0x00020000</resetValue>
 				</register>
 
 				<!-- DSR7_L -->
@@ -3325,6 +3636,59 @@
 						<size>32</size>
 						<access>read-only</access>
 						<resetValue>0x00000000</resetValue>
+            <fields>
+                <!-- Undefined/Reserved Bits -->
+                <field>
+                    <name>Reserved</name>
+                    <description>Reserved for future use</description>
+                    <bitRange>[31:7]</bitRange>
+                    <access>read-only</access>
+                </field>
+
+                <!-- Block Counter Field -->
+                <field>
+                    <name>Block_Counter</name>
+                    <description>
+                        Reserved Condition: OR of the StatusTfr_H register contents if DMAC_CHx_SUPPORT_BLK_COUNTER is defined. Otherwise, 0.
+                    </description>
+                    <bitRange>[6:6]</bitRange>
+                    <access>read-only</access>
+                </field>
+
+                <!-- 1_2_Block Field -->
+                <field>
+                    <name>1_2_Block</name>
+                    <description>
+                        Reserved Condition: OR of the Status_1_2_Block register contents if DMAC_1_2_BLK_TRANSFER_INT is defined. Otherwise, 0.
+                    </description>
+                    <bitRange>[5:5]</bitRange>
+                    <access>read-only</access>
+                </field>
+
+                <!-- Error Field -->
+                <field>
+                    <name>Error</name>
+                    <description>OR of the contents of StatusErr register.</description>
+                    <bitRange>[4:4]</bitRange>
+                    <access>read-only</access>
+                </field>
+
+                <!-- Block Field -->
+                <field>
+                    <name>Block</name>
+                    <description>OR of the contents of StatusBlock register.</description>
+                    <bitRange>[1:1]</bitRange>
+                    <access>read-only</access>
+                </field>
+
+                <!-- Tfr Field -->
+                <field>
+                    <name>Tfr</name>
+                    <description>OR of the contents of StatusTfr_L register.</description>
+                    <bitRange>[0:0]</bitRange>
+                    <access>read-only</access>
+                </field>
+            </fields>
 				</register>
 
 				<!-- STATUSINT_H -->
@@ -3355,6 +3719,30 @@
 						<size>32</size>
 						<access>read-write</access>
 						<resetValue>0x00000000</resetValue>
+
+          <fields>
+              <!-- CH_EN_WE Field -->
+              <field>
+                  <name>CH_EN_WE</name>
+                  <description>Channel enable write enable.</description>
+                  <bitRange>[15:8]</bitRange>
+                  <access>write</access>
+              </field>
+
+              <!-- CH_EN Field -->
+              <field>
+                  <name>CH_EN</name>
+                  <description>
+                      Enables/Disables the channel. Setting this bit enables a channel; clearing it disables the channel.
+                      - 0 = Disable the Channel
+                      - 1 = Enable the Channel
+
+                      The CHENREG_L.CH_EN bit is automatically cleared by hardware after the last AXI transfer of the DMA transfer to the destination has completed. Software can poll this bit to determine when the channel is available for a new DMA transfer.
+                  </description>
+                  <bitRange>[7:0]</bitRange>
+                  <access>read-write</access>
+              </field>
+          </fields>
 				</register>
       </registers>
     </peripheral>
