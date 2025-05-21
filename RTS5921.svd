@@ -3655,9 +3655,9 @@
                     <access>read-only</access>
                 </field>
 
-                <!-- 1_2_Block Field -->
+                <!-- Block_1_2 Field -->
                 <field>
-                    <name>1_2_Block</name>
+                    <name>Block_1_2</name>
                     <description>
                         Reserved Condition: OR of the Status_1_2_Block register contents if DMAC_1_2_BLK_TRANSFER_INT is defined. Otherwise, 0.
                     </description>
