@@ -6054,6 +6054,280 @@
             <size>32</size>
             <access>read-write</access>
             <resetValue>0x00000000</resetValue>
+
+            <fields>
+                <!-- DFS Field -->
+                <field>
+                    <name>DFS</name>
+                    <description>
+                        Data Frame Size. Determines the size of the data transfer in serial frames.
+                    </description>
+                    <bitRange>[3:0]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>FRAME_04BITS</name>
+                            <description>4-bit serial data transfer</description>
+                            <value>0x3</value>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>FRAME_05BITS</name>
+                            <description>5-bit serial data transfer</description>
+                            <value>0x4</value>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>FRAME_06BITS</name>
+                            <description>6-bit serial data transfer</description>
+                            <value>0x5</value>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>FRAME_07BITS</name>
+                            <description>7-bit serial data transfer</description>
+                            <value>0x6</value>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>FRAME_08BITS</name>
+                            <description>8-bit serial data transfer</description>
+                            <value>0x7</value>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>FRAME_09BITS</name>
+                            <description>9-bit serial data transfer</description>
+                            <value>0x8</value>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>FRAME_10BITS</name>
+                            <description>10-bit serial data transfer</description>
+                            <value>0x9</value>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>FRAME_11BITS</name>
+                            <description>11-bit serial data transfer</description>
+                            <value>0xA</value>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>FRAME_12BITS</name>
+                            <description>12-bit serial data transfer</description>
+                            <value>0xB</value>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>FRAME_13BITS</name>
+                            <description>13-bit serial data transfer</description>
+                            <value>0xC</value>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>FRAME_14BITS</name>
+                            <description>14-bit serial data transfer</description>
+                            <value>0xD</value>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>FRAME_15BITS</name>
+                            <description>15-bit serial data transfer</description>
+                            <value>0xE</value>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>FRAME_16BITS</name>
+                            <description>16-bit serial data transfer</description>
+                            <value>0xF</value>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <!-- SCPH Field -->
+                <field>
+                    <name>SCPH</name>
+                    <description>
+                        Serial Clock Phase. Determines the capture edge of the serial clock in relation to the slave select signal.
+                    </description>
+                    <bitRange>[6:6]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>SCPH_MIDDLE</name>
+                            <value>0x0</value>
+                            <description>Serial clock toggles in middle of first data bit</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>SCPH_SECOND_EDGE</name>
+                            <value>0x1</value>
+                            <description>Data are captured on the second edge of the serial clock</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+
+                <!-- SCP Field -->
+                <field>
+                    <name>SCP</name>
+                    <description>
+                        Used to select the polarity of the inactive serial clock.
+                    </description>
+                    <bitRange>[7:7]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>SCLK_LOW</name>
+                            <value>0x0</value>
+                            <description>Inactive state of serial clock is low</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>SCLK_HIGH</name>
+                            <value>0x1</value>
+                            <description>Inactive state of serial clock is high</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+
+                <!-- TM Field -->
+                <field>
+                    <name>TM</name>
+                    <description>Transmit Mode</description>
+                    <bitRange>[9:8]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>TX_AND_RX</name>
+                            <value>0x0</value>
+                            <description>Transmit & receive</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>TX_ONLY</name>
+                            <value>0x1</value>
+                            <description>Transmit only mode or Write (SPI_FRF != 2'b00)</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>EEPROM_READ</name>
+                            <value>0x3</value>
+                            <description>EEPROM Read mode</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+
+                <!-- SLV_OE Field -->
+                <field>
+                    <name>SLV_OE</name>
+                    <description>Slave Output Enable</description>
+                    <bitRange>[10:10]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>DISABLED</name>
+                            <value>0x1</value>
+                            <description>Disabled</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>ENABLED</name>
+                            <value>0x0</value>
+                            <description>Enabled</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+
+                <!-- SRL Field -->
+                <field>
+                    <name>SRL</name>
+                    <description>Shift Register Loop</description>
+                    <bitRange>[11:11]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>TESTING_MODE</name>
+                            <value>0x1</value>
+                            <description>Test mode: Tx & Rx shift reg connected</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>NORMAL_MODE</name>
+                            <value>0x0</value>
+                            <description>Normal mode operation</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+
+                <!-- CFS Field -->
+                <field>
+                    <name>CFS</name>
+                    <description>Control Frame Size</description>
+                    <bitRange>[15:12]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>SIZE_01_BIT</name>
+                            <value>0x0</value>
+                            <description>1-bit Control Word</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>SIZE_02_BIT</name>
+                            <value>0x1</value>
+                            <description>2-bit Control Word</description>
+                        </enumeratedValue>
+                        <!-- Additional enumerated values for CFS -->
+                        <enumeratedValue>
+                            <name>SIZE_16_BIT</name>
+                            <value>0xf</value>
+                            <description>16-bit Control Word</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+
+                <!-- DFS_32 Field -->
+                <field>
+                    <name>DFS_32</name>
+                    <description>
+                        Varies Data Frame Size up to 32 bits.
+                    </description>
+                    <bitRange>[20:16]</bitRange>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>FRAME_04BITS</name>
+                            <value>0x3</value>
+                            <description>4-bit serial data transfer</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>FRAME_05BITS</name>
+                            <value>0x4</value>
+                            <description>5-bit serial data transfer</description>
+                        </enumeratedValue>
+                        <!-- Additional enumerated values for DFS_32 -->
+                        <enumeratedValue>
+                            <name>FRAME_32BITS</name>
+                            <value>0x1F</value>
+                            <description>32-bit serial data transfer</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+
+                <!-- SPI_FRF Field -->
+                <field>
+                    <name>SPI_FRF</name>
+                    <description>
+                        Selects the serial protocol frame format.
+                        Valid when the frame format is set to Motorola SPI.
+                    </description>
+                    <bitRange>[22:21]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>MOTOROLA_SPI</name>
+                            <value>0x0</value>
+                            <description>Motorola SPI Frame Format</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>DUAL_SPI_FRF</name>
+                            <value>0x1</value>
+                            <description>Dual SPI Frame Format</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>QUAD_SPI_FRF</name>
+                            <value>0x2</value>
+                            <description>Quad SPI Frame Format</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>OCTAL_SPI_FRF</name>
+                            <value>0x3</value>
+                            <description>Octal SPI Frame Format</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+
+            </fields>
         </register>
 
         <!-- CTRLR1 -->
@@ -6064,6 +6338,17 @@
             <size>32</size>
             <access>read-write</access>
             <resetValue>0x00000000</resetValue>
+            <fields>
+              <!-- NDF Field -->
+              <field>
+                  <name>NDF</name>
+                  <description>
+                      Number of Data Frames. Represents the total number of data frames for the transaction.
+                  </description>
+                  <bitRange>[15:0]</bitRange>
+                  <access>read-write</access>
+              </field>
+          </fields>
         </register>
 
         <!-- SSIENR -->
@@ -6074,6 +6359,30 @@
             <size>32</size>
             <access>read-write</access>
             <resetValue>0x00000000</resetValue>
+
+            <fields>
+                <!-- SSI_EN Field -->
+                <field>
+                    <name>SSI_EN</name>
+                    <description>
+                        SSI Enable.
+                    </description>
+                    <bitRange>[0:0]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>DISABLE</name>
+                            <value>0x0</value>
+                            <description>Disables Serial Transfer</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>ENABLE</name>
+                            <value>0x1</value>
+                            <description>Enables Serial Transfer</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+            </fields>
         </register>
 
         <!-- MWCR -->
@@ -6084,6 +6393,73 @@
             <size>32</size>
             <access>read-write</access>
             <resetValue>0x00000000</resetValue>
+            <fields>
+                <!-- MHS Field -->
+                <field>
+                    <name>MHS</name>
+                    <description>
+                        Microwire Handshaking. Controls the handshaking interface of the Microwire.
+                    </description>
+                    <bitRange>[2:2]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>DISABLE</name>
+                            <value>0x0</value>
+                            <description>Handshaking interface is disabled</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>ENABLE</name>
+                            <value>0x1</value>
+                            <description>Handshaking interface is enabled</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+
+                <!-- MDD Field -->
+                <field>
+                    <name>MDD</name>
+                    <description>
+                        Microwire Control. Specifies the direction of data flow for SSI.
+                    </description>
+                    <bitRange>[1:1]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>RECEIVE</name>
+                            <value>0x0</value>
+                            <description>SSI receives data</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>TRANSMIT</name>
+                            <value>0x1</value>
+                            <description>SSI transmits data</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+
+                <!-- MWMOD Field -->
+                <field>
+                    <name>MWMOD</name>
+                    <description>
+                        Microwire Transfer Mode. Configures the transfer mode of the Microwire.
+                    </description>
+                    <bitRange>[0:0]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>NON_SEQUENTIAL</name>
+                            <value>0x0</value>
+                            <description>Non-Sequential Microwire Transfer</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>SEQUENTIAL</name>
+                            <value>0x1</value>
+                            <description>Sequential Microwire Transfer</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+            </fields>
         </register>
         
         <!-- SER -->
@@ -6104,6 +6480,18 @@
             <size>32</size>
             <access>read-write</access>
             <resetValue>0x00000000</resetValue>
+            <fields>
+                <!-- SCKDV Field -->
+                <field>
+                    <name>SCKDV</name>
+                    <description>
+                        SSI Clock Divider. Determines the output serial clock frequency. 
+                        The formula for the output clock: Fsclk_out = Fssi_clk / SCKDV.
+                    </description>
+                    <bitRange>[15:0]</bitRange>
+                    <access>read-write</access>
+                </field>
+            </fields>
        </register>
 
         <!-- TXFTLR -->
@@ -6154,6 +6542,162 @@
             <size>32</size>
             <access>read-only</access>
             <resetValue>0x00000000</resetValue>
+            <fields>
+                <!-- DCOL Field -->
+                <field>
+                    <name>DCOL</name>
+                    <description>
+                        Data Collision Error. Indicates a collision occurred during transmission.
+                    </description>
+                    <bitRange>[6:6]</bitRange>
+                    <access>read-only</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>NO_ERROR_CONDITION</name>
+                            <value>0x0</value>
+                            <description>No Error</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>TX_COLLISION_ERROR</name>
+                            <value>0x1</value>
+                            <description>Transmit Data Collision Error</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+
+                <!-- TXE Field -->
+                <field>
+                    <name>TXE</name>
+                    <description>
+                        Transmission Error. Indicates an error occurred during transmission.
+                    </description>
+                    <bitRange>[5:5]</bitRange>
+                    <access>read-only</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>NO_ERROR</name>
+                            <value>0x0</value>
+                            <description>No Error</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>TX_ERROR</name>
+                            <value>0x1</value>
+                            <description>Transmission Error</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+
+                <!-- RFF Field -->
+                <field>
+                    <name>RFF</name>
+                    <description>
+                        Receive FIFO Full. Indicates the status of the receive FIFO.
+                    </description>
+                    <bitRange>[4:4]</bitRange>
+                    <access>read-only</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>NOT_FULL</name>
+                            <value>0x0</value>
+                            <description>Receive FIFO is not full</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>FULL</name>
+                            <value>0x1</value>
+                            <description>Receive FIFO is full</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+
+                <!-- RFNE Field -->
+                <field>
+                    <name>RFNE</name>
+                    <description>
+                        Receive FIFO Not Empty. Indicates if the receive FIFO contains data.
+                    </description>
+                    <bitRange>[3:3]</bitRange>
+                    <access>read-only</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>EMPTY</name>
+                            <value>0x0</value>
+                            <description>Receive FIFO is empty</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>NOT_EMPTY</name>
+                            <value>0x1</value>
+                            <description>Receive FIFO is not empty</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+
+                <!-- TFE Field -->
+                <field>
+                    <name>TFE</name>
+                    <description>
+                        Transmit FIFO Empty. Indicates if the transmit FIFO is empty.
+                    </description>
+                    <bitRange>[2:2]</bitRange>
+                    <access>read-only</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>NOT_EMPTY</name>
+                            <value>0x0</value>
+                            <description>Transmit FIFO is not empty</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>EMPTY</name>
+                            <value>0x1</value>
+                            <description>Transmit FIFO is empty</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+
+                <!-- TFNF Field -->
+                <field>
+                    <name>TFNF</name>
+                    <description>
+                        Transmit FIFO Not Full. Indicates if the transmit FIFO is not full.
+                    </description>
+                    <bitRange>[1:1]</bitRange>
+                    <access>read-only</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>FULL</name>
+                            <value>0x0</value>
+                            <description>Transmit FIFO is full</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>NOT_FULL</name>
+                            <value>0x1</value>
+                            <description>Transmit FIFO is not full</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+
+                <!-- BUSY Field -->
+                <field>
+                    <name>BUSY</name>
+                    <description>
+                        SSI Busy Flag. Indicates if the SSI is actively transferring data.
+                    </description>
+                    <bitRange>[0:0]</bitRange>
+                    <access>read-only</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>INACTIVE</name>
+                            <value>0x0</value>
+                            <description>DW_apb_ssi is idle or disabled</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>ACTIVE</name>
+                            <value>0x1</value>
+                            <description>DW_apb_ssi is actively transferring data</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+            </fields>
+
         </register>
 
         <!-- IMR -->
@@ -6164,6 +6708,139 @@
             <size>32</size>
             <access>read-write</access>
             <resetValue>0x00000000</resetValue>
+            <fields>
+                <!-- MSTIM Field -->
+                <field>
+                    <name>MSTIM</name>
+                    <description>
+                        Multi-Master Contention Interrupt Mask. Controls the masking of the ssi_mst_intr interrupt.
+                    </description>
+                    <bitRange>[5:5]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>MASKED</name>
+                            <value>0x0</value>
+                            <description>ssi_mst_intr interrupt is masked</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>UNMASKED</name>
+                            <value>0x1</value>
+                            <description>ssi_mst_intr interrupt is not masked</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+
+                <!-- RXFIM Field -->
+                <field>
+                    <name>RXFIM</name>
+                    <description>
+                        Receive FIFO Full Interrupt Mask. Controls the masking of the ssi_rxf_intr interrupt.
+                    </description>
+                    <bitRange>[4:4]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>MASKED</name>
+                            <value>0x0</value>
+                            <description>ssi_rxf_intr interrupt is masked</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>UNMASKED</name>
+                            <value>0x1</value>
+                            <description>ssi_rxf_intr interrupt is not masked</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+
+                <!-- RXOIM Field -->
+                <field>
+                    <name>RXOIM</name>
+                    <description>
+                        Receive FIFO Overflow Interrupt Mask. Controls the masking of the ssi_rxo_intr interrupt.
+                    </description>
+                    <bitRange>[3:3]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>MASKED</name>
+                            <value>0x0</value>
+                            <description>ssi_rxo_intr interrupt is masked</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>UNMASKED</name>
+                            <value>0x1</value>
+                            <description>ssi_rxo_intr interrupt is not masked</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+
+                <!-- RXUIM Field -->
+                <field>
+                    <name>RXUIM</name>
+                    <description>
+                        Receive FIFO Underflow Interrupt Mask. Controls the masking of the ssi_rxu_intr interrupt.
+                    </description>
+                    <bitRange>[2:2]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>MASKED</name>
+                            <value>0x0</value>
+                            <description>ssi_rxu_intr interrupt is masked</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>UNMASKED</name>
+                            <value>0x1</value>
+                            <description>ssi_rxu_intr interrupt is not masked</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+
+                <!-- TXOIM Field -->
+                <field>
+                    <name>TXOIM</name>
+                    <description>
+                        Transmit FIFO Overflow Interrupt Mask. Controls the masking of the ssi_txo_intr interrupt.
+                    </description>
+                    <bitRange>[1:1]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>MASKED</name>
+                            <value>0x0</value>
+                            <description>ssi_txo_intr interrupt is masked</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>UNMASKED</name>
+                            <value>0x1</value>
+                            <description>ssi_txo_intr interrupt is not masked</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+
+                <!-- TXEIM Field -->
+                <field>
+                    <name>TXEIM</name>
+                    <description>
+                        Transmit FIFO Empty Interrupt Mask. Controls the masking of the ssi_txe_intr interrupt.
+                    </description>
+                    <bitRange>[0:0]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>MASKED</name>
+                            <value>0x0</value>
+                            <description>ssi_txe_intr interrupt is masked</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>UNMASKED</name>
+                            <value>0x1</value>
+                            <description>ssi_txe_intr interrupt is not masked</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+            </fields>
         </register>
 
         <!-- ISR -->
@@ -6174,6 +6851,140 @@
             <size>32</size>
             <access>read-only</access>
             <resetValue>0x00000000</resetValue>
+
+            <fields>
+                <!-- MSTIS Field -->
+                <field>
+                    <name>MSTIS</name>
+                    <description>
+                        Multi-Master Contention Interrupt Status. Indicates the status of the ssi_mst_intr interrupt after masking.
+                    </description>
+                    <bitRange>[5:5]</bitRange>
+                    <access>read-only</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>INACTIVE</name>
+                            <value>0x0</value>
+                            <description>ssi_mst_intr interrupt not active after masking</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>ACTIVE</name>
+                            <value>0x1</value>
+                            <description>ssi_mst_intr interrupt is active after masking</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+
+                <!-- RXFIS Field -->
+                <field>
+                    <name>RXFIS</name>
+                    <description>
+                        Receive FIFO Full Interrupt Status. Indicates the status of the ssi_rxf_intr interrupt after masking.
+                    </description>
+                    <bitRange>[4:4]</bitRange>
+                    <access>read-only</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>INACTIVE</name>
+                            <value>0x0</value>
+                            <description>ssi_rxf_intr interrupt is not active after masking</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>ACTIVE</name>
+                            <value>0x1</value>
+                            <description>ssi_rxf_intr interrupt is full after masking</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+
+                <!-- RXOIS Field -->
+                <field>
+                    <name>RXOIS</name>
+                    <description>
+                        Receive FIFO Overflow Interrupt Status. Indicates the status of the ssi_rxo_intr interrupt after masking.
+                    </description>
+                    <bitRange>[3:3]</bitRange>
+                    <access>read-only</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>INACTIVE</name>
+                            <value>0x0</value>
+                            <description>ssi_rxo_intr interrupt is not active after masking</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>ACTIVE</name>
+                            <value>0x1</value>
+                            <description>ssi_rxo_intr interrupt is active after masking</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+
+                <!-- RXUIS Field -->
+                <field>
+                    <name>RXUIS</name>
+                    <description>
+                        Receive FIFO Underflow Interrupt Status. Indicates the status of the ssi_rxu_intr interrupt after masking.
+                    </description>
+                    <bitRange>[2:2]</bitRange>
+                    <access>read-only</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>INACTIVE</name>
+                            <value>0x0</value>
+                            <description>ssi_rxu_intr interrupt is not active after masking</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>ACTIVE</name>
+                            <value>0x1</value>
+                            <description>ssi_rxu_intr interrupt is active after masking</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+
+                <!-- TXOIS Field -->
+                <field>
+                    <name>TXOIS</name>
+                    <description>
+                        Transmit FIFO Overflow Interrupt Status. Indicates the status of the ssi_txo_intr interrupt after masking.
+                    </description>
+                    <bitRange>[1:1]</bitRange>
+                    <access>read-only</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>INACTIVE</name>
+                            <value>0x0</value>
+                            <description>ssi_txo_intr interrupt is not active after masking</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>ACTIVE</name>
+                            <value>0x1</value>
+                            <description>ssi_txo_intr interrupt is active after masking</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+
+                <!-- TXEIS Field -->
+                <field>
+                    <name>TXEIS</name>
+                    <description>
+                        Transmit FIFO Empty Interrupt Status. Indicates the status of the ssi_txe_intr interrupt after masking.
+                    </description>
+                    <bitRange>[0:0]</bitRange>
+                    <access>read-only</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>INACTIVE</name>
+                            <value>0x0</value>
+                            <description>ssi_txe_intr interrupt is not active after masking</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>ACTIVE</name>
+                            <value>0x1</value>
+                            <description>ssi_txe_intr interrupt is active after masking</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+            </fields>
         </register>
 
         <!-- RISR -->
@@ -6184,6 +6995,141 @@
             <size>32</size>
             <access>read-only</access>
             <resetValue>0x00000000</resetValue>
+
+            <fields>
+                <!-- MSTIR Field -->
+                <field>
+                    <name>MSTIR</name>
+                    <description>
+                        Multi-Master Contention Raw Interrupt Status. Indicates the status of the ssi_mst_intr interrupt prior to masking.
+                    </description>
+                    <bitRange>[5:5]</bitRange>
+                    <access>read-only</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>INACTIVE</name>
+                            <value>0x0</value>
+                            <description>ssi_mst_intr interrupt is not active prior to masking</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>ACTIVE</name>
+                            <value>0x1</value>
+                            <description>ssi_mst_intr interrupt is active prior to masking</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+
+                <!-- RXFIR Field -->
+                <field>
+                    <name>RXFIR</name>
+                    <description>
+                        Receive FIFO Full Raw Interrupt Status. Indicates the status of the ssi_rxf_intr interrupt prior to masking.
+                    </description>
+                    <bitRange>[4:4]</bitRange>
+                    <access>read-only</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>INACTIVE</name>
+                            <value>0x0</value>
+                            <description>ssi_rxf_intr interrupt is not active prior to masking</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>ACTIVE</name>
+                            <value>0x1</value>
+                            <description>ssi_rxf_intr interrupt is active prior to masking</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+
+                <!-- RXOIR Field -->
+                <field>
+                    <name>RXOIR</name>
+                    <description>
+                        Receive FIFO Overflow Raw Interrupt Status. Indicates the status of the ssi_rxo_intr interrupt prior to masking.
+                    </description>
+                    <bitRange>[3:3]</bitRange>
+                    <access>read-only</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>INACTIVE</name>
+                            <value>0x0</value>
+                            <description>ssi_rxo_intr interrupt is not active prior to masking</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>ACTIVE</name>
+                            <value>0x1</value>
+                            <description>ssi_rxo_intr interrupt is active prior to masking</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+
+                <!-- RXUIR Field -->
+                <field>
+                    <name>RXUIR</name>
+                    <description>
+                        Receive FIFO Underflow Raw Interrupt Status. Indicates the status of the ssi_rxu_intr interrupt prior to masking.
+                    </description>
+                    <bitRange>[2:2]</bitRange>
+                    <access>read-only</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>INACTIVE</name>
+                            <value>0x0</value>
+                            <description>ssi_rxu_intr interrupt is not active prior to masking</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>ACTIVE</name>
+                            <value>0x1</value>
+                            <description>ssi_rxu_intr interrupt is active prior to masking</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+
+                <!-- TXOIR Field -->
+                <field>
+                    <name>TXOIR</name>
+                    <description>
+                        Transmit FIFO Overflow Raw Interrupt Status. Indicates the status of the ssi_txo_intr interrupt prior to masking.
+                    </description>
+                    <bitRange>[1:1]</bitRange>
+                    <access>read-only</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>INACTIVE</name>
+                            <value>0x0</value>
+                            <description>ssi_txo_intr interrupt is not active prior to masking</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>ACTIVE</name>
+                            <value>0x1</value>
+                            <description>ssi_txo_intr interrupt is active prior to masking</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+
+                <!-- TXEIR Field -->
+                <field>
+                    <name>TXEIR</name>
+                    <description>
+                        Transmit FIFO Empty Raw Interrupt Status. Indicates the status of the ssi_txe_intr interrupt prior to masking.
+                    </description>
+                    <bitRange>[0:0]</bitRange>
+                    <access>read-only</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>INACTIVE</name>
+                            <value>0x0</value>
+                            <description>ssi_txe_intr interrupt is not active prior to masking</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>ACTIVE</name>
+                            <value>0x1</value>
+                            <description>ssi_txe_intr interrupt is active prior to masking</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+            </fields>
+
         </register>
 
         <!-- TXOICR -->
@@ -6244,6 +7190,52 @@
             <size>32</size>
             <access>read-write</access>
             <resetValue>0x00000000</resetValue>
+
+            <fields>
+                <!-- TDMAE Field -->
+                <field>
+                    <name>TDMAE</name>
+                    <description>
+                        Transmit DMA Enable. Controls the enable status of the transmit DMA operation.
+                    </description>
+                    <bitRange>[1:1]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>DISABLE</name>
+                            <value>0x0</value>
+                            <description>Transmit DMA disabled</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>ENABLE</name>
+                            <value>0x1</value>
+                            <description>Transmit DMA enabled</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+
+                <!-- RDMAE Field -->
+                <field>
+                    <name>RDMAE</name>
+                    <description>
+                        Receive DMA Enable. Controls the enable status of the receive DMA operation.
+                    </description>
+                    <bitRange>[0:0]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>DISABLE</name>
+                            <value>0x0</value>
+                            <description>Receive DMA disabled</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>ENABLE</name>
+                            <value>0x1</value>
+                            <description>Receive DMA enabled</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+            </fields>
         </register>
 
         <!-- DMATDLR -->
@@ -6314,6 +7306,191 @@
             <size>32</size>
             <access>read-write</access>
             <resetValue>0x00000000</resetValue>
+            <fields>
+              <!-- SPI_RXDS_EN Field -->
+              <field>
+                  <name>SPI_RXDS_EN</name>
+                  <description>Read data strobe enable bit.</description>
+                  <bitRange>[18:18]</bitRange>
+                  <access>read-write</access>
+              </field>
+
+              <!-- INST_DDR_EN Field -->
+              <field>
+                  <name>INST_DDR_EN</name>
+                  <description>Instruction DDR Enable bit.</description>
+                  <bitRange>[17:17]</bitRange>
+                  <access>read-write</access>
+              </field>
+
+              <!-- SPI_DDR_EN Field -->
+              <field>
+                  <name>SPI_DDR_EN</name>
+                  <description>SPI DDR Enable bit.</description>
+                  <bitRange>[16:16]</bitRange>
+                  <access>read-write</access>
+              </field>
+
+              <!-- WAIT_CYCLES Field -->
+              <field>
+                  <name>WAIT_CYCLES</name>
+                  <description>Wait cycles.</description>
+                  <bitRange>[15:11]</bitRange>
+                  <access>read-write</access>
+              </field>
+
+              <!-- INST_L Field -->
+              <field>
+                  <name>INST_L</name>
+                  <description>Instruction Length.</description>
+                  <bitRange>[9:8]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INST_L_0</name>
+                          <value>0x0</value>
+                          <description>0-bit (No Instruction)</description>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>INST_L_1</name>
+                          <value>0x1</value>
+                          <description>4-bit Instruction</description>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>INST_L_2</name>
+                          <value>0x2</value>
+                          <description>8-bit Instruction</description>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>INST_L_3</name>
+                          <value>0x3</value>
+                          <description>16-bit Instruction</description>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+
+              <!-- ADDR_L Field -->
+              <field>
+                  <name>ADDR_L</name>
+                  <description>Address Length.</description>
+                  <bitRange>[5:2]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <!-- Define values for ADDR_L similar to INST_L -->
+                      <enumeratedValue>
+                          <name>ADDR_L_0</name>
+                          <value>0x0</value>
+                          <description>0-bit Address Width</description>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ADDR_L_1</name>
+                          <value>0x1</value>
+                          <description>4-bit Address Width</description>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ADDR_L_2</name>
+                          <value>0x2</value>
+                          <description>8-bit Address Width</description>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ADDR_L_3</name>
+                          <value>0x3</value>
+                          <description>12-bit Address Width</description>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ADDR_L_4</name>
+                          <value>0x4</value>
+                          <description>16-bit Address Width</description>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ADDR_L_5</name>
+                          <value>0x5</value>
+                          <description>20-bit Address Width</description>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ADDR_L_6</name>
+                          <value>0x6</value>
+                          <description>24-bit Address Width</description>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ADDR_L_7</name>
+                          <value>0x7</value>
+                          <description>28-bit Address Width</description>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ADDR_L_8</name>
+                          <value>0x8</value>
+                          <description>32-bit Address Width</description>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ADDR_L_9</name>
+                          <value>0x9</value>
+                          <description>36-bit Address Width</description>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ADDR_L_10</name>
+                          <value>0xa</value>
+                          <description>40-bit Address Width</description>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ADDR_L_11</name>
+                          <value>0xb</value>
+                          <description>44-bit Address Width</description>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ADDR_L_12</name>
+                          <value>0xc</value>
+                          <description>48-bit Address Width</description>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ADDR_L_13</name>
+                          <value>0xd</value>
+                          <description>52-bit Address Width</description>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ADDR_L_14</name>
+                          <value>0xe</value>
+                          <description>56-bit Address Width</description>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ADDR_L_15</name>
+                          <value>0xf</value>
+                          <description>60-bit Address Width</description>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+
+              <!-- TRANS_TYPE Field -->
+              <field>
+                  <name>TRANS_TYPE</name>
+                  <description>Address and instruction transfer format.</description>
+                  <bitRange>[1:0]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>STANDARD_SPI</name>
+                          <value>0b00</value>
+                          <description>Instruction and Address will be sent in Standard SPI Mode.</description>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>INST_STANDARD_SPI_ADDR_SPECIFIED_MODE</name>
+                          <value>0b01</value>
+                          <description>Instruction sent in Standard SPI Mode, Address sent in mode specified by CTRLR0.SPI_FRF.</description>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>BOTH_SPECIFIED_MODE</name>
+                          <value>0b10</value>
+                          <description>Both Instruction and Address sent in the mode specified by SPI_FRF.</description>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NO_USED</name>
+                          <value>0b11</value>
+                          <description>NO_USED</description>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+          </fields>
+
         </register>
 
         <!-- TXD_DRIVE_EDGE -->
