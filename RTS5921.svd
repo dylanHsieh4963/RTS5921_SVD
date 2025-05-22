@@ -2707,7 +2707,7 @@
                       Low 16-bits of Block Transfer Size. Indicates the total number of single transactions per block transfer.
                   </description>
                   <bitRange>[31:16]</bitRange>
-                  <access>read</access>
+                  <access>read-only</access>
               </field>
 
               <!-- SGSN Field -->
@@ -3637,14 +3637,6 @@
 						<access>read-only</access>
 						<resetValue>0x00000000</resetValue>
             <fields>
-                <!-- Undefined/Reserved Bits -->
-                <field>
-                    <name>Reserved</name>
-                    <description>Reserved for future use</description>
-                    <bitRange>[31:7]</bitRange>
-                    <access>read-only</access>
-                </field>
-
                 <!-- Block Counter Field -->
                 <field>
                     <name>Block_Counter</name>
@@ -7473,7 +7465,7 @@
                           <description>Instruction and Address will be sent in Standard SPI Mode.</description>
                       </enumeratedValue>
                       <enumeratedValue>
-                          <name>INST_STANDARD_SPI_ADDR_SPECIFIED_MODE</name>
+                          <name>ADDR_SPECIFIED_MODE</name>
                           <value>0b01</value>
                           <description>Instruction sent in Standard SPI Mode, Address sent in mode specified by CTRLR0.SPI_FRF.</description>
                       </enumeratedValue>
@@ -7485,12 +7477,11 @@
                       <enumeratedValue>
                           <name>NO_USED</name>
                           <value>0b11</value>
-                          <description>NO_USED</description>
+                          <description>NO_USED.</description>
                       </enumeratedValue>
                   </enumeratedValues>
               </field>
           </fields>
-
         </register>
 
         <!-- TXD_DRIVE_EDGE -->
@@ -11071,6 +11062,451 @@
         <value>18</value>
       </interrupt>
     </peripheral>
+    <!-- PWMLED0 -->
+    <peripheral>
+      <!-- Description -->
+      <name>PWMLED0</name>
+      <version>1.00</version>
+      <description>PWM LED Controller</description>
+      <groupName>PWMLED</groupName>
+      <headerStructName>PWMLED</headerStructName>
+      <baseAddress>0x40121000</baseAddress>
+      <size>32</size>
+      <access>read-write</access>
 
+      <!-- Address Range -->
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x20</size>
+        <usage>registers</usage>
+      </addressBlock>
+
+      <!-- Registers -->
+      <registers>
+        <!-- MODE -->
+        <register>
+          <name>MODE</name>
+          <description>MODE REGISTER</description>
+          <addressOffset>0x00</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- SEL -->
+            <field>
+              <name>SEL</name>
+              <description>Mode Selection</description>
+              <bitRange>[1:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>OFF</name>
+                  <description>PWMLED ouput is off</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BREATHING</name>
+                  <description>PWMLED is under breathing mode</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BLINKING</name>
+                  <description>PWMLED is under blinking mode</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ALWAYS_ON</name>
+                  <description>PWMLED ouput is always on</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <!-- DL -->
+        <register>
+          <name>DL</name>
+          <description>DUTY LIMIT REGISTER</description>
+          <addressOffset>0x04</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- MINV -->
+            <field>
+              <name>MINV</name>
+              <description>Minimum Duty Cycle</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+            <!-- MAXV -->
+            <field>
+              <name>MAXV</name>
+              <description>Maximum Duty Cycle</description>
+              <bitRange>[15:8]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <!-- WT -->
+        <register>
+          <name>WT</name>
+          <description>WAIT TIME REGISTER</description>
+          <addressOffset>0x08</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- LKV -->
+            <field>
+              <name>LKV</name>
+              <description>Low wait-time</description>
+              <bitRange>[11:0]</bitRange>
+            </field>
+            <!-- HKV -->
+            <field>
+              <name>HKV</name>
+              <description>High wait-time</description>
+              <bitRange>[27:16]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <!-- SD -->
+        <register>
+          <name>SD</name>
+          <description>STEP DUTY REGISTER</description>
+          <addressOffset>0x0C</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- STEP0DV -->
+            <field>
+              <name>STEP0DV</name>
+              <description>Step0 Duty Value</description>
+              <bitRange>[3:0]</bitRange>
+            </field>
+            <!-- STEP1DV -->
+            <field>
+              <name>STEP1DV</name>
+              <description>Step1 Duty Value</description>
+              <bitRange>[7:4]</bitRange>
+            </field>
+            <!-- STEP2DV -->
+            <field>
+              <name>STEP2DV</name>
+              <description>Step2 Duty Value</description>
+              <bitRange>[11:8]</bitRange>
+            </field>
+            <!-- STEP3DV -->
+            <field>
+              <name>STEP3DV</name>
+              <description>Step3 Duty Value</description>
+              <bitRange>[15:12]</bitRange>
+            </field>
+            <!-- STEP4DV -->
+            <field>
+              <name>STEP4DV</name>
+              <description>Step4 Duty Value</description>
+              <bitRange>[19:16]</bitRange>
+            </field>
+            <!-- STEP5DV -->
+            <field>
+              <name>STEP5DV</name>
+              <description>Step5 Duty Value</description>
+              <bitRange>[23:20]</bitRange>
+            </field>
+            <!-- STEP6DV -->
+            <field>
+              <name>STEP6DV</name>
+              <description>Step6 Duty Value</description>
+              <bitRange>[27:24]</bitRange>
+            </field>
+            <!-- STEP7DV -->
+            <field>
+              <name>STEP7DV</name>
+              <description>Step7 Duty Value</description>
+              <bitRange>[31:28]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <!-- ST -->
+        <register>
+          <name>ST</name>
+          <description>STEP TIME REGISTER</description>
+          <addressOffset>0x10</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- STEP0TV -->
+            <field>
+              <name>STEP0TV</name>
+              <description>Step0 Time Value</description>
+              <bitRange>[3:0]</bitRange>
+            </field>
+            <!-- STEP1TV -->
+            <field>
+              <name>STEP1TV</name>
+              <description>Step1 Time Value</description>
+              <bitRange>[7:4]</bitRange>
+            </field>
+            <!-- STEP2TV -->
+            <field>
+              <name>STEP2TV</name>
+              <description>Step2 Time Value</description>
+              <bitRange>[11:8]</bitRange>
+            </field>
+            <!-- STEP3TV -->
+            <field>
+              <name>STEP3TV</name>
+              <description>Step3 Time Value</description>
+              <bitRange>[15:12]</bitRange>
+            </field>
+            <!-- STEP4TV -->
+            <field>
+              <name>STEP4TV</name>
+              <description>Step4 Time Value</description>
+              <bitRange>[19:16]</bitRange>
+            </field>
+            <!-- STEP5TV -->
+            <field>
+              <name>STEP5TV</name>
+              <description>Step5 Time Value</description>
+              <bitRange>[23:20]</bitRange>
+            </field>
+            <!-- STEP6TV -->
+            <field>
+              <name>STEP6TV</name>
+              <description>Step6 Time Value</description>
+              <bitRange>[27:24]</bitRange>
+            </field>
+            <!-- STEP7TV -->
+            <field>
+              <name>STEP7TV</name>
+              <description>Step7 Time Value</description>
+              <bitRange>[31:28]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <!-- CTRL -->
+        <register>
+          <name>CTRL</name>
+          <description>CONTROL REGISTER</description>
+          <addressOffset>0x14</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- CYCLE -->
+            <field>
+              <name>CYCLE</name>
+              <description>The number of output cycle</description>
+              <bitRange>[23:16]</bitRange>
+            </field>
+            <!-- OUTPUT -->
+            <field>
+              <name>OUTPUT</name>
+              <description>Control the output method</description>
+              <bitRange>[28:28]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ALWAYS_ON</name>
+                  <description>Output is always on</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BY_CYCLE</name>
+                  <description>Output is stop when entire cycle is finished</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- INVT -->
+            <field>
+              <name>INVT</name>
+              <description>Output Inverter Control</description>
+              <bitRange>[29:29]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NORMAL</name>
+                  <description>PWM output is not invert</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>INVERT</name>
+                  <description>PWM output is invert</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- RST -->
+            <field>
+              <name>RST</name>
+              <description>Reset PWM LED Controller</description>
+              <bitRange>[30:30]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DO_NOTHING</name>
+                  <description>Do nothing</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RESET</name>
+                  <description>Reset PWM LED controller</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- EN -->
+            <field>
+              <name>EN</name>
+              <description>Enable PWMLED Controller</description>
+              <bitRange>[31:31]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable PWMLED Controller</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable PWMLED Controller</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+      </registers>
+    </peripheral>
+    <peripheral derivedFrom="PWMLED0">
+      <name>PWMLED1</name>
+      <baseAddress>0x40121020</baseAddress>
+    </peripheral>
+    <peripheral derivedFrom="PWMLED0">
+      <name>PWMLED2</name>
+      <baseAddress>0x40121040</baseAddress>
+    </peripheral>
+    <peripheral derivedFrom="PWMLED0">
+      <name>PWMLED3</name>
+      <baseAddress>0x40121060</baseAddress>
+    </peripheral>
+    <peripheral derivedFrom="PWMLED0">
+      <name>PWMLED4</name>
+      <baseAddress>0x40121080</baseAddress>
+    </peripheral>
+    <peripheral derivedFrom="PWMLED0">
+      <name>PWMLED5</name>
+      <baseAddress>0x401210A0</baseAddress>
+    </peripheral>
+    <peripheral derivedFrom="PWMLED0">
+      <name>PWMLED6</name>
+      <baseAddress>0x401210C0</baseAddress>
+    </peripheral>
+    <peripheral derivedFrom="PWMLED0">
+      <name>PWMLED7</name>
+      <baseAddress>0x401210E0</baseAddress>
+    </peripheral>
+    <peripheral derivedFrom="PWMLED0">
+      <name>PWMLED8</name>
+      <baseAddress>0x40121100</baseAddress>
+    </peripheral>
+    <peripheral derivedFrom="PWMLED0">
+      <name>PWMLED9</name>
+      <baseAddress>0x40121120</baseAddress>
+    </peripheral>
+    <peripheral derivedFrom="PWMLED0">
+      <name>PWMLED10</name>
+      <baseAddress>0x40121140</baseAddress>
+    </peripheral>
+    <peripheral derivedFrom="PWMLED0">
+      <name>PWMLED11</name>
+      <baseAddress>0x40121160</baseAddress>
+    </peripheral>
+    <peripheral derivedFrom="PWMLED0">
+      <name>PWMLED12</name>
+      <baseAddress>0x40121180</baseAddress>
+    </peripheral>
+    <peripheral derivedFrom="PWMLED0">
+      <name>PWMLED13</name>
+      <baseAddress>0x401211A0</baseAddress>
+    </peripheral>
+    <peripheral derivedFrom="PWMLED0">
+      <name>PWMLED14</name>
+      <baseAddress>0x401211C0</baseAddress>
+    </peripheral>
+    <peripheral derivedFrom="PWMLED0">
+      <name>PWMLED15</name>
+      <baseAddress>0x401211E0</baseAddress>
+    </peripheral>
+    <peripheral derivedFrom="PWMLED0">
+      <name>PWMLED16</name>
+      <baseAddress>0x40121200</baseAddress>
+    </peripheral>
+    <peripheral derivedFrom="PWMLED0">
+      <name>PWMLED17</name>
+      <baseAddress>0x40121220</baseAddress>
+    </peripheral>
+    <peripheral derivedFrom="PWMLED0">
+      <name>PWMLED18</name>
+      <baseAddress>0x40121240</baseAddress>
+    </peripheral>
+    <peripheral derivedFrom="PWMLED0">
+      <name>PWMLED19</name>
+      <baseAddress>0x40121260</baseAddress>
+    </peripheral>
+    <peripheral derivedFrom="PWMLED0">
+      <name>PWMLED20</name>
+      <baseAddress>0x40121280</baseAddress>
+    </peripheral>
+    <peripheral derivedFrom="PWMLED0">
+      <name>PWMLED21</name>
+      <baseAddress>0x401212A0</baseAddress>
+    </peripheral>
+    <peripheral derivedFrom="PWMLED0">
+      <name>PWMLED22</name>
+      <baseAddress>0x401212C0</baseAddress>
+    </peripheral>
+    <peripheral derivedFrom="PWMLED0">
+      <name>PWMLED23</name>
+      <baseAddress>0x401212E0</baseAddress>
+    </peripheral>
+    <peripheral derivedFrom="PWMLED0">
+      <name>PWMLED24</name>
+      <baseAddress>0x40121300</baseAddress>
+    </peripheral>
+    <peripheral derivedFrom="PWMLED0">
+      <name>PWMLED25</name>
+      <baseAddress>0x40121320</baseAddress>
+    </peripheral>
+    <peripheral derivedFrom="PWMLED0">
+      <name>PWMLED26</name>
+      <baseAddress>0x40121340</baseAddress>
+    </peripheral>
+    <peripheral derivedFrom="PWMLED0">
+      <name>PWMLED27</name>
+      <baseAddress>0x40121360</baseAddress>
+    </peripheral>
+    <peripheral derivedFrom="PWMLED0">
+      <name>PWMLED28</name>
+      <baseAddress>0x40121380</baseAddress>
+    </peripheral>
+    <peripheral derivedFrom="PWMLED0">
+      <name>PWMLED29</name>
+      <baseAddress>0x401213A0</baseAddress>
+    </peripheral>
+    <peripheral derivedFrom="PWMLED0">
+      <name>PWMLED30</name>
+      <baseAddress>0x401213C0</baseAddress>
+    </peripheral>
+    <peripheral derivedFrom="PWMLED0">
+      <name>PWMLED31</name>
+      <baseAddress>0x401213E0</baseAddress>
+    </peripheral>
   </peripherals>
 </device>
