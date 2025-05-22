@@ -8430,7 +8430,366 @@
         </register>
       </registers>
     </peripheral>
+    <!-- TACHO0 -->
+    <peripheral>
+      <!-- Description -->
+      <name>TACHO0</name>
+      <version>1.00</version>
+      <description>Tachometer Controller</description>
+      <groupName>TACHO</groupName>
+      <headerStructName>TACHO</headerStructName>
+      <baseAddress>0x40100900</baseAddress>
+      <size>32</size>
+      <access>read-write</access>
 
+      <!-- Address Range -->
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x20</size>
+        <usage>registers</usage>
+      </addressBlock>
+
+      <!-- Interrup -->
+      <interrupt>
+        <name>TACHO0</name>
+        <description>TACHO0 Interrupt</description>
+        <value>36</value>
+      </interrupt>
+
+      <!-- Registers -->
+      <registers>
+        <!-- CTRL -->
+        <register>
+          <name>CTRL</name>
+          <description>CONTROL REGISTER</description>
+          <addressOffset>0x00</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- EN -->
+            <field>
+              <name>EN</name>
+              <description>Enable Tachometer Controller</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable tachometer controller</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enabled tachometer controller</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- FILTEREN -->
+            <field>
+              <name>FILTEREN</name>
+              <description>Enable Filter of Tachometer</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disabled filter</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enabled filter</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- SELEDGE -->
+            <field>
+              <name>SELEDGE</name>
+              <description>Select Edges of Tachometer</description>
+              <bitRange>[3:2]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>x2</name>
+                  <description>x2 edges (1/2 TACH period)</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>x3</name>
+                  <description>x3 edges (1/2 TACH period)</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>x5</name>
+                  <description>x5 edges (2 TACH period)</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>x9</name>
+                  <description>x9 edges (4 TACH period)</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- READMODE -->
+            <field>
+              <name>READMODE</name>
+              <description>Select Reading Mode of Tachometer</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>LOW_TO_HIGH</name>
+                  <description>Counter is incremented when input transitions from low-to-high</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RISING_EDGE</name>
+                  <description>Counter is incremented on the rising edge of the 100KHz input</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- CNT -->
+            <field>
+              <name>CNT</name>
+              <description>Counter of Tachometer</description>
+              <bitRange>[31:16]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <!-- STS -->
+        <register>
+          <name>STS</name>
+          <description>STATUS REGISTER</description>
+          <addressOffset>0x04</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- LIMIT -->
+            <field>
+              <name>LIMIT</name>
+              <description>Limit status of Tachometer</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>WITHIN</name>
+                  <description>Counter is within limit</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>OUTSIDE</name>
+                  <description>Counter is outside of limit</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- PIN -->
+            <field>
+              <name>PIN</name>
+              <description>Pin Status of Tachometer</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>LOW</name>
+                  <description>Tachometer input pin is low</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>HIGH</name>
+                  <description>Tachometer input pin is high</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- CHG -->
+            <field>
+              <name>CHG</name>
+              <description>Tachometer Input Changes Its Status</description>
+              <bitRange>[2:2]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>STABLE</name>
+                  <description>Tachometer input status is stable</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CHANGED</name>
+                  <description>Tachometer input status is changed</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- CNTRDY -->
+            <field>
+              <name>CNTRDY</name>
+              <description>Status of Count Ready</description>
+              <bitRange>[3:3]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOT_READY</name>
+                  <description>Tachometer is not ready to count</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>READY</name>
+                  <description>Tachometer is ready to count</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <!-- LIMITH -->
+        <register>
+          <name>LIMITH</name>
+          <description>HIGH-LIMIT REGISTER</description>
+          <addressOffset>0x08</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- VAL -->
+            <field>
+              <name>VAL</name>
+              <description>High limit value</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <!-- LIMITL -->
+        <register>
+          <name>LIMITL</name>
+          <description>LOW-LIMIT REGISTER</description>
+          <addressOffset>0x0C</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- VAL -->
+            <field>
+              <name>VAL</name>
+              <description>Low limit value</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <!-- INTEN -->
+        <register>
+          <name>INTEN</name>
+          <description>INTERRUPT ENABLE REGISTER</description>
+          <addressOffset>0x10</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- LIMITEN -->
+            <field>
+              <name>LIMITEN</name>
+              <description>Limit Interrupt Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disabled limit interrupt</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enabled limit interrupt</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- CNTRDYEN -->
+            <field>
+              <name>CNTRDYEN</name>
+              <description>Ready to count Interrupt Enable</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disabled ready to count interrupt</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enabled ready to count interrupt</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- CHGEN -->
+            <field>
+              <name>CHGEN</name>
+              <description>Input Change Interrupt Enable</description>
+              <bitRange>[2:2]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disabled input change interrupt</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enabled input change interrupt</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+      </registers>
+    </peripheral>
+    <peripheral derivedFrom="TACHO0">
+      <name>TACHO1</name>
+      <baseAddress>0x40100920</baseAddress>
+      <!-- Interrup -->
+      <interrupt>
+        <name>TACHO1</name>
+        <description>TACHO1 Interrupt</description>
+        <value>37</value>
+      </interrupt>
+    </peripheral>
+    <peripheral derivedFrom="TACHO0">
+      <name>TACHO2</name>
+      <baseAddress>0x40100940</baseAddress>
+      <!-- Interrup -->
+      <interrupt>
+        <name>TACHO2</name>
+        <description>TACHO2 Interrupt</description>
+        <value>38</value>
+      </interrupt>
+    </peripheral>
+    <peripheral derivedFrom="TACHO0">
+      <name>TACHO3</name>
+      <baseAddress>0x40100960</baseAddress>
+      <!-- Interrup -->
+      <interrupt>
+        <name>TACHO3</name>
+        <description>TACHO3 Interrupt</description>
+        <value>39</value>
+      </interrupt>
+    </peripheral>
     <!-- I2C0 -->
     <peripheral>
       <!-- Description -->
@@ -8456,8 +8815,6 @@
         <description>I2C0 Interrupt</description>
         <value>16</value>
       </interrupt>
-
->
 
       <!-- Registers -->
       <registers>
