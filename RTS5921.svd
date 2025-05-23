@@ -12066,5 +12066,208 @@
       <name>PWMLED31</name>
       <baseAddress>0x401213E0</baseAddress>
     </peripheral>
+    <!-- TMR0 -->
+    <peripheral>
+      <!-- Description -->
+      <name>TMR0</name>
+      <version>1.00</version>
+      <description>Timer Controller</description>
+      <groupName>TMR</groupName>
+      <headerStructName>TMR</headerStructName>
+      <baseAddress>0x40121400</baseAddress>
+      <size>32</size>
+      <access>read-write</access>
+
+      <!-- Address Range -->
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x10</size>
+        <usage>registers</usage>
+      </addressBlock>
+
+      <!-- Interrup -->
+      <interrupt>
+        <name>TMR0</name>
+        <description>TMR0 Interrupt</description>
+        <value>21</value>
+      </interrupt>
+
+      <!-- Registers -->
+      <registers>
+        <!-- LDCNT -->
+        <register>
+          <name>LDCNT</name>
+          <description>LOAD COUNTER REGISTER</description>
+          <addressOffset>0x00</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- CNT -->
+        <register>
+          <name>CNT</name>
+          <description>CURRENT COUNTER REGISTER</description>
+          <addressOffset>0x04</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- CTRL -->
+        <register>
+          <name>CTRL</name>
+          <description>CONTROL REGISTER</description>
+          <addressOffset>0x08</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- EN -->
+            <field>
+              <name>EN</name>
+              <description>Enable Timer Contoller</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable timer controller</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable timer controller</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- MDSEL -->
+            <field>
+              <name>MDSEL</name>
+              <description>Timer Operating Mode Selection</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ONE_SHOT</name>
+                  <description>Timer is operate at one-shot mode</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CONTINUOUS</name>
+                  <description>Timer is operate at continuous mode</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- INTEN -->
+            <field>
+              <name>INTEN</name>
+              <description>Enable Timer Interrupt</description>
+              <bitRange>[2:2]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable timer interrupt</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable timer interrupt</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- STOP -->
+            <field>
+              <name>STOP</name>
+              <description>Stop timer</description>
+              <bitRange>[3:3]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Resume timer</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Stop timer</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <!-- INTSTS -->
+        <register>
+          <name>INTSTS</name>
+          <description>INTERRUPT STATUS REGISTER</description>
+          <addressOffset>0x0C</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- STS -->
+            <field>
+              <name>STS</name>
+              <description>Timer Interrupt Status</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOT_OCCURRED</name>
+                  <description>Timer interrupt is not occurred</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>OCCURRED</name>
+                  <description>Timer interrupt is occurred</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+      </registers>
+    </peripheral>
+    <!-- TMR1 -->
+    <peripheral derivedFrom="TMR0">
+      <name>TMR1</name>
+      <baseAddress>0x40121410</baseAddress>
+      <!-- Interrup -->
+      <interrupt>
+        <name>TMR1</name>
+        <description>TMR1 Interrupt</description>
+        <value>22</value>
+      </interrupt>
+    </peripheral>
+    <!-- TMR2 -->
+    <peripheral derivedFrom="TMR0">
+      <name>TMR2</name>
+      <baseAddress>0x40121420</baseAddress>
+      <!-- Interrup -->
+      <interrupt>
+        <name>TMR2</name>
+        <description>TMR2 Interrupt</description>
+        <value>23</value>
+      </interrupt>
+    </peripheral>
+    <!-- TMR3 -->
+    <peripheral derivedFrom="TMR0">
+      <name>TMR3</name>
+      <baseAddress>0x40121430</baseAddress>
+      <!-- Interrup -->
+      <interrupt>
+        <name>TMR3</name>
+        <description>TMR3 Interrupt</description>
+        <value>24</value>
+      </interrupt>
+    </peripheral>
   </peripherals>
 </device>
