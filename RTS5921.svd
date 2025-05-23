@@ -8790,6 +8790,207 @@
         <value>39</value>
       </interrupt>
     </peripheral>
+    <!-- WDT -->
+    <peripheral>
+      <!-- Description -->
+      <name>WDT</name>
+      <version>1.00</version>
+      <description>WDT Controller</description>
+      <groupName>WDT</groupName>
+      <headerStructName>WDT</headerStructName>
+      <baseAddress>0x40100980</baseAddress>
+      <size>32</size>
+      <access>read-write</access>
+
+      <!-- Address Range -->
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x20</size>
+        <usage>registers</usage>
+      </addressBlock>
+
+      <!-- Interrup -->
+      <interrupt>
+				<name>WDT</name>
+				<description>WDT Interrupt</description>
+				<value>20</value>
+			</interrupt>
+
+      <!-- Registers -->
+      <registers>
+        <!-- CTRL -->
+        <register>
+          <name>CTRL</name>
+          <description>CONTROL REGISTER</description>
+          <addressOffset>0x00</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- EN -->
+            <field>
+              <name>EN</name>
+              <description>Enable WDT</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                    <description>Disable WDT</description>
+                    <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                    <description>Enable WDT</description>
+                    <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- RSTEN -->
+            <field>
+              <name>RSTEN</name>
+              <description>Enable WDT to Reset System</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-write</access>
+                <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                    <description>Disable WDT to reset system</description>
+                    <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                    <description>Enable WDT to reset system</description>
+                    <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- RELOAD -->
+            <field>
+              <name>RELOAD</name>
+              <description>Reload WDT Counter</description>
+              <bitRange>[2:2]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DO_NOTHING</name>
+                  <description>Do nothing</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RELOAD</name>
+                  <description>Reload WDT counter</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- CLRRSTFLAG -->
+            <field>
+              <name>CLRRSTFLAG</name>
+              <description>Clear WDT reset flag</description>
+              <bitRange>[3:3]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DO_NOTHING</name>
+                  <description>Do nothing</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CLR</name>
+                  <description>Clear WDT reset flag</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <!-- STS -->
+        <register>
+          <name>STS</name>
+          <description>STATUS REGISTER</description>
+          <addressOffset>0x04</addressOffset>
+          <size>32</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- RSTFLAG -->
+            <field>
+              <name>RSTFLAG</name>
+              <description>Reset Flag</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOT_OCCURRED</name>
+                  <description>WDT reset is not occurred</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>OCCURRED</name>
+                  <description>WDT reset is occurred</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <!-- CNT -->
+        <register>
+          <name>CNT</name>
+          <description>INITIAL COUNTER REGISTER</description>
+          <addressOffset>0x08</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+         <!-- DIV -->
+        <register>
+          <name>DIV</name>
+          <description>DIVIDER REGISTER</description>
+          <addressOffset>0x0C</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- INTEN -->
+        <register>
+          <name>INTEN</name>
+          <description>INTERRUPT ENABLE REGISTER</description>
+          <addressOffset>0x10</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+            <fields>
+            <!-- WDTINTEN -->
+              <field>
+                <name>WDTINTEN</name>
+                <description>Enable WDT Interrupt</description>
+                <bitRange>[0:0]</bitRange>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>DISBLE</name>
+                    <description>Disable WDT interrupt </description>
+                    <value>0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>ENABLE</name>
+                    <description>Enable WDT interrupt</description>
+                    <value>1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+            </fields>
+        </register>
+      </registers>
+    </peripheral>
     <!-- I2C0 -->
     <peripheral>
       <!-- Description -->
