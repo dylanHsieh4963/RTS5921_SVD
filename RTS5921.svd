@@ -8649,6 +8649,25 @@
                 </enumeratedValue>
               </enumeratedValues>
             </field>
+            <!-- FAIL -->
+            <field>
+              <name>FAIL</name>
+              <description>Status of Count Ready</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_FAIL</name>
+                  <description>Tachometer is not fail</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FAIL</name>
+                  <description>Tachometer is fail</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
           </fields>
         </register>
         <!-- LIMITH -->
@@ -8756,7 +8775,46 @@
                 </enumeratedValue>
               </enumeratedValues>
             </field>
+            <!-- FAILEN -->
+            <field>
+              <name>FAILEN</name>
+              <description>Fail Interrupt Enable</description>
+              <bitRange>[3:3]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disabled fail interrupt</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enabled fail interrupt</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
           </fields>
+        </register>
+        <!-- THRESHOLD -->
+        <register>
+          <name>THRESHOLD</name>
+          <description>THRESHOLD REGISTER</description>
+          <addressOffset>0x14</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- TIMEOUT -->
+        <register>
+          <name>TIMEOUT</name>
+          <description>TIMEOUT REGISTER</description>
+          <addressOffset>0x18</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
         </register>
       </registers>
     </peripheral>
