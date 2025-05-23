@@ -12360,6 +12360,299 @@
               <resetValue>0x00000000</resetValue>
           </register>
       </registers>
-     </peripheral>
+    </peripheral>
+    <!-- DOTMTX0 -->
+     <peripheral>
+      <!-- Description -->
+      <name>DOTMTX0</name>
+      <version>1.00</version>
+      <description>Dot Matrix Controller</description>
+      <groupName>DOTMTX</groupName>
+      <headerStructName>DOTMTX</headerStructName>
+      <baseAddress>0x40122100</baseAddress>
+      <size>32</size>
+      <access>read-write</access>
+
+      <!-- Address Range -->
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x20</size>
+        <usage>registers</usage>
+      </addressBlock>
+
+      <!-- Interrup -->
+      <interrupt>
+        <name>DOTMTX0</name>
+        <description>DOTMTX0 Interrupt</description>
+        <value>25</value>
+      </interrupt>
+
+      <registers>
+          <!-- DATASRC Register -->
+          <register>
+              <name>DATASRC</name>
+              <description>Register indicating the source address for PWM data.</description>
+              <addressOffset>0x00</addressOffset>
+              <resetValue>0x00000000</resetValue>
+              <fields>
+                  <field>
+                      <name>DSRC</name>
+                      <description>Source address for PWM data.</description>
+                      <bitRange>[31:0]</bitRange>
+                      <access>read-write</access>
+                  </field>
+              </fields>
+          </register>
+
+          <!-- CTRL Register -->
+          <register>
+              <name>CTRL</name>
+              <description>Control register for matrix operations including interrupts and scan control.</description>
+              <addressOffset>0x04</addressOffset>
+              <resetValue>0x00000000</resetValue>
+              <fields>
+                  <field>
+                      <name>INTTYPE</name>
+                      <description>Interrupt type. Determines interrupt behavior for matrix scans.</description>
+                      <bitRange>[2:2]</bitRange>
+                      <access>read-write</access>
+                      <enumeratedValues>
+                          <enumeratedValue>
+                              <name>LINE_SWITCH</name>
+                              <value>0x0</value>
+                              <description>Interrupt when each scan line is switched.</description>
+                          </enumeratedValue>
+                          <enumeratedValue>
+                              <name>ROUND_FINISH</name>
+                              <value>0x1</value>
+                              <description>Interrupt when a complete round of scan lines is finished.</description>
+                          </enumeratedValue>
+                      </enumeratedValues>
+                  </field>
+                  <field>
+                      <name>INTEN</name>
+                      <description>Enable matrix interrupt.</description>
+                      <bitRange>[1:1]</bitRange>
+                      <access>read-write</access>
+                  </field>
+                  <field>
+                      <name>START</name>
+                      <description>Control matrix scan start or stop.</description>
+                      <bitRange>[0:0]</bitRange>
+                      <access>read-write</access>
+                      <enumeratedValues>
+                          <enumeratedValue>
+                              <name>STOP</name>
+                              <value>0x0</value>
+                              <description>Stop the dot matrix scan.</description>
+                          </enumeratedValue>
+                          <enumeratedValue>
+                              <name>START</name>
+                              <value>0x1</value>
+                              <description>Start the dot matrix scan.</description>
+                          </enumeratedValue>
+                      </enumeratedValues>
+                  </field>
+              </fields>
+          </register>
+
+          <!-- COLCTRL Register -->
+          <register>
+              <name>COLCTRL</name>
+              <description>Column control register for matrix PWM and reference setup.</description>
+              <addressOffset>0x08</addressOffset>
+              <resetValue>0x00000000</resetValue>
+              <fields>
+                  <field>
+                      <name>ROUND</name>
+                      <description>Number of PWM cycles to run during the same row before switching.</description>
+                      <bitRange>[27:20]</bitRange>
+                      <access>read-write</access>
+                  </field>
+                  <field>
+                      <name>REFCH</name>
+                      <description>Indicates which PWM channel is the reference source.</description>
+                      <bitRange>[19:16]</bitRange>
+                      <access>read-write</access>
+                  </field>
+                  <field>
+                      <name>CHEN</name>
+                      <description>Indicates which PWM channels are used for the matrix.</description>
+                      <bitRange>[15:0]</bitRange>
+                      <access>read-write</access>
+                  </field>
+              </fields>
+          </register>
+
+          <!-- ROWCTRL Register -->
+          <register>
+              <name>ROWCTRL</name>
+              <description>Row control register for setting polarity and scan timing for dot matrix.</description>
+              <addressOffset>0x0C</addressOffset>
+              <resetValue>0x00000000</resetValue>
+              <fields>
+                  <field>
+                      <name>PSWPOL</name>
+                      <description>Setting active polarity for PSWn.</description>
+                      <bitRange>[31:22]</bitRange>
+                      <access>read-write</access>
+                  </field>
+                  <field>
+                      <name>PSWODEN</name>
+                      <description>Enable open-drain configuration on PSWn.</description>
+                      <bitRange>[21:12]</bitRange>
+                      <access>read-write</access>
+                  </field>
+                  <field>
+                      <name>SWDELAY</name>
+                      <description>Sets delay time before/after row scan switch.</description>
+                      <bitRange>[11:4]</bitRange>
+                      <access>read-write</access>
+                  </field>
+                  <field>
+                      <name>PSWNUM</name>
+                      <description>Indicate how many scan rows the matrix uses.</description>
+                      <bitRange>[3:0]</bitRange>
+                      <access>read-write</access>
+                  </field>
+              </fields>
+          </register>
+
+          <!-- ROWORD0 Register -->
+          <register>
+              <name>ROWORD0</name>
+              <description>Register specifying scan order for matrix rows.</description>
+              <addressOffset>0x10</addressOffset>
+              <resetValue>0x00000000</resetValue>
+              <fields>
+                  <field>
+                      <name>PSWORD7</name>
+                      <description>Reference PSWORD0.</description>
+                      <bitRange>[31:28]</bitRange>
+                      <access>read-write</access>
+                  </field>
+                  <field>
+                      <name>PSWORD6</name>
+                      <description>Reference PSWORD0.</description>
+                      <bitRange>[27:24]</bitRange>
+                      <access>read-write</access>
+                  </field>
+                  <field>
+                      <name>PSWORD5</name>
+                      <description>Reference PSWORD0.</description>
+                      <bitRange>[23:20]</bitRange>
+                      <access>read-write</access>
+                  </field>
+                  <field>
+                      <name>PSWORD4</name>
+                      <description>Reference PSWORD0.</description>
+                      <bitRange>[19:16]</bitRange>
+                      <access>read-write</access>
+                  </field>
+                  <field>
+                      <name>PSWORD3</name>
+                      <description>Reference PSWORD0.</description>
+                      <bitRange>[15:12]</bitRange>
+                      <access>read-write</access>
+                  </field>
+                  <field>
+                      <name>PSWORD2</name>
+                      <description>Reference PSWORD0.</description>
+                      <bitRange>[11:8]</bitRange>
+                      <access>read-write</access>
+                  </field>
+                  <field>
+                      <name>PSWORD1</name>
+                      <description>Reference PSWORD0.</description>
+                      <bitRange>[7:4]</bitRange>
+                      <access>read-write</access>
+                  </field>
+                  <field>
+                      <name>PSWORD0</name>
+                      <description>Indicate scan order for PSW0 row.</description>
+                      <bitRange>[3:0]</bitRange>
+                      <access>read-write</access>
+                  </field>
+              </fields>
+          </register>
+
+          <!-- ROWORD1 Register -->
+          <register>
+              <name>ROWORD1</name>
+              <description>Additional row control specifying scan order for remaining rows.</description>
+              <addressOffset>0x14</addressOffset>
+              <resetValue>0x00000000</resetValue>
+              <fields>
+                  <field>
+                      <name>PSWORD9</name>
+                      <description>Reference PSWORD0.</description>
+                      <bitRange>[7:4]</bitRange>
+                      <access>read-write</access>
+                  </field>
+                  <field>
+                      <name>PSWORD8</name>
+                      <description>Reference PSWORD0.</description>
+                      <bitRange>[3:0]</bitRange>
+                      <access>read-write</access>
+                  </field>
+              </fields>
+          </register>
+
+          <!-- INT Register -->
+          <register>
+              <name>INT</name>
+              <description>Interrupt control register for matrix operations.</description>
+              <addressOffset>0x18</addressOffset>
+              <resetValue>0x00000000</resetValue>
+              <fields>
+                  <field>
+                      <name>INTRDY</name>
+                      <description>Interrupt flag for APB ready without response.</description>
+                      <bitRange>[1:1]</bitRange>
+                      <access>read-write</access>
+                  </field>
+                  <field>
+                      <name>INTSTS</name>
+                      <description>Interrupt flag for matrix operation.</description>
+                      <bitRange>[0:0]</bitRange>
+                      <access>read-write</access>
+                  </field>
+              </fields>
+          </register>
+
+          <!-- STS Register -->
+          <register>
+              <name>STS</name>
+              <description>Status register showing current scan position and cycle count.</description>
+              <addressOffset>0x1C</addressOffset>
+              <resetValue>0x00000000</resetValue>
+              <fields>
+                  <field>
+                      <name>CURROW</name>
+                      <description>Indicates current scan row for matrix operation.</description>
+                      <bitRange>[11:8]</bitRange>
+                      <access>read-only</access>
+                  </field>
+                  <field>
+                      <name>CURROUND</name>
+                      <description>Indicates current PWM cycle round for the matrix.</description>
+                      <bitRange>[7:0]</bitRange>
+                      <access>read-only</access>
+                  </field>
+              </fields>
+          </register>
+      </registers>
+    </peripheral>
+    <!-- DOTMTX1 -->
+    <peripheral derivedFrom="DOTMTX0">
+      <name>DOTMTX1</name>
+      <baseAddress>0x40122120</baseAddress>
+      <!-- Interrup -->
+      <interrupt>
+        <name>DOTMTX1</name>
+        <description>DOTMTX1 Interrupt</description>
+        <value>26</value>
+      </interrupt>
+    </peripheral>
   </peripherals>
 </device>
