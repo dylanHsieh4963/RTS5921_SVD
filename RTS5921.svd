@@ -12269,5 +12269,97 @@
         <value>24</value>
       </interrupt>
     </peripheral>
+    <!-- CRC32 -->
+     <peripheral>
+      <!-- Description -->
+      <name>CRC32</name>
+      <version>1.00</version>
+      <description>CRC32 Engine</description>
+      <groupName>CRC</groupName>
+      <headerStructName>CRC</headerStructName>
+      <baseAddress>0x40122000</baseAddress>
+      <size>32</size>
+      <access>read-write</access>
+
+      <!-- Address Range -->
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x100</size>
+        <usage>registers</usage>
+      </addressBlock>
+
+      <registers>
+          <!-- CTRL Register -->
+          <register>
+              <name>CTRL</name>
+              <description>Control register</description>
+              <addressOffset>0x00</addressOffset>
+              <resetValue>0x00000000</resetValue>
+              <fields>
+                  <!-- INIT Field -->
+                  <field>
+                      <name>INIT</name>
+                      <description>
+                          Initialize checksum. Resets CHKSUM to 0xFFFFFFFF and auto-clears to '0'.
+                      </description>
+                      <bitRange>[1:1]</bitRange>
+                      <access>read-write</access>
+                  </field>
+
+                  <!-- EN Field -->
+                  <field>
+                      <name>EN</name>
+                      <description>Enable CRC32. Controls whether CRC32 is enabled or disabled.</description>
+                      <bitRange>[0:0]</bitRange>
+                      <access>read-write</access>
+                      <enumeratedValues>
+                          <enumeratedValue>
+                              <name>DISABLE</name>
+                              <value>0x0</value>
+                              <description>Disable CRC32</description>
+                          </enumeratedValue>
+                          <enumeratedValue>
+                              <name>ENABLE</name>
+                              <value>0x1</value>
+                              <description>Enable CRC32</description>
+                          </enumeratedValue>
+                      </enumeratedValues>
+                  </field>
+              </fields>
+          </register>
+
+          <!-- INPUT Register -->
+          <register>
+              <name>INPUT</name>
+              <description>Data input register for CRC32 computation.</description>
+              <addressOffset>0x04</addressOffset>
+              <fields>
+                  <!-- INPUT Field -->
+                  <field>
+                      <name>INPUT</name>
+                      <description>Data input for CRC32.</description>
+                      <bitRange>[31:0]</bitRange>
+                      <access>read-write</access>
+                  </field>
+              </fields>
+          </register>
+
+          <!-- RESULT Register -->
+          <register>
+              <name>RESULT</name>
+              <description>CRC32 Result Register</description>
+              <addressOffset>0x08</addressOffset>
+              <resetValue>0x00000000</resetValue>
+          </register>
+
+          <!-- CHKSUM Register (Alternate Result Register) -->
+          <register>
+              <name>CHKSUM</name>
+              <description>Checksum Result Register</description>
+              <addressOffset>0x0C</addressOffset>
+              <resetValue>0x00000000</resetValue>
+          </register>
+      </registers>
+     </peripheral>
   </peripherals>
 </device>
