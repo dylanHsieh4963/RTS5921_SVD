@@ -1998,14 +1998,6 @@
 						<access>read-write</access>
 						<resetValue>0xFFFFFFFF</resetValue> <!-- Placeholder for configuration-dependent reset value -->
          <fields>
-            <!-- Undefined/Reserved Field [31:29] -->
-            <field>
-               <name>Undefined</name>
-               <description>Reserved</description>
-               <bitRange>[31:29]</bitRange>
-               <access>read-only</access>
-            </field>
-
             <!-- LLP_SRC_EN Field -->
             <field>
                <name>LLP_SRC_EN</name>
@@ -3718,7 +3710,7 @@
                   <name>CH_EN_WE</name>
                   <description>Channel enable write enable.</description>
                   <bitRange>[15:8]</bitRange>
-                  <access>write</access>
+                  <access>read-write</access>
               </field>
 
               <!-- CH_EN Field -->
@@ -3784,7 +3776,7 @@
                   </field>
                   <field>
                       <name>ChirpEn</name>
-                      <description>Core asserting chirp_on before sending an actual Chirp "K" signal on USB.</description>
+                      <description>Core asserting chirp_on before sending an actual Chirp K signal on USB.</description>
                       <bitOffset>27</bitOffset>
                       <bitWidth>1</bitWidth>
                       <access>read-write</access>
@@ -11698,7 +11690,7 @@
                         <enumeratedValue>
                             <name>TX_AND_RX</name>
                             <value>0x0</value>
-                            <description>Transmit & receive</description>
+                            <description>Transmit and receive</description>
                         </enumeratedValue>
                         <enumeratedValue>
                             <name>TX_ONLY</name>
@@ -11743,7 +11735,7 @@
                         <enumeratedValue>
                             <name>TESTING_MODE</name>
                             <value>0x1</value>
-                            <description>Test mode: Tx & Rx shift reg connected</description>
+                            <description>Test mode: Tx and Rx shift reg connected</description>
                         </enumeratedValue>
                         <enumeratedValue>
                             <name>NORMAL_MODE</name>
