@@ -17198,6 +17198,411 @@
         <value>18</value>
       </interrupt>
     </peripheral>
+    <!-- GPIO -->
+    <peripheral>
+      <!-- Description -->
+      <name>GPIO</name>
+      <version>1.00</version>
+      <description>GPIO Controller</description>
+      <groupName>GPIO</groupName>
+      <headerStructName>GPIO</headerStructName>
+      <baseAddress>0x40110000</baseAddress>
+      <size>32</size>
+      <access>read-write</access>
+
+      <!-- Address Range -->
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+
+      <!-- Interrup -->
+			<interrupt>
+				<name>GPIOA</name>
+				<description>GPIO PORTA Interrupt</description>
+				<value>0</value>
+			</interrupt>
+
+      <!-- Interrup -->
+			<interrupt>
+				<name>GPIOB</name>
+				<description>GPIO PORTB Interrupt</description>
+				<value>1</value>
+			</interrupt>
+
+      <!-- Interrup -->
+			<interrupt>
+				<name>GPIOC</name>
+				<description>GPIO PORTC Interrupt</description>
+				<value>2</value>
+			</interrupt>
+
+      <!-- Interrup -->
+			<interrupt>
+				<name>GPIOD</name>
+				<description>GPIO PORTD Interrupt</description>
+				<value>3</value>
+			</interrupt>
+
+      <!-- Interrup -->
+			<interrupt>
+				<name>GPIDE</name>
+				<description>GPIO PORTE Interrupt</description>
+				<value>4</value>
+			</interrupt>
+
+      <!-- Interrup -->
+			<interrupt>
+				<name>GPIOF</name>
+				<description>GPIO PORTF Interrupt</description>
+				<value>5</value>
+			</interrupt>
+
+      <!-- Interrup -->
+			<interrupt>
+				<name>GPIOG</name>
+				<description>GPIO PORTG Interrupt</description>
+				<value>6</value>
+			</interrupt>
+
+      <!-- Interrup -->
+			<interrupt>
+				<name>GPIOH</name>
+				<description>GPIO PORTH Interrupt</description>
+				<value>7</value>
+			</interrupt>
+
+      <!-- Registers -->
+      <registers>
+        <!-- GCRn -->
+        <register>
+          <dim>61</dim> 
+          <dimIncrement>4</dimIncrement> 
+          <name>GCR[%s]</name> 
+          <description>CONTROL REGISTER</description>
+          <addressOffset>0x00</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- DIR -->
+            <field>
+              <name>DIR</name>
+              <description>Direction</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INPUT</name>
+                  <description>Intput mode</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>OUTPUT</name>
+                  <description>Output mode</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- INDETEN -->
+            <field>
+              <name>INDETEN</name>
+              <description>Input Detection Enable</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable input detection</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable input detection</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- INVOLMD -->
+            <field>
+              <name>INVOLMD</name>
+              <description>Input Voltage Mode</description>
+              <bitRange>[2:2]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>3V3</name>
+                  <description>3V3 voltage input</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>1V8</name>
+                  <description>1V8 voltage input</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- PINSTS -->
+            <field>
+              <name>PINSTS</name>
+              <description>Status of GPIO Pin</description>
+              <bitRange>[3:3]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>LOW</name>
+                  <description>Pin status is low</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>HIGH</name>
+                  <description>Pin status is high</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- MFCTRL -->
+            <field>
+              <name>MFCTRL</name>
+              <description>Multiple Function Control</description>
+              <bitRange>[10:8]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>FUN0</name>
+                  <description>Select function[0]</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FUN1</name>
+                  <description>Select function[1]</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FUN2</name>
+                  <description>Select function[2]</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FUN3</name>
+                  <description>Select function[3]</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- OUTDRV -->
+            <field>
+              <name>OUTDRV</name>
+              <description>Driving Current Selection</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>LOW</name>
+                  <description>Low driving capability</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>HIGH</name>
+                  <description>High driving capability</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- SLEWRATE -->
+            <field>
+              <name>SLEWRATE</name>
+              <description>Slew Rate Selection</description>
+              <bitRange>[12:12]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>FAST</name>
+                  <description>Fast slew-rate</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SLOW</name>
+                  <description>Slow slew-rate</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- PULLDWEN -->
+            <field>
+              <name>PULLDWEN</name>
+              <description>Internal Pull-Down Resistor Enable</description>
+              <bitRange>[13:13]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable internal pull-down resistor</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable internal pull-down resistor</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- PULLUPEN -->
+            <field>
+              <name>PULLUPEN</name>
+              <description>Internal Pull-Up Resistor Enable</description>
+              <bitRange>[14:14]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable internal pull-up resistor</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable internal pull-up resistor</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- SCHEN -->
+            <field>
+              <name>SCHEN</name>
+              <description>Schmitter-Trigger Enable</description>
+              <bitRange>[15:15]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable schmitter-trigger</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable schmitter-trigger</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- OUTMD -->
+            <field>
+              <name>OUTMD</name>
+              <description>Output Mode Selection</description>
+              <bitRange>[16:16]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>PUSH_PULL</name>
+                  <description>Push-pull mode</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>OPEN_DRAIN</name>
+                  <description>Open-drain mode</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- OUTCTRL -->
+            <field>
+              <name>OUTCTRL</name>
+              <description>Output Control</description>
+              <bitRange>[17:17]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>LOW</name>
+                  <description>Output low</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>HIGH</name>
+                  <description>Output high</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- INTCTRL -->
+            <field>
+              <name>INTCTRL</name>
+              <description>Type of GPIO Interrupt</description>
+              <bitRange>[26:24]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>POSTIVE</name>
+                  <description>Trigger interrupt when positive edge occurred</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>NEGATIVE</name>
+                  <description>Trigger interrupt when negative edge occurred</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DUAL</name>
+                  <description>Trigger interrupt when positive/negative edge occurred</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>LOW</name>
+                  <description>Trigger interrupt when low-level occurred</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>HIGH</name>
+                  <description>Trigger interrupt when high-level occurred</description>
+                  <value>4</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- INTEN -->
+            <field>
+              <name>INTEN</name>
+              <description>Interrupt Enable</description>
+              <bitRange>[28:28]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable interrupt</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable interrupt</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- INTSTS -->
+            <field>
+              <name>INTSTS</name>
+              <description>Interrupt Status</description>
+              <bitRange>[31:31]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOT_OCCURRED</name>
+                  <description>GPIO interrupt is not occurred</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>OCCURRED</name>
+                  <description>GPIO interrupt is occurred</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+      </registers>
+    </peripheral>
+
     <!-- PWMLED0 -->
     <peripheral>
       <!-- Description -->
