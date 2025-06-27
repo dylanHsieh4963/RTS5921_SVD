@@ -11523,6 +11523,263 @@
       </registers>
     </peripheral>
 
+    <!-- SYSTEM -->
+    <peripheral>
+      <!-- Description -->
+      <name>SYSTEM</name>
+      <version>1.00</version>
+      <description>System Controller</description>
+      <groupName>SYSTEM</groupName>
+      <headerStructName>SYSTEM</headerStructName>
+      <baseAddress>0x40100000</baseAddress>
+      <size>32</size>
+      <access>read-write</access>
+
+      <!-- Address Range -->
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x100</size>
+        <usage>registers</usage>
+      </addressBlock>
+
+      <registers>
+        <!-- PERICLKPWR0 -->
+        <register>
+            <name>PERICLKPWR0</name>
+            <description>PERIPHERAL CLOCK POWER REGISTER #0</description>
+            <addressOffset>0x0</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+        <!-- PERICLKCTRL0 -->
+        <register>
+            <name>PERICLKCTRL0</name>
+            <description>PERIPHERAL CLOCK CONTROL REGISTER #0</description>
+            <addressOffset>0x4</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+        <!-- PERICLKPWR1 -->
+        <register>
+            <name>PERICLKPWR1</name>
+            <description>PERIPHERAL CLOCK POWER REGISTER #1</description>
+            <addressOffset>0x8</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+        <!-- PERICLKPWR2 -->
+        <register>
+            <name>PERICLKPWR2</name>
+            <description>PERIPHERAL CLOCK POWER REGISTER #2</description>
+            <addressOffset>0xc</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+        <!-- PERICLKPWR3 -->
+        <register>
+            <name>PERICLKPWR3</name>
+            <description>PERIPHERAL CLOCK POWER REGISTER #3</description>
+            <addressOffset>0x10</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+        <!-- APBCLKPWR0 -->
+        <register>
+            <name>APBCLKPWR0</name>
+            <description>APB CLOCK POWER REGISTER #0</description>
+            <addressOffset>0x14</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+        <!-- APBCLKPWR1 -->
+        <register>
+            <name>APBCLKPWR1</name>
+            <description>APB CLOCK POWER REGISTER #1</description>
+            <addressOffset>0x18</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+        <!-- PERICLKCTRL1 -->
+        <register>
+            <name>PERICLKCTRL1</name>
+            <description>PERIPHERAL CLOCK CONTROL REGISTER #1</description>
+            <addressOffset>0x1c</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+        <!-- PERICLKCTRL2 -->
+        <register>
+            <name>PERICLKCTRL2</name>
+            <description>PERIPHERAL CLOCK CONTROL REGISTER #2</description>
+            <addressOffset>0x20</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+        <!-- APBCLKPWR2 -->
+        <register>
+            <name>APBCLKPWR2</name>
+            <description>APB CLOCK POWER REGISTER #2</description>
+            <addressOffset>0x24</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+        <!-- PERICLKCTRL3 -->
+        <register>
+            <name>PERICLKCTRL3</name>
+            <description>PERIPHERAL CLOCK CONTROL REGISTER #3</description>
+            <addressOffset>0x28</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+        <!-- PERICLKCTRL4 -->
+        <register>
+            <name>PERICLKCTRL4</name>
+            <description>PERIPHERAL CLOCK CONTROL REGISTER #4</description>
+            <addressOffset>0x2c</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+        <!-- PERIRST0 -->
+        <register>
+            <name>PERIRST0</name>
+            <description>PERIPHERAL RESET CONTROL REGISTER #0</description>
+            <addressOffset>0x30</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+        <!-- PERIRST1 -->
+        <register>
+            <name>PERIRST1</name>
+            <description>PERIPHERAL RESET CONTROL REGISTER #1</description>
+            <addressOffset>0x34</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+        <!-- PERIRST2 -->
+        <register>
+            <name>PERIRST2</name>
+            <description>PERIPHERAL RESET CONTROL REGISTER #2</description>
+            <addressOffset>0x38</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+        <!-- PERIRST3 -->
+        <register>
+            <name>PERIRST3</name>
+            <description>PERIPHERAL RESET CONTROL REGISTER #3</description>
+            <addressOffset>0x3c</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+        <!-- PERIRST4 -->
+        <register>
+            <name>PERIRST4</name>
+            <description>PERIPHERAL RESET CONTROL REGISTER #4</description>
+            <addressOffset>0x40</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+        <!-- PERIRST5 -->
+        <register>
+            <name>PERIRST5</name>
+            <description>PERIPHERAL RESET CONTROL REGISTER #5</description>
+            <addressOffset>0x44</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+        <!-- PERIRST6 -->
+        <register>
+            <name>PERIRST6</name>
+            <description>PERIPHERAL RESET CONTROL REGISTER #6</description>
+            <addressOffset>0x48</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+        <!-- PERIRST7 -->
+        <register>
+            <name>PERIRST7</name>
+            <description>PERIPHERAL RESET CONTROL REGISTER #7</description>
+            <addressOffset>0x4c</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+        <!-- PERIRST8 -->
+        <register>
+            <name>PERIRST8</name>
+            <description>PERIPHERAL RESET CONTROL REGISTER #8</description>
+            <addressOffset>0x50</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+        <!-- CPUINITADDR0 -->
+        <register>
+            <name>CPUINITADDR0</name>
+            <description>CPU INITIAL ADDRESS REGISTER #0</description>
+            <addressOffset>0x54</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+        <!-- CPUINITADDR1 -->
+        <register>
+            <name>CPUINITADDR1</name>
+            <description>CPU INITIAL ADDRESS REGISTER #1</description>
+            <addressOffset>0x58</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+        <!-- SLEEPCTRL -->
+        <register>
+            <name>SLEEPCTRL</name>
+            <description>SLEEP CONTROL REGISTER</description>
+            <addressOffset>0x5c</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+        <!-- ADCCLKCTRL -->
+        <register>
+            <name>ADCCLKCTRL</name>
+            <description>ADC CLOCK CONTROL REGISTER</description>
+            <addressOffset>0x60</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+        <!-- FPGAUSBCTRL -->
+        <register>
+            <name>USBCTRL</name>
+            <description>FPGA USB CONTROL REGISTER</description>
+            <addressOffset>0x64</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0x00000000</resetValue>
+        </register>
+      </registers>
+    </peripheral>
+
     <!-- SPIM -->
     <peripheral>
       <!-- Description -->
