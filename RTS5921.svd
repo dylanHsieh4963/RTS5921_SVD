@@ -3945,7 +3945,7 @@
                     <description>Indicates change in ACA pin value</description>
                     <bitOffset>20</bitOffset>
                     <bitWidth>1</bitWidth>
-                    <access>read-writeOnce</access>
+                    <access>read-write</access>
                     <enumeratedValues>
                         <enumeratedValue>
                             <name>NO_ACA_PIN_CHANGE</name>
@@ -3964,7 +3964,7 @@
                     <description>Debounce Done</description>
                     <bitOffset>19</bitOffset>
                     <bitWidth>1</bitWidth>
-                    <access>read-writeOnce</access>
+                    <access>read-write</access>
                     <enumeratedValues>
                         <enumeratedValue>
                             <name>INACTIVE</name>
@@ -3983,7 +3983,7 @@
                     <description>A-Device Timeout Change</description>
                     <bitOffset>18</bitOffset>
                     <bitWidth>1</bitWidth>
-                    <access>read-writeOnce</access>
+                    <access>read-write</access>
                     <enumeratedValues>
                         <enumeratedValue>
                             <name>INACTIVE</name>
@@ -4002,7 +4002,7 @@
                     <description>Host Negotiation Detected</description>
                     <bitOffset>17</bitOffset>
                     <bitWidth>1</bitWidth>
-                    <access>read-writeOnce</access>
+                    <access>read-write</access>
                     <enumeratedValues>
                         <enumeratedValue>
                             <name>INACTIVE</name>
@@ -4021,7 +4021,7 @@
                     <description>Host Negotiation Success Status Change</description>
                     <bitOffset>9</bitOffset>
                     <bitWidth>1</bitWidth>
-                    <access>read-writeOnce</access>
+                    <access>read-write</access>
                     <enumeratedValues>
                         <enumeratedValue>
                             <name>INACTIVE</name>
@@ -4040,7 +4040,7 @@
                     <description>Session Request Success Status Change</description>
                     <bitOffset>8</bitOffset>
                     <bitWidth>1</bitWidth>
-                    <access>read-writeOnce</access>
+                    <access>read-write</access>
                     <enumeratedValues>
                         <enumeratedValue>
                             <name>INACTIVE</name>
@@ -4059,7 +4059,7 @@
                     <description>Session End Detected</description>
                     <bitOffset>2</bitOffset>
                     <bitWidth>1</bitWidth>
-                    <access>read-writeOnce</access>
+                    <access>read-write</access>
                     <enumeratedValues>
                         <enumeratedValue>
                             <name>INACTIVE</name>
@@ -5062,7 +5062,7 @@
                 <name>WkUpInt</name>
                 <description>Resume/Remote Wakeup Detected Interrupt</description>
                 <bitRange>[31:31]</bitRange>
-                <access>read-writeOnce</access>
+                <access>read-write</access>
                 <enumeratedValues>
                   <enumeratedValue>
                     <name>INACTIVE</name>
@@ -5081,7 +5081,7 @@
                 <name>SessReqInt</name>
                 <description>Session Request/New Session Detected Interrupt</description>
                 <bitRange>[30:30]</bitRange>
-                <access>read-writeOnce</access>
+                <access>read-write</access>
                 <enumeratedValues>
                   <enumeratedValue>
                     <name>INACTIVE</name>
@@ -5100,7 +5100,7 @@
                 <name>DisconnInt</name>
                 <description>Disconnect Detected Interrupt</description>
                 <bitRange>[29:29]</bitRange>
-                <access>read-writeOnce</access>
+                <access>read-write</access>
                 <enumeratedValues>
                   <enumeratedValue>
                     <name>INACTIVE</name>
@@ -5119,7 +5119,7 @@
                 <name>ConIDStsChng</name>
                 <description>Connector ID Status Change</description>
                 <bitRange>[28:28]</bitRange>
-                <access>read-writeOnce</access>
+                <access>read-write</access>
                 <enumeratedValues>
                   <enumeratedValue>
                     <name>INACTIVE</name>
@@ -5138,7 +5138,7 @@
                 <name>LPM_Int</name>
                 <description>LPM Transaction Received Interrupt</description>
                 <bitRange>[27:27]</bitRange>
-                <access>read-writeOnce</access>
+                <access>read-write</access>
                 <enumeratedValues>
                   <enumeratedValue>
                     <name>INACTIVE</name>
@@ -5214,7 +5214,7 @@
                 <name>ResetDet</name>
                 <description>Reset Detected Interrupt</description>
                 <bitRange>[23:23]</bitRange>
-                <access>read-writeOnce</access>
+                <access>read-write</access>
                 <enumeratedValues>
                   <enumeratedValue>
                     <name>INACTIVE</name>
@@ -5233,7 +5233,7 @@
                 <name>FetSusp</name>
                 <description>Data Fetch Suspended</description>
                 <bitRange>[22:22]</bitRange>
-                <access>read-writeOnce</access>
+                <access>read-write</access>
                 <enumeratedValues>
                   <enumeratedValue>
                     <name>INACTIVE</name>
@@ -5252,7 +5252,7 @@
                 <name>incomplP</name>
                 <description>Incomplete Periodic Transfer</description>
                 <bitRange>[21:21]</bitRange>
-                <access>read-writeOnce</access>
+                <access>read-write</access>
                 <enumeratedValues>
                   <enumeratedValue>
                     <name>INACTIVE</name>
@@ -5271,7 +5271,7 @@
                 <name>incompISOIN</name>
                 <description>Incomplete Isochronous IN Transfer</description>
                 <bitRange>[20:20]</bitRange>
-                <access>read-writeOnce</access>
+                <access>read-write</access>
                 <enumeratedValues>
                   <enumeratedValue>
                     <name>INACTIVE</name>
@@ -5328,7 +5328,7 @@
                 <name>EPMis</name>
                 <description>Endpoint Mismatch Interrupt</description>
                 <bitRange>[17:17]</bitRange>
-                <access>read-writeOnce</access>
+                <access>read-write</access>
                 <enumeratedValues>
                   <enumeratedValue>
                     <name>INACTIVE</name>
@@ -5347,7 +5347,7 @@
                 <name>RstrDoneInt</name>
                 <description>Restore Done Interrupt</description>
                 <bitRange>[16:16]</bitRange>
-                <access>read-writeOnce</access>
+                <access>read-write</access>
                 <enumeratedValues>
                   <enumeratedValue>
                     <name>INACTIVE</name>
@@ -5366,7 +5366,7 @@
                 <name>EOPF</name>
                 <description>End of Periodic Frame Interrupt</description>
                 <bitRange>[15:15]</bitRange>
-                <access>read-writeOnce</access>
+                <access>read-write</access>
                 <enumeratedValues>
                   <enumeratedValue>
                     <name>INACTIVE</name>
@@ -5385,7 +5385,7 @@
                 <name>ISOOutDrop</name>
                 <description>Isochronous OUT Packet Dropped Interrupt</description>
                 <bitRange>[14:14]</bitRange>
-                <access>read-writeOnce</access>
+                <access>read-write</access>
                 <enumeratedValues>
                   <enumeratedValue>
                     <name>INACTIVE</name>
@@ -5404,7 +5404,7 @@
                 <name>EnumDone</name>
                 <description>Enumeration Done</description>
                 <bitRange>[13:13]</bitRange>
-                <access>read-writeOnce</access>
+                <access>read-write</access>
                 <enumeratedValues>
                   <enumeratedValue>
                     <name>INACTIVE</name>
@@ -5423,7 +5423,7 @@
                 <name>USBRst</name>
                 <description>USB Reset</description>
                 <bitRange>[12:12]</bitRange>
-                <access>read-writeOnce</access>
+                <access>read-write</access>
                 <enumeratedValues>
                   <enumeratedValue>
                     <name>INACTIVE</name>
@@ -5442,7 +5442,7 @@
                 <name>USBSusp</name>
                 <description>USB Suspend</description>
                 <bitRange>[11:11]</bitRange>
-                <access>read-writeOnce</access>
+                <access>read-write</access>
                 <enumeratedValues>
                   <enumeratedValue>
                     <name>INACTIVE</name>
@@ -5461,7 +5461,7 @@
                 <name>ErlySusp</name>
                 <description>Early Suspend</description>
                 <bitRange>[10:10]</bitRange>
-                <access>read-writeOnce</access>
+                <access>read-write</access>
                 <enumeratedValues>
                   <enumeratedValue>
                     <name>INACTIVE</name>
@@ -5480,7 +5480,7 @@
                 <name>I2CINT</name>
                 <description>I2C Interrupt</description>
                 <bitRange>[9:9]</bitRange>
-                <access>read-writeOnce</access>
+                <access>read-write</access>
                 <enumeratedValues>
                   <enumeratedValue>
                     <name>INACTIVE</name>
@@ -5499,7 +5499,7 @@
                 <name>ULPICKINT</name>
                 <description>ULPI Carkit Interrupt</description>
                 <bitRange>[8:8]</bitRange>
-                <access>read-writeOnce</access>
+                <access>read-write</access>
                 <enumeratedValues>
                   <enumeratedValue>
                     <name>INACTIVE</name>
@@ -5594,7 +5594,7 @@
                 <name>Sof</name>
                 <description>Start of (micro)Frame</description>
                 <bitRange>[3:3]</bitRange>
-                <access>read-writeOnce</access>
+                <access>read-write</access>
                 <enumeratedValues>
                   <enumeratedValue>
                     <name>INACTIVE</name>
@@ -5632,7 +5632,7 @@
                 <name>ModeMis</name>
                 <description>Mode Mismatch Interrupt</description>
                 <bitRange>[1:1]</bitRange>
-                <access>read-writeOnce</access>
+                <access>read-write</access>
                 <enumeratedValues>
                   <enumeratedValue>
                     <name>INACTIVE</name>
@@ -11552,7 +11552,7 @@
                     <name>SOFTRST</name>
                     <description>Software Reset (Write 1 to Clear)</description>
                     <bitRange>[31:31]</bitRange>
-                    <access>writeOnceToClear</access>
+                    <access>read-write</access>
                     <enumeratedValues>
                         <enumeratedValue>
                             <name>DISABLE</name>
@@ -11583,12 +11583,6 @@
                             <description>Enable</description>
                         </enumeratedValue>
                     </enumeratedValues>
-                </field>
-                <field>
-                    <name>reserved</name>
-                    <description>Reserved</description>
-                    <bitRange>[29:22]</bitRange>
-                    <access>read-only</access>
                 </field>
                 <field>
                     <name>SYS</name>
@@ -20709,6 +20703,602 @@
         <name>I2C2</name>
         <description>I2C2 Interrupt</description>
         <value>18</value>
+      </interrupt>
+    </peripheral>
+    <!-- STRIP -->
+    <peripheral>
+      <!-- Description -->
+      <name>STRIP0</name>
+      <version>1.00</version>
+      <description>ARGB LED STRIP Controller</description>
+      <groupName>STRIP</groupName>
+      <headerStructName>STRIP</headerStructName>
+      <baseAddress>0x40101600</baseAddress>
+      <size>32</size>
+      <access>read-write</access>
+
+      <!-- Address Range -->
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x100</size>
+        <usage>registers</usage>
+      </addressBlock>
+
+      <!-- Interrup -->
+			<interrupt>
+				<name>STRIP0</name>
+				<description>STRIP0 Interrupt</description>
+				<value>27</value>
+			</interrupt>
+
+      <registers>
+        <register>
+          <name>CONTROL</name>
+          <description>LED STRIP CONTROL REGISTER</description>
+          <addressOffset>0x00</addressOffset>
+          <fields>
+            <field>
+              <name>REPCY</name>
+              <description>LED STRIP REPEAT CYCLE. Output strip data size is [REPCY * (TRANSLEN +1)]</description>
+              <bitRange>[23:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>FINISHSTS</name>
+              <description>LED STRIP FINISH STATUS: 1=Data transfer is finished; 0=interface is idle</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Idle</name>
+                  <value>0</value>
+                  <description>LED STRIP interface is idle</description>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Finished</name>
+                  <value>1</value>
+                  <description>Data transfer is finished</description>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FINISHINTSTS</name>
+              <description>LED STRIP BUSY INTERRUPT STATUS. W1C clears to 0. 1=Busy flag from 1 to 0</description>
+              <bitRange>[7:7]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NoEffect</name>
+                  <value>0</value>
+                  <description>No effect</description>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SetOnBusyToIdle</name>
+                  <value>1</value>
+                  <description>Set when Busy flag from 1 to 0</description>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FINISHINTEN</name>
+              <description>LED STRIP FINISH INTERRUPT ENABLE</description>
+              <bitRange>[6:6]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <value>0</value>
+                  <description>Disable Interrupt</description>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <value>1</value>
+                  <description>Enable Interrupt</description>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>MDSEL</name>
+              <description>LED MODE SELECT</description>
+              <bitRange>[5:4]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>OneShot</name>
+                  <value>0</value>
+                  <description>One shot Mode</description>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Repeat</name>
+                  <value>1</value>
+                  <description>Repeat Mode</description>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>AlwaysRun</name>
+                  <value>2</value>
+                  <description>Always Run Mode</description>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PENDEN</name>
+              <description>LED STRIP PENDING CODE ENABLE</description>
+              <bitRange>[3:3]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <value>0</value>
+                  <description>Disable Pending Code</description>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <value>1</value>
+                  <description>Enable Pending Code</description>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>STOP</name>
+              <description>LED STRIP STOP. 1=stop after this transmit cycle is complete</description>
+              <bitRange>[2:2]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NoEffect</name>
+                  <value>0</value>
+                  <description>No effect</description>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Stop</name>
+                  <value>1</value>
+                  <description>Stop after this cycle</description>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>START</name>
+              <description>LED STRIP START. 1=Start data buffer transmit. W1C clears</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NoEffect</name>
+                  <value>0</value>
+                  <description>No effect</description>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Start</name>
+                  <value>1</value>
+                  <description>Start LED STRIP data buffer transmit</description>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>EN</name>
+              <description>LED STRIP ENABLE</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <value>0</value>
+                  <description>Disable LED STRIP Module</description>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <value>1</value>
+                  <description>Enable LED STRIP Module</description>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CODE0</name>
+          <description>LED STRIP 0 CODE</description>
+          <addressOffset>0x04</addressOffset>
+          <fields>
+            <field>
+              <name>ZCHW</name>
+              <description>LED STRIP 0 CODE HIGH WIDTH. Output 0 high time = (ZCHW + 2) * period of clk_fnd (40ns)</description>
+              <bitRange>[13:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>ZCLW</name>
+              <description>LED STRIP 0 CODE LOW WIDTH. Output 0 low time = (ZCLW + 2) * period of clk_fnd (40ns)</description>
+              <bitRange>[5:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CODE1</name>
+          <description>LED STRIP 1 CODE</description>
+          <addressOffset>0x08</addressOffset>
+          <fields>
+            <field>
+              <name>OCHW</name>
+              <description>LED STRIP 1 CODE HIGH WIDTH. Output 1 high time = (OCHW + 2) * period of clk_fnd (40ns)</description>
+              <bitRange>[13:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OCLW</name>
+              <description>LED STRIP 1 CODE LOW WIDTH. Output 1 low time = (OCLW + 2) * period of clk_fnd (40ns)</description>
+              <bitRange>[5:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>RSTW</name>
+          <description>LED STRIP RESET WIDTH REGISTER</description>
+          <addressOffset>0x0C</addressOffset>
+          <fields>
+            <field>
+              <name>RSTW</name>
+              <description>
+                LED strip reset time = (RSTW + 1) * period of clk_fnd (40ns). 
+                RSTLW [5:0] is treated as 1_11111b internally.
+              </description>
+              <bitRange>[31:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>PENDW</name>
+          <description>Pending Width Control Register</description>
+          <addressOffset>0x10</addressOffset>
+          <fields>
+            <field>
+              <name>PENDW</name>
+              <description>These bits control pending time before the next LED strip data is transferred.</description>
+              <bitRange>[5:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>DSRC</name>
+          <description>LED STRIP Data Source Address</description>
+          <addressOffset>0x14</addressOffset>
+          <fields>
+            <field>
+              <name>TRANSADD</name>
+              <description>Before starting an LED STRIP Transmit, this field must be initialized to contain the Base Address of the buffer in SRAM.</description>
+              <bitRange>[31:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TRANSLEN</name>
+          <description>Transmit Length Register</description>
+          <addressOffset>0x18</addressOffset>
+          <fields>
+            <field>
+              <name>TRANSLEN</name>
+              <description>Specifies how many bytes are to be transmitted from the Transmit Buffer memory.</description>
+              <bitRange>[13:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>ADVCMD</name>
+          <description>Advanced Command Register</description>
+          <addressOffset>0x1C</addressOffset>
+          <fields>
+            <field>
+              <name>ADVEN</name>
+              <description>Enable advanced command execution</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>ADVCMD</name>
+              <description>
+                Advanced command selector. 
+                0x00: AVD_TH50
+                0x01: AVD_TH20
+                0x02: AVD_SLEEP
+                0x03: AVD_WAKEUP
+                0x04: AVD_SET_ID
+                0x05: AVD_CLEAN_ID
+                0x06: AVD_CHECK_ID
+                0x07: AVD_SPECIFY_ID
+              </description>
+              <bitRange>[3:1]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TH50CTRL0</name>
+          <description>ADV_TH50 Command Timing Register</description>
+          <addressOffset>0x20</addressOffset>
+          <fields>
+            <field>
+              <name>TH50L1T</name>
+              <description>Indicate the 1st low pulse width (number of count base on 24MHz) of ADV_TH50 command.</description>
+              <bitRange>[27:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TH50H1T</name>
+              <description>Indicate the 1st high pulse width (number of count base on 24MHz) of ADV_TH50 command.</description>
+              <bitRange>[11:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+            <name>TH50CTRL1</name>
+            <description>ADV_TH50 2nd Pulse Timing Register</description>
+            <addressOffset>0x24</addressOffset>
+            <fields>
+                <field>
+                    <name>TH50L2T</name>
+                    <description>
+                        Indicate the 2nd low pulse width (number of count based on 24MHz) of ADV_TH50 command.
+                    </description>
+                    <bitRange>[27:16]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>TH50H2T</name>
+                    <description>
+                        Indicate the 2nd high pulse width (number of count based on 24MHz) of ADV_TH50 command.
+                    </description>
+                    <bitRange>[11:0]</bitRange>
+                    <access>read-write</access>
+                </field>
+            </fields>
+        </register>
+        <register>
+            <name>TH50RX</name>
+            <description>TH50 Receive Register</description>
+            <addressOffset>0x28</addressOffset>
+            <fields>
+                <field>
+                    <name>RX_TH50</name>
+                    <description>Received TH50 data (bits 15:8).</description>
+                    <bitRange>[15:8]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>RX_TH50_PRE</name>
+                    <description>TH50 pre-received data (bits 7:0).</description>
+                    <bitRange>[7:0]</bitRange>
+                    <access>read-write</access>
+                </field>
+            </fields>
+        </register>
+        <register>
+            <name>TH50TO</name>
+            <description>ADV_TH50 Timeout Register</description>
+            <addressOffset>0x2C</addressOffset>
+            <fields>
+                <field>
+                    <name>TH50TO</name>
+                    <description>
+                        Indicate the timeout pulse width (number of count based on 24MHz) of ADV_TH50 command. 
+                        Exit ADV_TH50 mode when there is no response pulse within the time of TH50TO.
+                    </description>
+                    <bitRange>[11:0]</bitRange>
+                    <access>read-write</access>
+                </field>
+            </fields>
+        </register>
+        <register>
+            <name>AVDPRLCTRL0</name>
+            <description>ARGB Gen2 Parallel Control Register 0</description>
+            <addressOffset>0x30</addressOffset>
+            <fields>
+                <field>
+                    <name>ADVID</name>
+                    <description>Dynamic ID number for ARGB gen2 parallel mode</description>
+                    <bitRange>[31:28]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>ADVWKHT</name>
+                    <description>High pulse width (counts, 24MHz) of ADV_WAKUP command</description>
+                    <bitRange>[27:20]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>ADVWKLT</name>
+                    <description>Low pulse width (counts, 24MHz/1024) of ADV_WAKUP command, default ~1ms</description>
+                    <bitRange>[19:12]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>TH20HT</name>
+                    <description>High pulse width (counts, 24MHz) of ADV_TH20 command</description>
+                    <bitRange>[11:0]</bitRange>
+                    <access>read-write</access>
+                </field>
+            </fields>
+        </register>
+        <register>
+            <name>AVDPRLCTRL1</name>
+            <description>ARGB Gen2 Parallel Control Register 1</description>
+            <addressOffset>0x34</addressOffset>
+            <fields>
+                <field>
+                    <name>PRLLT</name>
+                    <description>Low pulse width (counts, 24MHz) of ADV_SET_ID command</description>
+                    <bitRange>[27:16]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>PRLHT</name>
+                    <description>High pulse width (counts, 24MHz) of ADV_SET_ID command</description>
+                    <bitRange>[11:0]</bitRange>
+                    <access>read-write</access>
+                </field>
+            </fields>
+        </register>
+        <register>
+            <name>AVDPRLTO</name>
+            <description>ADV_SET_ID Timeout Register</description>
+            <addressOffset>0x38</addressOffset>
+            <fields>
+                <field>
+                    <name>PRLTO</name>
+                    <description>Timeout low pulse width (counts, 24MHz) of ADV_SET_ID command</description>
+                    <bitRange>[11:0]</bitRange>
+                    <access>read-write</access>
+                </field>
+            </fields>
+        </register>
+        <register>
+            <name>RECVADDR</name>
+            <description>SRAM Address for Receiving Gen2 ARGB Data</description>
+            <addressOffset>0x3C</addressOffset>
+            <fields>
+                <field>
+                    <name>RECVADDR</name>
+                    <description>SRAM address for receiving Gen2 ARGB data</description>
+                    <bitRange>[31:0]</bitRange>
+                    <access>read-write</access>
+                </field>
+            </fields>
+        </register>
+        <register>
+            <name>RECVCNT</name>
+            <description>Receive Data Count Register</description>
+            <addressOffset>0x40</addressOffset>
+            <fields>
+                <field>
+                    <name>RECVCNT</name>
+                    <description>Receive data count</description>
+                    <bitRange>[7:0]</bitRange>
+                    <access>read-write</access>
+                </field>
+            </fields>
+        </register>
+        <register>
+            <name>ADVSTS</name>
+            <description>Status Register</description>
+            <addressOffset>0x44</addressOffset>
+            <fields>
+                <field>
+                    <name>ID_ACK</name>
+                    <description>ID Acknowledge (W1C)</description>
+                    <bitRange>[1:1]</bitRange>
+                </field>
+                <field>
+                    <name>ADVTO</name>
+                    <description>Timeout Flag (W1C)</description>
+                    <bitRange>[0:0]</bitRange>
+                </field>
+            </fields>
+        </register>
+        <register>
+            <name>ADVINT</name>
+            <description>ADV Interrupt Enable Register</description>
+            <addressOffset>0x48</addressOffset>
+            <fields>
+                <field>
+                    <name>ADVTOINT_EN</name>
+                    <description>ADV Timeout Interrupt Enable</description>
+                    <bitRange>[0:0]</bitRange>
+                    <access>read-write</access>
+                </field>
+            </fields>
+        </register>
+      </registers>
+    </peripheral>
+    <!-- STRIP1 -->
+    <peripheral derivedFrom="STRIP0">
+      <name>STRIP1</name>
+      <baseAddress>0x40101700</baseAddress>
+      <interrupt>
+        <name>STRIP1</name>
+        <description>STRIP1 Interrupt</description>
+        <value>28</value>
+      </interrupt>
+    </peripheral>
+
+    <!-- STRIP2 -->
+    <peripheral derivedFrom="STRIP0">
+      <name>STRIP2</name>
+      <baseAddress>0x40101800</baseAddress>
+      <interrupt>
+        <name>STRIP2</name>
+        <description>STRIP2 Interrupt</description>
+        <value>29</value>
+      </interrupt>
+    </peripheral>
+
+    <!-- STRIP3 -->
+    <peripheral derivedFrom="STRIP0">
+      <name>STRIP3</name>
+      <baseAddress>0x40101900</baseAddress>
+      <interrupt>
+        <name>STRIP3</name>
+        <description>STRIP3 Interrupt</description>
+        <value>30</value>
+      </interrupt>
+    </peripheral>
+
+    <!-- STRIP4 -->
+    <peripheral derivedFrom="STRIP0">
+      <name>STRIP4</name>
+      <baseAddress>0x40101A00</baseAddress>
+      <interrupt>
+        <name>STRIP4</name>
+        <description>STRIP4 Interrupt</description>
+        <value>31</value>
+      </interrupt>
+    </peripheral>
+
+    <!-- STRIP5 -->
+    <peripheral derivedFrom="STRIP0">
+      <name>STRIP5</name>
+      <baseAddress>0x40101B00</baseAddress>
+      <interrupt>
+        <name>STRIP5</name>
+        <description>STRIP5 Interrupt</description>
+        <value>32</value>
+      </interrupt>
+    </peripheral>
+
+    <!-- STRIP6 -->
+    <peripheral derivedFrom="STRIP0">
+      <name>STRIP6</name>
+      <baseAddress>0x40101C00</baseAddress>
+      <interrupt>
+        <name>STRIP6</name>
+        <description>STRIP6 Interrupt</description>
+        <value>33</value>
+      </interrupt>
+    </peripheral>
+
+    <!-- STRIP7 -->
+    <peripheral derivedFrom="STRIP0">
+      <name>STRIP7</name>
+      <baseAddress>0x40101D00</baseAddress>
+      <interrupt>
+        <name>STRIP7</name>
+        <description>STRIP7 Interrupt</description>
+        <value>34</value>
+      </interrupt>
+    </peripheral>
+
+    <!-- STRIP8 -->
+    <peripheral derivedFrom="STRIP0">
+      <name>STRIP8</name>
+      <baseAddress>0x40101E00</baseAddress>
+      <interrupt>
+        <name>STRIP8</name>
+        <description>STRIP8 Interrupt</description>
+        <value>35</value>
       </interrupt>
     </peripheral>
     <!-- GPIO -->
