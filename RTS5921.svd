@@ -11585,7 +11585,7 @@
                     </enumeratedValues>
                 </field>
                 <field>
-                    <name>SYS</name>
+                    <name>SYS_TOP</name>
                     <description>System Clock Power Control</description>
                     <bitRange>[21:21]</bitRange>
                     <access>read-write</access>
@@ -11603,7 +11603,7 @@
                     </enumeratedValues>
                 </field>
                 <field>
-                    <name>USB</name>
+                    <name>USB_TOP</name>
                     <description>USB Clock Power Control</description>
                     <bitRange>[20:20]</bitRange>
                     <access>read-write</access>
@@ -11621,7 +11621,7 @@
                     </enumeratedValues>
                 </field>
                 <field>
-                    <name>APB</name>
+                    <name>APB_TOP</name>
                     <description>APB Clock Power Control</description>
                     <bitRange>[19:19]</bitRange>
                     <access>read-write</access>
@@ -11639,7 +11639,7 @@
                     </enumeratedValues>
                 </field>
                 <field>
-                    <name>I3C</name>
+                    <name>I3C_TOP</name>
                     <description>I3C Clock Power Control</description>
                     <bitRange>[18:18]</bitRange>
                     <access>read-write</access>
@@ -11657,7 +11657,7 @@
                     </enumeratedValues>
                 </field>
                 <field>
-                    <name>SPIM</name>
+                    <name>SPIM_TOP</name>
                     <description>SPI Master Clock Power Control</description>
                     <bitRange>[17:17]</bitRange>
                     <access>read-write</access>
@@ -11675,7 +11675,7 @@
                     </enumeratedValues>
                 </field>
                 <field>
-                    <name>SPIS</name>
+                    <name>SPIS_TOP</name>
                     <description>SPI Slave Clock Power Control</description>
                     <bitRange>[16:16]</bitRange>
                     <access>read-write</access>
@@ -11693,7 +11693,7 @@
                     </enumeratedValues>
                 </field>
                 <field>
-                    <name>I2C</name>
+                    <name>I2C_TOP</name>
                     <description>I2C Clock Power Control</description>
                     <bitRange>[15:15]</bitRange>
                     <access>read-write</access>
@@ -11711,7 +11711,7 @@
                     </enumeratedValues>
                 </field>
                 <field>
-                    <name>STRIP</name>
+                    <name>STRIP_TOP</name>
                     <description>Strip Clock Power Control</description>
                     <bitRange>[14:14]</bitRange>
                     <access>read-write</access>
@@ -11729,7 +11729,7 @@
                     </enumeratedValues>
                 </field>
                 <field>
-                    <name>ADC</name>
+                    <name>ADC_TOP</name>
                     <description>ADC Clock Power Control</description>
                     <bitRange>[13:13]</bitRange>
                     <access>read-write</access>
@@ -11747,7 +11747,7 @@
                     </enumeratedValues>
                 </field>
                 <field>
-                    <name>UART</name>
+                    <name>UART_TOP</name>
                     <description>UART Clock Power Control</description>
                     <bitRange>[12:12]</bitRange>
                     <access>read-write</access>
@@ -11765,7 +11765,7 @@
                     </enumeratedValues>
                 </field>
                 <field>
-                    <name>MATRIX</name>
+                    <name>MATRIX_TOP</name>
                     <description>Matrix Clock Power Control</description>
                     <bitRange>[11:11]</bitRange>
                     <access>read-write</access>
@@ -11783,7 +11783,7 @@
                     </enumeratedValues>
                 </field>
                 <field>
-                    <name>CRC</name>
+                    <name>CRC_TOP</name>
                     <description>CRC Clock Power Control</description>
                     <bitRange>[10:10]</bitRange>
                     <access>read-write</access>
@@ -11801,7 +11801,7 @@
                     </enumeratedValues>
                 </field>
                 <field>
-                    <name>TMR</name>
+                    <name>TMR_TOP</name>
                     <description>Timer Clock Power Control</description>
                     <bitRange>[9:9]</bitRange>
                     <access>read-write</access>
@@ -11819,7 +11819,7 @@
                     </enumeratedValues>
                 </field>
                 <field>
-                    <name>PWM</name>
+                    <name>PWM_TOP</name>
                     <description>PWM Clock Power Control</description>
                     <bitRange>[8:8]</bitRange>
                     <access>read-write</access>
@@ -11837,7 +11837,7 @@
                     </enumeratedValues>
                 </field>
                 <field>
-                    <name>WDT</name>
+                    <name>WDT_TOP</name>
                     <description>Watchdog Timer Clock Power Control</description>
                     <bitRange>[7:7]</bitRange>
                     <access>read-write</access>
@@ -11855,7 +11855,7 @@
                     </enumeratedValues>
                 </field>
                 <field>
-                    <name>RC32KCAL</name>
+                    <name>RC32KCAL_TOP</name>
                     <description>RC 32K Cal Clock Power Control</description>
                     <bitRange>[6:6]</bitRange>
                     <access>read-write</access>
@@ -11873,7 +11873,7 @@
                     </enumeratedValues>
                 </field>
                 <field>
-                    <name>RC32KREF</name>
+                    <name>RC32KREF_TOP</name>
                     <description>RC 32K Ref Clock Power Control</description>
                     <bitRange>[5:5]</bitRange>
                     <access>read-write</access>
@@ -11891,7 +11891,7 @@
                     </enumeratedValues>
                 </field>
                 <field>
-                    <name>TACHO</name>
+                    <name>TACHO_TOP</name>
                     <description>Tachometer Clock Power Control</description>
                     <bitRange>[4:4]</bitRange>
                     <access>read-write</access>
@@ -11909,7 +11909,7 @@
                     </enumeratedValues>
                 </field>
                 <field>
-                    <name>RC24MCAL</name>
+                    <name>RC24MCAL_TOP</name>
                     <description>RC 24M Cal Clock Power Control</description>
                     <bitRange>[3:3]</bitRange>
                     <access>read-write</access>
@@ -11927,7 +11927,7 @@
                     </enumeratedValues>
                 </field>
                 <field>
-                    <name>RC24MREF</name>
+                    <name>RC24MREF_TOP</name>
                     <description>RC 24M Ref Clock Power Control</description>
                     <bitRange>[2:2]</bitRange>
                     <access>read-write</access>
@@ -11945,7 +11945,7 @@
                     </enumeratedValues>
                 </field>
                 <field>
-                    <name>IO</name>
+                    <name>GPIO_TOP</name>
                     <description>IO Clock Power Control</description>
                     <bitRange>[1:1]</bitRange>
                     <access>read-write</access>
@@ -11963,7 +11963,7 @@
                     </enumeratedValues>
                 </field>
                 <field>
-                    <name>USB_DPHY</name>
+                    <name>USB_DPHY_TOP</name>
                     <description>USB DPHY Clock Power Control</description>
                     <bitRange>[0:0]</bitRange>
                     <access>read-write</access>
@@ -12073,7 +12073,7 @@
           <addressOffset>0x08</addressOffset>
           <fields>
             <field>
-              <name>CPU</name>
+              <name>CPU_IP</name>
               <description>CPU clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[21:21]</bitRange>
               <access>read-write</access>
@@ -12091,7 +12091,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>DMA</name>
+              <name>DMA_IP</name>
               <description>DMA clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[20:20]</bitRange>
               <access>read-write</access>
@@ -12109,7 +12109,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>INTR_SPIC</name>
+              <name>INTR_SPIC_IP</name>
               <description>INTR SPIC clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[19:19]</bitRange>
               <access>read-write</access>
@@ -12127,7 +12127,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>EXTR_SPIC</name>
+              <name>EXTR_SPIC_IP</name>
               <description>EXTR SPIC clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[18:18]</bitRange>
               <access>read-write</access>
@@ -12145,7 +12145,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>USB</name>
+              <name>USB_IP</name>
               <description>USB clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[17:17]</bitRange>
               <access>read-write</access>
@@ -12163,7 +12163,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>I3C</name>
+              <name>I3C_IP</name>
               <description>I3C clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[16:16]</bitRange>
               <access>read-write</access>
@@ -12181,7 +12181,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>SPIM</name>
+              <name>SPIM_IP</name>
               <description>SPIM clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[15:15]</bitRange>
               <access>read-write</access>
@@ -12199,7 +12199,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>SPIS</name>
+              <name>SPIS_IP</name>
               <description>SPIS clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[14:14]</bitRange>
               <access>read-write</access>
@@ -12217,7 +12217,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>SWD</name>
+              <name>SWD_IP</name>
               <description>SWD clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[13:13]</bitRange>
               <access>read-write</access>
@@ -12235,7 +12235,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>I2CDBG</name>
+              <name>I2CDBG_IP</name>
               <description>I2C Debug clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[12:12]</bitRange>
               <access>read-write</access>
@@ -12253,7 +12253,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>I2C2</name>
+              <name>I2C2_IP</name>
               <description>I2C2 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[11:11]</bitRange>
               <access>read-write</access>
@@ -12271,7 +12271,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>I2C1</name>
+              <name>I2C1_IP</name>
               <description>I2C1 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[10:10]</bitRange>
               <access>read-write</access>
@@ -12289,7 +12289,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>I2C0</name>
+              <name>I2C0_IP</name>
               <description>I2C0 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[9:9]</bitRange>
               <access>read-write</access>
@@ -12307,7 +12307,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>STRIP8</name>
+              <name>STRIP8_IP</name>
               <description>STRIP8 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[8:8]</bitRange>
               <access>read-write</access>
@@ -12325,7 +12325,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>STRIP7</name>
+              <name>STRIP7_IP</name>
               <description>STRIP7 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[7:7]</bitRange>
               <access>read-write</access>
@@ -12343,7 +12343,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>STRIP6</name>
+              <name>STRIP6_IP</name>
               <description>STRIP6 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[6:6]</bitRange>
               <access>read-write</access>
@@ -12361,7 +12361,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>STRIP5</name>
+              <name>STRIP5_IP</name>
               <description>STRIP5 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[5:5]</bitRange>
               <access>read-write</access>
@@ -12379,7 +12379,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>STRIP4</name>
+              <name>STRIP4_IP</name>
               <description>STRIP4 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[4:4]</bitRange>
               <access>read-write</access>
@@ -12397,7 +12397,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>STRIP3</name>
+              <name>STRIP3_IP</name>
               <description>STRIP3 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[3:3]</bitRange>
               <access>read-write</access>
@@ -12415,7 +12415,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>STRIP2</name>
+              <name>STRIP2_IP</name>
               <description>STRIP2 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[2:2]</bitRange>
               <access>read-write</access>
@@ -12433,7 +12433,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>STRIP1</name>
+              <name>STRIP1_IP</name>
               <description>STRIP1 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[1:1]</bitRange>
               <access>read-write</access>
@@ -12451,7 +12451,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>STRIP0</name>
+              <name>STRIP0_IP</name>
               <description>STRIP0 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[0:0]</bitRange>
               <access>read-write</access>
@@ -12476,7 +12476,7 @@
           <addressOffset>0x0C</addressOffset>
           <fields>
             <field>
-              <name>EFUSE</name>
+              <name>EFUSE_IP</name>
               <description>EFUSE clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[19:19]</bitRange>
               <access>read-write</access>
@@ -12494,7 +12494,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>MATRIX</name>
+              <name>MATRIX_IP</name>
               <description>MATRIX clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[18:18]</bitRange>
               <access>read-write</access>
@@ -12512,7 +12512,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>CRC</name>
+              <name>CRC_IP</name>
               <description>CRC clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[17:17]</bitRange>
               <access>read-write</access>
@@ -12530,7 +12530,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>ADC</name>
+              <name>ADC_IP</name>
               <description>ADC clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[16:16]</bitRange>
               <access>read-write</access>
@@ -12548,7 +12548,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>URAT</name>
+              <name>URAT_IP</name>
               <description>URAT clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[15:15]</bitRange>
               <access>read-write</access>
@@ -12566,7 +12566,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>WDT</name>
+              <name>WDT_IP</name>
               <description>WDT clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[14:14]</bitRange>
               <access>read-write</access>
@@ -12584,7 +12584,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>IO</name>
+              <name>GPIO_IP</name>
               <description>IO clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[13:13]</bitRange>
               <access>read-write</access>
@@ -12602,7 +12602,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>USB_DPHY</name>
+              <name>USB_DPHY_IP</name>
               <description>USB_DPHY clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[12:12]</bitRange>
               <access>read-write</access>
@@ -12620,7 +12620,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>TMR3</name>
+              <name>TMR3_IP</name>
               <description>TMR3 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[11:11]</bitRange>
               <access>read-write</access>
@@ -12638,7 +12638,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>TMR2</name>
+              <name>TMR2_IP</name>
               <description>TMR2 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[10:10]</bitRange>
               <access>read-write</access>
@@ -12656,7 +12656,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>TMR1</name>
+              <name>TMR1_IP</name>
               <description>TMR1 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[9:9]</bitRange>
               <access>read-write</access>
@@ -12674,7 +12674,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>TMR0</name>
+              <name>TMR0_IP</name>
               <description>TMR0 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[8:8]</bitRange>
               <access>read-write</access>
@@ -12692,7 +12692,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>TACHO3</name>
+              <name>TACHO3_IP</name>
               <description>TACHO3 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[7:7]</bitRange>
               <access>read-write</access>
@@ -12710,7 +12710,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>TACHO2</name>
+              <name>TACHO2_IP</name>
               <description>TACHO2 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[6:6]</bitRange>
               <access>read-write</access>
@@ -12728,7 +12728,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>TACHO1</name>
+              <name>TACHO1_IP</name>
               <description>TACHO1 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[5:5]</bitRange>
               <access>read-write</access>
@@ -12746,7 +12746,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>TACHO0</name>
+              <name>TACHO0_IP</name>
               <description>TACHO0 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[4:4]</bitRange>
               <access>read-write</access>
@@ -12764,7 +12764,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>RC32CAL</name>
+              <name>RC32CAL_IP</name>
               <description>RC32CAL clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[3:3]</bitRange>
               <access>read-write</access>
@@ -12782,7 +12782,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>RC32REF</name>
+              <name>RC32REF_IP</name>
               <description>RC32REF clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[2:2]</bitRange>
               <access>read-write</access>
@@ -12800,7 +12800,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>RC24CAL</name>
+              <name>RC24CAL_IP</name>
               <description>RC24CAL clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[1:1]</bitRange>
               <access>read-write</access>
@@ -12818,7 +12818,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>RC24REF</name>
+              <name>RC24REF_IP</name>
               <description>RC24REF clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[0:0]</bitRange>
               <access>read-write</access>
@@ -12843,7 +12843,7 @@
           <addressOffset>0x10</addressOffset>
           <fields>
             <field>
-              <name>LEDPWM31</name>
+              <name>LEDPWM31_IP</name>
               <description>LEDPWM31 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[31:31]</bitRange>
               <access>read-write</access>
@@ -12861,7 +12861,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM30</name>
+              <name>LEDPWM30_IP</name>
               <description>LEDPWM30 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[30:30]</bitRange>
               <access>read-write</access>
@@ -12879,7 +12879,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM29</name>
+              <name>LEDPWM29_IP</name>
               <description>LEDPWM29 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[29:29]</bitRange>
               <access>read-write</access>
@@ -12897,7 +12897,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM28</name>
+              <name>LEDPWM28_IP</name>
               <description>LEDPWM28 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[28:28]</bitRange>
               <access>read-write</access>
@@ -12915,7 +12915,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM27</name>
+              <name>LEDPWM27_IP</name>
               <description>LEDPWM27 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[27:27]</bitRange>
               <access>read-write</access>
@@ -12933,7 +12933,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM26</name>
+              <name>LEDPWM26_IP</name>
               <description>LEDPWM26 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[26:26]</bitRange>
               <access>read-write</access>
@@ -12951,7 +12951,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM25</name>
+              <name>LEDPWM25_IP</name>
               <description>LEDPWM25 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[25:25]</bitRange>
               <access>read-write</access>
@@ -12969,7 +12969,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM24</name>
+              <name>LEDPWM24_IP</name>
               <description>LEDPWM24 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[24:24]</bitRange>
               <access>read-write</access>
@@ -12987,7 +12987,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM23</name>
+              <name>LEDPWM23_IP</name>
               <description>LEDPWM23 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[23:23]</bitRange>
               <access>read-write</access>
@@ -13005,7 +13005,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM22</name>
+              <name>LEDPWM22_IP</name>
               <description>LEDPWM22 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[22:22]</bitRange>
               <access>read-write</access>
@@ -13023,7 +13023,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM21</name>
+              <name>LEDPWM21_IP</name>
               <description>LEDPWM21 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[21:21]</bitRange>
               <access>read-write</access>
@@ -13041,7 +13041,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM20</name>
+              <name>LEDPWM20_IP</name>
               <description>LEDPWM20 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[20:20]</bitRange>
               <access>read-write</access>
@@ -13059,7 +13059,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM19</name>
+              <name>LEDPWM19_IP</name>
               <description>LEDPWM19 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[19:19]</bitRange>
               <access>read-write</access>
@@ -13077,7 +13077,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM18</name>
+              <name>LEDPWM18_IP</name>
               <description>LEDPWM18 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[18:18]</bitRange>
               <access>read-write</access>
@@ -13095,7 +13095,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM17</name>
+              <name>LEDPWM17_IP</name>
               <description>LEDPWM17 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[17:17]</bitRange>
               <access>read-write</access>
@@ -13113,7 +13113,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM16</name>
+              <name>LEDPWM16_IP</name>
               <description>LEDPWM16 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[16:16]</bitRange>
               <access>read-write</access>
@@ -13131,7 +13131,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM15</name>
+              <name>LEDPWM15_IP</name>
               <description>LEDPWM15 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[15:15]</bitRange>
               <access>read-write</access>
@@ -13149,7 +13149,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM14</name>
+              <name>LEDPWM14_IP</name>
               <description>LEDPWM14 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[14:14]</bitRange>
               <access>read-write</access>
@@ -13167,7 +13167,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM13</name>
+              <name>LEDPWM13_IP</name>
               <description>LEDPWM13 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[13:13]</bitRange>
               <access>read-write</access>
@@ -13185,7 +13185,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM12</name>
+              <name>LEDPWM12_IP</name>
               <description>LEDPWM12 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[12:12]</bitRange>
               <access>read-write</access>
@@ -13203,7 +13203,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM11</name>
+              <name>LEDPWM11_IP</name>
               <description>LEDPWM11 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[11:11]</bitRange>
               <access>read-write</access>
@@ -13221,7 +13221,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM10</name>
+              <name>LEDPWM10_IP</name>
               <description>LEDPWM10 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[10:10]</bitRange>
               <access>read-write</access>
@@ -13239,7 +13239,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM9</name>
+              <name>LEDPWM9_IP</name>
               <description>LEDPWM9 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[9:9]</bitRange>
               <access>read-write</access>
@@ -13257,7 +13257,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM8</name>
+              <name>LEDPWM8_IP</name>
               <description>LEDPWM8 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[8:8]</bitRange>
               <access>read-write</access>
@@ -13275,7 +13275,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM7</name>
+              <name>LEDPWM7_IP</name>
               <description>LEDPWM7 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[7:7]</bitRange>
               <access>read-write</access>
@@ -13293,7 +13293,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM6</name>
+              <name>LEDPWM6_IP</name>
               <description>LEDPWM6 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[6:6]</bitRange>
               <access>read-write</access>
@@ -13311,7 +13311,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM5</name>
+              <name>LEDPWM5_IP</name>
               <description>LEDPWM5 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[5:5]</bitRange>
               <access>read-write</access>
@@ -13329,7 +13329,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM4</name>
+              <name>LEDPWM4_IP</name>
               <description>LEDPWM4 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[4:4]</bitRange>
               <access>read-write</access>
@@ -13347,7 +13347,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM3</name>
+              <name>LEDPWM3_IP</name>
               <description>LEDPWM3 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[3:3]</bitRange>
               <access>read-write</access>
@@ -13365,7 +13365,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM2</name>
+              <name>LEDPWM2_IP</name>
               <description>LEDPWM2 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[2:2]</bitRange>
               <access>read-write</access>
@@ -13383,7 +13383,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM1</name>
+              <name>LEDPWM1_IP</name>
               <description>LEDPWM1 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[1:1]</bitRange>
               <access>read-write</access>
@@ -13401,7 +13401,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM0</name>
+              <name>LEDPWM0_IP</name>
               <description>LEDPWM0 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[0:0]</bitRange>
               <access>read-write</access>
@@ -13426,7 +13426,7 @@
           <addressOffset>0x14</addressOffset>
           <fields>
             <field>
-              <name>USB</name>
+              <name>USB_APB</name>
               <description>USB clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[29:29]</bitRange>
               <access>read-write</access>
@@ -13444,7 +13444,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>MATRIX</name>
+              <name>MATRIX_APB</name>
               <description>MATRIX clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[28:28]</bitRange>
               <access>read-write</access>
@@ -13462,7 +13462,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>CRC</name>
+              <name>CRC_APB</name>
               <description>CRC clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[27:27]</bitRange>
               <access>read-write</access>
@@ -13480,7 +13480,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>SPIM</name>
+              <name>SPIM_APB</name>
               <description>SPIM clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[26:26]</bitRange>
               <access>read-write</access>
@@ -13498,7 +13498,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>SPIS</name>
+              <name>SPIS_APB</name>
               <description>SPIS clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[25:25]</bitRange>
               <access>read-write</access>
@@ -13516,7 +13516,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>I2CDBG</name>
+              <name>I2CDBG_APB</name>
               <description>I2C Debug clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[24:24]</bitRange>
               <access>read-write</access>
@@ -13534,7 +13534,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>I2C2</name>
+              <name>I2C2_APB</name>
               <description>I2C2 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[23:23]</bitRange>
               <access>read-write</access>
@@ -13552,7 +13552,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>I2C1</name>
+              <name>I2C1_APB</name>
               <description>I2C1 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[22:22]</bitRange>
               <access>read-write</access>
@@ -13570,7 +13570,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>I2C0</name>
+              <name>I2C0_APB</name>
               <description>I2C0 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[21:21]</bitRange>
               <access>read-write</access>
@@ -13588,7 +13588,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>STRIP8</name>
+              <name>STRIP8_APB</name>
               <description>STRIP8 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[20:20]</bitRange>
               <access>read-write</access>
@@ -13606,7 +13606,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>STRIP7</name>
+              <name>STRIP7_APB</name>
               <description>STRIP7 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[19:19]</bitRange>
               <access>read-write</access>
@@ -13624,7 +13624,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>STRIP6</name>
+              <name>STRIP6_APB</name>
               <description>STRIP6 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[18:18]</bitRange>
               <access>read-write</access>
@@ -13642,7 +13642,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>STRIP5</name>
+              <name>STRIP5_APB</name>
               <description>STRIP5 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[17:17]</bitRange>
               <access>read-write</access>
@@ -13660,7 +13660,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>STRIP4</name>
+              <name>STRIP4_APB</name>
               <description>STRIP4 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[16:16]</bitRange>
               <access>read-write</access>
@@ -13678,7 +13678,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>STRIP3</name>
+              <name>STRIP3_APB</name>
               <description>STRIP3 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[15:15]</bitRange>
               <access>read-write</access>
@@ -13696,7 +13696,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>STRIP2</name>
+              <name>STRIP2_APB</name>
               <description>STRIP2 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[14:14]</bitRange>
               <access>read-write</access>
@@ -13714,7 +13714,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>STRIP1</name>
+              <name>STRIP1_APB</name>
               <description>STRIP1 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[13:13]</bitRange>
               <access>read-write</access>
@@ -13732,7 +13732,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>STRIP0</name>
+              <name>STRIP0_APB</name>
               <description>STRIP0 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[12:12]</bitRange>
               <access>read-write</access>
@@ -13750,7 +13750,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>ADC</name>
+              <name>ADC_APB</name>
               <description>ADC clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[11:11]</bitRange>
               <access>read-write</access>
@@ -13768,7 +13768,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>UART</name>
+              <name>UART_APB</name>
               <description>UART clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[10:10]</bitRange>
               <access>read-write</access>
@@ -13786,7 +13786,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>WDT</name>
+              <name>WDT_APB</name>
               <description>WDT clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[9:9]</bitRange>
               <access>read-write</access>
@@ -13804,7 +13804,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>IO</name>
+              <name>GPIO_APB</name>
               <description>IO clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[8:8]</bitRange>
               <access>read-write</access>
@@ -13822,7 +13822,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>TMR3</name>
+              <name>TMR3_APB</name>
               <description>TMR3 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[7:7]</bitRange>
               <access>read-write</access>
@@ -13840,7 +13840,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>TMR2</name>
+              <name>TMR2_APB</name>
               <description>TMR2 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[6:6]</bitRange>
               <access>read-write</access>
@@ -13858,7 +13858,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>TMR1</name>
+              <name>TMR1_APB</name>
               <description>TMR1 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[5:5]</bitRange>
               <access>read-write</access>
@@ -13876,7 +13876,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>TMR0</name>
+              <name>TMR0_APB</name>
               <description>TMR0 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[4:4]</bitRange>
               <access>read-write</access>
@@ -13894,7 +13894,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>TACHO3</name>
+              <name>TACHO3_APB</name>
               <description>TACHO3 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[3:3]</bitRange>
               <access>read-write</access>
@@ -13912,7 +13912,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>TACHO2</name>
+              <name>TACHO2_APB</name>
               <description>TACHO2 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[2:2]</bitRange>
               <access>read-write</access>
@@ -13930,7 +13930,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>TACHO1</name>
+              <name>TACHO1_APB</name>
               <description>TACHO1 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[1:1]</bitRange>
               <access>read-write</access>
@@ -13948,7 +13948,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>TACHO0</name>
+              <name>TACHO0_APB</name>
               <description>TACHO0 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[0:0]</bitRange>
               <access>read-write</access>
@@ -13973,7 +13973,7 @@
           <addressOffset>0x18</addressOffset>
           <fields>
             <field>
-              <name>LEDPWM31</name>
+              <name>LEDPWM31_APB</name>
               <description>LEDPWM31 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[31:31]</bitRange>
               <access>read-write</access>
@@ -13991,7 +13991,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM30</name>
+              <name>LEDPWM30_APB</name>
               <description>LEDPWM30 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[30:30]</bitRange>
               <access>read-write</access>
@@ -14009,7 +14009,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM29</name>
+              <name>LEDPWM29_APB</name>
               <description>LEDPWM29 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[29:29]</bitRange>
               <access>read-write</access>
@@ -14027,7 +14027,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM28</name>
+              <name>LEDPWM28_APB</name>
               <description>LEDPWM28 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[28:28]</bitRange>
               <access>read-write</access>
@@ -14045,7 +14045,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM27</name>
+              <name>LEDPWM27_APB</name>
               <description>LEDPWM27 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[27:27]</bitRange>
               <access>read-write</access>
@@ -14063,7 +14063,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM26</name>
+              <name>LEDPWM26_APB</name>
               <description>LEDPWM26 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[26:26]</bitRange>
               <access>read-write</access>
@@ -14081,7 +14081,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM25</name>
+              <name>LEDPWM25_APB</name>
               <description>LEDPWM25 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[25:25]</bitRange>
               <access>read-write</access>
@@ -14099,7 +14099,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM24</name>
+              <name>LEDPWM24_APB</name>
               <description>LEDPWM24 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[24:24]</bitRange>
               <access>read-write</access>
@@ -14117,7 +14117,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM23</name>
+              <name>LEDPWM23_APB</name>
               <description>LEDPWM23 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[23:23]</bitRange>
               <access>read-write</access>
@@ -14135,7 +14135,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM22</name>
+              <name>LEDPWM22_APB</name>
               <description>LEDPWM22 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[22:22]</bitRange>
               <access>read-write</access>
@@ -14153,7 +14153,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM21</name>
+              <name>LEDPWM21_APB</name>
               <description>LEDPWM21 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[21:21]</bitRange>
               <access>read-write</access>
@@ -14171,7 +14171,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM20</name>
+              <name>LEDPWM20_APB</name>
               <description>LEDPWM20 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[20:20]</bitRange>
               <access>read-write</access>
@@ -14189,7 +14189,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM19</name>
+              <name>LEDPWM19_APB</name>
               <description>LEDPWM19 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[19:19]</bitRange>
               <access>read-write</access>
@@ -14207,7 +14207,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM18</name>
+              <name>LEDPWM18_APB</name>
               <description>LEDPWM18 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[18:18]</bitRange>
               <access>read-write</access>
@@ -14225,7 +14225,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM17</name>
+              <name>LEDPWM17_APB</name>
               <description>LEDPWM17 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[17:17]</bitRange>
               <access>read-write</access>
@@ -14243,7 +14243,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM16</name>
+              <name>LEDPWM16_APB</name>
               <description>LEDPWM16 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[16:16]</bitRange>
               <access>read-write</access>
@@ -14261,7 +14261,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM15</name>
+              <name>LEDPWM15_APB</name>
               <description>LEDPWM15 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[15:15]</bitRange>
               <access>read-write</access>
@@ -14279,7 +14279,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM14</name>
+              <name>LEDPWM14_APB</name>
               <description>LEDPWM14 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[14:14]</bitRange>
               <access>read-write</access>
@@ -14297,7 +14297,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM13</name>
+              <name>LEDPWM13_APB</name>
               <description>LEDPWM13 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[13:13]</bitRange>
               <access>read-write</access>
@@ -14315,7 +14315,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM12</name>
+              <name>LEDPWM12_APB</name>
               <description>LEDPWM12 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[12:12]</bitRange>
               <access>read-write</access>
@@ -14333,7 +14333,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM11</name>
+              <name>LEDPWM11_APB</name>
               <description>LEDPWM11 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[11:11]</bitRange>
               <access>read-write</access>
@@ -14351,7 +14351,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM10</name>
+              <name>LEDPWM10_APB</name>
               <description>LEDPWM10 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[10:10]</bitRange>
               <access>read-write</access>
@@ -14369,7 +14369,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM9</name>
+              <name>LEDPWM9_APB</name>
               <description>LEDPWM9 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[9:9]</bitRange>
               <access>read-write</access>
@@ -14387,7 +14387,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM8</name>
+              <name>LEDPWM8_APB</name>
               <description>LEDPWM8 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[8:8]</bitRange>
               <access>read-write</access>
@@ -14405,7 +14405,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM7</name>
+              <name>LEDPWM7_APB</name>
               <description>LEDPWM7 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[7:7]</bitRange>
               <access>read-write</access>
@@ -14423,7 +14423,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM6</name>
+              <name>LEDPWM6_APB</name>
               <description>LEDPWM6 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[6:6]</bitRange>
               <access>read-write</access>
@@ -14441,7 +14441,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM5</name>
+              <name>LEDPWM5_APB</name>
               <description>LEDPWM5 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[5:5]</bitRange>
               <access>read-write</access>
@@ -14459,7 +14459,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM4</name>
+              <name>LEDPWM4_APB</name>
               <description>LEDPWM4 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[4:4]</bitRange>
               <access>read-write</access>
@@ -14477,7 +14477,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM3</name>
+              <name>LEDPWM3_APB</name>
               <description>LEDPWM3 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[3:3]</bitRange>
               <access>read-write</access>
@@ -14495,7 +14495,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM2</name>
+              <name>LEDPWM2_APB</name>
               <description>LEDPWM2 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[2:2]</bitRange>
               <access>read-write</access>
@@ -14513,7 +14513,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM1</name>
+              <name>LEDPWM1_APB</name>
               <description>LEDPWM1 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[1:1]</bitRange>
               <access>read-write</access>
@@ -14531,7 +14531,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM0</name>
+              <name>LEDPWM0_APB</name>
               <description>LEDPWM0 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[0:0]</bitRange>
               <access>read-write</access>
