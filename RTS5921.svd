@@ -12548,7 +12548,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>URAT_IP</name>
+              <name>UART_IP</name>
               <description>URAT clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[15:15]</bitRange>
               <access>read-write</access>
