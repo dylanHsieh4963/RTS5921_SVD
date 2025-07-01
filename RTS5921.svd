@@ -11945,8 +11945,8 @@
                     </enumeratedValues>
                 </field>
                 <field>
-                    <name>GPIO</name>
-                    <description>GPIO Clock Power Control</description>
+                    <name>IO</name>
+                    <description>IO Clock Power Control</description>
                     <bitRange>[1:1]</bitRange>
                     <access>read-write</access>
                     <enumeratedValues>
@@ -12584,8 +12584,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>GPIO</name>
-              <description>GPIO clock enable: 0=Disable, 1=Enable</description>
+              <name>IO</name>
+              <description>IO clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[13:13]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -13804,8 +13804,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>GPIO</name>
-              <description>GPIO clock enable: 0=Disable, 1=Enable</description>
+              <name>IO</name>
+              <description>IO clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[8:8]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
