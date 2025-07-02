@@ -21013,6 +21013,48 @@
               </description>
               <bitRange>[3:1]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>AVD_TH50</name>
+                  <value>0</value>
+                  <description>AVD_TH50</description>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>AVD_TH20</name>
+                  <value>1</value>
+                  <description>AVD_TH20</description>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>AVD_SLEEP</name>
+                  <value>2</value>
+                  <description>AVD_SLEEP</description>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>AVD_WAKEUP</name>
+                  <value>3</value>
+                  <description>AVD_WAKEUP</description>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>AVD_SET_ID</name>
+                  <value>4</value>
+                  <description>AVD_SET_ID</description>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>AVD_CLEAN_ID</name>
+                  <value>5</value>
+                  <description>AVD_CLEAN_ID</description> 
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>AVD_CHECK_ID</name>
+                  <value>6</value>
+                  <description>AVD_CHECK_ID</description>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>AVD_SPECIFY_ID</name>
+                  <value>7</value>
+                  <description>AVD_SPECIFY_ID</description>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
           </fields>
         </register>
