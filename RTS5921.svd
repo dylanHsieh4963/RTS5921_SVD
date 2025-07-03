@@ -22726,35 +22726,31 @@
               </fields>
           </register>
 
-          <!-- INT Register -->
+          <!-- STS Register -->
           <register>
-              <name>INT</name>
-              <description>Interrupt control register for matrix operations.</description>
+              <name>STS</name>
+              <description>Status control register for matrix operations.</description>
               <addressOffset>0x18</addressOffset>
               <resetValue>0x00000000</resetValue>
               <fields>
                   <field>
-                      <name>INTRDY</name>
-                      <description>Interrupt flag for APB ready without response.</description>
-                      <bitRange>[1:1]</bitRange>
+                      <name>INTWRRDY</name>
+                      <description>Interrupt flag for APB write without response.</description>
+                      <bitRange>[14:14]</bitRange>
+                      <access>read-write</access>
+                  </field>
+                  <field>
+                      <name>INTRDRDY</name>
+                      <description>Interrupt flag for APB read without response.</description>
+                      <bitRange>[13:13]</bitRange>
                       <access>read-write</access>
                   </field>
                   <field>
                       <name>INTSTS</name>
                       <description>Interrupt flag for matrix operation.</description>
-                      <bitRange>[0:0]</bitRange>
+                      <bitRange>[12:12]</bitRange>
                       <access>read-write</access>
                   </field>
-              </fields>
-          </register>
-
-          <!-- STS Register -->
-          <register>
-              <name>STS</name>
-              <description>Status register showing current scan position and cycle count.</description>
-              <addressOffset>0x1C</addressOffset>
-              <resetValue>0x00000000</resetValue>
-              <fields>
                   <field>
                       <name>CURROW</name>
                       <description>Indicates current scan row for matrix operation.</description>
@@ -22768,6 +22764,14 @@
                       <access>read-only</access>
                   </field>
               </fields>
+          </register>
+
+          <!-- PWMADDR Register -->
+          <register>
+              <name>PWMADDR</name>
+              <description>Indicate the written address for PWM data.</description>
+              <addressOffset>0x1C</addressOffset>
+              <resetValue>0x00000000</resetValue>
           </register>
       </registers>
     </peripheral>
