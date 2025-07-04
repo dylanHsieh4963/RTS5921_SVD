@@ -11988,82 +11988,303 @@
           <addressOffset>0x04</addressOffset>
           <fields>
             <field>
-              <name>SEL_CLK_SYS_CTS2_ROOT</name>
+              <name>SYS_SRC</name>
               <description>System Clock Source Select</description>
               <bitRange>[25:24]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>PLL60M</name>
+                      <value>0</value>
+                      <description>From PLL60M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>XTAL24M</name>
+                      <value>1</value>
+                      <description>From XTAL24M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>RC24M</name>
+                      <value>2</value>
+                      <description>From RC24M</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>SEL_CLK_ASYNC_BUS_CTS2_ROOT</name>
+              <name>APB_SRC</name>
               <description>Async Bus Clock Source Select</description>
               <bitRange>[23:22]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>PLL60M</name>
+                      <value>0</value>
+                      <description>From PLL60M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>XTAL24M</name>
+                      <value>1</value>
+                      <description>From XTAL24M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>RC24M</name>
+                      <value>2</value>
+                      <description>From RC24M</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>SEL_CLK_LED_CTS2_ROOT</name>
-              <description>LED Clock Source Select</description>
+              <name>PWM_SRC</name>
+              <description>PWM Clock Source Select</description>
               <bitRange>[21:20]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>XTAL24M</name>
+                      <value>0</value>
+                      <description>From XTAL24M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>RC24M</name>
+                      <value>1</value>
+                      <description>From RC24M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>RC32K</name>
+                      <value>2</value>
+                      <description>From RC32K</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>SEL_CLK_SPI_M_CTS2_ROOT</name>
+              <name>SPIM_SRC</name>
               <description>SPI Master Clock Source Select</description>
               <bitRange>[19:18]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>PLL60M</name>
+                      <value>0</value>
+                      <description>From PLL60M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>XTAL24M</name>
+                      <value>1</value>
+                      <description>From XTAL24M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>RC24M</name>
+                      <value>2</value>
+                      <description>From RC24M</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>SEL_CLK_SPI_S_CTS2_ROOT</name>
+              <name>SPIS_SRC</name>
               <description>SPI Slave Clock Source Select</description>
               <bitRange>[17:16]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>PLL60M</name>
+                      <value>0</value>
+                      <description>From PLL60M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>XTAL24M</name>
+                      <value>1</value>
+                      <description>From XTAL24M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>RC24M</name>
+                      <value>2</value>
+                      <description>From RC24M</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>SEL_CLK_I2C_CTS2_ROOT</name>
+              <name>I2C_SRC</name>
               <description>I2C Clock Source Select</description>
               <bitRange>[15:14]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>PLL60M</name>
+                      <value>0</value>
+                      <description>From PLL60M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>XTAL24M</name>
+                      <value>1</value>
+                      <description>From XTAL24M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>RC24M</name>
+                      <value>2</value>
+                      <description>From RC24M</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>SEL_CLK_STRIP_CTS2_ROOT</name>
+              <name>STRIP</name>
               <description>STRIP Clock Source Select</description>
               <bitRange>[13:12]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>PLL60M</name>
+                      <value>0</value>
+                      <description>From PLL60M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>XTAL24M</name>
+                      <value>1</value>
+                      <description>From XTAL24M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>RC24M</name>
+                      <value>2</value>
+                      <description>From RC24M</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>SEL_CLK_ADC_CTS2_ROOT</name>
+              <name>ADC_SRC</name>
               <description>ADC Clock Source Select</description>
               <bitRange>[11:10]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>PLL60M</name>
+                      <value>0</value>
+                      <description>From PLL60M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>XTAL24M</name>
+                      <value>1</value>
+                      <description>From XTAL24M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>RC24M</name>
+                      <value>2</value>
+                      <description>From RC24M</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>SEL_CLK_UART_CTS2_ROOT</name>
+              <name>UART_SRC</name>
               <description>UART Clock Source Select</description>
               <bitRange>[9:8]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>PLL60M</name>
+                      <value>0</value>
+                      <description>From PLL60M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>XTAL24M</name>
+                      <value>1</value>
+                      <description>From XTAL24M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>RC24M</name>
+                      <value>2</value>
+                      <description>From RC24M</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>SEL_CLK_DOT_MATRIX_LED_CTS2_ROOT</name>
+              <name>MATRIX_SRC</name>
               <description>Dot Matrix LED Clock Source Select</description>
               <bitRange>[7:6]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>PLL60M</name>
+                      <value>0</value>
+                      <description>From PLL60M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>XTAL24M</name>
+                      <value>1</value>
+                      <description>From XTAL24M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>RC24M</name>
+                      <value>2</value>
+                      <description>From RC24M</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>SEL_CLK_TURBO_MEM_COMP_CTS2_ROOT</name>
-              <description>Turbo Mem Comp Clock Source Select</description>
+              <name>CRC_SRC</name>
+              <description>CRC Source Select</description>
               <bitRange>[5:4]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>PLL60M</name>
+                      <value>0</value>
+                      <description>From PLL60M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>XTAL24M</name>
+                      <value>1</value>
+                      <description>From XTAL24M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>RC24M</name>
+                      <value>2</value>
+                      <description>From RC24M</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>SEL_CLK_TMR_CTS2_ROOT</name>
+              <name>TMR_SRC</name>
               <description>TMR Clock Source Select</description>
               <bitRange>[3:2]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>XTAL24M</name>
+                      <value>0</value>
+                      <description>From XTAL24M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>RC24M</name>
+                      <value>1</value>
+                      <description>From RC24M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>RC32K</name>
+                      <value>2</value>
+                      <description>From RC32K</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>SEL_CLK_TACH_CTS2_ROOT</name>
+              <name>TACH_SRC</name>
               <description>TACH Clock Source Select</description>
               <bitRange>[1:0]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>XTAL24M</name>
+                      <value>0</value>
+                      <description>From XTAL24M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>RC24M</name>
+                      <value>1</value>
+                      <description>From RC24M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>RC32K</name>
+                      <value>2</value>
+                      <description>From RC32K</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -14556,7 +14777,7 @@
           <addressOffset>0x1C</addressOffset>
           <fields>
             <field>
-              <name>sel_clk_adc_async_bus</name>
+              <name>ADC_APB_SRC</name>
               <description>ADC Async Bus Clock Source Select</description>
               <bitRange>[30:30]</bitRange>
               <access>read-write</access>
