@@ -73,242 +73,117 @@
 						<size>32</size>
 						<access>read-write</access>
 						<resetValue>0xFFFFFFFF</resetValue>
-
             <fields>
-              <!-- PRM_2ND_PHASE Field -->
-              <field>
-                <name>PRM_2ND_PHASE</name>
-                <description>Indicate if Flash is in PRM (hi-performance read mode) of 2nd phase</description>
-                <bitRange>[31:31]</bitRange>
-                <access>read-write</access>
-                <enumeratedValues>
-                  <enumeratedValue>
-                    <name>DISABLE</name>
-                    <description>PRM 2nd phase is disabled</description>
-                    <value>0</value>
-                  </enumeratedValue>
-                  <enumeratedValue>
-                    <name>ENABLE</name>
-                    <description>PRM 2nd phase is enabled</description>
-                    <value>1</value>
-                  </enumeratedValue>
-                </enumeratedValues>
-              </field>
-
-              <!-- DDR_EN Field -->
-              <field>
-                <name>DDR_EN</name>
-                <description>Indicates DDR mode in CMD_CH/DATA_CH/ADDR_CH</description>
-                <bitRange>[30:28]</bitRange>
-                <access>read-write</access>
-                <enumeratedValues>
-                  <enumeratedValue>
-                    <name>DISABLE</name>
-                    <description>DDR mode disabled</description>
-                    <value>0</value>
-                  </enumeratedValue>
-                  <enumeratedValue>
-                    <name>ENABLE_CMD_CH</name>
-                    <description>DDR mode enabled for CMD_CH</description>
-                    <value>1</value>
-                  </enumeratedValue>
-                  <enumeratedValue>
-                    <name>ENABLE_DATA_CH</name>
-                    <description>DDR mode enabled for DATA_CH</description>
-                    <value>2</value>
-                  </enumeratedValue>
-                  <enumeratedValue>
-                    <name>ENABLE_ADDR_CH</name>
-                    <description>DDR mode enabled for ADDR_CH</description>
-                    <value>4</value>
-                  </enumeratedValue>
-                </enumeratedValues>
-              </field>
-
-              <!-- CK_MTIMES Field -->
-              <field>
-                <name>CK_MTIMES</name>
-                <description>Indicates the number of check times for FLASH busy state</description>
-                <bitRange>[27:23]</bitRange>
-                <access>read-write</access>
-              </field>
-
-              <!-- FAST_RD Field -->
-              <field>
-                <name>FAST_RD</name>
-                <description>Indicate whether to use fast read command in user mode</description>
-                <bitRange>[22:22]</bitRange>
-                <access>read-write</access>
-              </field>
-
-              <!-- CMD_CH Field -->
-              <field>
-                <name>CMD_CH</name>
-                <description>Indicate channel number of command phase</description>
-                <bitRange>[21:20]</bitRange>
-                <access>read-write</access>
-                <enumeratedValues>
-                  <enumeratedValue>
-                    <name>SINGLE</name>
-                    <description>Single channel</description>
-                    <value>0</value>
-                  </enumeratedValue>
-                  <enumeratedValue>
-                    <name>DUAL</name>
-                    <description>Dual channel</description>
-                    <value>1</value>
-                  </enumeratedValue>
-                  <enumeratedValue>
-                    <name>QUAD</name>
-                    <description>Quad channel</description>
-                    <value>2</value>
-                  </enumeratedValue>
-                  <enumeratedValue>
-                    <name>OCTAL</name>
-                    <description>Octal channel</description>
-                    <value>3</value>
-                  </enumeratedValue>
-                </enumeratedValues>
-              </field>
-
-              <!-- DATA_CH Field -->
-              <field>
-                <name>DATA_CH</name>
-                <description>Indicate channel number of data phase</description>
-                <bitRange>[19:18]</bitRange>
-                <access>read-write</access>
-                <enumeratedValues>
-                  <enumeratedValue>
-                    <name>SINGLE</name>
-                    <description>Single channel</description>
-                    <value>0</value>
-                  </enumeratedValue>
-                  <enumeratedValue>
-                    <name>DUAL</name>
-                    <description>Dual channel</description>
-                    <value>1</value>
-                  </enumeratedValue>
-                  <enumeratedValue>
-                    <name>QUAD</name>
-                    <description>Quad channel</description>
-                    <value>2</value>
-                  </enumeratedValue>
-                  <enumeratedValue>
-                    <name>OCTAL</name>
-                    <description>Octal channel</description>
-                    <value>3</value>
-                  </enumeratedValue>
-                </enumeratedValues>
-              </field>
-
-              <!-- ADDR_CH Field -->
-              <field>
-                <name>ADDR_CH</name>
-                <description>Indicate channel number of address phase</description>
-                <bitRange>[17:16]</bitRange>
-                <access>read-write</access>
-                <enumeratedValues>
-                  <enumeratedValue>
-                    <name>SINGLE</name>
-                    <description>Single channel</description>
-                    <value>0</value>
-                  </enumeratedValue>
-                  <enumeratedValue>
-                    <name>DUAL</name>
-                    <description>Dual channel</description>
-                    <value>1</value>
-                  </enumeratedValue>
-                  <enumeratedValue>
-                    <name>QUAD</name>
-                    <description>Quad channel</description>
-                    <value>2</value>
-                  </enumeratedValue>
-                  <enumeratedValue>
-                    <name>OCTAL</name>
-                    <description>Octal channel</description>
-                    <value>3</value>
-                  </enumeratedValue>
-                </enumeratedValues>
-              </field>
-
-              <!-- GCLK_DIS Field -->
-              <field>
-                <name>GCLK_DIS</name>
-                <description>Set to disable gated clock of icg cell</description>
-                <bitRange>[10:10]</bitRange>
-                <access>read-write</access>
-              </field>
-
-              <!-- TMOD Field -->
-              <field>
-                <name>TMOD</name>
-                <description>Indicate transfer mode</description>
-                <bitRange>[9:8]</bitRange>
-                <access>read-write</access>
-                <enumeratedValues>
-                  <enumeratedValue>
-                    <name>TRANSMIT</name>
-                    <description>Transmit mode</description>
-                    <value>0</value>
-                  </enumeratedValue>
-                  <enumeratedValue>
-                    <name>RECEIVE</name>
-                    <description>Receive mode</description>
-                    <value>3</value>
-                  </enumeratedValue>
-                </enumeratedValues>
-              </field>
-
-              <!-- SCPOL Field -->
-              <field>
-                <name>SCPOL</name>
-                <description>Indicate serial clock polarity</description>
-                <bitRange>[7:7]</bitRange>
-                <access>read-write</access>
-              </field>
-
-              <!-- SCPH Field -->
-              <field>
-                <name>SCPH</name>
-                <description>Indicate serial clock phase</description>
-                <bitRange>[6:6]</bitRange>
-                <access>read-write</access>
-              </field>
-
-              <!-- SIPOL_EN Field -->
-              <field>
-                <name>SIPOL_EN</name>
-                <description>Set to enable SIPOL functionality</description>
-                <bitRange>[5:5]</bitRange>
-                <access>read-write</access>
-                <enumeratedValues>
-                  <enumeratedValue>
-                    <name>DISABLE</name>
-                    <description>SIPOL disabled</description>
-                    <value>0</value>
-                  </enumeratedValue>
-                  <enumeratedValue>
-                    <name>ENABLE</name>
-                    <description>SIPOL enabled</description>
-                    <value>1</value>
-                  </enumeratedValue>
-                </enumeratedValues>
-              </field>
-
-              <!-- SIPOL Field -->
-              <field>
-                <name>SIPOL</name>
-                <description>Configure SPI input lines</description>
-                <bitRange>[4:0]</bitRange>
-                <access>read-write</access>
-                <enumeratedValues>
-                  <enumeratedValue>
-                    <name>DEFAULT</name>
-                    <description>All relevant bits are high</description>
-                    <value>31</value> <!-- 0x1F in decimal -->
-                  </enumeratedValue>
-                </enumeratedValues>
-              </field>
+                <field>
+                    <name>USER_MODE</name>
+                    <description>
+                        User mode bit.
+                    </description>
+                    <bitRange>[31:31]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>UAR</name>
+                    <description>
+                        User mode bit auto reset. Enable to auto reset USER_MODE to 0 after user mode transaction is over.
+                    </description>
+                    <bitRange>[30:30]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>CK_MTIMES</name>
+                    <description>Indicate the auto-check times</description>
+                    <bitRange>[27:23]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>FAST_RD</name>
+                    <description>
+                        Enable use of fast read command in user mode. Use FBAUDR as spi_sclk when set.
+                    </description>
+                    <bitRange>[22:22]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>CMD_CH</name>
+                    <description>
+                        Channel number of command phase. 0: single, 1: dual, 2: quad, 3: octal.
+                    </description>
+                    <bitRange>[21:20]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>DATA_CH</name>
+                    <description>
+                        Channel number of data phase. 0: single, 1: dual, 2: quad, 3: octal.
+                    </description>
+                    <bitRange>[19:18]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>ADDR_CH</name>
+                    <description>
+                        Channel number for address phase. 0: single, 1: dual, 2: quad, 3: octal.
+                    </description>
+                    <bitRange>[17:16]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>DDR_EN_CMD_CH</name>
+                    <description>Enable DDR mode on CMD_CH (2-Byte CMD type). Only if DDR_EN defined.</description>
+                    <bitRange>[15:15]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>DDR_EN_DATA_CH</name>
+                    <description>Enable DDR mode on DATA_CH. Only if DDR_EN defined.</description>
+                    <bitRange>[14:14]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>DDR_EN_ADDR_CH</name>
+                    <description>Enable DDR mode on ADDR_CH. Only if DDR_EN defined.</description>
+                    <bitRange>[13:13]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>GCLK_DIS</name>
+                    <description>Disable gated clock of icg cell.</description>
+                    <bitRange>[10:10]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>TMOD</name>
+                    <description>
+                        Transfer mode. 00: transmit mode, others: receive mode.
+                    </description>
+                    <bitRange>[9:8]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>SCPOL</name>
+                    <description>Serial clock polarity. 0: inactive state is low, 1: inactive state is high.</description>
+                    <bitRange>[7:7]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>SCPH</name>
+                    <description>Serial clock phase. 0: toggles in middle of 1st data bit, 1: toggles at start of 1st data bit.</description>
+                    <bitRange>[6:6]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>SIPOL_EN</name>
+                    <description>Enable SIPOL control for SPI in/out signal polarity.</description>
+                    <bitRange>[5:5]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>SIPOL</name>
+                    <description>SPI input signal polarity</description>
+                    <bitRange>[4:0]</bitRange>
+                    <access>read-write</access>
+                </field>
             </fields>
 				</register>
 
@@ -325,7 +200,7 @@
               <field>
                 <name>NDF</name>
                 <description>Indicates the number of data frames</description>
-                <bitRange>[15:0]</bitRange>
+                <bitRange>[24:0]</bitRange>
                 <access>read-write</access>
                 <description>
                   Indicate a number of data frames. If Data-Split-Read function enables, NDF can be set larger than FIFO size, with a maximum size of 65535 bytes.
@@ -343,43 +218,43 @@
 					<access>read-write</access>
 					<resetValue>0x00000000</resetValue>
           <fields>
-            <!-- PGM_RST_TEST_EN Field -->
-            <field>
-              <name>PGM_RST_TEST_EN</name>
-              <description>Generates a warm reset pulse; for PGM RST testing only</description>
-              <bitRange>[4:4]</bitRange>
-              <access>write-only</access> <!-- Write-only as specified -->
-            </field>
-
-            <!-- ATCK_CMD Field -->
-            <field>
-              <name>ATCK_CMD</name>
-              <description>
-                Sets to enable the check of flash busy status or timeout before accepting new commands in User Mode.
-                Disable this if CTRLR0.SEQ_CMD is set.
-              </description>
-              <bitRange>[1:1]</bitRange>
-              <access>read-write</access>
-            </field>
-
-            <!-- SPIC_EN Field -->
-            <field>
-              <name>SPIC_EN</name>
-              <description>Set to enable SPIC</description>
-              <bitRange>[0:0]</bitRange>
-              <access>read-write</access>
-            </field>
+              <field>
+                  <name>CUR_GP</name>
+                  <description>Current group, for frequency change .</description>
+                  <bitRange>[11:10]</bitRange>
+                  <access>read-only</access>
+              </field>
+              <field>
+                  <name>GP_NUM</name>
+                  <description>Target group, for frequency change.</description>
+                  <bitRange>[9:8]</bitRange>
+                  <access>read-write</access>
+              </field>
+              <field>
+                  <name>PGM_RST_TEST_EN</name>
+                  <description>Pulse warm reset. Test only.</description>
+                  <bitRange>[4:4]</bitRange>
+                  <access>write-only</access>
+              </field>
+              <field>
+                  <name>FRQC</name>
+                  <description>Enable/complete frequency change.</description>
+                  <bitRange>[2:2]</bitRange>
+                  <access>read-write</access>
+              </field>
+              <field>
+                  <name>ATCK_CMD</name>
+                  <description>Enable auto check command.</description>
+                  <bitRange>[1:1]</bitRange>
+                  <access>read-write</access>
+              </field>
+              <field>
+                  <name>SPIC_EN</name>
+                  <description>Enable SPIC / user mode transaction.</description>
+                  <bitRange>[0:0]</bitRange>
+                  <access>read-write</access>
+              </field>
           </fields>
-				</register>
-
-				<!-- MWCR -->
-				<register>
-						<name>MWCR</name>
-						<description>N/A</description>
-						<addressOffset>0x00C</addressOffset>
-						<size>32</size>
-						<access>read-write</access>
-						<resetValue>0x00000000</resetValue>
 				</register>
 
 				<!-- SER -->
@@ -500,6 +375,13 @@
 						<resetValue>0x00000006</resetValue>
     
             <fields>
+              <!-- ATWR_RDSR_N Field -->
+              <field>
+                <name>ATWR_RDSR_N</name>
+                <description>The previous auto write cmd didn't check the status register (RDSR).</description>
+                <bitRange>[8:8]</bitRange>
+                <access>read-only</access>
+              </field>
               <!-- BOOT_FIN Field -->
               <field>
                 <name>BOOT_FIN</name>
@@ -1202,56 +1084,56 @@
 						<access>read-write</access>
 						<resetValue>0x10000505</resetValue>
 
-         <fields>
-            <!-- ADDR_EN Field -->
-            <field>
-               <name>ADDR_EN</name>
-               <description>Indicates SPI Flash read status with an address.</description>
-               <bitRange>[31:31]</bitRange>
-               <access>read-write</access>
-            </field>
-
-            <!-- ADDR_LEN Field -->
-            <field>
-               <name>ADDR_LEN</name>
-               <description>
-                  Indicates SPI Flash read status with address and address length.Available only if DDR_EN is defined.</description>
-               <bitRange>[30:29]</bitRange>
-               <access>read-write</access>
-            </field>
-
-            <!-- ADDR_SEL Field -->
-            <field>
-               <name>ADDR_SEL</name>
-               <description>Indicates SPI Flash read status with address and address value.</description>
-               <bitRange>[28:28]</bitRange>
-               <access>read-write</access>
-            </field>
-
-            <!-- INTERVAL_EN Field -->
-            <field>
-               <name>INTERVAL_EN</name>
-               <description>Indicates SPI Flash read status with a 2-byte status but checking only odd or even byte.</description>
-               <bitRange>[27:27]</bitRange>
-               <access>read-write</access>
-            </field>
-
-            <!-- CMD_2ND_BYTE Field -->
-            <field>
-               <name>CMD_2ND_BYTE</name>
-               <description>SPI Flash command value of the 2nd byte of read status.Available only if DDR_EN is defined.</description>
-               <bitRange>[15:8]</bitRange>
-               <access>read-write</access>
-            </field>
-
-            <!-- CMD_1ST_BYTE Field -->
-            <field>
-               <name>CMD_1ST_BYTE</name>
-               <description>SPI Flash command value of the 1st byte of read status.</description>
-               <bitRange>[7:0]</bitRange>
-               <access>read-write</access>
-            </field>
-         </fields>
+            <fields>
+                <field>
+                    <name>INTERVAL_EN</name>
+                    <description>Enable INTERVAL_ODD (*).</description>
+                    <bitRange>[31:31]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>INTERVAL_ODD</name>
+                    <description>Odd/even byte check for 2-Byte status.</description>
+                    <bitRange>[30:30]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>ST_CMD_LEN</name>
+                    <description>Number of bytes in read status command .</description>
+                    <bitRange>[29:28]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>ST_CMD_CH</name>
+                    <description>Channel number for TX/RX in read status command.</description>
+                    <bitRange>[27:26]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>ST_CMD_DDR_EN</name>
+                    <description>DDR mode for ST_CMD_CH.</description>
+                    <bitRange>[25:25]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>RD_ST_CMD_3rd_BYTE</name>
+                    <description>Command value of 3rd byte for SPI Flash read status.</description>
+                    <bitRange>[23:16]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>RD_ST_CMD_2nd_BYTE</name>
+                    <description>Command value of 2nd byte for SPI Flash read status .</description>
+                    <bitRange>[15:8]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>RD_ST_CMD_1st_BYTE</name>
+                    <description>Command value of 1st byte for SPI Flash read status.</description>
+                    <bitRange>[7:0]</bitRange>
+                    <access>read-write</access>
+                </field>
+            </fields>
 				</register>
 
 				<!-- CTRLR2 -->
@@ -1262,79 +1144,87 @@
 						<size>32</size>
 						<access>read-write</access>
 						<resetValue>0xFFFFFFFF</resetValue> <!-- Placeholder for configuration-dependent reset value -->
-				
-         <fields>
-            <!-- CS_ACTIVE_HOLD Field -->
-            <field>
-               <name>CS_ACTIVE_HOLD</name>
-               <description>
-                  For Flash chip select active hold time after SCLK rising edge. Refer to tSLCH/CHSH, tCSS/tCSH.
-                  Note: Wait up to 4 spic_clk cycles before CS becomes inactive.
-               </description>
-               <bitRange>[13:12]</bitRange>
-               <access>read-write</access>
-            </field>
-
-            <!-- RX_FIFO_ENTRY Field -->
-            <field>
-               <name>RX_FIFO_ENTRY</name>
-               <description>
-                  Indicates the valid entry of RX FIFO if using SPIC_HAS_DMA (NO_MERGE_FIFO).
-               </description>
-               <bitRange>[11:8]</bitRange>
-               <access>read-write</access>
-            </field>
-
-            <!-- FIFO_ENTRY/TX_FIFO_ENTRY Field -->
-            <field>
-               <name>FIFO_ENTRY</name>
-               <description>
-                  Indicates the valid entry of TX_FIFO if using SPIC_HAS_DMA (NO_MERGE_FIFO).
-               </description>
-               <bitRange>[7:4]</bitRange>
-               <access>read-write</access>
-            </field>
-
-            <!-- SEQ_EN Field -->
-            <field>
-               <name>SEQ_EN</name>
-               <description>
-                  Enables Data-Split Program/Read (FIFO size-independent Program and Read). 
-               </description>
-               <bitRange>[3:3]</bitRange>
-               <access>read-write</access>
-            </field>
-
-            <!-- WPN_DNUM Field -->
-            <field>
-               <name>WPN_DNUM</name>
-               <description>
-                  Indicates whether WPn input pin of SPI Flash is connected to spi_sdata[2] or [3].
-               </description>
-               <bitRange>[2:2]</bitRange>
-               <access>read-write</access>
-            </field>
-
-            <!-- WPN_SET Field -->
-            <field>
-               <name>WPN_SET</name>
-               <description>
-                  Implements the write protect function. If set to 1, WPn is protected; otherwise, it is not.
-               </description>
-               <bitRange>[1:1]</bitRange>
-               <access>read-write</access>
-            </field>
-
-            <!-- SO_DNUM Field -->
-            <field>
-               <name>SO_DNUM</name>
-               <description>
-                  Indicates whether SO input pin of SPI Flash is connected to spi_sout[0] or [1].
-               </description>
-               <bitRange>[0:0]</bitRange>
-               <access>read-write</access>
-            </field>
-         </fields>
+            <fields>
+                <field>
+                    <name>RD_WEIGHT</name>
+                    <description>Read/Write priority.</description>
+                    <bitRange>[23:19]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>WR_VL_EN</name>
+                    <description>Enable variable write latency.</description>
+                    <bitRange>[17:17]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>RD_VALID_EN</name>
+                    <description>Enable variable read latency.</description>
+                    <bitRange>[16:16]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>DIS_WRAP_ALIGN</name>
+                    <description>Disable wrap_align in auto mode.</description>
+                    <bitRange>[15:15]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>DIS_DM_CA</name>
+                    <description>Disable spi_dm_oe_n for CMD and ADDR.</description>
+                    <bitRange>[14:14]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <!-- Below are DM_EN-dependent bits -->
+                <field>
+                    <name>FULL_WR</name>
+                    <description>Enable full write in auto mode.</description>
+                    <bitRange>[13:13]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>DM_ACT</name>
+                    <description>DM active polarity for specific PSRAM.</description>
+                    <bitRange>[12:12]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>RX_FIFO_ENTRY</name>
+                    <description>Valid RX FIFO entry index.</description>
+                    <bitRange>[11:8]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>TX_FIFO_ENTRY</name>
+                    <description>Valid TX FIFO/FIFO entry index.</description>
+                    <bitRange>[7:4]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>DR_FIXED</name>
+                    <description>AXI FIXED read mode on DR.</description>
+                    <bitRange>[3:3]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>WPN_DNUM</name>
+                    <description>WPn connects to spi_sout[2]/[3].</description>
+                    <bitRange>[2:2]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>WPN_SET</name>
+                    <description>Write protect setting.</description>
+                    <bitRange>[1:1]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>SO_DNUM</name>
+                    <description>SO connects to spi_sout[0]/[1].</description>
+                    <bitRange>[0:0]</bitRange>
+                    <access>read-write</access>
+                </field>
+            </fields>
         </register>
 
 				<!-- FBAUDR -->
@@ -1355,6 +1245,32 @@
 						<size>32</size>
 						<access>read-write</access>
 						<resetValue>0x00030000</resetValue>
+            <fields>
+                <field>
+                    <name>USER_ADDR_LENGTH</name>
+                    <description>
+                        Number of address phase bytes in user mode.
+                    </description>
+                    <bitRange>[19:16]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>USER_CMD_LENGTH</name>
+                    <description>
+                        Number of command bytes in user mode.
+                    </description>
+                    <bitRange>[13:12]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>USER_RD_DUMMY_LENGTH</name>
+                    <description>
+                        Delay cycles for receiving data in user mode.
+                    </description>
+                    <bitRange>[11:0]</bitRange>
+                    <access>read-write</access>
+                </field>
+            </fields>
 				</register>
 
 				<!-- AUTO_LENGTH -->
@@ -1365,73 +1281,44 @@
 						<size>32</size>
 						<access>read-write</access>
 						<resetValue>0xFFFFFFFF</resetValue> <!-- Placeholder for configuration-dependent reset value -->
-         <fields>
-            <!-- CS_H_WR_DUM_LEN Field -->
-            <field>
-               <name>CS_H_WR_DUM_LEN</name>
-               <description>
-                  Dummy cycle between sending write command to SPI Flash. Uses dummy cycles to avoid timing violation of CS high time. Controls CS high Write time in either fine grain or coarse grain.
-                  Fine grain: CS high Write time = CS_H_WR_DUM_LEN * bus_clk period
-                  Coarse grain: CS high Write time = (CS_H_WR_DUM_LEN * bus_clk period) * 4, if CS_H_RD_DUM_LEN == 0
-               </description>
-               <bitRange>[31:28]</bitRange>
-               <access>read-write</access>
-            </field>
-
-            <!-- CS_H_RD_DUM_LEN Field -->
-            <field>
-               <name>CS_H_RD_DUM_LEN</name>
-               <description>
-                  Dummy cycle between sending read command to SPI Flash. Similar handling to write command for avoiding CS high time violations.
-                  Fine grain: CS high Read time = CS_H_RD_DUM_LEN * bus_clk period
-                  Coarse grain: CS high Read time = (CS_H_WR_DUM_LEN * bus_clk period) * 4, if CS_H_RD_DUM_LEN == 0
-               </description>
-               <bitRange>[27:26]</bitRange>
-               <access>read-write</access>
-            </field>
-
-            <!-- RDSR_DUMMY_LENGTH Field -->
-            <field>
-               <name>RDSR_DUMMY_LENGTH</name>
-               <description>
-                  Indicates delay cycles for receiving data after Read Status Register (RDSR) command in auto write or user mode with auto check, referenced by bus_clk.
-               </description>
-               <bitRange>[25:18]</bitRange>
-               <access>read-write</access>
-            </field>
-
-            <!-- AUTO_ADDR_LENGTH Field -->
-            <field>
-               <name>AUTO_ADDR_LENGTH</name>
-               <description>
-                  Indicates the number of bytes address in read/write command in auto mode. Can be set to 1, 2, or 3 bytes. A setting of 0 transmits a 4-byte address.
-                  Ensure PRM_EN in auto mode aligns with AUTO_ADDR_LENGTH.
-               </description>
-               <bitRange>[17:16]</bitRange>
-               <access>read-write</access>
-            </field>
-
-            <!-- IN_PHYSICAL_CYC Field -->
-            <field>
-               <name>IN_PHYSICAL_CYC</name>
-               <description>
-                  Indicates how many SPIC CLK (bus_clk) cycles are from the pad to the internal SPIC.
-               </description>
-               <bitRange>[15:12]</bitRange>
-               <access>read-write</access>
-            </field>
-
-            <!-- RD_DUMMY_LENGTH Field -->
-            <field>
-               <name>RD_DUMMY_LENGTH</name>
-               <description>
-                  Indicates delay cycles for receiving data, referenced by bus_clk. Does not include cycles from pad to internal SPIC.
-               </description>
-               <bitRange>[11:0]</bitRange>
-               <access>read-write</access>
-            </field>
-         </fields>
-        
+            <fields>
+                <field>
+                    <name>RDSR_DUMMY_LENGTH</name>
+                    <description>
+                        Delay cycles for receiving data after RDSR command (referenced by bus_clk)  
+                        Used in auto write or user mode with auto check.
+                    </description>
+                    <bitRange>[27:20]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>AUTO_ADDR_LENGTH</name>
+                    <description>
+                        Number of address phase bytes in auto read/write command (support 1~4 bytes).  
+                        Set to 4 for 4-byte address mode in SPI Flash.  
+                        * PRM in auto must set VALID_CMD[11] (PRM_EN) with correct AUTO_ADDR_LENGTH.
+                    </description>
+                    <bitRange>[19:16]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>IN_PHYSICAL_CYC</name>
+                    <description>
+                        Indicates number of SPIC CLK (bus_clk) cycles from pad to internal SPIC.
+                    </description>
+                    <bitRange>[15:12]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>RD_DUMMY_LENGTH</name>
+                    <description>
+                        Delay cycles for receiving data (referenced by bus_clk).  
+                        * Don't include SPIC CLK (bus_clk) cycles from pad to internal SPIC.
+                    </description>
+                    <bitRange>[11:0]</bitRange>
+                    <access>read-write</access>
+                </field>
+            </fields>
         </register>
 
 				<!-- VALID_CMD -->
@@ -1442,148 +1329,146 @@
 						<size>32</size>
 						<access>read-write</access>
 						<resetValue>0xFFFFFFFF</resetValue> <!-- Placeholder for configuration-dependent reset value -->
-         <fields>
-            <!-- SEQ_TRANS_EN Field -->
-            <field>
-               <name>SEQ_TRANS_EN</name>
-               <description>
-                  Enables read sequential transaction read function.
-                  If two bus read transactions are sequential, SPIC accesses the second transaction without resending Read CMD/ADDR/DUMMY.
-               </description>
-               <bitRange>[14:14]</bitRange>
-               <access>read-write</access>
-            </field>
-
-            <!-- DUM_EN Field -->
-            <field>
-               <name>DUM_EN</name>
-               <description>
-                  Enables the use of a dummy byte (DUM_BYTE_VAL) following the address in auto read. If PRM_EN is set, it uses PRM_Value instead.
-               </description>
-               <bitRange>[13:13]</bitRange>
-               <access>read-write</access>
-            </field>
-
-            <!-- CTRLR0_CH Field -->
-            <field>
-               <name>CTRLR0_CH</name>
-               <description>
-                  Configures SPIC to use CTRLR0 CMD_CH/DATA_CH/ADDR_CH and DDR_EN fields in Auto mode. Otherwise, SPIC decodes based on chosen VALID_CMD.
-               </description>
-               <bitRange>[12:12]</bitRange>
-               <access>read-write</access>
-            </field>
-
-            <!-- PRM_EN Field -->
-            <field>
-               <name>PRM_EN</name>
-               <description>
-                  Enables SPIC performance read mode in Auto Mode. Uses specific setup and exit flows to handle PRM.
-               </description>
-               <bitRange>[11:11]</bitRange>
-               <access>read-write</access>
-            </field>
-
-            <!-- WR_BLOCKING Field -->
-            <field>
-               <name>WR_BLOCKING</name>
-               <description>
-                  When set, ensures operations are blocking, and next operation cannot proceed until FIFO is emptied. Otherwise, it is non-blocking.
-               </description>
-               <bitRange>[9:9]</bitRange>
-               <access>read-write</access>
-            </field>
-
-            <!-- WR_QUAD_II Field -->
-            <field>
-               <name>WR_QUAD_II</name>
-               <description>
-                  Indicates that quad address/data write (1-4-4) is a valid command to execute.
-               </description>
-               <bitRange>[8:8]</bitRange>
-               <access>read-write</access>
-            </field>
-
-            <!-- WR_QUAD_I Field -->
-            <field>
-               <name>WR_QUAD_I</name>
-               <description>
-                  Indicates that quad data write (1-1-4) is a valid command to execute.
-               </description>
-               <bitRange>[7:7]</bitRange>
-               <access>read-write</access>
-            </field>
-
-            <!-- WR_DUAL_II Field -->
-            <field>
-               <name>WR_DUAL_II</name>
-               <description>
-                  Indicates that dual address/data write (1-2-2) is a valid command to execute.
-               </description>
-               <bitRange>[6:6]</bitRange>
-               <access>read-write</access>
-            </field>
-
-            <!-- WR_DUAL_I Field -->
-            <field>
-               <name>WR_DUAL_I</name>
-               <description>
-                  Indicates that dual data write (1-1-2) is a valid command to execute.
-               </description>
-               <bitRange>[5:5]</bitRange>
-               <access>read-write</access>
-            </field>
-
-            <!-- RD_QUAD_IO Field -->
-            <field>
-               <name>RD_QUAD_IO</name>
-               <description>
-                  Indicates that quad address/data read (1-4-4) is a valid command to execute.
-               </description>
-               <bitRange>[4:4]</bitRange>
-               <access>read-write</access>
-            </field>
-
-            <!-- RD_QUAD_O Field -->
-            <field>
-               <name>RD_QUAD_O</name>
-               <description>
-                  Indicates that quad data read (1-1-4) is a valid command to execute.
-               </description>
-               <bitRange>[3:3]</bitRange>
-               <access>read-write</access>
-            </field>
-
-            <!-- RD_DUAL_IO Field -->
-            <field>
-               <name>RD_DUAL_IO</name>
-               <description>
-                  Indicates that dual address/data read (1-2-2) is a valid command to execute.
-               </description>
-               <bitRange>[2:2]</bitRange>
-               <access>read-write</access>
-            </field>
-
-            <!-- RD_DUAL_I Field -->
-            <field>
-               <name>RD_DUAL_I</name>
-               <description>
-                  Indicates that dual data read (1-1-2) is a valid command to execute.
-               </description>
-               <bitRange>[1:1]</bitRange>
-               <access>read-write</access>
-            </field>
-
-            <!-- FRD_SINGLE Field -->
-            <field>
-               <name>FRD_SINGLE</name>
-               <description>
-                  Indicates that fast read command (1-1-1) is a valid command to execute.
-               </description>
-               <bitRange>[0:0]</bitRange>
-               <access>read-write</access>
-            </field>
-         </fields>
+            <fields>
+                <field>
+                    <name>SEQ_WR_EN</name>
+                    <description>
+                        Enable (1) sequential write in auto mode. 
+                        Disabling deactivates spi_csn and this feature immediately.
+                        (Run after SPIC boot finish.)
+                    </description>
+                    <bitRange>[15:15]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>SEQ_RD_EN</name>
+                    <description>
+                        Enable (1) sequential read in auto mode. 
+                        Disabling deactivates spi_csn and this feature immediately.
+                        (Run after SPIC boot finish.)
+                    </description>
+                    <bitRange>[14:14]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>DUM_EN</name>
+                    <description>
+                        Enable dummy byte (DUM_BYTE_VAL) after address in auto read. 
+                        If PRM_EN active, push PRM_Value instead.
+                        If RD_DUMMY_LENGTH = 0, dummy byte will not be pushed.
+                    </description>
+                    <bitRange>[13:13]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>CTRLR0_CH</name>
+                    <description>
+                        Use CTRLR0 CMD_CH/DATA_CH/ADDR_CH and DDR_EN field in Auto mode. 
+                        Otherwise, select by VALID_CMD.
+                        (Refer to datasheet for Flash mode usage.)
+                    </description>
+                    <bitRange>[12:12]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>PRM_EN</name>
+                    <description>
+                        Enable performance read mode in Auto Mode.
+                        Auto exit before auto write or enter user mode.
+                        (Refer to detailed flow in datasheet.)
+                    </description>
+                    <bitRange>[11:11]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>RM_WEN</name>
+                    <description>
+                        Remove write enable command in auto write.
+                    </description>
+                    <bitRange>[10:10]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>RM_RDSR</name>
+                    <description>
+                        Remove read status register in auto write.
+                    </description>
+                    <bitRange>[9:9]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>WR_QUAD_II</name>
+                    <description>
+                        Enable (1-4-4) quad addr/data write command valid for execution.
+                    </description>
+                    <bitRange>[8:8]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>WR_QUAD_I</name>
+                    <description>
+                        Enable (1-1-4) quad data write command valid for execution.
+                    </description>
+                    <bitRange>[7:7]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>WR_DUAL_II</name>
+                    <description>
+                        Enable (1-2-2) dual addr/data write command valid for execution.
+                    </description>
+                    <bitRange>[6:6]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>WR_DUAL_I</name>
+                    <description>
+                        Enable (1-1-2) dual data write command valid for execution.
+                    </description>
+                    <bitRange>[5:5]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>RD_QUAD_IO</name>
+                    <description>
+                        Enable (1-4-4) quad addr/data read command valid for execution.
+                    </description>
+                    <bitRange>[4:4]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>RD_QUAD_O</name>
+                    <description>
+                        Enable (1-1-4) quad data read command valid for execution.
+                    </description>
+                    <bitRange>[3:3]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>RD_DUAL_IO</name>
+                    <description>
+                        Enable (1-2-2) dual addr/data read command valid for execution.
+                    </description>
+                    <bitRange>[2:2]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>RD_DUAL_I</name>
+                    <description>
+                        Enable (1-1-2) dual data read command valid for execution.
+                    </description>
+                    <bitRange>[1:1]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>FRD_SINGLE</name>
+                    <description>
+                        Enable (1-1-1) fast read command valid for execution.
+                    </description>
+                    <bitRange>[0:0]</bitRange>
+                    <access>read-write</access>
+                </field>
+            </fields>
         </register>
 
 				<!-- FLASH_SIZE -->
@@ -1596,37 +1481,40 @@
 						<resetValue>0x00000000</resetValue>
 				</register>
 
-				<!-- FLUSH_FIFO -->
-				<register>
-						<name>FLUSH_FIFO</name>
-						<description>Flush FIFO Register</description>
-						<addressOffset>0x128</addressOffset>
-						<size>32</size>
-						<access>write-only</access>
-						<resetValue>0x00000000</resetValue>
-
-         <fields>
-            <!-- FLUSH_PGM_RST_FIFO Field -->
-            <field>
-               <name>FLUSH_PGM_RST_FIFO</name>
-               <description>
-                  Clear all data in the PGM_RST FIFO upon writing to this field.
-               </description>
-               <bitRange>[1:1]</bitRange>
-               <access>write-only</access>
-            </field>
-
-            <!-- FLUSH_FIFO Field -->
-            <field>
-               <name>FLUSH_FIFO</name>
-               <description>
-                  Clear all data in the FIFO upon writing to this field.
-               </description>
-               <bitRange>[0:0]</bitRange>
-               <access>write-only</access>
-            </field>
-         </fields>
-				</register>
+        <register>
+            <name>FLUSH_FIFO</name>
+            <description>
+                Write to flush specific or all FIFOs. 
+                Commonly used when SPIC is not in normal operation or FIFO data is invalid.
+            </description>
+            <addressOffset>0x128</addressOffset>
+            <fields>
+                <field>
+                    <name>FLUSH_ST_FIFO</name>
+                    <description>
+                        Write 1 to clear all data in the ST_FIFO.
+                    </description>
+                    <bitRange>[2:2]</bitRange>
+                    <access>write-only</access>
+                </field>
+                <field>
+                    <name>FLUSH_DR_FIFO</name>
+                    <description>
+                        Write 1 to clear all data in the TX_FIFO and RX_FIFO.
+                    </description>
+                    <bitRange>[1:1]</bitRange>
+                    <access>write-only</access>
+                </field>
+                <field>
+                    <name>FLUSH_ALL</name>
+                    <description>
+                        Write 1 to clear all data in TX_FIFO, RX_FIFO, ST_FIFO and reset all FSMs.
+                    </description>
+                    <bitRange>[0:0]</bitRange>
+                    <access>write-only</access>
+                </field>
+            </fields>
+        </register>
 
 				<!-- DUM_BYTE -->
 				<register>
@@ -1686,206 +1574,6 @@
 						<size>32</size>
 						<access>read-write</access>
 						<resetValue>0x00000001</resetValue>
-				</register>
-
-				<!-- SLOT_STARVE -->
-				<register>
-					<name>SLOT_STARVE</name>
-					<description>Slot starvation control register</description>
-					<addressOffset>0x144</addressOffset>
-					<size>32</size>
-					<access>read-write</access>
-					<resetValue>0x000FFF30</resetValue>
-				</register>
-
-				<!-- PDEX_CTRL0 -->
-				<register>
-					<name>PDEX_CTRL0</name>
-					<description>PDEX Ctrl Register 0</description>
-					<addressOffset>0x148</addressOffset>
-					<size>32</size>
-					<access>read-write</access>
-					<resetValue>0x000000B9</resetValue>
-				</register>
-
-				<!-- PDEX_CTRL1 -->
-				<register>
-					<name>PDEX_CTRL1</name>
-					<description>PDEX Ctrl Register 1</description>
-					<addressOffset>0x14C</addressOffset>
-					<size>32</size>
-					<access>read-write</access>
-					<resetValue>0x00000000</resetValue>
-				</register>
-
-				<!-- PDEX_CTRL2 -->
-				<register>
-					<name>PDEX_CTRL2</name>
-					<description>PDEX Ctrl Register 2</description>
-					<addressOffset>0x150</addressOffset>
-					<size>32</size>
-					<access>read-write</access>
-					<resetValue>0x00AB0041</resetValue>
-				</register>
-
-				<!-- TPR2 -->
-				<register>
-					<name>TPR2</name>
-					<description>Timing parameters Register 2</description>
-					<addressOffset>0x154</addressOffset>
-					<size>32</size>
-					<access>read-write</access>
-					<resetValue>0x00000604</resetValue>
-				</register>
-
-				<!-- ICG_EN -->
-				<register>
-					<name>ICG_EN</name>
-					<description>Clock gating enable control register</description>
-					<addressOffset>0x158</addressOffset>
-					<size>32</size>
-					<access>read-write</access>
-					<resetValue>0x000FFFFF</resetValue>
-				</register>
-
-				<!-- WBUF_ID -->
-				<register>
-					<name>WBUF_ID</name>
-					<description>WBUF ID control register</description>
-					<addressOffset>0x15C</addressOffset>
-					<size>32</size>
-					<access>read-write</access>
-					<resetValue>0x00000000</resetValue>
-				</register>
-
-				<!-- DCX_CTRL -->
-				<register>
-					<name>DCX_CTRL</name>
-					<description>LCDC DCX control register</description>
-					<addressOffset>0x160</addressOffset>
-					<size>32</size>
-					<access>read-write</access>
-					<resetValue>0x00000000</resetValue>
-				</register>
-
-				<!-- DCX_CMD -->
-				<register>
-					<name>DCX_CMD</name>
-					<description>LCDC cmd phase DCX control bit value register</description>
-					<addressOffset>0x164</addressOffset>
-					<size>32</size>
-					<access>read-write</access>
-					<resetValue>0x00000000</resetValue>
-				</register>
-
-				<!-- DCX_ADDR -->
-				<register>
-					<name>DCX_ADDR</name>
-					<description>LCDC addr phase DCX control bit value register</description>
-					<addressOffset>0x168</addressOffset>
-					<size>32</size>
-					<access>read-write</access>
-					<resetValue>0x00000000</resetValue>
-				</register>
-
-				<!-- DCX_DATA -->
-				<register>
-					<name>DCX_DATA</name>
-					<description>LCDC data phase DCX control bit value register</description>
-					<addressOffset>0x16C</addressOffset>
-					<size>32</size>
-					<access>read-write</access>
-					<resetValue>0x00000000</resetValue>
-				</register>
-
-				<!-- PAGE_CTRL0 -->
-				<register>
-					<name>PAGE_CTRL0</name>
-					<description>NAND page ctrl Register 0</description>
-					<addressOffset>0x170</addressOffset>
-					<size>32</size>
-					<access>read-write</access>
-					<resetValue>0x00000000</resetValue>
-				</register>
-
-				<!-- PAGE_CTRL1 -->
-				<register>
-					<name>PAGE_CTRL1</name>
-					<description>NAND page ctrl Register 1</description>
-					<addressOffset>0x174</addressOffset>
-					<size>32</size>
-					<access>read-write</access>
-					<resetValue>0x00000000</resetValue>
-				</register>
-
-				<!-- ST_DR 0x180~0x1BC -->
-				<register>
-					<name>ST_DR</name>
-					<description>Status Data Register</description>
-					<addressOffset>0x180</addressOffset>
-					<size>32</size>
-					<access>read-write</access>
-					<resetValue>0x00000000</resetValue>
-				</register>
-
-				<!-- STFLR -->
-				<register>
-					<name>STFLR</name>
-					<description>Status FIFO level Register</description>
-					<addressOffset>0x1C0</addressOffset>
-					<size>32</size>
-					<access>read-write</access>
-					<resetValue>0x00000000</resetValue>
-				</register>
-
-				<!-- PAGE_READ -->
-				<register>
-					<name>PAGE_READ</name>
-					<description>Page Read Command of NAND Flash</description>
-					<addressOffset>0x1D0</addressOffset>
-					<size>32</size>
-					<access>read-write</access>
-					<resetValue>0x000C0013</resetValue>
-				</register>
-
-				<!-- SEC_BASE_0 -->
-				<register>
-					<name>SEC_BASE_0</name>
-					<description>SEC region 0 base address register</description>
-					<addressOffset>0x200</addressOffset>
-					<size>32</size>
-					<access>read-write</access>
-					<resetValue>0x00000000</resetValue>
-				</register>
-
-				<!-- SEC_END_0 -->
-				<register>
-					<name>SEC_END_0</name>
-					<description>SEC region 0 end address register</description>
-					<addressOffset>0x204</addressOffset>
-					<size>32</size>
-					<access>read-write</access>
-					<resetValue>0x00000000</resetValue>
-				</register>
-
-				<!-- SEC_NONCE_0 -->
-				<register>
-					<name>SEC_NONCE_0</name>
-					<description>SEC region 0 nonce register</description>
-					<addressOffset>0x208</addressOffset>
-					<size>32</size>
-					<access>read-write</access>
-					<resetValue>0x00000000</resetValue>
-				</register>
-
-				<!-- SEC_IDR -->
-				<register>
-					<name>SEC_IDR</name>
-					<description>SEC ID register</description>
-					<addressOffset>0x3FC</addressOffset>
-					<size>32</size>
-					<access>read-only</access>
-					<resetValue>0x00000000</resetValue>
 				</register>
       </registers>
     </peripheral>
