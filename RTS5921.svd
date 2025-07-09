@@ -37,10 +37,10 @@
 
   <!-- Peripherals -->
   <peripherals>
-    <!-- ITR_SPIC -->
+    <!-- INTR_SPIC -->
     <peripheral>
       <!-- Description -->
-      <name>ITR_SPIC</name>
+      <name>INTR_SPIC</name>
       <version>1.00</version>
       <description>Realtek RXI-312 SPI Controller</description>
       <groupName>SPIC</groupName>
@@ -58,7 +58,7 @@
 
       <!-- Interrup -->
       <interrupt>
-        <name>ITR_SPIC</name>
+        <name>INTR_SPIC</name>
         <description>Internal SPIC Interrupt</description>
         <value>9</value>
       </interrupt>
@@ -1577,13 +1577,13 @@
 				</register>
       </registers>
     </peripheral>
-    <!-- ETR_SPIC -->
-    <peripheral derivedFrom="ITR_SPIC">
-      <name>ETR_SPIC</name>
+    <!-- EXTR_SPIC -->
+    <peripheral derivedFrom="INTR_SPIC">
+      <name>EXTR_SPIC</name>
       <baseAddress>0x40001000</baseAddress>
       <!-- Interrup -->
       <interrupt>
-        <name>ETR_SPIC</name>
+        <name>EXTR_SPIC</name>
         <description>External SPIC Interrupt</description>
         <value>10</value>
       </interrupt>
