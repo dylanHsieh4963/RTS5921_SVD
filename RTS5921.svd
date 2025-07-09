@@ -22886,7 +22886,7 @@
 
       <!-- Interrup -->
 			<interrupt>
-				<name>GPIDE</name>
+				<name>GPIOE</name>
 				<description>GPIO PORTE Interrupt</description>
 				<value>4</value>
 			</interrupt>
