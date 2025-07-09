@@ -14499,96 +14499,328 @@
               <description>ADC Async Bus Clock Source Select</description>
               <bitRange>[30:30]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>60M</name>
+                      <value>0</value>
+                      <description>60M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>30M</name>
+                      <value>1</value>
+                      <description>30M</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>sel_clk_adc_ctrl</name>
+              <name>ADC_IP_SRC</name>
               <description>ADC Control Clock Source Select</description>
               <bitRange>[29:28]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>PLL60M</name>
+                      <value>0</value>
+                      <description>From PLL60M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>XTAL24M</name>
+                      <value>1</value>
+                      <description>From XTAL24M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>RC24M</name>
+                      <value>2</value>
+                      <description>From RC24M</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>sel_clk_dot_matrix_led_async_bus</name>
+              <name>MATRIX_APB_SRC</name>
               <description>Dot Matrix LED Async Bus Clock Source Select</description>
               <bitRange>[26:26]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>60M</name>
+                      <value>0</value>
+                      <description>60M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>30M</name>
+                      <value>1</value>
+                      <description>30M</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>sel_clk_dot_matrix_led_ip</name>
+              <name>MATRIX_IP_SRC</name>
               <description>Dot Matrix LED IP Clock Source Select</description>
               <bitRange>[25:24]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>PLL60M</name>
+                      <value>0</value>
+                      <description>From PLL60M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>XTAL24M</name>
+                      <value>1</value>
+                      <description>From XTAL24M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>RC24M</name>
+                      <value>2</value>
+                      <description>From RC24M</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>sel_clk_i2c_dbg_async_bus</name>
+              <name>I2C_DBG_APB_SRC</name>
               <description>I2C Debug Async Bus Clock Source Select</description>
               <bitRange>[22:22]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>60M</name>
+                      <value>0</value>
+                      <description>60M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>30M</name>
+                      <value>1</value>
+                      <description>30M</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>sel_clk_i2c_dbg</name>
+              <name>I2C_DBG_IP_SRC</name>
               <description>I2C Debug Clock Source Select</description>
               <bitRange>[21:20]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>PLL60M</name>
+                      <value>0</value>
+                      <description>From PLL60M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>XTAL24M</name>
+                      <value>1</value>
+                      <description>From XTAL24M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>RC24M</name>
+                      <value>2</value>
+                      <description>From RC24M</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>sel_clk_i2c_ip_2_async_bus</name>
+              <name>I2C2_APB_SRC</name>
               <description>I2C IP 2 Async Bus Clock Source Select</description>
               <bitRange>[18:18]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>60M</name>
+                      <value>0</value>
+                      <description>60M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>30M</name>
+                      <value>1</value>
+                      <description>30M</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>sel_clk_i2c_ip_2</name>
+              <name>I2C2_IP_SRC</name>
               <description>I2C IP 2 Clock Source Select</description>
               <bitRange>[17:16]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>PLL60M</name>
+                      <value>0</value>
+                      <description>From PLL60M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>XTAL24M</name>
+                      <value>1</value>
+                      <description>From XTAL24M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>RC24M</name>
+                      <value>2</value>
+                      <description>From RC24M</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>sel_clk_i2c_ip_1_async_bus</name>
+              <name>I2C1_APB_SRC</name>
               <description>I2C IP 1 Async Bus Clock Source Select</description>
               <bitRange>[14:14]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>60M</name>
+                      <value>0</value>
+                      <description>60M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>30M</name>
+                      <value>1</value>
+                      <description>30M</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>sel_clk_i2c_ip_1</name>
+              <name>I2C1_IP_SRC</name>
               <description>I2C IP 1 Clock Source Select</description>
               <bitRange>[13:12]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>PLL60M</name>
+                      <value>0</value>
+                      <description>From PLL60M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>XTAL24M</name>
+                      <value>1</value>
+                      <description>From XTAL24M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>RC24M</name>
+                      <value>2</value>
+                      <description>From RC24M</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>sel_clk_i2c_ip_0_async_bus</name>
+              <name>I2C0_APB_SRC</name>
               <description>I2C IP 0 Async Bus Clock Source Select</description>
               <bitRange>[10:10]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>60M</name>
+                      <value>0</value>
+                      <description>60M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>30M</name>
+                      <value>1</value>
+                      <description>30M</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>sel_clk_i2c_ip_0</name>
+              <name>I2C0_IP_SRC</name>
               <description>I2C IP 0 Clock Source Select</description>
               <bitRange>[9:8]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>PLL60M</name>
+                      <value>0</value>
+                      <description>From PLL60M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>XTAL24M</name>
+                      <value>1</value>
+                      <description>From XTAL24M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>RC24M</name>
+                      <value>2</value>
+                      <description>From RC24M</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>sel_clk_spi_m_ip_0_async_bus</name>
+              <name>SPIM_APB_SRC</name>
               <description>SPI Master IP 0 Async Bus Clock Source Select</description>
               <bitRange>[6:6]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>60M</name>
+                      <value>0</value>
+                      <description>60M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>30M</name>
+                      <value>1</value>
+                      <description>30M</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>sel_clk_spi_m_ip_0</name>
+              <name>SPIM_IP_SRC</name>
               <description>SPI Master IP 0 Clock Source Select</description>
               <bitRange>[5:4]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>PLL60M</name>
+                      <value>0</value>
+                      <description>From PLL60M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>XTAL24M</name>
+                      <value>1</value>
+                      <description>From XTAL24M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>RC24M</name>
+                      <value>2</value>
+                      <description>From RC24M</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>sel_clk_spi_s_ip_0_async_bus</name>
+              <name>SPIS_APB_SRC</name>
               <description>SPI Slave IP 0 Async Bus Clock Source Select</description>
               <bitRange>[2:2]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>60M</name>
+                      <value>0</value>
+                      <description>60M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>30M</name>
+                      <value>1</value>
+                      <description>30M</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>sel_clk_spi_s_ip_0</name>
+              <name>SPIS_IP_SRC</name>
               <description>SPI Slave IP 0 Clock Source Select</description>
               <bitRange>[1:0]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>PLL60M</name>
+                      <value>0</value>
+                      <description>From PLL60M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>XTAL24M</name>
+                      <value>1</value>
+                      <description>From XTAL24M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>RC24M</name>
+                      <value>2</value>
+                      <description>From RC24M</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -14598,145 +14830,376 @@
           <addressOffset>0x20</addressOffset>
           <fields>
             <field>
-              <name>sel_clk_tmr_ip_1_async_bus</name>
+              <name>TMR1_APB_SRC</name>
               <description>Timer IP 1 Async Bus Clock Source Select</description>
               <bitRange>[30:30]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>60M</name>
+                      <value>0</value>
+                      <description>60M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>30M</name>
+                      <value>1</value>
+                      <description>30M</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>sel_clk_tmr_ip_1</name>
+              <name>TMR1_IP_SRC</name>
               <description>Timer IP 1 Clock Source Select</description>
               <bitRange>[29:28]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>XTAL24M</name>
+                      <value>0</value>
+                      <description>From XTAL24M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>RC24M</name>
+                      <value>1</value>
+                      <description>From RC24M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>RC32K</name>
+                      <value>2</value>
+                      <description>From RC32K</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>sel_clk_tmr_ip_0_async_bus</name>
+              <name>TMR0_APB_SRC</name>
               <description>Timer IP 0 Async Bus Clock Source Select</description>
               <bitRange>[26:26]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>60M</name>
+                      <value>0</value>
+                      <description>60M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>30M</name>
+                      <value>1</value>
+                      <description>30M</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>sel_clk_tmr_ip_0</name>
+              <name>TMR0_IP_SRC</name>
               <description>Timer IP 0 Clock Source Select</description>
               <bitRange>[25:24]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>XTAL24M</name>
+                      <value>0</value>
+                      <description>From XTAL24M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>RC24M</name>
+                      <value>1</value>
+                      <description>From RC24M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>RC32K</name>
+                      <value>2</value>
+                      <description>From RC32K</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>sel_clk_turbo_mem_comp_async_bus</name>
+              <name>CRC_APB_SRC</name>
               <description>Turbo Memory Comparator Async Bus Clock Source Select</description>
               <bitRange>[22:22]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>60M</name>
+                      <value>0</value>
+                      <description>60M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>30M</name>
+                      <value>1</value>
+                      <description>30M</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>sel_clk_turbo_mem_comp_ip</name>
+              <name>CRC_IP_SRC</name>
               <description>Turbo Memory Comparator IP Clock Source Select</description>
               <bitRange>[21:20]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>PLL60M</name>
+                      <value>0</value>
+                      <description>From PLL60M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>XTAL24M</name>
+                      <value>1</value>
+                      <description>From XTAL24M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>RC24M</name>
+                      <value>2</value>
+                      <description>From RC24M</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>sel_clk_tach_ip_3</name>
+              <name>TACHO3_IP_SRC</name>
               <description>TACH IP 3 Clock Source Select</description>
               <bitRange>[19:19]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>XTAL24M</name>
+                      <value>0</value>
+                      <description>From XTAL24M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>RC24M</name>
+                      <value>1</value>
+                      <description>From RC24M</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>sel_clk_tach_ip_2</name>
+              <name>TACHO2_IP_SRC</name>
               <description>TACH IP 2 Clock Source Select</description>
               <bitRange>[18:18]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>XTAL24M</name>
+                      <value>0</value>
+                      <description>From XTAL24M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>RC24M</name>
+                      <value>1</value>
+                      <description>From RC24M</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>sel_clk_tach_ip_1</name>
+              <name>TACHO1_IP_SRC</name>
               <description>TACH IP 1 Clock Source Select</description>
               <bitRange>[17:17]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>XTAL24M</name>
+                      <value>0</value>
+                      <description>From XTAL24M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>RC24M</name>
+                      <value>1</value>
+                      <description>From RC24M</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>sel_clk_tach_ip_0</name>
+              <name>TACHO0_IP_SRC</name>
               <description>TACH IP 0 Clock Source Select</description>
               <bitRange>[16:16]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>XTAL24M</name>
+                      <value>0</value>
+                      <description>From XTAL24M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>RC24M</name>
+                      <value>1</value>
+                      <description>From RC24M</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>sel_clk_tach_ip_3_async_bus</name>
+              <name>TACHO3_APB_SRC</name>
               <description>TACH IP 3 Async Bus Clock Source Select</description>
               <bitRange>[15:15]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>60M</name>
+                      <value>0</value>
+                      <description>60M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>30M</name>
+                      <value>1</value>
+                      <description>30M</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>sel_clk_tach_ip_2_async_bus</name>
+              <name>TACHO2_APB_SRC</name>
               <description>TACH IP 2 Async Bus Clock Source Select</description>
               <bitRange>[14:14]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>60M</name>
+                      <value>0</value>
+                      <description>60M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>30M</name>
+                      <value>1</value>
+                      <description>30M</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>sel_clk_tach_ip_1_async_bus</name>
+              <name>TACHO1_APB_SRC</name>
               <description>TACH IP 1 Async Bus Clock Source Select</description>
               <bitRange>[13:13]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>60M</name>
+                      <value>0</value>
+                      <description>60M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>30M</name>
+                      <value>1</value>
+                      <description>30M</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>sel_clk_tach_ip_0_async_bus</name>
+              <name>TACHO0_APB_SRC</name>
               <description>TACH IP 0 Async Bus Clock Source Select</description>
               <bitRange>[12:12]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>60M</name>
+                      <value>0</value>
+                      <description>60M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>30M</name>
+                      <value>1</value>
+                      <description>30M</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>sel_clk_efuse</name>
+              <name>EFUSE_IP_SRC</name>
               <description>eFuse Clock Source Select</description>
               <bitRange>[11:11]</bitRange>
               <access>read-write</access>
             </field>
             <field>
-              <name>sel_clk_gpio_async_bus</name>
+              <name>GPIO_APB_SRC</name>
               <description>GPIO Async Bus Clock Source Select</description>
               <bitRange>[10:10]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>60M</name>
+                      <value>0</value>
+                      <description>60M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>30M</name>
+                      <value>1</value>
+                      <description>30M</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>sel_clk_wdt_async_bus</name>
+              <name>WDT_APB_SRC</name>
               <description>WDT Async Bus Clock Source Select</description>
               <bitRange>[9:9]</bitRange>
               <access>read-write</access>
+              <enumeratedValues>
+                  <enumeratedValue>
+                      <name>60M</name>
+                      <value>0</value>
+                      <description>60M</description>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                      <name>30M</name>
+                      <value>1</value>
+                      <description>30M</description>
+                  </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>sel_clk_usb_dphy_ip</name>
+              <name>USB_DPHY_SRC</name>
               <description>USB DPHY IP Clock Source Select</description>
               <bitRange>[8:8]</bitRange>
               <access>read-write</access>
             </field>
             <field>
-              <name>sel_clk_i3c_ip</name>
+              <name>I3C_IP_SRC</name>
               <description>I3C IP Clock Source Select</description>
               <bitRange>[7:6]</bitRange>
               <access>read-write</access>
             </field>
             <field>
-              <name>sel_clk_swd</name>
+              <name>SWD_IP_SRC</name>
               <description>SWD Clock Source Select</description>
               <bitRange>[5:4]</bitRange>
               <access>read-write</access>
             </field>
             <field>
-              <name>sel_clk_spic_extr</name>
+              <name>EXTR_SPIC_IP_SRC</name>
               <description>SPIC EXTR Clock Source Select</description>
               <bitRange>[3:3]</bitRange>
               <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
             </field>
             <field>
-              <name>sel_clk_spic_intr</name>
+              <name>INTR_SPIC_IP_SRC</name>
               <description>SPIC INTR Clock Source Select</description>
               <bitRange>[2:2]</bitRange>
               <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
             </field>
             <field>
-              <name>sel_clk_dma</name>
+              <name>DMA_IP_SRC</name>
               <description>DMA Clock Source Select</description>
               <bitRange>[1:1]</bitRange>
               <access>read-write</access>
             </field>
             <field>
-              <name>sel_clk_cpu</name>
+              <name>CPU_SRC</name>
               <description>CPU Clock Source Select</description>
               <bitRange>[0:0]</bitRange>
               <access>read-write</access>
@@ -14744,32 +15207,1124 @@
           </fields>
         </register>
 
-        <!-- APBCLKPWR2 -->
+        <!-- PERICLKSEL3 -->
         <register>
-            <name>APBCLKPWR2</name>
-            <description>APB CLOCK POWER REGISTER #2</description>
+            <name>PERICLKSEL3</name>
+            <description>Peripheral Clock Select Register 3</description>
             <addressOffset>0x24</addressOffset>
             <size>32</size>
             <access>read-write</access>
             <resetValue>0x00000000</resetValue>
+            <fields>
+                <field>
+                    <name>PWM31_APB_SRC</name>
+                    <description>Clock source select for LED async bus[31]</description>
+                    <bitRange>[31:31]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>PWM30_APB_SRC</name>
+                    <description>Clock source select for LED async bus[30]</description>
+                    <bitRange>[30:30]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>PWM29_APB_SRC</name>
+                    <description>Clock source select for LED async bus[29]</description>
+                    <bitRange>[29:29]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>PWM28_APB_SRC</name>
+                    <description>Clock source select for LED async bus[28]</description>
+                    <bitRange>[28:28]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>PWM27_APB_SRC</name>
+                    <description>Clock source select for LED async bus[27]</description>
+                    <bitRange>[27:27]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>PWM26_APB_SRC</name>
+                    <description>Clock source select for LED async bus[26]</description>
+                    <bitRange>[26:26]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>PWM25_APB_SRC</name>
+                    <description>Clock source select for LED async bus[25]</description>
+                    <bitRange>[25:25]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>PWM24_APB_SRC</name>
+                    <description>Clock source select for LED async bus[24]</description>
+                    <bitRange>[24:24]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>PWM23_APB_SRC</name>
+                    <description>Clock source select for LED async bus[23]</description>
+                    <bitRange>[23:23]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>PWM22_APB_SRC</name>
+                    <description>Clock source select for LED async bus[22]</description>
+                    <bitRange>[22:22]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>PWM21_APB_SRC</name>
+                    <description>Clock source select for LED async bus[21]</description>
+                    <bitRange>[21:21]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>PWM20_APB_SRC</name>
+                    <description>Clock source select for LED async bus[20]</description>
+                    <bitRange>[20:20]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>PWM19_APB_SRC</name>
+                    <description>Clock source select for LED async bus[19]</description>
+                    <bitRange>[19:19]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>PWM18_APB_SRC</name>
+                    <description>Clock source select for LED async bus[18]</description>
+                    <bitRange>[18:18]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>PWM17_APB_SRC</name>
+                    <description>Clock source select for LED async bus[17]</description>
+                    <bitRange>[17:17]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>PWM16_APB_SRC</name>
+                    <description>Clock source select for LED async bus[16]</description>
+                    <bitRange>[16:16]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>PWM15_APB_SRC</name>
+                    <description>Clock source select for LED async bus[15]</description>
+                    <bitRange>[15:15]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>PWM14_APB_SRC</name>
+                    <description>Clock source select for LED async bus[14]</description>
+                    <bitRange>[14:14]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>PWM13_APB_SRC</name>
+                    <description>Clock source select for LED async bus[13]</description>
+                    <bitRange>[13:13]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>PWM12_APB_SRC</name>
+                    <description>Clock source select for LED async bus[12]</description>
+                    <bitRange>[12:12]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>PWM11_APB_SRC</name>
+                    <description>Clock source select for LED async bus[11]</description>
+                    <bitRange>[11:11]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>PWM10_APB_SRC</name>
+                    <description>Clock source select for LED async bus[10]</description>
+                    <bitRange>[10:10]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>PWM9_APB_SRC</name>
+                    <description>Clock source select for LED async bus[9]</description>
+                    <bitRange>[9:9]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>PWM8_APB_SRC</name>
+                    <description>Clock source select for LED async bus[8]</description>
+                    <bitRange>[8:8]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>PWM7_APB_SRC</name>
+                    <description>Clock source select for LED async bus[7]</description>
+                    <bitRange>[7:7]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>PWM6_APB_SRC</name>
+                    <description>Clock source select for LED async bus[6]</description>
+                    <bitRange>[6:6]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>PWM5_APB_SRC</name>
+                    <description>Clock source select for LED async bus[5]</description>
+                    <bitRange>[5:5]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>PWM4_APB_SRC</name>
+                    <description>Clock source select for LED async bus[4]</description>
+                    <bitRange>[4:4]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>PWM3_APB_SRC</name>
+                    <description>Clock source select for LED async bus[3]</description>
+                    <bitRange>[3:3]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>PWM2_APB_SRC</name>
+                    <description>Clock source select for LED async bus[2]</description>
+                    <bitRange>[2:2]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>PWM1_APB_SRC</name>
+                    <description>Clock source select for LED async bus[1]</description>
+                    <bitRange>[1:1]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>PWM0_APB_SRC</name>
+                    <description>Clock source select for LED async bus[0]</description>
+                    <bitRange>[0:0]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+            </fields>
         </register>
-        <!-- PERICLKCTRL3 -->
+        <!-- PERICLKSEL4 -->
         <register>
-            <name>PERICLKCTRL3</name>
-            <description>PERIPHERAL CLOCK CONTROL REGISTER #3</description>
+            <name>PERICLKSEL4</name>
+            <description>Peripheral Clock Select Register 4</description>
             <addressOffset>0x28</addressOffset>
             <size>32</size>
             <access>read-write</access>
             <resetValue>0x00000000</resetValue>
+            <fields>
+                <field>
+                    <name>USB_APB_SRC</name>
+                    <description>Clock source select for USB async bus</description>
+                    <bitRange>[28:28]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>TMR3_APB_SRC</name>
+                    <description>Clock source select for Timer IP3 async bus</description>
+                    <bitRange>[26:26]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>TMR3_IP_SRC</name>
+                    <description>Clock source select for Timer IP3</description>
+                    <bitRange>[25:24]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>XTAL24M</name>
+                            <value>0</value>
+                            <description>From XTAL24M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>RC24M</name>
+                            <value>1</value>
+                            <description>From RC24M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>RC32K</name>
+                            <value>2</value>
+                            <description>From RC32K</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>TMR2_APB_SRC</name>
+                    <description>Clock source select for Timer IP2 async bus</description>
+                    <bitRange>[22:22]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>TMR2_IP_SRC</name>
+                    <description>Clock source select for Timer IP2</description>
+                    <bitRange>[21:20]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>XTAL24M</name>
+                            <value>0</value>
+                            <description>From XTAL24M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>RC24M</name>
+                            <value>1</value>
+                            <description>From RC24M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>RC32K</name>
+                            <value>2</value>
+                            <description>From RC32K</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>UART_APB_SRC</name>
+                    <description>Clock source select for UART async bus</description>
+                    <bitRange>[18:18]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>UART_IP_SRC</name>
+                    <description>Clock source select for UART</description>
+                    <bitRange>[17:16]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>PLL60M</name>
+                            <value>0</value>
+                            <description>From PLL60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>XTAL24M</name>
+                            <value>1</value>
+                            <description>From XTAL24M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>RC24M</name>
+                            <value>2</value>
+                            <description>From RC24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>STRIP8_APB_SRC</name>
+                    <description>Clock source select for strip IP[8] async bus</description>
+                    <bitRange>[14:14]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>STRIP8_IP_SRC</name>
+                    <description>Clock source select for strip IP[8]</description>
+                    <bitRange>[13:12]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>PLL60M</name>
+                            <value>0</value>
+                            <description>From PLL60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>XTAL24M</name>
+                            <value>1</value>
+                            <description>From XTAL24M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>RC24M</name>
+                            <value>2</value>
+                            <description>From RC24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>STRIP7_APB_SRC</name>
+                    <description>Clock source select for strip IP[7] async bus</description>
+                    <bitRange>[10:10]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>STRIP7_IP_SRC</name>
+                    <description>Clock source select for strip IP[7]</description>
+                    <bitRange>[9:8]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>PLL60M</name>
+                            <value>0</value>
+                            <description>From PLL60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>XTAL24M</name>
+                            <value>1</value>
+                            <description>From XTAL24M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>RC24M</name>
+                            <value>2</value>
+                            <description>From RC24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>STRIP6_APB_SRC</name>
+                    <description>Clock source select for strip IP[6] async bus</description>
+                    <bitRange>[6:6]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>STRIP6_IP_SRC</name>
+                    <description>Clock source select for strip IP[6]</description>
+                    <bitRange>[5:4]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>PLL60M</name>
+                            <value>0</value>
+                            <description>From PLL60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>XTAL24M</name>
+                            <value>1</value>
+                            <description>From XTAL24M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>RC24M</name>
+                            <value>2</value>
+                            <description>From RC24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>STRIP5_APB_SRC</name>
+                    <description>Clock source select for strip IP[5] async bus</description>
+                    <bitRange>[2:2]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>STRIP5_IP_SRC</name>
+                    <description>Clock source select for strip IP[5]</description>
+                    <bitRange>[1:0]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>PLL60M</name>
+                            <value>0</value>
+                            <description>From PLL60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>XTAL24M</name>
+                            <value>1</value>
+                            <description>From XTAL24M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>RC24M</name>
+                            <value>2</value>
+                            <description>From RC24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+            </fields>
         </register>
-        <!-- PERICLKCTRL4 -->
+        <!-- PERICLKSEL5 -->
         <register>
-            <name>PERICLKCTRL4</name>
-            <description>PERIPHERAL CLOCK CONTROL REGISTER #4</description>
+            <name>PERICLKSEL5</name>
+            <description>Peripheral Clock Select Register 5</description>
             <addressOffset>0x2c</addressOffset>
             <size>32</size>
             <access>read-write</access>
             <resetValue>0x00000000</resetValue>
+            <fields>
+                <field>
+                    <name>STRIP4_APB_SRC</name>
+                    <description>Clock source select for strip IP[4] async bus</description>
+                    <bitRange>[18:18]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>STRIP4_IP_SRC</name>
+                    <description>Clock source select for strip IP[4]</description>
+                    <bitRange>[17:16]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>PLL60M</name>
+                            <value>0</value>
+                            <description>From PLL60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>XTAL24M</name>
+                            <value>1</value>
+                            <description>From XTAL24M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>RC24M</name>
+                            <value>2</value>
+                            <description>From RC24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>STRIP3_APB_SRC</name>
+                    <description>Clock source select for strip IP[3] async bus</description>
+                    <bitRange>[14:14]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>STRIP3_IP_SRC</name>
+                    <description>Clock source select for strip IP[3]</description>
+                    <bitRange>[13:12]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>PLL60M</name>
+                            <value>0</value>
+                            <description>From PLL60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>XTAL24M</name>
+                            <value>1</value>
+                            <description>From XTAL24M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>RC24M</name>
+                            <value>2</value>
+                            <description>From RC24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>STRIP2_APB_SRC</name>
+                    <description>Clock source select for strip IP[2] async bus</description>
+                    <bitRange>[10:10]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>STRIP2_IP_SRC</name>
+                    <description>Clock source select for strip IP[2]</description>
+                    <bitRange>[9:8]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>PLL60M</name>
+                            <value>0</value>
+                            <description>From PLL60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>XTAL24M</name>
+                            <value>1</value>
+                            <description>From XTAL24M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>RC24M</name>
+                            <value>2</value>
+                            <description>From RC24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>STRIP1_APB_SRC</name>
+                    <description>Clock source select for strip IP[1] async bus</description>
+                    <bitRange>[6:6]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>STRIP1_IP_SRC</name>
+                    <description>Clock source select for strip IP[1]</description>
+                    <bitRange>[5:4]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>PLL60M</name>
+                            <value>0</value>
+                            <description>From PLL60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>XTAL24M</name>
+                            <value>1</value>
+                            <description>From XTAL24M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>RC24M</name>
+                            <value>2</value>
+                            <description>From RC24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>STRIP0_APB_SRC</name>
+                    <description>Clock source select for strip IP[0] async bus</description>
+                    <bitRange>[2:2]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>STRIP0_IP_SRC</name>
+                    <description>Clock source select for strip IP[0]</description>
+                    <bitRange>[1:0]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>PLL60M</name>
+                            <value>0</value>
+                            <description>From PLL60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>XTAL24M</name>
+                            <value>1</value>
+                            <description>From XTAL24M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>RC24M</name>
+                            <value>2</value>
+                            <description>From RC24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+            </fields>
         </register>
         <!-- PERIRST0 -->
         <register>
