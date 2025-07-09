@@ -3308,6 +3308,36 @@
 						<resetValue>0x00000000</resetValue>
 				</register>
 
+				<!-- CLEARTFR -->
+				<register>
+						<name>CLEARTFR</name>
+						<description>MClear for IntTfr Interrupt </description>
+						<addressOffset>0x338</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- CLEARBLOCK -->
+				<register>
+						<name>CLEARBLOCK</name>
+						<description>MClear for IntBlock Interrupt </description>
+						<addressOffset>0x340</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
+				<!-- CLEARERR -->
+				<register>
+						<name>CLEARERR</name>
+						<description>MClear for IntErr Interrupt </description>
+						<addressOffset>0x358</addressOffset>
+						<size>32</size>
+						<access>read-write</access>
+						<resetValue>0x00000000</resetValue>
+				</register>
+
 				<!-- STATUSINT_L -->
 				<register>
 						<name>STATUSINT_L</name>
