@@ -18974,7 +18974,7 @@
       <interrupt>
         <name>TACHO0</name>
         <description>TACHO0 Interrupt</description>
-        <value>36</value>
+        <value>40</value>
       </interrupt>
 
       <!-- Registers -->
@@ -19346,7 +19346,7 @@
       <interrupt>
         <name>TACHO1</name>
         <description>TACHO1 Interrupt</description>
-        <value>37</value>
+        <value>41</value>
       </interrupt>
     </peripheral>
     <peripheral derivedFrom="TACHO0">
@@ -19356,7 +19356,7 @@
       <interrupt>
         <name>TACHO2</name>
         <description>TACHO2 Interrupt</description>
-        <value>38</value>
+        <value>42</value>
       </interrupt>
     </peripheral>
     <peripheral derivedFrom="TACHO0">
@@ -19366,7 +19366,7 @@
       <interrupt>
         <name>TACHO3</name>
         <description>TACHO3 Interrupt</description>
-        <value>39</value>
+        <value>43</value>
       </interrupt>
     </peripheral>
     <!-- WDT -->
@@ -19392,7 +19392,7 @@
       <interrupt>
 				<name>WDT</name>
 				<description>WDT Interrupt</description>
-				<value>20</value>
+				<value>24</value>
 			</interrupt>
 
       <!-- Registers -->
@@ -22222,7 +22222,7 @@
 			<interrupt>
 				<name>STRIP0</name>
 				<description>STRIP0 Interrupt</description>
-				<value>27</value>
+				<value>31</value>
 			</interrupt>
 
       <registers>
@@ -22757,7 +22757,7 @@
       <interrupt>
         <name>STRIP1</name>
         <description>STRIP1 Interrupt</description>
-        <value>28</value>
+        <value>32</value>
       </interrupt>
     </peripheral>
 
@@ -22768,7 +22768,7 @@
       <interrupt>
         <name>STRIP2</name>
         <description>STRIP2 Interrupt</description>
-        <value>29</value>
+        <value>33</value>
       </interrupt>
     </peripheral>
 
@@ -22779,7 +22779,7 @@
       <interrupt>
         <name>STRIP3</name>
         <description>STRIP3 Interrupt</description>
-        <value>30</value>
+        <value>34</value>
       </interrupt>
     </peripheral>
 
@@ -22790,7 +22790,7 @@
       <interrupt>
         <name>STRIP4</name>
         <description>STRIP4 Interrupt</description>
-        <value>31</value>
+        <value>35</value>
       </interrupt>
     </peripheral>
 
@@ -22801,7 +22801,7 @@
       <interrupt>
         <name>STRIP5</name>
         <description>STRIP5 Interrupt</description>
-        <value>32</value>
+        <value>36</value>
       </interrupt>
     </peripheral>
 
@@ -22812,7 +22812,7 @@
       <interrupt>
         <name>STRIP6</name>
         <description>STRIP6 Interrupt</description>
-        <value>33</value>
+        <value>37</value>
       </interrupt>
     </peripheral>
 
@@ -22823,7 +22823,7 @@
       <interrupt>
         <name>STRIP7</name>
         <description>STRIP7 Interrupt</description>
-        <value>34</value>
+        <value>38</value>
       </interrupt>
     </peripheral>
 
@@ -22834,7 +22834,7 @@
       <interrupt>
         <name>STRIP8</name>
         <description>STRIP8 Interrupt</description>
-        <value>35</value>
+        <value>39</value>
       </interrupt>
     </peripheral>
     <!-- GPIO -->
@@ -23711,7 +23711,7 @@
       <interrupt>
         <name>TMR0</name>
         <description>TMR0 Interrupt</description>
-        <value>21</value>
+        <value>25</value>
       </interrupt>
 
       <!-- Registers -->
@@ -23866,7 +23866,7 @@
       <interrupt>
         <name>TMR1</name>
         <description>TMR1 Interrupt</description>
-        <value>22</value>
+        <value>26</value>
       </interrupt>
     </peripheral>
     <!-- TMR2 -->
@@ -23877,7 +23877,7 @@
       <interrupt>
         <name>TMR2</name>
         <description>TMR2 Interrupt</description>
-        <value>23</value>
+        <value>27</value>
       </interrupt>
     </peripheral>
     <!-- TMR3 -->
@@ -23888,7 +23888,7 @@
       <interrupt>
         <name>TMR3</name>
         <description>TMR3 Interrupt</description>
-        <value>24</value>
+        <value>28</value>
       </interrupt>
     </peripheral>
     <!-- CRC32 -->
@@ -24006,7 +24006,7 @@
       <interrupt>
         <name>DOTMTX0</name>
         <description>DOTMTX0 Interrupt</description>
-        <value>25</value>
+        <value>29</value>
       </interrupt>
 
       <registers>
@@ -24277,7 +24277,7 @@
       <interrupt>
         <name>DOTMTX1</name>
         <description>DOTMTX1 Interrupt</description>
-        <value>26</value>
+        <value>30</value>
       </interrupt>
     </peripheral>
   </peripherals>
