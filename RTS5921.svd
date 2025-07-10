@@ -23861,7 +23861,7 @@
     <!-- TMR1 -->
     <peripheral derivedFrom="TMR0">
       <name>TMR1</name>
-      <baseAddress>0x40121410</baseAddress>
+      <baseAddress>0x40121420</baseAddress>
       <!-- Interrup -->
       <interrupt>
         <name>TMR1</name>
@@ -23872,7 +23872,7 @@
     <!-- TMR2 -->
     <peripheral derivedFrom="TMR0">
       <name>TMR2</name>
-      <baseAddress>0x40121420</baseAddress>
+      <baseAddress>0x40121440</baseAddress>
       <!-- Interrup -->
       <interrupt>
         <name>TMR2</name>
@@ -23883,7 +23883,7 @@
     <!-- TMR3 -->
     <peripheral derivedFrom="TMR0">
       <name>TMR3</name>
-      <baseAddress>0x40121430</baseAddress>
+      <baseAddress>0x40121460</baseAddress>
       <!-- Interrup -->
       <interrupt>
         <name>TMR3</name>
