@@ -20833,6 +20833,30 @@
         <usage>registers</usage>
       </addressBlock>
 
+      <!-- Interrup -->
+      <interrupt>
+				<name>WDT</name>
+				<description>WDT Interrupt</description>
+				<value>24</value>
+			</interrupt>
+
+      <!-- Interrup -->
+      <interrupt>
+				<name>I2CDBG0</name>
+				<description>I2CDBG0 Interrupt</description>
+				<value>44</value>
+			</interrupt>
+      <interrupt>
+				<name>I2CDBG1</name>
+				<description>I2CDBG0 Interrupt</description>
+				<value>45</value>
+			</interrupt>
+      <interrupt>
+				<name>I2CDBG2</name>
+				<description>I2CDBG0 Interrupt</description>
+				<value>46</value>
+			</interrupt>
+
 		  <registers>
 		    <register>
 		      <name>UNLOCKKEYH</name>
