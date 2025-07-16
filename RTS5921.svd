@@ -20835,13 +20835,6 @@
 
       <!-- Interrup -->
       <interrupt>
-				<name>WDT</name>
-				<description>WDT Interrupt</description>
-				<value>24</value>
-			</interrupt>
-
-      <!-- Interrup -->
-      <interrupt>
 				<name>I2CDBG0</name>
 				<description>I2CDBG0 Interrupt</description>
 				<value>44</value>
