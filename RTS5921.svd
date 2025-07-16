@@ -20841,12 +20841,12 @@
 			</interrupt>
       <interrupt>
 				<name>I2CDBG1</name>
-				<description>I2CDBG0 Interrupt</description>
+				<description>I2CDBG1 Interrupt</description>
 				<value>45</value>
 			</interrupt>
       <interrupt>
 				<name>I2CDBG2</name>
-				<description>I2CDBG0 Interrupt</description>
+				<description>I2CDBG2 Interrupt</description>
 				<value>46</value>
 			</interrupt>
 
