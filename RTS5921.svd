@@ -890,15 +890,55 @@
 						<resetValue>0x00000000</resetValue>
 				</register>
 
-				<!-- DR -->
-				<register>
-						<name>DR</name>
-						<description>Data Register</description>
-						<addressOffset>0x060</addressOffset>
-						<size>32</size>
-						<access>read-write</access>
-						<resetValue>0x00000000</resetValue>
-				</register>
+        <!-- DR -->
+        <register>
+          <name>DR</name>
+          <description>DATA REGISTER</description>
+          <addressOffset>0x060</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        
+        <!-- DR_BYTE -->
+        <register>
+          <name>DR_BYTE</name>
+          <description>DATA REGISTER IN BYTE</description>
+          <alternateRegister>DR</alternateRegister>
+          <addressOffset>0x060</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <dataType>uint8_t</dataType>
+        </register>
+
+        <!-- DR_HALF -->
+        <register>
+          <name>DR_HALF</name>
+          <description>DATA REGISTER IN HALF WORD</description>
+          <alternateRegister>DR</alternateRegister>
+          <addressOffset>0x060</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <dataType>uint16_t</dataType>
+        </register>
+
+        <!-- DR_WORD -->
+        <register>
+          <name>DR_WORD</name>
+          <description>DATA REGISTER IN WORD</description>
+          <alternateRegister>DR</alternateRegister>
+          <addressOffset>0x060</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <dataType>uint32_t</dataType>
+        </register>
 
 				<!-- DM_DR -->
 				<register>
