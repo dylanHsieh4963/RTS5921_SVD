@@ -13523,6 +13523,93 @@
 					<size>32</size>
 					<access>read-write</access>
 					<resetValue>0x00000000</resetValue>
+          <fields>
+              <field>
+                  <name>NYETIntrpt</name>
+                  <description>NYET interrupt</description>
+                  <bitRange>[14:14]</bitRange>
+                  <access>read-write</access>
+              </field>
+              <field>
+                  <name>NAKIntrpt</name>
+                  <description>NAK interrupt</description>
+                  <bitRange>[13:13]</bitRange>
+                  <access>read-write</access>
+              </field>
+              <field>
+                  <name>BbleErr</name>
+                  <description>Babble error interrupt</description>
+                  <bitRange>[12:12]</bitRange>
+                  <access>read-write</access>
+              </field>
+              <field>
+                  <name>PktDrpSts</name>
+                  <description>ISOC OUT packet dropped</description>
+                  <bitRange>[11:11]</bitRange>
+                  <access>read-write</access>
+              </field>
+              <field>
+                  <name>BNAIntr</name>
+                  <description>Buffer not available interrupt</description>
+                  <bitRange>[9:9]</bitRange>
+                  <access>read-write</access>
+              </field>
+              <field>
+                  <name>TxfifoUndrn</name>
+                  <description>Tx FIFO underrun interrupt</description>
+                  <bitRange>[8:8]</bitRange>
+                  <access>read-write</access>
+              </field>
+              <field>
+                  <name>TxFEmp</name>
+                  <description>Transmit FIFO empty interrupt</description>
+                  <bitRange>[7:7]</bitRange>
+                  <access>read-only</access>
+              </field>
+              <field>
+                  <name>INEPNakEff</name>
+                  <description>IN endpoint NAK effective interrupt</description>
+                  <bitRange>[6:6]</bitRange>
+                  <access>read-write</access>
+              </field>
+              <field>
+                  <name>INTknEPMis</name>
+                  <description>IN token received with EP mismatch</description>
+                  <bitRange>[5:5]</bitRange>
+                  <access>read-write</access>
+              </field>
+              <field>
+                  <name>INTknTXFEmp</name>
+                  <description>IN token received when TxFIFO empty</description>
+                  <bitRange>[4:4]</bitRange>
+                  <access>read-write</access>
+              </field>
+              <field>
+                  <name>TimeOUT</name>
+                  <description>Timeout condition interrupt</description>
+                  <bitRange>[3:3]</bitRange>
+                  <access>read-write</access>
+              </field>
+              <field>
+                  <name>AHBErr</name>
+                  <description>AHB error interrupt</description>
+                  <bitRange>[2:2]</bitRange>
+                  <access>read-write</access>
+              </field>
+              <field>
+                  <name>EPDisbld</name>
+                  <description>Endpoint disabled interrupt</description>
+                  <bitRange>[1:1]</bitRange>
+                  <access>read-write</access>
+              </field>
+              <field>
+                  <name>XferCompl</name>
+                  <description>Transfer completed interrupt</description>
+                  <bitRange>[0:0]</bitRange>
+                  <access>read-write</access>
+              </field>
+          </fields>
+
 				</register>
         <register derivedFrom="DIEPINT1">
           <name>DIEPINT2</name>
