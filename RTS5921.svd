@@ -900,7 +900,7 @@
           <resetValue>0x00000000</resetValue>
           <resetMask>0xFFFFFFFF</resetMask>
         </register>
-        
+
         <!-- DR_BYTE -->
         <register>
           <name>DR_BYTE</name>
@@ -6461,53 +6461,6 @@
                     <description>Non-periodic Transmit Request Queue Space Available</description>
                     <bitRange>[23:16]</bitRange>
                     <access>read-only</access>
-                    <enumeratedValues>
-                        <enumeratedValue>
-                            <name>FULL</name>
-                            <description>Non-periodic Transmit</description>
-                            <value>0x0</value>
-                        </enumeratedValue>
-                        <enumeratedValue>
-                            <name>QUE1</name>
-                            <description>1 location available</description>
-                            <value>0x1</value>
-                        </enumeratedValue>
-                        <enumeratedValue>
-                            <name>QUE2</name>
-                            <description>2 locations available</description>
-                            <value>0x2</value>
-                        </enumeratedValue>
-                        <enumeratedValue>
-                            <name>QUE3</name>
-                            <description>3 locations available</description>
-                            <value>0x3</value>
-                        </enumeratedValue>
-                        <enumeratedValue>
-                            <name>QUE4</name>
-                            <description>4 locations available</description>
-                            <value>0x4</value>
-                        </enumeratedValue>
-                        <enumeratedValue>
-                            <name>QUE5</name>
-                            <description>5 locations available</description>
-                            <value>0x5</value>
-                        </enumeratedValue>
-                        <enumeratedValue>
-                            <name>QUE6</name>
-                            <description>6 locations available</description>
-                            <value>0x6</value>
-                        </enumeratedValue>
-                        <enumeratedValue>
-                            <name>QUE7</name>
-                            <description>7 locations available</description>
-                            <value>0x7</value>
-                        </enumeratedValue>
-                        <enumeratedValue>
-                            <name>QUE8</name>
-                            <description>8 locations available</description>
-                            <value>0x8</value>
-                        </enumeratedValue>
-                    </enumeratedValues>
                 </field>
                 <!-- NPTxFSpcAvail -->
                 <field>
@@ -9102,28 +9055,6 @@
                     <description>RAMP TIME</description>
                     <bitRange>[16:6]</bitRange>
                     <access>read-only</access>
-                    <enumeratedValues>
-                        <enumeratedValue>
-                            <name>RTIM1</name>
-                            <description>1 cycle</description>
-                            <value>0</value>
-                        </enumeratedValue>
-                        <enumeratedValue>
-                            <name>RTIM2</name>
-                            <description>2 cycles</description>
-                            <value>1</value>
-                        </enumeratedValue>
-                        <enumeratedValue>
-                            <name>RTIM3</name>
-                            <description>3 cycles</description>
-                            <value>2</value>
-                        </enumeratedValue>
-                        <enumeratedValue>
-                            <name>RTIM4</name>
-                            <description>2048 cycles</description>
-                            <value>2047</value>
-                        </enumeratedValue>
-                    </enumeratedValues>
                 </field>
                 <!-- PrbPer -->
                 <field>
@@ -9648,6 +9579,278 @@
 					<size>32</size>
 					<access>read-write</access>
 					<resetValue>0x00000000</resetValue>
+          <fields>
+              <field>
+                  <name>ResValid</name>
+                  <description>Resume Validation Period. Effective only when Ena32KHzSusp is set. Value after reset: 0x2</description>
+                  <bitRange>[31:26]</bitRange>
+                  <access>read-write</access>
+              </field>
+              <field>
+                  <name>PerSchIntvl</name>
+                  <description>
+                      Periodic Scheduling Interval.
+                  </description>
+                  <bitRange>[25:24]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MF25</name>
+                          <description>25% of (micro)Frame</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>MF50</name>
+                          <description>50% of (micro)Frame</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>MF75</name>
+                          <description>75% of (micro)Frame</description>
+                          <value>2</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>RESERVED</name>
+                          <description>Reserved</description>
+                          <value>3</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>DescDMA</name>
+                  <description>
+                      Enable Scatter/Gather DMA in device mode. One-time programmable after reset.
+                      Value after reset: 0x0
+                  </description>
+                  <bitRange>[23:23]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>DISABLED</name>
+                          <description>Disable Scatter/Gather DMA</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ENABLED</name>
+                          <description>Enable Scatter/Gather DMA</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>EPMisCnt</name>
+                  <description>
+                      IN Endpoint Mismatch Count (Shared FIFO only). Value after reset: 0x8
+                  </description>
+                  <bitRange>[22:18]</bitRange>
+                  <access>read-write</access>
+              </field>
+              <field>
+                  <name>ipgisocSupt</name>
+                  <description>
+                      Worst-Case Inter-Packet Gap ISOC OUT Support. Value after reset: 0x1
+                  </description>
+                  <bitRange>[17:17]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>DISABLED</name>
+                          <description>Support disabled</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ENABLED</name>
+                          <description>Support enabled</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>RESERVED16</name>
+                  <description>Reserved</description>
+                  <bitRange>[16:16]</bitRange>
+                  <access>read-write</access>
+              </field>
+              <field>
+                  <name>ErraticIntMsk</name>
+                  <description>
+                      Erratic Error Interrupt Mask. Value after reset: 0x0
+                  </description>
+                  <bitRange>[15:15]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>Interrupt generated</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Interrupt masked</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>XCVRDLY</name>
+                  <description>
+                      XCVR Delay between xcvr_sel and txvalid during device chirp. Value after reset: 0x0
+                  </description>
+                  <bitRange>[14:14]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>DISABLE</name>
+                          <description>No delay</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ENABLE</name>
+                          <description>Enable delay</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>EnDevOutNak</name>
+                  <description>
+                      Enable Device OUT NAK after Bulk OUT transfer complete (only for Descriptor DMA mode). Value after reset: 0x0
+                  </description>
+                  <bitRange>[13:13]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>DISABLED</name>
+                          <description>Not set NAK</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ENABLED</name>
+                          <description>Set NAK</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>PerFrInt</name>
+                  <description>
+                      Periodic Frame Interval End-Of-Periodic Frame Interrupt time.
+                      0x0: 80%
+                      0x1: 85%
+                      0x2: 90%
+                      0x3: 95%
+                      Value after reset: 0x0
+                  </description>
+                  <bitRange>[12:11]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>EOPF80</name>
+                          <description>80% of (micro)Frame</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>EOPF85</name>
+                          <description>85% of (micro)Frame</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>EOPF90</name>
+                          <description>90% of (micro)Frame</description>
+                          <value>2</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>EOPF95</name>
+                          <description>95% of (micro)Frame</description>
+                          <value>3</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>DevAddr</name>
+                  <description>Device address. Must be set after SetAddress command. Value after reset: 0x0</description>
+                  <bitRange>[10:4]</bitRange>
+                  <access>read-write</access>
+              </field>
+              <field>
+                  <name>Ena32KHzSusp</name>
+                  <description>
+                      Enable 32KHz Suspend mode, only valid for FS PHY. Value after reset: 0x0
+                  </description>
+                  <bitRange>[3:3]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>DISABLED</name>
+                          <description>Not in 32KHz suspend</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ENABLED</name>
+                          <description>32KHz suspend enabled</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>NZStsOUTHShk</name>
+                  <description>
+                      Non-Zero-Length Status OUT Handshake on receiving status OUT.
+                      0: Send PKT to app, handshake follows endpoint config
+                      1: STALL on NZL status OUT, do not send to app
+                      Value after reset: 0x0
+                  </description>
+                  <bitRange>[2:2]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>SENDOUT</name>
+                          <description>Send received OUT packet to application (zero or nonzero) and handshake as per endpoint</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>SENDSTALL</name>
+                          <description>Send STALL on nonzero-length status OUT</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>DevSpd</name>
+                  <description>
+                      Device Speed for enumeration.
+                      0x0: High speed (USB 2.0, 30/60MHz)
+                      0x1: Full speed (USB 2.0, 30/60MHz)
+                      0x2: Low speed (USB 1.1, 6MHz)
+                      0x3: Full speed (USB 1.1, 48MHz)
+                      Value after reset: 0x0
+                  </description>
+                  <bitRange>[1:0]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>USBHS20</name>
+                          <description>High speed USB 2.0 PHY clock is 30 MHz or 60 MHz</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>USBFS20</name>
+                          <description>Full speed USB 2.0 PHY clock is 30 MHz or 60 MHz</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>USBLS116</name>
+                          <description>Low speed USB 1.1 transceiver clock is 6 MHz</description>
+                          <value>2</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>USBFS1148</name>
+                          <description>Full speed USB 1.1 transceiver clock is 48 MHz</description>
+                          <value>3</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+          </fields>
 				</register>
 
 				<!-- DCTL -->
@@ -9658,6 +9861,327 @@
 					<size>32</size>
 					<access>read-write</access>
 					<resetValue>0x00000000</resetValue>
+          <fields>
+              <field>
+                  <name>ServInt</name>
+                  <description>Enable Service Interval scheduling for ISOC IN EP</description>
+                  <bitRange>[19:19]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>DISABLED</name>
+                          <description>Disabled</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ENABLED</name>
+                          <description>Enabled</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>DeepSleepBESLReject</name>
+                  <description>Enable Deep Sleep BESL Reject</description>
+                  <bitRange>[18:18]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>DISABLED</name>
+                          <description>Disabled</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ENABLED</name>
+                          <description>Enabled</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>EnContOnBNA</name>
+                  <description>Continue on BNA (DMA mode)</description>
+                  <bitRange>[17:17]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>DISABLED</name>
+                          <description>Disabled</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ENABLED</name>
+                          <description>Enabled</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>NakOnBble</name>
+                  <description>NAK on Babble Error</description>
+                  <bitRange>[16:16]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>DISABLED</name>
+                          <description>Disabled</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ENABLED</name>
+                          <description>Enabled</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>IgnrFrmNum</name>
+                  <description>Ignore Frame Number / Enable PTI Mode</description>
+                  <bitRange>[15:15]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>DISABLED</name>
+                          <description>Disabled</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ENABLED</name>
+                          <description>Enabled</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>GMC</name>
+                  <description>Global Multi Packet Count</description>
+                  <bitRange>[14:13]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INVALID</name>
+                          <description>Invalid</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ONE</name>
+                          <description>1 packet</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>TWO</name>
+                          <description>2 packets</description>
+                          <value>2</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>THREE</name>
+                          <description>3 packets</description>
+                          <value>3</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>PWROnPrgDone</name>
+                  <description>Power-On Programming Done</description>
+                  <bitRange>[11:11]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>NOTDONE</name>
+                          <description>Not Done</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>DONE</name>
+                          <description>Done</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>CGOUTNak</name>
+                  <description>Clear Global OUT NAK</description>
+                  <bitRange>[10:10]</bitRange>
+                  <access>write-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>DISABLED</name>
+                          <description>Disabled</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ENABLED</name>
+                          <description>Enabled</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>SGOUTNak</name>
+                  <description>Set Global OUT NAK</description>
+                  <bitRange>[9:9]</bitRange>
+                  <access>write-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>DISABLED</name>
+                          <description>Disabled</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ENABLED</name>
+                          <description>Enabled</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>CGNPInNak</name>
+                  <description>Clear Global Non-Periodic IN NAK</description>
+                  <bitRange>[8:8]</bitRange>
+                  <access>write-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>DISABLE</name>
+                          <description>Disabled</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ENABLE</name>
+                          <description>Enabled</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>SGNPInNak</name>
+                  <description>Set Global Non-Periodic IN NAK</description>
+                  <bitRange>[7:7]</bitRange>
+                  <access>write-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>DISABLE</name>
+                          <description>Disabled</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ENABLE</name>
+                          <description>Enabled</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>TstCtl</name>
+                  <description>Test Control</description>
+                  <bitRange>[6:4]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>DISABLED</name>
+                          <description>Test mode disabled</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>TESTJ</name>
+                          <description>Test J</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>TESTK</name>
+                          <description>Test K</description>
+                          <value>2</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>TESTSN</name>
+                          <description>Test SE0 NAK</description>
+                          <value>3</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>TESTPM</name>
+                          <description>Test Packet</description>
+                          <value>4</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>TESTFE</name>
+                          <description>Test Force Enable</description>
+                          <value>5</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>GOUTNakSts</name>
+                  <description>Global OUT NAK Status</description>
+                  <bitRange>[3:3]</bitRange>
+                  <access>read-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>Inactive</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>Active</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>GNPINNakSts</name>
+                  <description>Global Non-Periodic IN NAK Status</description>
+                  <bitRange>[2:2]</bitRange>
+                  <access>read-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>Inactive</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>Active</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>SftDiscon</name>
+                  <description>Soft Disconnect</description>
+                  <bitRange>[1:1]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>NODISCONNECT</name>
+                          <description>Connected</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>DISCONNECT</name>
+                          <description>Disconnected</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>RmtWkUpSig</name>
+                  <description>Remote Wakeup Signaling</description>
+                  <bitRange>[0:0]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>DISABLED</name>
+                          <description>Disabled</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ENABLED</name>
+                          <description>Enabled</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+          </fields>
+
 				</register>
 
 				<!-- DSTS -->
@@ -9668,6 +10192,84 @@
 					<size>32</size>
 					<access>read-write</access>
 					<resetValue>0x00000000</resetValue>
+          <fields>
+              <field>
+                  <name>DevLnSts</name>
+                  <description>Current logic level of USB D+ and D- lines</description>
+                  <bitRange>[23:22]</bitRange>
+                  <access>read-only</access>
+              </field>
+              <field>
+                  <name>SOFFN</name>
+                  <description>Current frame or microframe number</description>
+                  <bitRange>[21:8]</bitRange>
+                  <access>read-only</access>
+              </field>
+              <field>
+                  <name>ErrticErr</name>
+                  <description>Erratic error detected</description>
+                  <bitRange>[3:3]</bitRange>
+                  <access>read-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No erratic error</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>Erratic error</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>EnumSpd</name>
+                  <description>Enumerated USB speed</description>
+                  <bitRange>[2:1]</bitRange>
+                  <access>read-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>HS3060</name>
+                          <description>High speed (30/60 MHz)</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>FS3060</name>
+                          <description>Full speed (30/60 MHz)</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>LS6</name>
+                          <description>Low speed (6 MHz)</description>
+                          <value>2</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>FS48</name>
+                          <description>Full speed (48 MHz)</description>
+                          <value>3</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>SuspSts</name>
+                  <description>Device is in suspend state</description>
+                  <bitRange>[0:0]</bitRange>
+                  <access>read-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>Not suspended</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>Suspended</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+          </fields>
 				</register>
 
 				<!-- DIEPMSK -->
@@ -9678,6 +10280,188 @@
 					<size>32</size>
 					<access>read-write</access>
 					<resetValue>0x00000000</resetValue>
+          <fields>
+              <field>
+                  <name>NAKMsk</name>
+                  <description>NAK interrupt mask</description>
+                  <bitRange>[13:13]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask NAK Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Mask NAK Interrupt</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>BNAInIntrMsk</name>
+                  <description>BNA interrupt mask</description>
+                  <bitRange>[9:9]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask BNA Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Mask BNA Interrupt</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>TxfifoUndrnMsk</name>
+                  <description>FIFO underrun interrupt mask</description>
+                  <bitRange>[8:8]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask FIFO Underrun Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Mask FIFO Underrun Interrupt</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>INEPNakEffMsk</name>
+                  <description>IN EP NAK effective interrupt mask</description>
+                  <bitRange>[6:6]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask IN EP NAK Effective Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Mask IN EP NAK Effective Interrupt</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>INTknEPMisMsk</name>
+                  <description>IN token EP mismatch interrupt mask</description>
+                  <bitRange>[5:5]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask IN Token EP Mismatch Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Mask IN Token EP Mismatch Interrupt</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>INTknTXFEmpMsk</name>
+                  <description>IN token TxFIFO empty interrupt mask</description>
+                  <bitRange>[4:4]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask IN Token Received When TxFIFO Empty Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Mask IN Token Received When TxFIFO Empty Interrupt</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>TimeOUTMsk</name>
+                  <description>Timeout condition interrupt mask</description>
+                  <bitRange>[3:3]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask Timeout Condition Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Mask Timeout Condition Interrupt</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>AHBErrMsk</name>
+                  <description>AHB error interrupt mask</description>
+                  <bitRange>[2:2]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask AHB Error Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Mask AHB Error Interrupt</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>EPDisbldMsk</name>
+                  <description>Endpoint disabled interrupt mask</description>
+                  <bitRange>[1:1]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask Endpoint Disabled Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Mask Endpoint Disabled Interrupt</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>XferComplMsk</name>
+                  <description>Transfer completed interrupt mask</description>
+                  <bitRange>[0:0]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask Transfer Completed Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Mask Transfer Completed Interrupt</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+          </fields>
 				</register>
 
 				<!-- DOEPMSK -->
@@ -9688,6 +10472,224 @@
 					<size>32</size>
 					<access>read-write</access>
 					<resetValue>0x00000000</resetValue>
+          <fields>
+              <field>
+                  <name>NYETMsk</name>
+                  <description>NYET interrupt mask</description>
+                  <bitRange>[14:14]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask NYET Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No NYET Interrupt Mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>NAKMsk</name>
+                  <description>NAK interrupt mask</description>
+                  <bitRange>[13:13]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask NAK Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No NAK Interrupt Mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>BbleErrMsk</name>
+                  <description>Babble error interrupt mask</description>
+                  <bitRange>[12:12]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask Babble Error Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Babble Error Interrupt Mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>BnaOutIntrMsk</name>
+                  <description>BNA interrupt mask</description>
+                  <bitRange>[9:9]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask BNA Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No BNA Interrupt Mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>OutPktErrMsk</name>
+                  <description>OUT packet error interrupt mask</description>
+                  <bitRange>[8:8]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask OUT Packet Error Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No OUT Packet Error Interrupt Mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>Back2BackSETup</name>
+                  <description>Back-to-back SETUP packets mask</description>
+                  <bitRange>[6:6]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Interrupt Mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>StsPhseRcvdMsk</name>
+                  <description>Status phase received mask</description>
+                  <bitRange>[5:5]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask Status Phase Received Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Status Phase Received Interrupt Mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>OUTTknEPdisMsk</name>
+                  <description>OUT token received when EP disabled mask</description>
+                  <bitRange>[4:4]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask OUT Token Received when Endpoint Disabled Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No OUT Token Received when Endpoint Disabled Interrupt Mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>SetUPMsk</name>
+                  <description>SETUP phase done interrupt mask</description>
+                  <bitRange>[3:3]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask SETUP Phase Done Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No SETUP Phase Done Interrupt Mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>AHBErrMsk</name>
+                  <description>AHB error interrupt mask</description>
+                  <bitRange>[2:2]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask AHB Error Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No AHB Error Interrupt Mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>EPDisbldMsk</name>
+                  <description>Endpoint disabled interrupt mask</description>
+                  <bitRange>[1:1]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask Endpoint Disabled Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Endpoint Disabled Interrupt Mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>XferComplMsk</name>
+                  <description>Transfer completed interrupt mask</description>
+                  <bitRange>[0:0]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask Transfer Completed Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Transfer Completed Interrupt Mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+          </fields>
 				</register>
 
 				<!-- DAINT -->
@@ -9698,6 +10700,584 @@
 					<size>32</size>
 					<access>read-write</access>
 					<resetValue>0x00000000</resetValue>
+          <fields>
+              <field>
+                  <name>OutEPInt15</name>
+                  <description>OUT EP15 interrupt</description>
+                  <bitRange>[31:31]</bitRange>
+                  <access>read-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>Interrupt active</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>OutEPInt14</name>
+                  <description>OUT EP14 interrupt</description>
+                  <bitRange>[30:30]</bitRange>
+                  <access>read-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>Interrupt active</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>OutEPInt13</name>
+                  <description>OUT EP13 interrupt</description>
+                  <bitRange>[29:29]</bitRange>
+                  <access>read-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>Interrupt active</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>OutEPInt12</name>
+                  <description>OUT EP12 interrupt</description>
+                  <bitRange>[28:28]</bitRange>
+                  <access>read-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>Interrupt active</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>OutEPInt11</name>
+                  <description>OUT EP11 interrupt</description>
+                  <bitRange>[27:27]</bitRange>
+                  <access>read-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>Interrupt active</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>OutEPInt10</name>
+                  <description>OUT EP10 interrupt</description>
+                  <bitRange>[26:26]</bitRange>
+                  <access>read-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>Interrupt active</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>OutEPInt9</name>
+                  <description>OUT EP9 interrupt</description>
+                  <bitRange>[25:25]</bitRange>
+                  <access>read-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>Interrupt active</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>OutEPInt8</name>
+                  <description>OUT EP8 interrupt</description>
+                  <bitRange>[24:24]</bitRange>
+                  <access>read-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>Interrupt active</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>OutEPInt7</name>
+                  <description>OUT EP7 interrupt</description>
+                  <bitRange>[23:23]</bitRange>
+                  <access>read-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>Interrupt active</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>OutEPInt6</name>
+                  <description>OUT EP6 interrupt</description>
+                  <bitRange>[22:22]</bitRange>
+                  <access>read-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>Interrupt active</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>OutEPInt5</name>
+                  <description>OUT EP5 interrupt</description>
+                  <bitRange>[21:21]</bitRange>
+                  <access>read-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>Interrupt active</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>OutEPInt4</name>
+                  <description>OUT EP4 interrupt</description>
+                  <bitRange>[20:20]</bitRange>
+                  <access>read-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>Interrupt active</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>OutEPInt3</name>
+                  <description>OUT EP3 interrupt</description>
+                  <bitRange>[19:19]</bitRange>
+                  <access>read-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>Interrupt active</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>OutEPInt2</name>
+                  <description>OUT EP2 interrupt</description>
+                  <bitRange>[18:18]</bitRange>
+                  <access>read-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>Interrupt active</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>OutEPInt1</name>
+                  <description>OUT EP1 interrupt</description>
+                  <bitRange>[17:17]</bitRange>
+                  <access>read-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>Interrupt active</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>OutEPInt0</name>
+                  <description>OUT EP0 interrupt</description>
+                  <bitRange>[16:16]</bitRange>
+                  <access>read-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>Interrupt active</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>InEPInt15</name>
+                  <description>IN EP15 interrupt</description>
+                  <bitRange>[15:15]</bitRange>
+                  <access>read-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>Interrupt active</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>InEPInt14</name>
+                  <description>IN EP14 interrupt</description>
+                  <bitRange>[14:14]</bitRange>
+                  <access>read-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>Interrupt active</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>InEPInt13</name>
+                  <description>IN EP13 interrupt</description>
+                  <bitRange>[13:13]</bitRange>
+                  <access>read-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>Interrupt active</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>InEPInt12</name>
+                  <description>IN EP12 interrupt</description>
+                  <bitRange>[12:12]</bitRange>
+                  <access>read-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>Interrupt active</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>InEPInt11</name>
+                  <description>IN EP11 interrupt</description>
+                  <bitRange>[11:11]</bitRange>
+                  <access>read-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>Interrupt active</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>InEPInt10</name>
+                  <description>IN EP10 interrupt</description>
+                  <bitRange>[10:10]</bitRange>
+                  <access>read-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>Interrupt active</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>InEPInt9</name>
+                  <description>IN EP9 interrupt</description>
+                  <bitRange>[9:9]</bitRange>
+                  <access>read-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>Interrupt active</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>InEPInt8</name>
+                  <description>IN EP8 interrupt</description>
+                  <bitRange>[8:8]</bitRange>
+                  <access>read-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>Interrupt active</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>InEPInt7</name>
+                  <description>IN EP7 interrupt</description>
+                  <bitRange>[7:7]</bitRange>
+                  <access>read-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>Interrupt active</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>InEPInt6</name>
+                  <description>IN EP6 interrupt</description>
+                  <bitRange>[6:6]</bitRange>
+                  <access>read-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>Interrupt active</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>InEPInt5</name>
+                  <description>IN EP5 interrupt</description>
+                  <bitRange>[5:5]</bitRange>
+                  <access>read-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>Interrupt active</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>InEPInt4</name>
+                  <description>IN EP4 interrupt</description>
+                  <bitRange>[4:4]</bitRange>
+                  <access>read-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>Interrupt active</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>InEPInt3</name>
+                  <description>IN EP3 interrupt</description>
+                  <bitRange>[3:3]</bitRange>
+                  <access>read-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>Interrupt active</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>InEPInt2</name>
+                  <description>IN EP2 interrupt</description>
+                  <bitRange>[2:2]</bitRange>
+                  <access>read-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>Interrupt active</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>InEPInt1</name>
+                  <description>IN EP1 interrupt</description>
+                  <bitRange>[1:1]</bitRange>
+                  <access>read-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>Interrupt active</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>InEPInt0</name>
+                  <description>IN EP0 interrupt</description>
+                  <bitRange>[0:0]</bitRange>
+                  <access>read-only</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>Interrupt active</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+          </fields>
 				</register>
 
 				<!-- DAINTMSK -->
@@ -9708,6 +11288,585 @@
 					<size>32</size>
 					<access>read-write</access>
 					<resetValue>0x00000000</resetValue>
+          <fields>
+              <field>
+                  <name>OutEPMsk15</name>
+                  <description>OUT EP15 interrupt mask</description>
+                  <bitRange>[31:31]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask OUT Endpoint Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Interrupt mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>OutEPMsk14</name>
+                  <description>OUT EP14 interrupt mask</description>
+                  <bitRange>[30:30]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask OUT Endpoint Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Interrupt mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>OutEPMsk13</name>
+                  <description>OUT EP13 interrupt mask</description>
+                  <bitRange>[29:29]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask OUT Endpoint Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Interrupt mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>OutEPMsk12</name>
+                  <description>OUT EP12 interrupt mask</description>
+                  <bitRange>[28:28]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask OUT Endpoint Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Interrupt mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>OutEPMsk11</name>
+                  <description>OUT EP11 interrupt mask</description>
+                  <bitRange>[27:27]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask OUT Endpoint Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Interrupt mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>OutEPMsk10</name>
+                  <description>OUT EP10 interrupt mask</description>
+                  <bitRange>[26:26]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask OUT Endpoint Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Interrupt mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>OutEPMsk9</name>
+                  <description>OUT EP9 interrupt mask</description>
+                  <bitRange>[25:25]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask OUT Endpoint Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Interrupt mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>OutEPMsk8</name>
+                  <description>OUT EP8 interrupt mask</description>
+                  <bitRange>[24:24]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask OUT Endpoint Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Interrupt mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>OutEPMsk7</name>
+                  <description>OUT EP7 interrupt mask</description>
+                  <bitRange>[23:23]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask OUT Endpoint Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Interrupt mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>OutEPMsk6</name>
+                  <description>OUT EP6 interrupt mask</description>
+                  <bitRange>[22:22]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask OUT Endpoint Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Interrupt mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>OutEPMsk5</name>
+                  <description>OUT EP5 interrupt mask</description>
+                  <bitRange>[21:21]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask OUT Endpoint Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Interrupt mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>OutEPMsk4</name>
+                  <description>OUT EP4 interrupt mask</description>
+                  <bitRange>[20:20]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask OUT Endpoint Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Interrupt mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>OutEPMsk3</name>
+                  <description>OUT EP3 interrupt mask</description>
+                  <bitRange>[19:19]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask OUT Endpoint Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Interrupt mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>OutEPMsk2</name>
+                  <description>OUT EP2 interrupt mask</description>
+                  <bitRange>[18:18]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask OUT Endpoint Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Interrupt mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>OutEPMsk1</name>
+                  <description>OUT EP1 interrupt mask</description>
+                  <bitRange>[17:17]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask OUT Endpoint Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Interrupt mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>OutEPMsk0</name>
+                  <description>OUT EP0 interrupt mask</description>
+                  <bitRange>[16:16]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask OUT Endpoint 0 Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Interrupt mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>InEpMsk15</name>
+                  <description>IN EP15 interrupt mask</description>
+                  <bitRange>[15:15]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask IN Endpoint Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Interrupt mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>InEpMsk14</name>
+                  <description>IN EP14 interrupt mask</description>
+                  <bitRange>[14:14]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask IN Endpoint Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Interrupt mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>InEpMsk13</name>
+                  <description>IN EP13 interrupt mask</description>
+                  <bitRange>[13:13]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask IN Endpoint Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Interrupt mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>InEpMsk12</name>
+                  <description>IN EP12 interrupt mask</description>
+                  <bitRange>[12:12]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask IN Endpoint Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Interrupt mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>InEpMsk11</name>
+                  <description>IN EP11 interrupt mask</description>
+                  <bitRange>[11:11]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask IN Endpoint Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Interrupt mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>InEpMsk10</name>
+                  <description>IN EP10 interrupt mask</description>
+                  <bitRange>[10:10]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask IN Endpoint Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Interrupt mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>InEpMsk9</name>
+                  <description>IN EP9 interrupt mask</description>
+                  <bitRange>[9:9]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask IN Endpoint Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Interrupt mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>InEpMsk8</name>
+                  <description>IN EP8 interrupt mask</description>
+                  <bitRange>[8:8]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask IN Endpoint Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Interrupt mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>InEpMsk7</name>
+                  <description>IN EP7 interrupt mask</description>
+                  <bitRange>[7:7]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask IN Endpoint Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Interrupt mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>InEpMsk6</name>
+                  <description>IN EP6 interrupt mask</description>
+                  <bitRange>[6:6]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask IN Endpoint Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Interrupt mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>InEpMsk5</name>
+                  <description>IN EP5 interrupt mask</description>
+                  <bitRange>[5:5]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask IN Endpoint Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Interrupt mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>InEpMsk4</name>
+                  <description>IN EP4 interrupt mask</description>
+                  <bitRange>[4:4]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask IN Endpoint Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Interrupt mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>InEpMsk3</name>
+                  <description>IN EP3 interrupt mask</description>
+                  <bitRange>[3:3]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask IN Endpoint Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Interrupt mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>InEpMsk2</name>
+                  <description>IN EP2 interrupt mask</description>
+                  <bitRange>[2:2]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask IN Endpoint Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Interrupt mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>InEpMsk1</name>
+                  <description>IN EP1 interrupt mask</description>
+                  <bitRange>[1:1]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask IN Endpoint Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Interrupt mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>InEpMsk0</name>
+                  <description>IN EP0 interrupt mask</description>
+                  <bitRange>[0:0]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask IN Endpoint 0 Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Interrupt mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+          </fields>
+
 				</register>
 
 				<!-- DVBUSDIS -->
@@ -9760,9 +11919,9 @@
 					<resetValue>0x00000000</resetValue>
 				</register>
 
-				<!-- DEACHINTMSK0 -->
+				<!-- DEACHINTMSK -->
 				<register>
-					<name>DEACHINTMSK0</name>
+					<name>DEACHINTMSK</name>
 					<description>Device Each Endpoints Interrupt Mask Register</description>
 					<addressOffset>0x3C</addressOffset>
 					<size>32</size>
@@ -9770,30 +11929,854 @@
 					<resetValue>0x00000000</resetValue>
 				</register>
 
-        <!-- DIEPEACHMSK -->
+        <!-- DIEPEACHMSK0 -->
         <register>
-          <dim>16</dim> 
-          <dimIncrement>4</dimIncrement> 
-          <name>DIEPTXF[%s]</name> 
-          <description>Device Each IN Endpoint Interrupt Registers</description>
+          <name>DIEPEACHMSK0</name> 
+          <description> Device Each IN Endpoint 0 Interrupt Register </description>
           <addressOffset>0x40</addressOffset>
           <size>32</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
-          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+              <field>
+                  <name>NAKMsk</name>
+                  <description>NAK interrupt mask</description>
+                  <bitRange>[13:13]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask NAK interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No NAK interrupt mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>BNAInIntrMsk</name>
+                  <description>BNA interrupt mask</description>
+                  <bitRange>[9:9]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask BNA interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No BNA interrupt mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>TxfifoUndrnMsk</name>
+                  <description>Fifo underrun mask</description>
+                  <bitRange>[8:8]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask Fifo underrun</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Fifo underrun mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>INEPNakEffMsk</name>
+                  <description>IN endpoint NAK effective mask</description>
+                  <bitRange>[6:6]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask IN NAK effective</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No IN NAK effective mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>INTknEPMisMsk</name>
+                  <description>IN token EP mismatch mask</description>
+                  <bitRange>[5:5]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask IN token EP mismatch</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No IN token EP mismatch mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>INTknTXFEmpMsk</name>
+                  <description>IN token TxFIFO empty mask</description>
+                  <bitRange>[4:4]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask IN token TxFIFO empty</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No IN token TxFIFO empty mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>TimeOUTMsk</name>
+                  <description>Timeout condition mask</description>
+                  <bitRange>[3:3]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask timeout condition</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No timeout mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>AHBErrMsk</name>
+                  <description>AHB error mask</description>
+                  <bitRange>[2:2]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask AHB error</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No AHB error mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>EPDisbldMsk</name>
+                  <description>EP disabled interrupt mask</description>
+                  <bitRange>[1:1]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask EP disabled interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No EP disabled mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>XferComplMsk</name>
+                  <description>Transfer completed interrupt mask</description>
+                  <bitRange>[0:0]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask transfer completed</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No transfer completed mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+          </fields>
+
+        </register>
+
+        <!-- DIEPEACHMSK_ARR -->
+        <register>
+          <dim>15</dim> 
+          <dimIncrement>4</dimIncrement> 
+          <name>DIEPEACHMSK_ARR[%s]</name> 
+          <description>Device Each IN Endpoint Interrupt Registers</description>
+          <addressOffset>0x44</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+              <field>
+                  <name>NAKMsk</name>
+                  <description>NAK interrupt mask</description>
+                  <bitRange>[13:13]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask NAK Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No NAK Interrupt Mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>BNAInIntrMsk</name>
+                  <description>BNA interrupt mask</description>
+                  <bitRange>[9:9]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask BNA Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No BNA Interrupt Mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>TxfifoUndrnMsk</name>
+                  <description>Fifo underrun mask</description>
+                  <bitRange>[8:8]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask Fifo Underrun Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Fifo Underrun Interrupt Mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>INEPNakEffMsk</name>
+                  <description>IN endpoint NAK effective mask</description>
+                  <bitRange>[6:6]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask IN Endpoint NAK Effective</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No IN Endpoint NAK Effective Mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>INTknEPMisMsk</name>
+                  <description>IN token EP mismatch mask</description>
+                  <bitRange>[5:5]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask IN Token received with EP Mismatch Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Mask IN Token received with EP Mismatch Interrupt</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>INTknTXFEmpMsk</name>
+                  <description>IN token TxFIFO empty mask</description>
+                  <bitRange>[4:4]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask IN Token Received When TxFIFO Empty Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No IN Token Received When TxFIFO Empty Interrupt</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>TimeOUTMsk</name>
+                  <description>Timeout condition mask (Non-isochronous endpoints)</description>
+                  <bitRange>[3:3]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask Timeout Condition Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Timeout Condition Interrupt Mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>AHBErrMsk</name>
+                  <description>AHB error mask</description>
+                  <bitRange>[2:2]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask AHB Error</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No AHB Error Mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>EPDisbldMsk</name>
+                  <description>Endpoint disabled interrupt mask</description>
+                  <bitRange>[1:1]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask Endpoint Disabled Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Endpoint Disabled Interrupt Mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>XferComplMsk</name>
+                  <description>Transfer completed interrupt mask</description>
+                  <bitRange>[0:0]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask Transfer Completed Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Transfer Completed Interrupt Mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+          </fields>
+
         </register>
         
-        <!-- DOEPEACHMSK -->
+        <!-- DOEPEACHMSK0 -->
         <register>
-          <dim>16</dim> 
-          <dimIncrement>4</dimIncrement> 
-          <name>DOEPEACHMSK[%s]</name> 
-          <description>Device Each OUT Endpoint Interrupt Registers</description>
+          <name>DOEPEACHMSK0</name> 
+          <description>Device Each OUT Endpoint 0 Interrupt Registers</description>
           <addressOffset>0x80</addressOffset>
           <size>32</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
           <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+              <field>
+                  <name>NYETMsk</name>
+                  <description>NYET interrupt mask</description>
+                  <bitRange>[14:14]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask NYET Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No NYET Interrupt Mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>NAKMsk</name>
+                  <description>NAK interrupt mask</description>
+                  <bitRange>[13:13]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask NAK Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No NAK Interrupt Mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>BbleErrMsk</name>
+                  <description>Babble error mask</description>
+                  <bitRange>[12:12]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask Babble Error Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Babble Error Interrupt Mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>BnaOutIntrMsk</name>
+                  <description>BNA interrupt mask</description>
+                  <bitRange>[9:9]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask BNA Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No BNA Interrupt Mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>OutPktErrMsk</name>
+                  <description>OUT packet error mask</description>
+                  <bitRange>[8:8]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask OUT Packet Error</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No OUT Packet Error Mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>Back2BackSETup</name>
+                  <description>Back-to-Back SETUP packets mask</description>
+                  <bitRange>[6:6]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask Back-to-Back SETUP Packets</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Back-to-Back SETUP Mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>StsPhsRcvdMsk</name>
+                  <description>Status phase received mask</description>
+                  <bitRange>[5:5]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask Status Phase Received</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Status Phase Received Mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>OUTTknEPdisMsk</name>
+                  <description>OUT token EP disabled mask</description>
+                  <bitRange>[4:4]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask OUT Token Received when Endpoint Disabled</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No OUT Token Received when Endpoint Disabled Mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>SetUPMsk</name>
+                  <description>SETUP phase done mask</description>
+                  <bitRange>[3:3]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask SETUP Phase Done</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No SETUP Phase Done Mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>AHBErrMsk</name>
+                  <description>AHB error mask</description>
+                  <bitRange>[2:2]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask AHB Error</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No AHB Error Mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>EPDisbldMsk</name>
+                  <description>Endpoint disabled interrupt mask</description>
+                  <bitRange>[1:1]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask Endpoint Disabled Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Endpoint Disabled Interrupt Mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>XferComplMsk</name>
+                  <description>Transfer completed interrupt mask</description>
+                  <bitRange>[0:0]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask Transfer Completed Interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Transfer Completed Interrupt Mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+          </fields>
+
+        </register>
+
+        <!-- DOEPEACHMSK_ARR -->
+        <register>
+          <dim>15</dim> 
+          <dimIncrement>4</dimIncrement> 
+          <name>DOEPEACHMSK_ARR[%s]</name> 
+          <description>Device Each OUT Endpoint Interrupt Registers</description>
+          <addressOffset>0x84</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+
+          <fields>
+              <field>
+                  <name>NYETMsk</name>
+                  <description>NYET interrupt mask</description>
+                  <bitRange>[14:14]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask NYET interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No NYET interrupt mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>NAKMsk</name>
+                  <description>NAK response received mask</description>
+                  <bitRange>[13:13]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask NAK response received</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No NAK response received mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>BbleErrMsk</name>
+                  <description>Babble error mask</description>
+                  <bitRange>[12:12]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask Babble Error interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Babble Error interrupt mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>BnaOutIntrMsk</name>
+                  <description>BNA interrupt mask</description>
+                  <bitRange>[9:9]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask BNA interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No BNA interrupt mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>OutPktErrMsk</name>
+                  <description>OUT packet error mask</description>
+                  <bitRange>[8:8]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask OUT packet error interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No OUT packet error interrupt mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>Back2BackSETup</name>
+                  <description>Back-to-Back SETUP packets received mask</description>
+                  <bitRange>[6:6]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask Back-to-Back SETUP packets received</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Back-to-Back SETUP received mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>StsPhsRcvdMsk</name>
+                  <description>Status phase received mask</description>
+                  <bitRange>[5:5]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask Status Phase Received</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Status Phase Received mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>OUTTknEPdisMsk</name>
+                  <description>OUT token received when endpoint disabled mask</description>
+                  <bitRange>[4:4]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask OUT Token received when EP disabled</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No OUT Token Received when EP disabled mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>SetUPMsk</name>
+                  <description>SETUP phase done mask</description>
+                  <bitRange>[3:3]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask SETUP Phase Done interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No SETUP Phase Done interrupt mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>AHBErrMsk</name>
+                  <description>AHB error mask</description>
+                  <bitRange>[2:2]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask AHB error</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No AHB error mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>EPDisbldMsk</name>
+                  <description>Endpoint disabled interrupt mask</description>
+                  <bitRange>[1:1]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Mask Endpoint Disabled interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Endpoint Disabled interrupt mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>XferComplMsk</name>
+                  <description>Transfer completed mask</description>
+                  <bitRange>[0:0]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>MASK</name>
+                          <description>Transfer Completed Mask</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>NOMASK</name>
+                          <description>No Transfer Completed mask</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+          </fields>
         </register>
 			</registers>
     </peripheral>
