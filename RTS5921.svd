@@ -9609,11 +9609,6 @@
                           <description>75% of (micro)Frame</description>
                           <value>2</value>
                       </enumeratedValue>
-                      <enumeratedValue>
-                          <name>RESERVED</name>
-                          <description>Reserved</description>
-                          <value>3</value>
-                      </enumeratedValue>
                   </enumeratedValues>
               </field>
               <field>
@@ -9664,12 +9659,6 @@
                           <value>1</value>
                       </enumeratedValue>
                   </enumeratedValues>
-              </field>
-              <field>
-                  <name>RESERVED16</name>
-                  <description>Reserved</description>
-                  <bitRange>[16:16]</bitRange>
-                  <access>read-write</access>
               </field>
               <field>
                   <name>ErraticIntMsk</name>
@@ -12858,7 +12847,7 @@
                   <name>SetD1PID</name>
                   <description>Set DATA1 PID or set odd (micro)frame</description>
                   <bitRange>[29:29]</bitRange>
-                  <access>write</access>
+                  <access>read-write</access>
                   <enumeratedValues>
                       <enumeratedValue>
                           <name>DISABLED</name>
@@ -12876,7 +12865,7 @@
                   <name>SetD0PID</name>
                   <description>Set DATA0 PID or set even (micro)frame</description>
                   <bitRange>[28:28]</bitRange>
-                  <access>write</access>
+                  <access>read-write</access>
                   <enumeratedValues>
                       <enumeratedValue>
                           <name>DISABLED</name>
@@ -12894,7 +12883,7 @@
                   <name>SNAK</name>
                   <description>Set NAK</description>
                   <bitRange>[27:27]</bitRange>
-                  <access>write</access>
+                  <access>read-write</access>
                   <enumeratedValues>
                       <enumeratedValue>
                           <name>INACTIVE</name>
@@ -12912,7 +12901,7 @@
                   <name>CNAK</name>
                   <description>Clear NAK</description>
                   <bitRange>[26:26]</bitRange>
-                  <access>write</access>
+                  <access>read-write</access>
                   <enumeratedValues>
                       <enumeratedValue>
                           <name>INACTIVE</name>
@@ -13064,7 +13053,7 @@
                   <name>NAKSts</name>
                   <description>NAK status</description>
                   <bitRange>[17:17]</bitRange>
-                  <access>read</access>
+                  <access>read-write</access>
                   <enumeratedValues>
                       <enumeratedValue>
                           <name>NONNAK</name>
@@ -13082,7 +13071,7 @@
                   <name>DPID</name>
                   <description>Data PID or even/odd microframe</description>
                   <bitRange>[16:16]</bitRange>
-                  <access>read</access>
+                  <access>read-write</access>
                   <enumeratedValues>
                       <enumeratedValue>
                           <name>DATA0EVENFRM</name>
@@ -13116,7 +13105,7 @@
               </field>
               <field>
                   <name>NextEp</name>
-                  <description>Next endpoint (only valid if OTG_ARCHITECTURE!=0 && OTG_EN_DED_TX_FIFO==0)</description>
+                  <description>Next endpoint</description>
                   <bitRange>[14:11]</bitRange>
                   <access>read-write</access>
                   <enumeratedValues>
@@ -13402,7 +13391,7 @@
                   <name>TxFEmp</name>
                   <description>Transmit FIFO empty (IN endpoint only)</description>
                   <bitRange>[7:7]</bitRange>
-                  <access>read</access>
+                  <access>read-write</access>
                   <enumeratedValues>
                       <enumeratedValue>
                           <name>INACTIVE</name>
@@ -14150,7 +14139,7 @@
       <!-- Address Range -->
       <addressBlock>
         <offset>0</offset>
-        <size>0x200</size>
+        <size>0x400</size>
         <usage>registers</usage>
       </addressBlock>
 
@@ -14163,6 +14152,158 @@
 	            <size>32</size>
 	            <access>read-write</access>
 	            <resetValue>0x00000000</resetValue>
+              <fields>
+                  <field>
+                      <name>EPEna</name>
+                      <description>Endpoint enable (write 1 to set)</description>
+                      <bitRange>[31:31]</bitRange>
+                      <access>read-write</access>
+                      <enumeratedValues>
+                          <enumeratedValue>
+                              <name>INACTIVE</name>
+                              <description>No action</description>
+                              <value>0</value>
+                          </enumeratedValue>
+                          <enumeratedValue>
+                              <name>ACTIVE</name>
+                              <description>Enable Endpoint</description>
+                              <value>1</value>
+                          </enumeratedValue>
+                      </enumeratedValues>
+                  </field>
+                  <field>
+                      <name>EPDis</name>
+                      <description>Endpoint disable status</description>
+                      <bitRange>[30:30]</bitRange>
+                      <access>read-only</access>
+                  </field>
+                  <field>
+                      <name>SNAK</name>
+                      <description>Set NAK (write 1 to set)</description>
+                      <bitRange>[27:27]</bitRange>
+                      <access>write-only</access>
+                      <enumeratedValues>
+                          <enumeratedValue>
+                              <name>NOSET</name>
+                              <description>No action</description>
+                              <value>0</value>
+                          </enumeratedValue>
+                          <enumeratedValue>
+                              <name>SET</name>
+                              <description>Set NAK</description>
+                              <value>1</value>
+                          </enumeratedValue>
+                      </enumeratedValues>
+                  </field>
+                  <field>
+                      <name>CNAK</name>
+                      <description>Clear NAK (write 1 to clear)</description>
+                      <bitRange>[26:26]</bitRange>
+                      <access>write-only</access>
+                      <enumeratedValues>
+                          <enumeratedValue>
+                              <name>NOCLEAR</name>
+                              <description>No action</description>
+                              <value>0</value>
+                          </enumeratedValue>
+                          <enumeratedValue>
+                              <name>CLEAR</name>
+                              <description>Clear NAK</description>
+                              <value>1</value>
+                          </enumeratedValue>
+                      </enumeratedValues>
+                  </field>
+                  <field>
+                      <name>Stall</name>
+                      <description>STALL handshake (write 1 to set, core clears)</description>
+                      <bitRange>[21:21]</bitRange>
+                      <access>read-write</access>
+                      <enumeratedValues>
+                          <enumeratedValue>
+                              <name>INACTIVE</name>
+                              <description>No stall</description>
+                              <value>0</value>
+                          </enumeratedValue>
+                          <enumeratedValue>
+                              <name>ACTIVE</name>
+                              <description>Stall handshake</description>
+                              <value>1</value>
+                          </enumeratedValue>
+                      </enumeratedValues>
+                  </field>
+                  <field>
+                      <name>Snp</name>
+                      <description>Snp</description>
+                      <bitRange>[20:20]</bitRange>
+                      <access>read-write</access>
+                  </field>
+                  <field>
+                      <name>EPType</name>
+                      <description>Endpoint type (always control)</description>
+                      <bitRange>[19:18]</bitRange>
+                      <access>read-only</access>
+                      <enumeratedValues>
+                          <enumeratedValue>
+                              <name>CONTROL0</name>
+                              <description>Endpoint Control 0</description>
+                              <value>0</value>
+                          </enumeratedValue>
+                      </enumeratedValues>
+                  </field>
+                  <field>
+                      <name>NAKSts</name>
+                      <description>NAK status (0: non-NAK, 1: NAK handshakes)</description>
+                      <bitRange>[17:17]</bitRange>
+                      <access>read-only</access>
+                      <enumeratedValues>
+                          <enumeratedValue>
+                              <name>INACTIVE</name>
+                              <description>Non-NAK handshakes</description>
+                              <value>0</value>
+                          </enumeratedValue>
+                          <enumeratedValue>
+                              <name>ACTIVE</name>
+                              <description>NAK handshakes</description>
+                              <value>1</value>
+                          </enumeratedValue>
+                      </enumeratedValues>
+                  </field>
+                  <field>
+                      <name>USBActEP</name>
+                      <description>USB active endpoint (always 1 for control 0)</description>
+                      <bitRange>[15:15]</bitRange>
+                      <access>read-only</access>
+                  </field>
+                  <field>
+                      <name>MPS</name>
+                      <description>Max packet size for EP0 (0:64B, 1:32B, 2:16B, 3:8B)</description>
+                      <bitRange>[1:0]</bitRange>
+                      <access>read-only</access>
+                      <enumeratedValues>
+                          <enumeratedValue>
+                              <name>BYTE64</name>
+                              <description>64 bytes</description>
+                              <value>0</value>
+                          </enumeratedValue>
+                          <enumeratedValue>
+                              <name>BYTE32</name>
+                              <description>32 bytes</description>
+                              <value>1</value>
+                          </enumeratedValue>
+                          <enumeratedValue>
+                              <name>BYTE16</name>
+                              <description>16 bytes</description>
+                              <value>2</value>
+                          </enumeratedValue>
+                          <enumeratedValue>
+                              <name>BYTE8</name>
+                              <description>8 bytes</description>
+                              <value>3</value>
+                          </enumeratedValue>
+                      </enumeratedValues>
+                  </field>
+              </fields>
+
 	        </register>
 
 	        <!-- DOEPINT0 -->
@@ -14173,6 +14314,104 @@
 	            <size>32</size>
 	            <access>read-write</access>
 	            <resetValue>0x00000000</resetValue>
+              <fields>
+                  <field>
+                      <name>StupPktRcvd</name>
+                      <description>Setup packet received</description>
+                      <bitRange>[15:15]</bitRange>
+                      <access>read-write</access>
+                      <enumeratedValues>
+                          <enumeratedValue>
+                              <name>NOT_RCVD</name>
+                              <description>No Setup packet received</description>
+                              <value>0</value>
+                          </enumeratedValue>
+                          <enumeratedValue>
+                              <name>RCVD</name>
+                              <description>Setup packet received</description>
+                              <value>1</value>
+                          </enumeratedValue>
+                      </enumeratedValues>
+                  </field>
+                  <field>
+                      <name>NYETIntrpt</name>
+                      <description>NYET interrupt</description>
+                      <bitRange>[14:14]</bitRange>
+                      <access>read-write</access>
+                  </field>
+                  <field>
+                      <name>NAKIntrpt</name>
+                      <description>NAK interrupt</description>
+                      <bitRange>[13:13]</bitRange>
+                      <access>read-write</access>
+                  </field>
+                  <field>
+                      <name>BbleErr</name>
+                      <description>Babble error</description>
+                      <bitRange>[12:12]</bitRange>
+                      <access>read-write</access>
+                  </field>
+                  <field>
+                      <name>PktDrpSts</name>
+                      <description>ISOC OUT packet dropped</description>
+                      <bitRange>[11:11]</bitRange>
+                      <access>read-write</access>
+                  </field>
+                  <field>
+                      <name>BNAIntr</name>
+                      <description>Buffer not available interrupt</description>
+                      <bitRange>[9:9]</bitRange>
+                      <access>read-write</access>
+                  </field>
+                  <field>
+                      <name>OutPktErr</name>
+                      <description>OUT packet error</description>
+                      <bitRange>[8:8]</bitRange>
+                      <access>read-write</access>
+                  </field>
+                  <field>
+                      <name>Back2BackSETup</name>
+                      <description>Back-to-back SETUP packets received</description>
+                      <bitRange>[6:6]</bitRange>
+                      <access>read-write</access>
+                  </field>
+                  <field>
+                      <name>StsPhseRcvd</name>
+                      <description>Status phase received (control OUT)</description>
+                      <bitRange>[5:5]</bitRange>
+                      <access>read-write</access>
+                  </field>
+                  <field>
+                      <name>OUTTknEPdis</name>
+                      <description>OUT token received when endpoint disabled</description>
+                      <bitRange>[4:4]</bitRange>
+                      <access>read-write</access>
+                  </field>
+                  <field>
+                      <name>SetUp</name>
+                      <description>SETUP phase done</description>
+                      <bitRange>[3:3]</bitRange>
+                      <access>read-write</access>
+                  </field>
+                  <field>
+                      <name>AHBErr</name>
+                      <description>AHB error</description>
+                      <bitRange>[2:2]</bitRange>
+                      <access>read-write</access>
+                  </field>
+                  <field>
+                      <name>EPDisbld</name>
+                      <description>Endpoint disabled interrupt</description>
+                      <bitRange>[1:1]</bitRange>
+                      <access>read-write</access>
+                  </field>
+                  <field>
+                      <name>XferCompl</name>
+                      <description>Transfer completed interrupt</description>
+                      <bitRange>[0:0]</bitRange>
+                      <access>read-write</access>
+                  </field>
+              </fields>
 	        </register>
 	        <!-- DOEPTSIZ: Device OUT Endpoint Transfer Size Registers -->
 	        <register>
@@ -14182,6 +14421,43 @@
 	            <size>32</size>
 	            <access>read-write</access>
 	            <resetValue>0x00000000</resetValue>
+              <fields>
+                  <field>
+                      <name>SUPCnt</name>
+                      <description>SETUP packet count</description>
+                      <bitRange>[30:29]</bitRange>
+                      <access>read-write</access>
+                      <enumeratedValues>
+                          <enumeratedValue>
+                              <name>ONEPACKET</name>
+                              <description>1 packet</description>
+                              <value>1</value>
+                          </enumeratedValue>
+                          <enumeratedValue>
+                              <name>TWOPACKET</name>
+                              <description>2 packets</description>
+                              <value>2</value>
+                          </enumeratedValue>
+                          <enumeratedValue>
+                              <name>THREEPACKET</name>
+                              <description>3 packets</description>
+                              <value>3</value>
+                          </enumeratedValue>
+                      </enumeratedValues>
+                  </field>
+                  <field>
+                      <name>PktCnt</name>
+                      <description>Packet count</description>
+                      <bitRange>[19:19]</bitRange>
+                      <access>read-write</access>
+                  </field>
+                  <field>
+                      <name>XferSize</name>
+                      <description>Transfer size in bytes</description>
+                      <bitRange>[6:0]</bitRange>
+                      <access>read-write</access>
+                  </field>
+              </fields>
 	        </register>
 	        <!-- DOEPDMA: Device OUT Endpoint DMA Address Registers -->
 	        <register>
@@ -14210,119 +14486,269 @@
               <size>32</size>
               <access>read-write</access>
               <resetValue>0x00000000</resetValue>
+              <fields>
+                  <field>
+                      <name>EPEna</name>
+                      <description>Endpoint enable</description>
+                      <bitRange>[31:31]</bitRange>
+                      <access>read-write</access>
+                      <enumeratedValues>
+                          <enumeratedValue>
+                              <name>INACTIVE</name>
+                              <description>No action</description>
+                              <value>0</value>
+                          </enumeratedValue>
+                          <enumeratedValue>
+                              <name>ACTIVE</name>
+                              <description>Enable endpoint</description>
+                              <value>1</value>
+                          </enumeratedValue>
+                      </enumeratedValues>
+                  </field>
+                  <field>
+                      <name>EPDis</name>
+                      <description>Endpoint disable</description>
+                      <bitRange>[30:30]</bitRange>
+                      <access>read-write</access>
+                      <enumeratedValues>
+                          <enumeratedValue>
+                              <name>INACTIVE</name>
+                              <description>No action</description>
+                              <value>0</value>
+                          </enumeratedValue>
+                          <enumeratedValue>
+                              <name>ACTIVE</name>
+                              <description>Disable endpoint</description>
+                              <value>1</value>
+                          </enumeratedValue>
+                      </enumeratedValues>
+                  </field>
+                  <field>
+                      <name>SetD1PID</name>
+                      <description>Set DATA1 PID / Odd frame</description>
+                      <bitRange>[29:29]</bitRange>
+                      <access>write-only</access>
+                      <enumeratedValues>
+                          <enumeratedValue>
+                              <name>DISABLED</name>
+                              <description>Disable</description>
+                              <value>0</value>
+                          </enumeratedValue>
+                          <enumeratedValue>
+                              <name>ENABLED</name>
+                              <description>Set DATA1 PID or Odd frame</description>
+                              <value>1</value>
+                          </enumeratedValue>
+                      </enumeratedValues>
+                  </field>
+                  <field>
+                      <name>SetD0PID</name>
+                      <description>Set DATA0 PID / Even frame</description>
+                      <bitRange>[28:28]</bitRange>
+                      <access>write-only</access>
+                      <enumeratedValues>
+                          <enumeratedValue>
+                              <name>DISABLED</name>
+                              <description>Disable</description>
+                              <value>0</value>
+                          </enumeratedValue>
+                          <enumeratedValue>
+                              <name>ENABLED</name>
+                              <description>Set DATA0 PID or Even frame</description>
+                              <value>1</value>
+                          </enumeratedValue>
+                      </enumeratedValues>
+                  </field>
+                  <field>
+                      <name>SNAK</name>
+                      <description>Set NAK</description>
+                      <bitRange>[27:27]</bitRange>
+                      <access>write-only</access>
+                      <enumeratedValues>
+                          <enumeratedValue>
+                              <name>INACTIVE</name>
+                              <description>No set NAK</description>
+                              <value>0</value>
+                          </enumeratedValue>
+                          <enumeratedValue>
+                              <name>ACTIVE</name>
+                              <description>Set NAK</description>
+                              <value>1</value>
+                          </enumeratedValue>
+                      </enumeratedValues>
+                  </field>
+                  <field>
+                      <name>CNAK</name>
+                      <description>Clear NAK</description>
+                      <bitRange>[26:26]</bitRange>
+                      <access>write-only</access>
+                      <enumeratedValues>
+                          <enumeratedValue>
+                              <name>INACTIVE</name>
+                              <description>No clear NAK</description>
+                              <value>0</value>
+                          </enumeratedValue>
+                          <enumeratedValue>
+                              <name>ACTIVE</name>
+                              <description>Clear NAK</description>
+                              <value>1</value>
+                          </enumeratedValue>
+                      </enumeratedValues>
+                  </field>
+                  <field>
+                      <name>Stall</name>
+                      <description>STALL handshake</description>
+                      <bitRange>[21:21]</bitRange>
+                      <access>read-write</access>
+                  </field>
+                  <field>
+                      <name>EPType</name>
+                      <description>Endpoint type</description>
+                      <bitRange>[19:18]</bitRange>
+                      <access>read-write</access>
+                      <enumeratedValues>
+                          <enumeratedValue>
+                              <name>CONTROL</name>
+                              <description>Control</description>
+                              <value>0</value>
+                          </enumeratedValue>
+                          <enumeratedValue>
+                              <name>ISOCHRONOUS</name>
+                              <description>Isochronous</description>
+                              <value>1</value>
+                          </enumeratedValue>
+                          <enumeratedValue>
+                              <name>BULK</name>
+                              <description>Bulk</description>
+                              <value>2</value>
+                          </enumeratedValue>
+                          <enumeratedValue>
+                              <name>INTERRUPT</name>
+                              <description>Interrupt</description>
+                              <value>3</value>
+                          </enumeratedValue>
+                      </enumeratedValues>
+                  </field>
+                  <field>
+                      <name>NAKSts</name>
+                      <description>NAK status</description>
+                      <bitRange>[17:17]</bitRange>
+                      <access>read-only</access>
+                      <enumeratedValues>
+                          <enumeratedValue>
+                              <name>NONNAK</name>
+                              <description>Non-NAK handshake</description>
+                              <value>0</value>
+                          </enumeratedValue>
+                          <enumeratedValue>
+                              <name>NAK</name>
+                              <description>NAK handshake</description>
+                              <value>1</value>
+                          </enumeratedValue>
+                      </enumeratedValues>
+                  </field>
+                  <field>
+                      <name>DPID</name>
+                      <description>Endpoint DATA PID (micro)frame number</description>
+                      <bitRange>[16:16]</bitRange>
+                      <access>read-only</access>
+                      <enumeratedValues>
+                          <enumeratedValue>
+                              <name>DATA0/EVEN</name>
+                              <description>DATA0 PID or even (micro)frame</description>
+                              <value>0</value>
+                          </enumeratedValue>
+                          <enumeratedValue>
+                              <name>DATA1/ODD</name>
+                              <description>DATA1 PID or odd (micro)frame</description>
+                              <value>1</value>
+                          </enumeratedValue>
+                      </enumeratedValues>
+                  </field>
+                  <field>
+                      <name>USBActEP</name>
+                      <description>USB active endpoint</description>
+                      <bitRange>[15:15]</bitRange>
+                      <access>read-write</access>
+                  </field>
+                  <field>
+                      <name>MPS</name>
+                      <description>Maximum packet size in bytes</description>
+                      <bitRange>[10:0]</bitRange>
+                      <access>read-write</access>
+                  </field>
+              </fields>
           </register>
-          <register>
-              <name>DOEPCTL2</name>
-              <description>Device Control OUT Endpoint 2 Control Register</description>
-              <addressOffset>0x40</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
+          <register derivedFrom="DOEPCTL1">
+            <name>DOEPCTL2</name>
+            <description>Device Control OUT Endpoint 2 Control Register</description>
+            <addressOffset>0x40</addressOffset>
           </register>
-          <register>
-              <name>DOEPCTL3</name>
-              <description>Device Control OUT Endpoint 3 Control Register</description>
-              <addressOffset>0x60</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
-          </register>
-          <register>
-              <name>DOEPCTL4</name>
-              <description>Device Control OUT Endpoint 4 Control Register</description>
-              <addressOffset>0x80</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
-          </register>
-          <register>
-              <name>DOEPCTL5</name>
-              <description>Device Control OUT Endpoint 5 Control Register</description>
-              <addressOffset>0xA0</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
-          </register>
-          <register>
-              <name>DOEPCTL6</name>
-              <description>Device Control OUT Endpoint 6 Control Register</description>
-              <addressOffset>0xC0</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
-          </register>
-          <register>
-              <name>DOEPCTL7</name>
-              <description>Device Control OUT Endpoint 7 Control Register</description>
-              <addressOffset>0xE0</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
-          </register>
-          <register>
-              <name>DOEPCTL8</name>
-              <description>Device Control OUT Endpoint 8 Control Register</description>
-              <addressOffset>0x100</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
-          </register>
-          <register>
-              <name>DOEPCTL9</name>
-              <description>Device Control OUT Endpoint 9 Control Register</description>
-              <addressOffset>0x120</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
-          </register>
-          <register>
-              <name>DOEPCTL10</name>
-              <description>Device Control OUT Endpoint 10 Control Register</description>
-              <addressOffset>0x140</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
-          </register>
-          <register>
-              <name>DOEPCTL11</name>
-              <description>Device Control OUT Endpoint 11 Control Register</description>
-              <addressOffset>0x160</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
-          </register>
-          <register>
-              <name>DOEPCTL12</name>
-              <description>Device Control OUT Endpoint 12 Control Register</description>
-              <addressOffset>0x180</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
-          </register>
-          <register>
-              <name>DOEPCTL13</name>
-              <description>Device Control OUT Endpoint 13 Control Register</description>
-              <addressOffset>0x1A0</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
-          </register>
-          <register>
-              <name>DOEPCTL14</name>
-              <description>Device Control OUT Endpoint 14 Control Register</description>
-              <addressOffset>0x1C0</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
-          </register>
-          <register>
-              <name>DOEPCTL15</name>
-              <description>Device Control OUT Endpoint 15 Control Register</description>
-              <addressOffset>0x1E0</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
-          </register>
+        <register derivedFrom="DOEPCTL1">
+          <name>DOEPCTL3</name>
+          <description>Device Control OUT Endpoint 2 Control Register</description>
+          <addressOffset>0x60</addressOffset>
+        </register>
+        <register derivedFrom="DOEPCTL1">
+          <name>DOEPCTL4</name>
+          <description>Device Control OUT Endpoint 4 Control Register</description>
+          <addressOffset>0x80</addressOffset>
+        </register>
+        <register derivedFrom="DOEPCTL1">
+          <name>DOEPCTL5</name>
+          <description>Device Control OUT Endpoint 5 Control Register</description>
+          <addressOffset>0xA0</addressOffset>
+        </register>
+        <register derivedFrom="DOEPCTL1">
+          <name>DOEPCTL6</name>
+          <description>Device Control OUT Endpoint 6 Control Register</description>
+          <addressOffset>0xC0</addressOffset>
+        </register>
+        <register derivedFrom="DOEPCTL1">
+          <name>DOEPCTL7</name>
+          <description>Device Control OUT Endpoint 7 Control Register</description>
+          <addressOffset>0xE0</addressOffset>
+        </register>
+        <register derivedFrom="DOEPCTL1">
+          <name>DOEPCTL8</name>
+          <description>Device Control OUT Endpoint 8 Control Register</description>
+          <addressOffset>0x100</addressOffset>
+        </register>
+        <register derivedFrom="DOEPCTL1">
+          <name>DOEPCTL9</name>
+          <description>Device Control OUT Endpoint 9 Control Register</description>
+          <addressOffset>0x120</addressOffset>
+        </register>
+        <register derivedFrom="DOEPCTL1">
+          <name>DOEPCTL10</name>
+          <description>Device Control OUT Endpoint 10 Control Register</description>
+          <addressOffset>0x140</addressOffset>
+        </register>
+        <register derivedFrom="DOEPCTL1">
+          <name>DOEPCTL11</name>
+          <description>Device Control OUT Endpoint 11 Control Register</description>
+          <addressOffset>0x160</addressOffset>
+        </register>
+        <register derivedFrom="DOEPCTL1">
+          <name>DOEPCTL12</name>
+          <description>Device Control OUT Endpoint 12 Control Register</description>
+          <addressOffset>0x180</addressOffset>
+        </register>
+        <register derivedFrom="DOEPCTL1">
+          <name>DOEPCTL13</name>
+          <description>Device Control OUT Endpoint 13 Control Register</description>
+          <addressOffset>0x1A0</addressOffset>
+        </register>
+        <register derivedFrom="DOEPCTL1">
+          <name>DOEPCTL14</name>
+          <description>Device Control OUT Endpoint 14 Control Register</description>
+          <addressOffset>0x1C0</addressOffset>
+        </register>
+        <register derivedFrom="DOEPCTL1">
+          <name>DOEPCTL15</name>
+          <description>Device Control OUT Endpoint 15 Control Register</description>
+          <addressOffset>0x1E0</addressOffset>
+        </register>
 
           <!-- Device OUT Endpoint Interrupt Registers (DOEPINT) for endpoints 1 to 16 -->
           <register>
@@ -14332,120 +14758,175 @@
               <size>32</size>
               <access>read-write</access>
               <resetValue>0x00000000</resetValue>
+            <fields>
+                <field>
+                    <name>StupPktRcvd</name>
+                    <description>Setup packet received</description>
+                    <bitRange>[15:15]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>NOT_RCVD</name>
+                            <description>No Setup packet received</description>
+                            <value>0</value>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>RCVD</name>
+                            <description>Setup packet received</description>
+                            <value>1</value>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>NYETIntrpt</name>
+                    <description>NYET interrupt</description>
+                    <bitRange>[14:14]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>NAKIntrpt</name>
+                    <description>NAK interrupt</description>
+                    <bitRange>[13:13]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>BbleErr</name>
+                    <description>Babble error interrupt</description>
+                    <bitRange>[12:12]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>PktDrpSts</name>
+                    <description>ISOC OUT packet dropped</description>
+                    <bitRange>[11:11]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>BNAIntr</name>
+                    <description>Buffer not available interrupt</description>
+                    <bitRange>[9:9]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>OutPktErr</name>
+                    <description>OUT packet error</description>
+                    <bitRange>[8:8]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>Back2BackSETup</name>
+                    <description>Back-to-back SETUP packets received</description>
+                    <bitRange>[6:6]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>StsPhseRcvd</name>
+                    <description>Status phase received (control write)</description>
+                    <bitRange>[5:5]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>OUTTknEPdis</name>
+                    <description>OUT token received when endpoint disabled</description>
+                    <bitRange>[4:4]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>SetUp</name>
+                    <description>SETUP phase done</description>
+                    <bitRange>[3:3]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>AHBErr</name>
+                    <description>AHB error</description>
+                    <bitRange>[2:2]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>EPDisbld</name>
+                    <description>Endpoint disabled interrupt</description>
+                    <bitRange>[1:1]</bitRange>
+                    <access>read-write</access>
+                </field>
+                <field>
+                    <name>XferCompl</name>
+                    <description>Transfer completed interrupt</description>
+                    <bitRange>[0:0]</bitRange>
+                    <access>read-write</access>
+                </field>
+            </fields>
           </register>
-          <register>
-              <name>DOEPINT2</name>
-              <description>Device OUT Endpoint 2 Interrupt Register</description>
-              <addressOffset>0x48</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
+          <register derivedFrom="DOEPINT1">
+            <name>DOEPINT2</name>
+            <description>Device OUT Endpoint 2 Interrupt Register</description>
+            <addressOffset>0x48</addressOffset>
           </register>
-          <register>
-              <name>DOEPINT3</name>
-              <description>Device OUT Endpoint 3 Interrupt Register</description>
-              <addressOffset>0x68</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
+          <register derivedFrom="DOEPINT1">
+            <name>DOEPINT3</name>
+            <description>Device OUT Endpoint 3 Interrupt Register</description>
+            <addressOffset>0x68</addressOffset>
           </register>
-          <register>
-              <name>DOEPINT4</name>
-              <description>Device OUT Endpoint 4 Interrupt Register</description>
-              <addressOffset>0x88</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
+          <register derivedFrom="DOEPINT1">
+            <name>DOEPINT4</name>
+            <description>Device OUT Endpoint 4 Interrupt Register</description>
+            <addressOffset>0x88</addressOffset>
           </register>
-          <register>
-              <name>DOEPINT5</name>
-              <description>Device OUT Endpoint 5 Interrupt Register</description>
-              <addressOffset>0xA8</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
+          <register derivedFrom="DOEPINT1">
+            <name>DOEPINT5</name>
+            <description>Device OUT Endpoint 5 Interrupt Register</description>
+            <addressOffset>0xA8</addressOffset>
           </register>
-          <register>
-              <name>DOEPINT6</name>
-              <description>Device OUT Endpoint 6 Interrupt Register</description>
-              <addressOffset>0xC8</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
+          <register derivedFrom="DOEPINT1">
+            <name>DOEPINT6</name>
+            <description>Device OUT Endpoint 6 Interrupt Register</description>
+            <addressOffset>0xC8</addressOffset>
           </register>
-          <register>
-              <name>DOEPINT7</name>
-              <description>Device OUT Endpoint 7 Interrupt Register</description>
-              <addressOffset>0xE8</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
+          <register derivedFrom="DOEPINT1">
+            <name>DOEPINT7</name>
+            <description>Device OUT Endpoint 7 Interrupt Register</description>
+            <addressOffset>0xE8</addressOffset>
           </register>
-          <register>
-              <name>DOEPINT8</name>
-              <description>Device OUT Endpoint 8 Interrupt Register</description>
-              <addressOffset>0x108</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
+          <register derivedFrom="DOEPINT1">
+            <name>DOEPINT8</name>
+            <description>Device OUT Endpoint 8 Interrupt Register</description>
+            <addressOffset>0x108</addressOffset>
           </register>
-          <register>
-              <name>DOEPINT9</name>
-              <description>Device OUT Endpoint 9 Interrupt Register</description>
-              <addressOffset>0x128</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
+          <register derivedFrom="DOEPINT1">
+            <name>DOEPINT9</name>
+            <description>Device OUT Endpoint 9 Interrupt Register</description>
+            <addressOffset>0x128</addressOffset>
           </register>
-          <register>
-              <name>DOEPINT10</name>
-              <description>Device OUT Endpoint 10 Interrupt Register</description>
-              <addressOffset>0x148</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
+          <register derivedFrom="DOEPINT1">
+            <name>DOEPINT10</name>
+            <description>Device OUT Endpoint 10 Interrupt Register</description>
+            <addressOffset>0x148</addressOffset>
           </register>
-          <register>
-              <name>DOEPINT11</name>
-              <description>Device OUT Endpoint 11 Interrupt Register</description>
-              <addressOffset>0x168</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
+          <register derivedFrom="DOEPINT1">
+            <name>DOEPINT11</name>
+            <description>Device OUT Endpoint 11 Interrupt Register</description>
+            <addressOffset>0x168</addressOffset>
           </register>
-          <register>
-              <name>DOEPINT12</name>
-              <description>Device OUT Endpoint 12 Interrupt Register</description>
-              <addressOffset>0x188</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
+          <register derivedFrom="DOEPINT1">
+            <name>DOEPINT12</name>
+            <description>Device OUT Endpoint 12 Interrupt Register</description>
+            <addressOffset>0x188</addressOffset>
           </register>
-          <register>
-              <name>DOEPINT13</name>
-              <description>Device OUT Endpoint 13 Interrupt Register</description>
-              <addressOffset>0x1A8</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
+          <register derivedFrom="DOEPINT1">
+            <name>DOEPINT13</name>
+            <description>Device OUT Endpoint 13 Interrupt Register</description>
+            <addressOffset>0x1A8</addressOffset>
           </register>
-          <register>
-              <name>DOEPINT14</name>
-              <description>Device OUT Endpoint 14 Interrupt Register</description>
-              <addressOffset>0x1C8</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
+          <register derivedFrom="DOEPINT1">
+            <name>DOEPINT14</name>
+            <description>Device OUT Endpoint 14 Interrupt Register</description>
+            <addressOffset>0x1C8</addressOffset>
           </register>
-          <register>
-              <name>DOEPINT15</name>
-              <description>Device OUT Endpoint 15 Interrupt Register</description>
-              <addressOffset>0x1E8</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
+          <register derivedFrom="DOEPINT1">
+            <name>DOEPINT15</name>
+            <description>Device OUT Endpoint 15 Interrupt Register</description>
+            <addressOffset>0x1E8</addressOffset>
           </register>
-
           <!-- Device OUT Endpoint Transfer Size Registers (DOEPTSIZ) for endpoints 1 to 16 -->
           <register>
               <name>DOEPTSIZ1</name>
@@ -14454,118 +14935,108 @@
               <size>32</size>
               <access>read-write</access>
               <resetValue>0x00000000</resetValue>
+              <fields>
+                  <field>
+                      <name>RxDPID</name>
+                      <description>Received data PID / Setup packet count</description>
+                      <bitRange>[30:29]</bitRange>
+                      <access>read-only</access>
+                      <enumeratedValues>
+                          <enumeratedValue>
+                              <name>DATA0</name>
+                              <description>DATA0</description>
+                              <value>0</value>
+                          </enumeratedValue>
+                          <enumeratedValue>
+                              <name>DATA2PACKET1</name>
+                              <description>DATA2 or 1 packet</description>
+                              <value>1</value>
+                          </enumeratedValue>
+                          <enumeratedValue>
+                              <name>DATA1PACKET2</name>
+                              <description>DATA1 or 2 packets</description>
+                              <value>2</value>
+                          </enumeratedValue>
+                          <enumeratedValue>
+                              <name>MDATAPACKET3</name>
+                              <description>MDATA or 3 packets</description>
+                              <value>3</value>
+                          </enumeratedValue>
+                      </enumeratedValues>
+                  </field>
+                  <field>
+                      <name>PktCnt</name>
+                      <description>Packet count</description>
+                      <bitRange>[28:19]</bitRange>
+                      <access>read-write</access>
+                  </field>
+                  <field>
+                      <name>XferSize</name>
+                      <description>Transfer size in bytes</description>
+                      <bitRange>[18:0]</bitRange>
+                      <access>read-write</access>
+                  </field>
+              </fields>
           </register>
-          <register>
-              <name>DOEPTSIZ2</name>
-              <description>Device OUT Endpoint 2 Transfer Size Register</description>
-              <addressOffset>0x50</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
+          <register derivedFrom="DOEPTSIZ1">
+            <name>DOEPTSIZ2</name>
+            <description>Device OUT Endpoint 2 Transfer Size Register</description>
+            <addressOffset>0x50</addressOffset>
           </register>
-          <register>
-              <name>DOEPTSIZ3</name>
-              <description>Device OUT Endpoint 3 Transfer Size Register</description>
-              <addressOffset>0x70</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
+          <register derivedFrom="DOEPTSIZ1">
+            <name>DOEPTSIZ3</name>
+            <description>Device OUT Endpoint 3 Transfer Size Register</description>
+            <addressOffset>0x70</addressOffset>
           </register>
-          <register>
-              <name>DOEPTSIZ4</name>
-              <description>Device OUT Endpoint 4 Transfer Size Register</description>
-              <addressOffset>0x90</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
+          <register derivedFrom="DOEPTSIZ1">
+            <name>DOEPTSIZ4</name>
+            <description>Device OUT Endpoint 4 Transfer Size Register</description>
+            <addressOffset>0x90</addressOffset>
           </register>
-          <register>
-              <name>DOEPTSIZ5</name>
-              <description>Device OUT Endpoint 5 Transfer Size Register</description>
-              <addressOffset>0xB0</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
+          <register derivedFrom="DOEPTSIZ1">
+            <name>DOEPTSIZ5</name>
+            <description>Device OUT Endpoint 5 Transfer Size Register</description>
+            <addressOffset>0x110</addressOffset>
           </register>
-          <register>
-              <name>DOEPTSIZ6</name>
-              <description>Device OUT Endpoint 6 Transfer Size Register</description>
-              <addressOffset>0xD0</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
+          <register derivedFrom="DOEPTSIZ1">
+            <name>DOEPTSIZ6</name>
+            <description>Device OUT Endpoint 6 Transfer Size Register</description>
+            <addressOffset>0x130</addressOffset>
           </register>
-          <register>
-              <name>DOEPTSIZ7</name>
-              <description>Device OUT Endpoint 7 Transfer Size Register</description>
-              <addressOffset>0xF0</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
+          <register derivedFrom="DOEPTSIZ1">
+            <name>DOEPTSIZ7</name>
+            <description>Device OUT Endpoint 7 Transfer Size Register</description>
+            <addressOffset>0x150</addressOffset>
           </register>
-          <register>
-              <name>DOEPTSIZ8</name>
-              <description>Device OUT Endpoint 8 Transfer Size Register</description>
-              <addressOffset>0x110</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
+          <register derivedFrom="DOEPTSIZ1">
+            <name>DOEPTSIZ8</name>
+            <description>Device OUT Endpoint 8 Transfer Size Register</description>
+            <addressOffset>0x170</addressOffset>
           </register>
-          <register>
-              <name>DOEPTSIZ9</name>
-              <description>Device OUT Endpoint 9 Transfer Size Register</description>
-              <addressOffset>0x130</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
+          <register derivedFrom="DOEPTSIZ1">
+            <name>DOEPTSIZ9</name>
+            <description>Device OUT Endpoint 9 Transfer Size Register</description>
+            <addressOffset>0x190</addressOffset>
           </register>
-          <register>
-              <name>DOEPTSIZ10</name>
-              <description>Device OUT Endpoint 10 Transfer Size Register</description>
-              <addressOffset>0x150</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
+          <register derivedFrom="DOEPTSIZ1">
+            <name>DOEPTSIZ10</name>
+            <description>Device OUT Endpoint 10 Transfer Size Register</description>
+            <addressOffset>0x1B0</addressOffset>
           </register>
-          <register>
-              <name>DOEPTSIZ11</name>
-              <description>Device OUT Endpoint 11 Transfer Size Register</description>
-              <addressOffset>0x170</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
+          <register derivedFrom="DOEPTSIZ1">
+            <name>DOEPTSIZ11</name>
+            <description>Device OUT Endpoint 11 Transfer Size Register</description>
+            <addressOffset>0x1D0</addressOffset>
           </register>
-          <register>
-              <name>DOEPTSIZ12</name>
-              <description>Device OUT Endpoint 12 Transfer Size Register</description>
-              <addressOffset>0x190</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
+          <register derivedFrom="DOEPTSIZ1">
+            <name>DOEPTSIZ12</name>
+            <description>Device OUT Endpoint 12 Transfer Size Register</description>
+            <addressOffset>0x1F0</addressOffset>
           </register>
-          <register>
-              <name>DOEPTSIZ13</name>
-              <description>Device OUT Endpoint 13 Transfer Size Register</description>
-              <addressOffset>0x1B0</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
-          </register>
-          <register>
-              <name>DOEPTSIZ14</name>
-              <description>Device OUT Endpoint 14 Transfer Size Register</description>
-              <addressOffset>0x1D0</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
-          </register>
-          <register>
-              <name>DOEPTSIZ15</name>
-              <description>Device OUT Endpoint 15 Transfer Size Register</description>
-              <addressOffset>0x1F0</addressOffset>
-              <size>32</size>
-              <access>read-write</access>
-              <resetValue>0x00000000</resetValue>
+          <register derivedFrom="DOEPTSIZ1">
+            <name>DOEPTSIZ13</name>
+            <description>Device OUT Endpoint 13 Transfer Size Register</description>
+            <addressOffset>0x210</addressOffset>
           </register>
 
 				  <!-- Device OUT Endpoint DMA Address Registers (DOEPDMA) for endpoints 1 to 16 -->
@@ -24944,7 +25415,7 @@
               <access>write-only</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>WRITE</name>
+                  <name>read-write</name>
                   <description>Master write command</description>
                   <value>0</value>
                 </enumeratedValue>
