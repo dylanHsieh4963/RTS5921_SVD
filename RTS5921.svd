@@ -12888,7 +12888,294 @@
                   </enumeratedValues>
               </field>
           </fields>
-
+				</register>
+				<register>
+					<name>DIEPINT0</name>
+					<description>Device IN Endpoint 0 Interrupt Register</description>
+					<addressOffset>0x08</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+          <fields>
+              <field>
+                  <name>NYETIntrpt</name>
+                  <description>NYET interrupt</description>
+                  <bitRange>[14:14]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>NYET interrupt</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>NAKIntrpt</name>
+                  <description>NAK interrupt</description>
+                  <bitRange>[13:13]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>NAK interrupt</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>BbleErr</name>
+                  <description>Babble error interrupt</description>
+                  <bitRange>[12:12]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>Babble error interrupt</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>PktDrpSts</name>
+                  <description>Packet drop status</description>
+                  <bitRange>[11:11]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No packet dropped</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>Packet dropped</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>BNAIntr</name>
+                  <description>BNA (Buffer Not Available) interrupt</description>
+                  <bitRange>[9:9]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No BNA interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>BNA interrupt</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>TxfifoUndrn</name>
+                  <description>TxFIFO underrun interrupt (IN endpoint only)</description>
+                  <bitRange>[8:8]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No TxFIFO underrun</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>TxFIFO underrun interrupt</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>TxFEmp</name>
+                  <description>Transmit FIFO empty (IN endpoint only)</description>
+                  <bitRange>[7:7]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No TxFIFO empty</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>TxFIFO empty</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>INEPNakEff</name>
+                  <description>IN endpoint NAK effective</description>
+                  <bitRange>[6:6]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No NAK effective</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>NAK effective interrupt</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>INTknEPMis</name>
+                  <description>IN token received with EP mismatch</description>
+                  <bitRange>[5:5]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No EP mismatch</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>EP mismatch interrupt</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>INTknTXFEmp</name>
+                  <description>IN token received when TxFIFO empty</description>
+                  <bitRange>[4:4]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No TxFIFO empty on IN token</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>IN token with TxFIFO empty interrupt</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>TimeOUT</name>
+                  <description>Timeout condition</description>
+                  <bitRange>[3:3]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No timeout</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>Timeout interrupt</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>AHBErr</name>
+                  <description>AHB error interrupt</description>
+                  <bitRange>[2:2]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No AHB error</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>AHB error interrupt</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>EPDisbld</name>
+                  <description>Endpoint disabled interrupt</description>
+                  <bitRange>[1:1]</bitRange>
+                  <access>read-write</access>
+                  <enumeratedValues>
+                      <enumeratedValue>
+                          <name>INACTIVE</name>
+                          <description>No endpoint disabled interrupt</description>
+                          <value>0</value>
+                      </enumeratedValue>
+                      <enumeratedValue>
+                          <name>ACTIVE</name>
+                          <description>Endpoint disabled interrupt</description>
+                          <value>1</value>
+                      </enumeratedValue>
+                  </enumeratedValues>
+              </field>
+              <field>
+                  <name>XferCompl</name>
+                  <description>Transfer completed interrupt</description>
+                  <bitRange>[0:0]</bitRange>
+                  <access>read-write</access>
+              </field>
+          </fields>
+				</register>
+        <register>
+					<name>DIEPTSIZ0</name>
+					<description>Device IN Endpoint 0 Transfer Size Register</description>
+					<addressOffset>0x10</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+          <fields>
+              <field>
+                  <name>PktCnt</name>
+                  <description>USB packet count</description>
+                  <bitRange>[20:19]</bitRange>
+                  <access>read-write</access>
+              </field>
+              <field>
+                  <name>XferSize</name>
+                  <description>Transfer size in bytes</description>
+                  <bitRange>[6:0]</bitRange>
+                  <access>read-write</access>
+              </field>
+          </fields>
+				</register>
+				<register>
+					<name>DIEPDMA0</name>
+					<description>Device IN Endpoint 0 DMA Address Register</description>
+					<addressOffset>0x14</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
+				</register>
+				<register>
+					<name>DIEPDMAB0</name>
+					<description>Device IN Endpoint 0 Buffer Address Register</description>
+					<addressOffset>0x1C</addressOffset>
+					<size>32</size>
+					<access>read-write</access>
+					<resetValue>0x00000000</resetValue>
 				</register>
         <register>
 					<name>DIEPCTL1</name>
@@ -13363,251 +13650,6 @@
         </register>
 				<!-- DIEPINT: Device IN Endpoint Interrupt Registers -->
 				<register>
-					<name>DIEPINT0</name>
-					<description>Device IN Endpoint 0 Interrupt Register</description>
-					<addressOffset>0x08</addressOffset>
-					<size>32</size>
-					<access>read-write</access>
-					<resetValue>0x00000000</resetValue>
-          <fields>
-              <field>
-                  <name>NYETIntrpt</name>
-                  <description>NYET interrupt</description>
-                  <bitRange>[14:14]</bitRange>
-                  <access>read-write</access>
-                  <enumeratedValues>
-                      <enumeratedValue>
-                          <name>INACTIVE</name>
-                          <description>No interrupt</description>
-                          <value>0</value>
-                      </enumeratedValue>
-                      <enumeratedValue>
-                          <name>ACTIVE</name>
-                          <description>NYET interrupt</description>
-                          <value>1</value>
-                      </enumeratedValue>
-                  </enumeratedValues>
-              </field>
-              <field>
-                  <name>NAKIntrpt</name>
-                  <description>NAK interrupt</description>
-                  <bitRange>[13:13]</bitRange>
-                  <access>read-write</access>
-                  <enumeratedValues>
-                      <enumeratedValue>
-                          <name>INACTIVE</name>
-                          <description>No interrupt</description>
-                          <value>0</value>
-                      </enumeratedValue>
-                      <enumeratedValue>
-                          <name>ACTIVE</name>
-                          <description>NAK interrupt</description>
-                          <value>1</value>
-                      </enumeratedValue>
-                  </enumeratedValues>
-              </field>
-              <field>
-                  <name>BbleErr</name>
-                  <description>Babble error interrupt</description>
-                  <bitRange>[12:12]</bitRange>
-                  <access>read-write</access>
-                  <enumeratedValues>
-                      <enumeratedValue>
-                          <name>INACTIVE</name>
-                          <description>No interrupt</description>
-                          <value>0</value>
-                      </enumeratedValue>
-                      <enumeratedValue>
-                          <name>ACTIVE</name>
-                          <description>Babble error interrupt</description>
-                          <value>1</value>
-                      </enumeratedValue>
-                  </enumeratedValues>
-              </field>
-              <field>
-                  <name>PktDrpSts</name>
-                  <description>Packet drop status</description>
-                  <bitRange>[11:11]</bitRange>
-                  <access>read-write</access>
-                  <enumeratedValues>
-                      <enumeratedValue>
-                          <name>INACTIVE</name>
-                          <description>No packet dropped</description>
-                          <value>0</value>
-                      </enumeratedValue>
-                      <enumeratedValue>
-                          <name>ACTIVE</name>
-                          <description>Packet dropped</description>
-                          <value>1</value>
-                      </enumeratedValue>
-                  </enumeratedValues>
-              </field>
-              <field>
-                  <name>BNAIntr</name>
-                  <description>BNA (Buffer Not Available) interrupt</description>
-                  <bitRange>[9:9]</bitRange>
-                  <access>read-write</access>
-                  <enumeratedValues>
-                      <enumeratedValue>
-                          <name>INACTIVE</name>
-                          <description>No BNA interrupt</description>
-                          <value>0</value>
-                      </enumeratedValue>
-                      <enumeratedValue>
-                          <name>ACTIVE</name>
-                          <description>BNA interrupt</description>
-                          <value>1</value>
-                      </enumeratedValue>
-                  </enumeratedValues>
-              </field>
-              <field>
-                  <name>TxfifoUndrn</name>
-                  <description>TxFIFO underrun interrupt (IN endpoint only)</description>
-                  <bitRange>[8:8]</bitRange>
-                  <access>read-write</access>
-                  <enumeratedValues>
-                      <enumeratedValue>
-                          <name>INACTIVE</name>
-                          <description>No TxFIFO underrun</description>
-                          <value>0</value>
-                      </enumeratedValue>
-                      <enumeratedValue>
-                          <name>ACTIVE</name>
-                          <description>TxFIFO underrun interrupt</description>
-                          <value>1</value>
-                      </enumeratedValue>
-                  </enumeratedValues>
-              </field>
-              <field>
-                  <name>TxFEmp</name>
-                  <description>Transmit FIFO empty (IN endpoint only)</description>
-                  <bitRange>[7:7]</bitRange>
-                  <access>read-write</access>
-                  <enumeratedValues>
-                      <enumeratedValue>
-                          <name>INACTIVE</name>
-                          <description>No TxFIFO empty</description>
-                          <value>0</value>
-                      </enumeratedValue>
-                      <enumeratedValue>
-                          <name>ACTIVE</name>
-                          <description>TxFIFO empty</description>
-                          <value>1</value>
-                      </enumeratedValue>
-                  </enumeratedValues>
-              </field>
-              <field>
-                  <name>INEPNakEff</name>
-                  <description>IN endpoint NAK effective</description>
-                  <bitRange>[6:6]</bitRange>
-                  <access>read-write</access>
-                  <enumeratedValues>
-                      <enumeratedValue>
-                          <name>INACTIVE</name>
-                          <description>No NAK effective</description>
-                          <value>0</value>
-                      </enumeratedValue>
-                      <enumeratedValue>
-                          <name>ACTIVE</name>
-                          <description>NAK effective interrupt</description>
-                          <value>1</value>
-                      </enumeratedValue>
-                  </enumeratedValues>
-              </field>
-              <field>
-                  <name>INTknEPMis</name>
-                  <description>IN token received with EP mismatch</description>
-                  <bitRange>[5:5]</bitRange>
-                  <access>read-write</access>
-                  <enumeratedValues>
-                      <enumeratedValue>
-                          <name>INACTIVE</name>
-                          <description>No EP mismatch</description>
-                          <value>0</value>
-                      </enumeratedValue>
-                      <enumeratedValue>
-                          <name>ACTIVE</name>
-                          <description>EP mismatch interrupt</description>
-                          <value>1</value>
-                      </enumeratedValue>
-                  </enumeratedValues>
-              </field>
-              <field>
-                  <name>INTknTXFEmp</name>
-                  <description>IN token received when TxFIFO empty</description>
-                  <bitRange>[4:4]</bitRange>
-                  <access>read-write</access>
-                  <enumeratedValues>
-                      <enumeratedValue>
-                          <name>INACTIVE</name>
-                          <description>No TxFIFO empty on IN token</description>
-                          <value>0</value>
-                      </enumeratedValue>
-                      <enumeratedValue>
-                          <name>ACTIVE</name>
-                          <description>IN token with TxFIFO empty interrupt</description>
-                          <value>1</value>
-                      </enumeratedValue>
-                  </enumeratedValues>
-              </field>
-              <field>
-                  <name>TimeOUT</name>
-                  <description>Timeout condition</description>
-                  <bitRange>[3:3]</bitRange>
-                  <access>read-write</access>
-                  <enumeratedValues>
-                      <enumeratedValue>
-                          <name>INACTIVE</name>
-                          <description>No timeout</description>
-                          <value>0</value>
-                      </enumeratedValue>
-                      <enumeratedValue>
-                          <name>ACTIVE</name>
-                          <description>Timeout interrupt</description>
-                          <value>1</value>
-                      </enumeratedValue>
-                  </enumeratedValues>
-              </field>
-              <field>
-                  <name>AHBErr</name>
-                  <description>AHB error interrupt</description>
-                  <bitRange>[2:2]</bitRange>
-                  <access>read-write</access>
-                  <enumeratedValues>
-                      <enumeratedValue>
-                          <name>INACTIVE</name>
-                          <description>No AHB error</description>
-                          <value>0</value>
-                      </enumeratedValue>
-                      <enumeratedValue>
-                          <name>ACTIVE</name>
-                          <description>AHB error interrupt</description>
-                          <value>1</value>
-                      </enumeratedValue>
-                  </enumeratedValues>
-              </field>
-              <field>
-                  <name>EPDisbld</name>
-                  <description>Endpoint disabled interrupt</description>
-                  <bitRange>[1:1]</bitRange>
-                  <access>read-write</access>
-                  <enumeratedValues>
-                      <enumeratedValue>
-                          <name>INACTIVE</name>
-                          <description>No endpoint disabled interrupt</description>
-                          <value>0</value>
-                      </enumeratedValue>
-                      <enumeratedValue>
-                          <name>ACTIVE</name>
-                          <description>Endpoint disabled interrupt</description>
-                          <value>1</value>
-                      </enumeratedValue>
-                  </enumeratedValues>
-              </field>
-          </fields>
-
-				</register>
-				<register>
 					<name>DIEPINT1</name>
 					<description>Device IN Endpoint 1 Interrupt Register</description>
 					<addressOffset>0x28</addressOffset>
@@ -13774,28 +13816,6 @@
         </register>
 				<!-- DIEPTSIZ: Device IN Endpoint Transfer Size Registers -->
 				<register>
-					<name>DIEPTSIZ0</name>
-					<description>Device IN Endpoint 0 Transfer Size Register</description>
-					<addressOffset>0x10</addressOffset>
-					<size>32</size>
-					<access>read-write</access>
-					<resetValue>0x00000000</resetValue>
-          <fields>
-              <field>
-                  <name>PktCnt</name>
-                  <description>USB packet count</description>
-                  <bitRange>[20:19]</bitRange>
-                  <access>read-write</access>
-              </field>
-              <field>
-                  <name>XferSize</name>
-                  <description>Transfer size in bytes</description>
-                  <bitRange>[6:0]</bitRange>
-                  <access>read-write</access>
-              </field>
-          </fields>
-				</register>
-				<register>
 					<name>DIEPTSIZ1</name>
 					<description>Device IN Endpoint 1 Transfer Size Register</description>
 					<addressOffset>0x30</addressOffset>
@@ -13911,14 +13931,6 @@
           <addressOffset>0x1F0</addressOffset>
         </register>
 				<!-- DIEPDMA: Device IN Endpoint DMA Address Registers -->
-				<register>
-					<name>DIEPDMA0</name>
-					<description>Device IN Endpoint 0 DMA Address Register</description>
-					<addressOffset>0x14</addressOffset>
-					<size>32</size>
-					<access>read-write</access>
-					<resetValue>0x00000000</resetValue>
-				</register>
 				<register>
 					<name>DIEPDMA1</name>
 					<description>Device IN Endpoint 1 DMA Address Register</description>
@@ -14169,16 +14181,7 @@
 					<access>read-only</access>
 					<resetValue>0x00000000</resetValue>
 				</register>
-
 				<!-- DIEPDMAB: Device IN Endpoint Buffer Address Registers -->
-				<register>
-					<name>DIEPDMAB0</name>
-					<description>Device IN Endpoint 0 Buffer Address Register</description>
-					<addressOffset>0x1C</addressOffset>
-					<size>32</size>
-					<access>read-write</access>
-					<resetValue>0x00000000</resetValue>
-				</register>
 				<register>
 					<name>DIEPDMAB1</name>
 					<description>Device IN Endpoint 1 Buffer Address Register</description>
@@ -29942,6 +29945,77 @@
         <description>DOTMTX1 Interrupt</description>
         <value>30</value>
       </interrupt>
+    </peripheral>
+    <!-- THERMAL_CAL -->
+     <peripheral>
+      <!-- Description -->
+      <name>THERMAL_CAL</name>
+      <version>1.00</version>
+      <description>Thermal Calibration Engine</description>
+      <groupName>THERMAL_CAL</groupName>
+      <headerStructName>THERMAL_CAL</headerStructName>
+      <baseAddress>0x40122600</baseAddress>
+      <size>32</size>
+      <access>read-write</access>
+
+      <!-- Address Range -->
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x100</size>
+        <usage>registers</usage>
+      </addressBlock>
+
+      <registers>
+          <!-- FREQ_CTRL0 -->
+          <register>
+              <name>FREQ_CTRL0</name>
+              <description>Frequency Control Register #0</description>
+              <addressOffset>0x00</addressOffset>
+              <resetValue>0x00000000</resetValue>
+          </register>
+          <!-- FREQ_CTRL1 Register -->
+          <register>
+              <name>FREQ_CTRL1</name>
+              <description>Frequency Control Register #1</description>
+              <addressOffset>0x04</addressOffset>
+              <resetValue>0x00000000</resetValue>
+          </register>
+          <!-- FREQ_CTRL2 Register -->
+          <register>
+              <name>FREQ_CTRL2</name>
+              <description>Frequency Control Register #2</description>
+              <addressOffset>0x08</addressOffset>
+              <resetValue>0x00000000</resetValue>
+          </register>
+          <!-- FREQ_STS Register -->
+          <register>
+              <name>FREQ_STS</name>
+              <description>Frequency Status Register</description>
+              <addressOffset>0x0c</addressOffset>
+              <resetValue>0x00000000</resetValue>
+          </register>
+          <!-- CP_CTRL0 -->
+          <register>
+              <name>CP_CTRL0</name>
+              <description>CP Control Register #0</description>
+              <addressOffset>0x10</addressOffset>
+              <resetValue>0x00000000</resetValue>
+          </register>
+          <!-- CP_CTRL1 Register -->
+          <register>
+              <name>CP_CTRL1</name>
+              <description>CP Control Register #1</description>
+              <addressOffset>0x14</addressOffset>
+              <resetValue>0x00000000</resetValue>
+          </register>
+          <!-- CP_STS Register -->
+          <register>
+              <name>CP_STS</name>
+              <description>CP Status Register</description>
+              <addressOffset>0x18</addressOffset>
+              <resetValue>0x00000000</resetValue>
+          </register>
+      </registers>
     </peripheral>
   </peripherals>
 </device>
