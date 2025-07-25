@@ -15544,6 +15544,24 @@
                     </enumeratedValues>
                 </field>
                 <field>
+                    <name>THERMAL_TOP</name>
+                    <description>Thermal Power Control</description>
+                    <bitRange>[22:22]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>DISABLE</name>
+                            <value>0</value>
+                            <description>Disable</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>ENABLE</name>
+                            <value>1</value>
+                            <description>Enable</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
                     <name>SYS_TOP</name>
                     <description>System Clock Power Control</description>
                     <bitRange>[21:21]</bitRange>
@@ -16656,6 +16674,24 @@
           <addressOffset>0x0C</addressOffset>
           <fields>
             <field>
+              <name>THERMAL_IP</name>
+              <description>THERMAL_IP clock enable: 0=Disable, 1=Enable</description>
+              <bitRange>[20:20]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <value>0</value>
+                  <description>Disable</description>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <value>1</value>
+                  <description>Enable</description>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
               <name>EFUSE_IP</name>
               <description>EFUSE clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[19:19]</bitRange>
@@ -17605,6 +17641,42 @@
           <description>APB Clock Power Control Register 0</description>
           <addressOffset>0x14</addressOffset>
           <fields>
+            <field>
+              <name>NXTAL_SOF_APB</name>
+              <description>NXTAL Sof clock enable: 0=Disable, 1=Enable</description>
+              <bitRange>[31:31]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <value>0</value>
+                  <description>Disable</description>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <value>1</value>
+                  <description>Enable</description>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>THERMAL_CAL_APB</name>
+              <description>Thermal calibration clock enable: 0=Disable, 1=Enable</description>
+              <bitRange>[30:30]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <value>0</value>
+                  <description>Disable</description>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <value>1</value>
+                  <description>Enable</description>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
             <field>
               <name>USB_APB</name>
               <description>USB clock enable: 0=Disable, 1=Enable</description>
@@ -20044,6 +20116,42 @@
             <access>read-write</access>
             <resetValue>0x00000000</resetValue>
             <fields>
+                <field>
+                    <name>NXTAL_SOF_SRC</name>
+                    <description>Clock source select for NXTAL sof async bus</description>
+                    <bitRange>[30:30]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
+                <field>
+                    <name>THERMAL_CAL_SRC</name>
+                    <description>Clock source select for thermal calibration async bus</description>
+                    <bitRange>[29:29]</bitRange>
+                    <access>read-write</access>
+                    <enumeratedValues>
+                        <enumeratedValue>
+                            <name>60M</name>
+                            <value>0</value>
+                            <description>60M</description>
+                        </enumeratedValue>
+                        <enumeratedValue>
+                            <name>24M</name>
+                            <value>1</value>
+                            <description>24M</description>
+                        </enumeratedValue>
+                    </enumeratedValues>
+                </field>
                 <field>
                     <name>USB_APB_SRC</name>
                     <description>Clock source select for USB async bus</description>
