@@ -60,7 +60,7 @@
       <interrupt>
         <name>INTR_SPIC</name>
         <description>Internal SPIC Interrupt</description>
-        <value>9</value>
+        <value>10</value>
       </interrupt>
 
       <!-- Registers -->
@@ -1625,7 +1625,7 @@
       <interrupt>
         <name>EXTR_SPIC</name>
         <description>External SPIC Interrupt</description>
-        <value>10</value>
+        <value>9</value>
       </interrupt>
     </peripheral>
     <!-- DMAC -->
@@ -28537,6 +28537,1017 @@
                     <access>read-write</access>
                 </field>
             </fields>
+        </register>
+      </registers>
+    </peripheral>
+    <!-- KBM -->
+    <peripheral>
+      <!-- Description -->
+      <name>KBM</name>
+      <version>1.00</version>
+      <description>Keyboard Matrix Controller</description>
+      <groupName>KBM</groupName>
+      <headerStructName>KBM</headerStructName>
+      <baseAddress>0x40122100</baseAddress>
+      <size>32</size>
+      <access>read-write</access>
+
+      <!-- Address Range -->
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x100</size>
+        <usage>registers</usage>
+      </addressBlock>
+
+      <!-- Interrupt -->
+      <interrupt>
+        <name>KBM</name>
+        <description>KBM Interrupt</description>
+        <value>30</value>
+      </interrupt>
+
+      <!-- Registers -->
+      <registers>
+        <!-- SCANOUT -->
+        <register>
+          <name>SCANOUT</name>
+          <description>SCAN OUT CONTROL REGISTER</description>
+          <addressOffset>0x00</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- KSOn -->
+            <field>
+              <name>KSO%s</name>
+              <dim>20</dim>
+              <dimIncrement>1</dimIncrement>
+              <dimIndex>0-19</dimIndex>
+              <description>KSO Output Level</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>LOW</name>
+                  <description>KSO output low</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>HIGH</name>
+                  <description>KSO output high</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <!-- SCANIN -->
+        <register>
+          <name>SCANIN</name>
+          <description>SACN INPUT STATUS REGISTER</description>
+          <addressOffset>0x04</addressOffset>
+          <size>32</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- KSIn -->
+            <field>
+              <name>KSI%s</name>
+              <dim>10</dim>
+              <dimIncrement>1</dimIncrement>
+              <dimIndex>0-9</dimIndex>
+              <description>KSI Input Level</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>LOW</name>
+                  <description>KSI input is low</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>HIGH</name>
+                  <description>KSI input is high</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <!-- INTEN -->
+        <register>
+          <name>INTEN</name>
+          <description>INTERRUPT ENABLE REGISTER</description>
+          <addressOffset>0x08</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- KSIn -->
+            <field>
+              <name>KSI%s</name>
+              <dim>10</dim>
+              <dimIncrement>1</dimIncrement>
+              <dimIndex>0-9</dimIndex>
+              <description>KSI Interrupt Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>KSI interrupt disable</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>KSI interrupt enable</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <!-- CTRL -->
+        <register>
+          <name>CTRL</name>
+          <description>CONTROL REGISTER</description>
+          <addressOffset>0x0C</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- KSOTYPE -->
+            <field>
+              <name>KSOTYPE</name>
+              <description>Output Type of KSO pin</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>PUSH_PULL</name>
+                  <description>Push-pull</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>OPEN_DRAIN</name>
+                  <description>Open-drain</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- KSI8EN -->
+            <field>
+              <name>KSI8EN</name>
+              <description>Enable KSI8</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable KSI8</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable KSI8</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- KSI9EN -->
+            <field>
+              <name>KSI9EN</name>
+              <description>Enable KSI9</description>
+              <bitRange>[2:2]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable KSI9</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable KSI9</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- KSO18EN -->
+            <field>
+              <name>KSO18EN</name>
+              <description>Enable KSO18</description>
+              <bitRange>[16:16]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable KSO18</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable KSO18</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- KSO19EN -->
+            <field>
+              <name>KSO19EN</name>
+              <description>Enable KSO19</description>
+              <bitRange>[17:17]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable KSO19</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable KSO19</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- KSIINTSTS -->
+            <field>
+              <name>KSIINTSTS</name>
+              <description>KSI Interrupt Status</description>
+              <bitRange>[18:18]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOT_OCCURRED</name>
+                  <description>KSI interrupt is not occurred</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>OCCURRED</name>
+                  <description>KSI interrupt is occurred</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- I2CDBGDEL -->
+            <field>
+              <name>I2CDBGDEL</name>
+              <description>I2C Debug Select</description>
+              <bitRange>[19:19]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>I2CDBG</name>
+                  <description>KBM I2C Debug</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>I2CDBGREG</name>
+                  <description>I2C Debug Refer Bit20</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- I2CDBGEN -->
+            <field>
+              <name>I2CDBGEN</name>
+              <description>I2C Debug Enable</description>
+              <bitRange>[20:20]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable I2C Debug</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable I2C Debug</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- ESPIMONEN -->
+            <field>
+              <name>ESPIMONEN</name>
+              <description>ESPI Monitor Enable</description>
+              <bitRange>[30:30]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable ESPI Monitor</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable ESPI Monitor</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- KBMDBGEN -->
+            <field>
+              <name>KBMDBGEN</name>
+              <description>KBM Debug Enable</description>
+              <bitRange>[31:31]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable KBM Debug</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable KBM Debug</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <!-- DBGSTS -->
+        <register>
+          <name>DBGSTS</name>
+          <description>DWBUG STATUS REGISTER</description>
+          <addressOffset>0x10</addressOffset>
+          <size>32</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- DBGMODE -->
+            <field>
+              <name>DBGMODE</name>
+              <description>Debug Mode Status</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NORMAL</name>
+                  <description>Normal Operation</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DEBUG</name>
+                  <description>In Debug Mode</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- EXITMODE -->
+            <field>
+              <name>EXITMODE</name>
+              <description>Exit Debug Mode Status</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NORMAL</name>
+                  <description>Normal Operation</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>EXIT</name>
+                  <description>Exit Debug Mode</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- STEPSTS -->
+            <field>
+              <name>STEPSTS</name>
+              <description>Entry Debug Status</description>
+              <bitRange>[5:2]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- PWRSTS -->
+            <field>
+              <name>PWRSTS</name>
+              <description>KBM Power Status</description>
+              <bitRange>[6:6]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOPWR</name>
+                  <description>KBM without Power</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>POWER</name>
+                  <description>KBM Powered</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- KSISTS -->
+            <field>
+              <name>KSISTS</name>
+              <description>KSIs Status</description>
+              <bitRange>[15:8]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- INFLS -->
+            <field>
+              <name>INFLS</name>
+              <description>Internal Flash Select</description>
+              <bitRange>[16:16]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NONE</name>
+                  <description>Not in Internal Flash Mode</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SELECTED</name>
+                  <description>Internal Flash Mode</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- CS0FLS -->
+            <field>
+              <name>CS0FLS</name>
+              <description>CS0 Flash Select</description>
+              <bitRange>[17:17]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NONE</name>
+                  <description>Not in CS0 Flash Mode</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SELECTED</name>
+                  <description>CS0 Flash Mode</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- CS1FLS -->
+            <field>
+              <name>CS1FLS</name>
+              <description>CS1 Flash Select</description>
+              <bitRange>[18:18]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NONE</name>
+                  <description>Not in CS1 Flash Mode</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SELECTED</name>
+                  <description>CS1 Flash Mode</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- JTAGMODE -->
+            <field>
+              <name>JTAGMODE</name>
+              <description>Jtag Mode Select</description>
+              <bitRange>[19:19]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NONE</name>
+                  <description>Not in Jtag Mode</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SELECTED</name>
+                  <description>Jtag Mode</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- ESPIMODE -->
+            <field>
+              <name>ESPIMODE</name>
+              <description>eSPI Mode Select</description>
+              <bitRange>[20:20]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NONE</name>
+                  <description>Not in eSPI Mode</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SELECTED</name>
+                  <description>eSPI Mode</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- SWDMODE -->
+            <field>
+              <name>SWDMODE</name>
+              <description>SWD Mode Select</description>
+              <bitRange>[21:21]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NONE</name>
+                  <description>Not in SWD Mode</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SELECTED</name>
+                  <description>SWD Mode</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <!-- SCANCTRL -->
+        <register>
+          <name>SCANCTRL</name>
+          <description>KB SCAN CONTROL REGISTER</description>
+          <addressOffset>0x14</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- AUTOEN -->
+            <field>
+              <name>AUTOEN</name>
+              <description>KBS AUTO SCAN ENABLE</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>LOW</name>
+                  <description>Disable KBS</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>HIGH</name>
+                  <description>Eable KBS</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- INTEN -->
+            <field>
+              <name>INTEN</name>
+              <description>KBS AUTO SCAN INTERRUPT ENABLE</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>LOW</name>
+                  <description>Disable KBS Interrupt</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>HIGH</name>
+                  <description>Eable KBS Interrupt</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- KBSLOOP -->
+            <field>
+              <name>KBSLOOP</name>
+              <description>KBS AUTO SCAN LOOP</description>
+              <bitRange>[4:2]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>1</name>
+                  <description>1 Round</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2</name>
+                  <description>2 Round</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>3</name>
+                  <description>3 Round</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4</name>
+                  <description>4 Round</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>5</name>
+                  <description>5 Round</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>6</name>
+                  <description>6 Round</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>7</name>
+                  <description>7 Round</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8</name>
+                  <description>8 Round</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- KBMSIZE -->
+            <field>
+              <name>KBMSIZE</name>
+              <description>KBS MATRIX SIZE</description>
+              <bitRange>[7:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>8X16</name>
+                  <description>16 KSOs</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8X17</name>
+                  <description>17 KSOs</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8X18</name>
+                  <description>18 KSOs</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8X19</name>
+                  <description>19 KSOs</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8X20</name>
+                  <description>20 KSOs</description>
+                  <value>4</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- HDELAY -->
+            <field>
+              <name>HDELAY</name>
+              <description>KSO HIGH DELAY</description>
+              <bitRange>[11:8]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>23US</name>
+                  <description>23 us</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>31US</name>
+                  <description>31 us</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>39US</name>
+                  <description>39 us</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>47US</name>
+                  <description>47 us</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>55US</name>
+                  <description>55 us</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>64US</name>
+                  <description>64 us</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>71US</name>
+                  <description>71 us</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>79US</name>
+                  <description>79 us</description>
+                  <value>7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>87US</name>
+                  <description>87 us</description>
+                  <value>8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>95US</name>
+                  <description>95 us</description>
+                  <value>9</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- SCANDELAY -->
+            <field>
+              <name>SCANDELAY</name>
+              <description>KSI SCAN DELAY</description>
+              <bitRange>[15:12]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>11US</name>
+                  <description>11 us</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>13US</name>
+                  <description>13 us</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>15US</name>
+                  <description>15 us</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>17US</name>
+                  <description>17 us</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>19US</name>
+                  <description>19 us</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>21US</name>
+                  <description>21 us</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>23US</name>
+                  <description>23 us</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>25US</name>
+                  <description>25 us</description>
+                  <value>7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>27US</name>
+                  <description>27 us</description>
+                  <value>8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>29US</name>
+                  <description>29 us</description>
+                  <value>9</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- ROUNDDELAY -->
+            <field>
+              <name>ROUNDDELAY</name>
+              <description>SCAN ROUND DELAY</description>
+              <bitRange>[19:16]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <!-- KBSSTS -->
+        <register>
+          <name>KBSSTS</name>
+          <description>KBSCAN STATUS REGISTER</description>
+          <addressOffset>0x18</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- KSIn -->
+            <field>
+              <name>KSO%sKSI</name>
+              <dim>20</dim>
+              <dimIncrement>1</dimIncrement>
+              <dimIndex>0-19</dimIndex>
+              <description>KSO Sampling SKI status</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <!-- KSOGP0DAT -->
+        <register>
+          <name>KSOGP0DAT</name>
+          <description>KSO GROUP0 DATA REGISTER</description>
+          <addressOffset>0x1C</addressOffset>
+          <size>32</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- KSO0 data -->
+            <field>
+              <name>KSO0DATA</name>
+              <description>KSO0 data</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- KSO1 data -->
+            <field>
+              <name>KSO1DATA</name>
+              <description>KSO1 data</description>
+              <bitRange>[15:8]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- KSO2 data -->
+            <field>
+              <name>KSO2DATA</name>
+              <description>KSO2 data</description>
+              <bitRange>[23:16]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- KSO3 data -->
+            <field>
+              <name>KSO3DATA</name>
+              <description>KSO3 data</description>
+              <bitRange>[31:24]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <!-- KSOGP1DAT -->
+        <register>
+          <name>KSOGP1DAT</name>
+          <description>KSO GROUP1 DATA REGISTER</description>
+          <addressOffset>0x20</addressOffset>
+          <size>32</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- KSO4 data -->
+            <field>
+              <name>KSO4DATA</name>
+              <description>KSO4 data</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- KSO5 data -->
+            <field>
+              <name>KSO5DATA</name>
+              <description>KSO5 data</description>
+              <bitRange>[15:8]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- KSO6 data -->
+            <field>
+              <name>KSO6DATA</name>
+              <description>KSO6 data</description>
+              <bitRange>[23:16]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- KSO7 data -->
+            <field>
+              <name>KSO7DATA</name>
+              <description>KSO7 data</description>
+              <bitRange>[31:24]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <!-- KSOGP2DAT -->
+        <register>
+          <name>KSOGP2DAT</name>
+          <description>KSO GROUP2 DATA REGISTER</description>
+          <addressOffset>0x24</addressOffset>
+          <size>32</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- KSO8 data -->
+            <field>
+              <name>KSO8DATA</name>
+              <description>KSO8 data</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- KSO9 data -->
+            <field>
+              <name>KSO9DATA</name>
+              <description>KSO9 data</description>
+              <bitRange>[15:8]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- KSO10 data -->
+            <field>
+              <name>KSO10DATA</name>
+              <description>KSO10 data</description>
+              <bitRange>[23:16]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- KSO11 data -->
+            <field>
+              <name>KSO11DATA</name>
+              <description>KSO11 data</description>
+              <bitRange>[31:24]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <!-- KSOGP3DAT -->
+        <register>
+          <name>KSOGP3DAT</name>
+          <description>KSO GROUP3 DATA REGISTER</description>
+          <addressOffset>0x28</addressOffset>
+          <size>32</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- KSO12 data -->
+            <field>
+              <name>KSO12DATA</name>
+              <description>KSO12 data</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- KSO13 data -->
+            <field>
+              <name>KSO13DATA</name>
+              <description>KSO13 data</description>
+              <bitRange>[15:8]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- KSO14 data -->
+            <field>
+              <name>KSO14DATA</name>
+              <description>KSO14 data</description>
+              <bitRange>[23:16]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- KSO15 data -->
+            <field>
+              <name>KSO15DATA</name>
+              <description>KSO15 data</description>
+              <bitRange>[31:24]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <!-- KSOGP4DAT -->
+        <register>
+          <name>KSOGP4DAT</name>
+          <description>KSO GROUP4 DATA REGISTER</description>
+          <addressOffset>0x2C</addressOffset>
+          <size>32</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- KSO16 data -->
+            <field>
+              <name>KSO16DATA</name>
+              <description>KSO16 data</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- KSO17 data -->
+            <field>
+              <name>KSO17DATA</name>
+              <description>KSO17 data</description>
+              <bitRange>[15:8]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- KSO18 data -->
+            <field>
+              <name>KSO18DATA</name>
+              <description>KSO18 data</description>
+              <bitRange>[23:16]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- KSO19 data -->
+            <field>
+              <name>KSO19DATA</name>
+              <description>KSO19 data</description>
+              <bitRange>[31:24]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
         </register>
       </registers>
     </peripheral>
