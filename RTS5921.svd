@@ -29717,7 +29717,7 @@
       <registers>
         <!-- GCRn -->
         <register>
-          <dim>61</dim> 
+          <dim>62</dim> 
           <dimIncrement>4</dimIncrement> 
           <name>GCR[%s]</name> 
           <description>CONTROL REGISTER</description>
