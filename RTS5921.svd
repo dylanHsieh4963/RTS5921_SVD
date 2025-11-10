@@ -30369,124 +30369,248 @@
       <name>PWMLED1</name>
       <baseAddress>0x40121020</baseAddress>
     </peripheral>
-    <peripheral derivedFrom="PWMLED0">
-      <name>PWMLED2</name>
+    <!-- PWM0 -->
+    <peripheral>
+      <!-- Description -->
+      <name>PWM0</name>
+      <version>1.00</version>
+      <description>PWM Controller</description>
+      <groupName>PWM</groupName>
+      <headerStructName>PWM</headerStructName>
       <baseAddress>0x40121040</baseAddress>
+      <size>32</size>
+      <access>read-write</access>
+
+      <!-- Address Range -->
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x0C</size>
+        <usage>registers</usage>
+      </addressBlock>
+
+      <!-- Registers -->
+      <registers>
+        <!-- DUTY -->
+        <register>
+          <name>DUTY</name>
+          <description>PWM DUTY REGISTER</description>
+          <addressOffset>0x00</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- DIV -->
+        <register>
+          <name>DIV</name>
+          <description>PWM DIVIDER REGISTER</description>
+          <addressOffset>0x04</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- CTRL -->
+        <register>
+          <name>CTRL</name>
+          <description>PWM CONTROL REGISTER</description>
+          <addressOffset>0x08</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- CLKSRC -->
+            <field>
+              <name>CLKSRC</name>
+              <description>Clock Source Selection</description>
+              <bitRange>[28:28]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>PLL</name>
+                  <description>PWM clock source is from PLL</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RC32K</name>
+                  <description>PWM clock source is from RC32K</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- INVT -->
+            <field>
+              <name>INVT</name>
+              <description>Output Inverter Control</description>
+              <bitRange>[29:29]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NORMAL</name>
+                  <description>PWM output is not invert</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>INVERT</name>
+                  <description>PWM output is invert</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- RST -->
+            <field>
+              <name>RST</name>
+              <description>Reset PWM Controller</description>
+              <bitRange>[30:30]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DO_NOTHING</name>
+                  <description>Do nothing</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RESET</name>
+                  <description>Reset PWM controller</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- EN -->
+            <field>
+              <name>EN</name>
+              <description>Enable PWM Controller</description>
+              <bitRange>[31:31]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable PWM Controller</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable PWM Controller</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+      </registers>
     </peripheral>
-    <peripheral derivedFrom="PWMLED0">
-      <name>PWMLED3</name>
+    <peripheral derivedFrom="PWM0">
+      <name>PWM1</name>
       <baseAddress>0x40121060</baseAddress>
     </peripheral>
-    <peripheral derivedFrom="PWMLED0">
-      <name>PWMLED4</name>
+    <peripheral derivedFrom="PWM0">
+      <name>PWM2</name>
       <baseAddress>0x40121080</baseAddress>
     </peripheral>
-    <peripheral derivedFrom="PWMLED0">
-      <name>PWMLED5</name>
+    <peripheral derivedFrom="PWM0">
+      <name>PWM3</name>
       <baseAddress>0x401210A0</baseAddress>
     </peripheral>
-    <peripheral derivedFrom="PWMLED0">
-      <name>PWMLED6</name>
+    <peripheral derivedFrom="PWM0">
+      <name>PWM4</name>
       <baseAddress>0x401210C0</baseAddress>
     </peripheral>
-    <peripheral derivedFrom="PWMLED0">
-      <name>PWMLED7</name>
+    <peripheral derivedFrom="PWM0">
+      <name>PWM5</name>
       <baseAddress>0x401210E0</baseAddress>
     </peripheral>
-    <peripheral derivedFrom="PWMLED0">
-      <name>PWMLED8</name>
+    <peripheral derivedFrom="PWM0">
+      <name>PWM6</name>
       <baseAddress>0x40121100</baseAddress>
     </peripheral>
-    <peripheral derivedFrom="PWMLED0">
-      <name>PWMLED9</name>
+    <peripheral derivedFrom="PWM0">
+      <name>PWM7</name>
       <baseAddress>0x40121120</baseAddress>
     </peripheral>
-    <peripheral derivedFrom="PWMLED0">
-      <name>PWMLED10</name>
+    <peripheral derivedFrom="PWM0">
+      <name>PWM8</name>
       <baseAddress>0x40121140</baseAddress>
     </peripheral>
-    <peripheral derivedFrom="PWMLED0">
-      <name>PWMLED11</name>
+    <peripheral derivedFrom="PWM0">
+      <name>PWM9</name>
       <baseAddress>0x40121160</baseAddress>
     </peripheral>
-    <peripheral derivedFrom="PWMLED0">
-      <name>PWMLED12</name>
+    <peripheral derivedFrom="PWM0">
+      <name>PWM10</name>
       <baseAddress>0x40121180</baseAddress>
     </peripheral>
-    <peripheral derivedFrom="PWMLED0">
-      <name>PWMLED13</name>
+    <peripheral derivedFrom="PWM0">
+      <name>PWM11</name>
       <baseAddress>0x401211A0</baseAddress>
     </peripheral>
-    <peripheral derivedFrom="PWMLED0">
-      <name>PWMLED14</name>
+    <peripheral derivedFrom="PWM0">
+      <name>PWM12</name>
       <baseAddress>0x401211C0</baseAddress>
     </peripheral>
-    <peripheral derivedFrom="PWMLED0">
-      <name>PWMLED15</name>
+    <peripheral derivedFrom="PWM0">
+      <name>PWM13</name>
       <baseAddress>0x401211E0</baseAddress>
     </peripheral>
-    <peripheral derivedFrom="PWMLED0">
-      <name>PWMLED16</name>
+    <peripheral derivedFrom="PWM0">
+      <name>PWM14</name>
       <baseAddress>0x40121200</baseAddress>
     </peripheral>
-    <peripheral derivedFrom="PWMLED0">
-      <name>PWMLED17</name>
+    <peripheral derivedFrom="PWM0">
+      <name>PWM15</name>
       <baseAddress>0x40121220</baseAddress>
     </peripheral>
-    <peripheral derivedFrom="PWMLED0">
-      <name>PWMLED18</name>
+    <peripheral derivedFrom="PWM0">
+      <name>PWM16</name>
       <baseAddress>0x40121240</baseAddress>
     </peripheral>
-    <peripheral derivedFrom="PWMLED0">
-      <name>PWMLED19</name>
+    <peripheral derivedFrom="PWM0">
+      <name>PWM17</name>
       <baseAddress>0x40121260</baseAddress>
     </peripheral>
-    <peripheral derivedFrom="PWMLED0">
-      <name>PWMLED20</name>
+    <peripheral derivedFrom="PWM0">
+      <name>PWM18</name>
       <baseAddress>0x40121280</baseAddress>
     </peripheral>
-    <peripheral derivedFrom="PWMLED0">
-      <name>PWMLED21</name>
+    <peripheral derivedFrom="PWM0">
+      <name>PWM19</name>
       <baseAddress>0x401212A0</baseAddress>
     </peripheral>
-    <peripheral derivedFrom="PWMLED0">
-      <name>PWMLED22</name>
+    <peripheral derivedFrom="PWM0">
+      <name>PWM20</name>
       <baseAddress>0x401212C0</baseAddress>
     </peripheral>
-    <peripheral derivedFrom="PWMLED0">
-      <name>PWMLED23</name>
+    <peripheral derivedFrom="PWM0">
+      <name>PWM21</name>
       <baseAddress>0x401212E0</baseAddress>
     </peripheral>
-    <peripheral derivedFrom="PWMLED0">
-      <name>PWMLED24</name>
+    <peripheral derivedFrom="PWM0">
+      <name>PWM22</name>
       <baseAddress>0x40121300</baseAddress>
     </peripheral>
-    <peripheral derivedFrom="PWMLED0">
-      <name>PWMLED25</name>
+    <peripheral derivedFrom="PWM0">
+      <name>PWM23</name>
       <baseAddress>0x40121320</baseAddress>
     </peripheral>
-    <peripheral derivedFrom="PWMLED0">
-      <name>PWMLED26</name>
+    <peripheral derivedFrom="PWM0">
+      <name>PWM24</name>
       <baseAddress>0x40121340</baseAddress>
     </peripheral>
-    <peripheral derivedFrom="PWMLED0">
-      <name>PWMLED27</name>
+    <peripheral derivedFrom="PWM0">
+      <name>PWM25</name>
       <baseAddress>0x40121360</baseAddress>
     </peripheral>
-    <peripheral derivedFrom="PWMLED0">
-      <name>PWMLED28</name>
+    <peripheral derivedFrom="PWM0">
+      <name>PWM26</name>
       <baseAddress>0x40121380</baseAddress>
     </peripheral>
-    <peripheral derivedFrom="PWMLED0">
-      <name>PWMLED29</name>
+    <peripheral derivedFrom="PWM0">
+      <name>PWM27</name>
       <baseAddress>0x401213A0</baseAddress>
     </peripheral>
-    <peripheral derivedFrom="PWMLED0">
-      <name>PWMLED30</name>
+    <peripheral derivedFrom="PWM0">
+      <name>PWM28</name>
       <baseAddress>0x401213C0</baseAddress>
     </peripheral>
-    <peripheral derivedFrom="PWMLED0">
-      <name>PWMLED31</name>
+    <peripheral derivedFrom="PWM0">
+      <name>PWM29</name>
       <baseAddress>0x401213E0</baseAddress>
     </peripheral>
     <!-- TMR0 -->
