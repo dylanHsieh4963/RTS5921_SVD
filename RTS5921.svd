@@ -17059,8 +17059,8 @@
           <addressOffset>0x10</addressOffset>
           <fields>
             <field>
-              <name>LEDPWM31_IP</name>
-              <description>LEDPWM31 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM29_IP</name>
+              <description>PWM29_APB_SRC clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[31:31]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -17077,8 +17077,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM30_IP</name>
-              <description>LEDPWM30 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM28_IP</name>
+              <description>PWM28 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[30:30]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -17095,8 +17095,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM29_IP</name>
-              <description>LEDPWM29 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM27_IP</name>
+              <description>PWM27 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[29:29]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -17113,8 +17113,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM28_IP</name>
-              <description>LEDPWM28 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM26_IP</name>
+              <description>PWM26 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[28:28]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -17131,8 +17131,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM27_IP</name>
-              <description>LEDPWM27 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM25_IP</name>
+              <description>PWM25 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[27:27]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -17149,8 +17149,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM26_IP</name>
-              <description>LEDPWM26 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM24_IP</name>
+              <description>PWM24 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[26:26]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -17167,8 +17167,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM25_IP</name>
-              <description>LEDPWM25 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM23_IP</name>
+              <description>PWM23 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[25:25]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -17185,8 +17185,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM24_IP</name>
-              <description>LEDPWM24 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM22_IP</name>
+              <description>PWM22 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[24:24]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -17203,8 +17203,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM23_IP</name>
-              <description>LEDPWM23 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM21_IP</name>
+              <description>PWM21 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[23:23]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -17221,8 +17221,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM22_IP</name>
-              <description>LEDPWM22 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM20_IP</name>
+              <description>PWM20 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[22:22]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -17239,8 +17239,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM21_IP</name>
-              <description>LEDPWM21 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM19_IP</name>
+              <description>PWM19 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[21:21]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -17257,8 +17257,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM20_IP</name>
-              <description>LEDPWM20 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM18_IP</name>
+              <description>PWM18 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[20:20]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -17275,8 +17275,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM19_IP</name>
-              <description>LEDPWM19 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM17_IP</name>
+              <description>PWM17 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[19:19]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -17293,8 +17293,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM18_IP</name>
-              <description>LEDPWM18 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM16_IP</name>
+              <description>PWM16 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[18:18]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -17311,8 +17311,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM17_IP</name>
-              <description>LEDPWM17 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM15_IP</name>
+              <description>PWM15 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[17:17]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -17329,8 +17329,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM16_IP</name>
-              <description>LEDPWM16 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM14_IP</name>
+              <description>PWM14 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[16:16]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -17347,8 +17347,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM15_IP</name>
-              <description>LEDPWM15 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM13_IP</name>
+              <description>PWM13 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[15:15]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -17365,8 +17365,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM14_IP</name>
-              <description>LEDPWM14 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM12_IP</name>
+              <description>PWM12 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[14:14]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -17383,8 +17383,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM13_IP</name>
-              <description>LEDPWM13 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM11_IP</name>
+              <description>PWM11 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[13:13]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -17401,8 +17401,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM12_IP</name>
-              <description>LEDPWM12 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM10_IP</name>
+              <description>PWM10 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[12:12]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -17419,8 +17419,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM11_IP</name>
-              <description>LEDPWM11 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM9_IP</name>
+              <description>PWM9 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[11:11]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -17437,8 +17437,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM10_IP</name>
-              <description>LEDPWM10 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM8_IP</name>
+              <description>PWM8 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[10:10]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -17455,8 +17455,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM9_IP</name>
-              <description>LEDPWM9 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM7_IP</name>
+              <description>PWM7 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[9:9]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -17473,8 +17473,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM8_IP</name>
-              <description>LEDPWM8 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM6_IP</name>
+              <description>PWM6 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[8:8]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -17491,8 +17491,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM7_IP</name>
-              <description>LEDPWM7 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM5_IP</name>
+              <description>PWM5 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[7:7]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -17509,8 +17509,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM6_IP</name>
-              <description>LEDPWM6 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM4_IP</name>
+              <description>PWM4 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[6:6]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -17527,8 +17527,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM5_IP</name>
-              <description>LEDPWM5 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM3_IP</name>
+              <description>PWM3 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[5:5]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -17545,8 +17545,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM4_IP</name>
-              <description>LEDPWM4 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM2_IP</name>
+              <description>PWM2 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[4:4]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -17563,8 +17563,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM3_IP</name>
-              <description>LEDPWM3 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM1_IP</name>
+              <description>PWM1 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[3:3]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -17581,8 +17581,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM2_IP</name>
-              <description>LEDPWM2 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM0_IP</name>
+              <description>PWM0 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[2:2]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -17599,8 +17599,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM1_IP</name>
-              <description>LEDPWM1 clock enable: 0=Disable, 1=Enable</description>
+              <name>LED1_IP</name>
+              <description>LED1 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[1:1]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -17617,8 +17617,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM0_IP</name>
-              <description>LEDPWM0 clock enable: 0=Disable, 1=Enable</description>
+              <name>LED0_IP</name>
+              <description>LED0 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[0:0]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -18225,8 +18225,8 @@
           <addressOffset>0x18</addressOffset>
           <fields>
             <field>
-              <name>LEDPWM31_APB</name>
-              <description>LEDPWM31 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM29_APB</name>
+              <description>PWM29 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[31:31]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -18243,8 +18243,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM30_APB</name>
-              <description>LEDPWM30 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM28_APB</name>
+              <description>PWM28 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[30:30]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -18261,8 +18261,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM29_APB</name>
-              <description>LEDPWM29 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM27_APB</name>
+              <description>PWM27 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[29:29]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -18279,8 +18279,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM28_APB</name>
-              <description>LEDPWM28 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM26_APB</name>
+              <description>PWM26 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[28:28]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -18297,8 +18297,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM27_APB</name>
-              <description>LEDPWM27 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM25_APB</name>
+              <description>PWM25 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[27:27]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -18315,8 +18315,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM26_APB</name>
-              <description>LEDPWM26 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM24_APB</name>
+              <description>PWM24 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[26:26]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -18333,8 +18333,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM25_APB</name>
-              <description>LEDPWM25 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM23_APB</name>
+              <description>PWM23 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[25:25]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -18351,8 +18351,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM24_APB</name>
-              <description>LEDPWM24 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM22_APB</name>
+              <description>PWM22 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[24:24]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -18369,8 +18369,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM23_APB</name>
-              <description>LEDPWM23 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM21_APB</name>
+              <description>PWM21 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[23:23]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -18387,8 +18387,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM22_APB</name>
-              <description>LEDPWM22 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM20_APB</name>
+              <description>PWM20 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[22:22]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -18405,8 +18405,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM21_APB</name>
-              <description>LEDPWM21 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM19_APB</name>
+              <description>PWM19 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[21:21]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -18423,8 +18423,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM20_APB</name>
-              <description>LEDPWM20 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM18_APB</name>
+              <description>PWM18 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[20:20]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -18441,8 +18441,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM19_APB</name>
-              <description>LEDPWM19 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM17_APB</name>
+              <description>PWM17 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[19:19]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -18459,8 +18459,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM18_APB</name>
-              <description>LEDPWM18 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM16_APB</name>
+              <description>PWM16 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[18:18]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -18477,8 +18477,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM17_APB</name>
-              <description>LEDPWM17 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM15_APB</name>
+              <description>PWM15 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[17:17]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -18495,8 +18495,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM16_APB</name>
-              <description>LEDPWM16 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM14_APB</name>
+              <description>PWM14 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[16:16]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -18513,8 +18513,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM15_APB</name>
-              <description>LEDPWM15 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM13_APB</name>
+              <description>PWM13 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[15:15]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -18531,8 +18531,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM14_APB</name>
-              <description>LEDPWM14 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM12_APB</name>
+              <description>PWM12 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[14:14]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -18549,8 +18549,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM13_APB</name>
-              <description>LEDPWM13 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM11_APB</name>
+              <description>PWM11 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[13:13]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -18567,8 +18567,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM12_APB</name>
-              <description>LEDPWM12 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM10_APB</name>
+              <description>PWM10 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[12:12]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -18585,8 +18585,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM11_APB</name>
-              <description>LEDPWM11 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM9_APB</name>
+              <description>PWM9 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[11:11]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -18603,8 +18603,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM10_APB</name>
-              <description>LEDPWM10 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM8_APB</name>
+              <description>PWM8 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[10:10]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -18621,8 +18621,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM9_APB</name>
-              <description>LEDPWM9 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM7_APB</name>
+              <description>PWM7 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[9:9]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -18639,8 +18639,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM8_APB</name>
-              <description>LEDPWM8 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM6_APB</name>
+              <description>PWM6 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[8:8]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -18657,8 +18657,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM7_APB</name>
-              <description>LEDPWM7 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM5_APB</name>
+              <description>PWM5 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[7:7]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -18675,8 +18675,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM6_APB</name>
-              <description>LEDPWM6 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM4_APB</name>
+              <description>PWM4 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[6:6]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -18693,8 +18693,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM5_APB</name>
-              <description>LEDPWM5 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM3_APB</name>
+              <description>PWM3 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[5:5]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -18711,8 +18711,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM4_APB</name>
-              <description>LEDPWM4 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM2_APB</name>
+              <description>PWM2 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[4:4]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -18729,8 +18729,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM3_APB</name>
-              <description>LEDPWM3 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM1_APB</name>
+              <description>PWM1 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[3:3]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -18747,8 +18747,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM2_APB</name>
-              <description>LEDPWM2 clock enable: 0=Disable, 1=Enable</description>
+              <name>PWM0_APB</name>
+              <description>PWM0 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[2:2]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -18765,8 +18765,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM1_APB</name>
-              <description>LEDPWM1 clock enable: 0=Disable, 1=Enable</description>
+              <name>LED1_APB</name>
+              <description>LED1 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[1:1]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -18783,8 +18783,8 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LEDPWM0_APB</name>
-              <description>LEDPWM0 clock enable: 0=Disable, 1=Enable</description>
+              <name>LED0_APB</name>
+              <description>LED0 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[0:0]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
