@@ -16505,24 +16505,6 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>STRIP8_IP</name>
-              <description>STRIP8 clock enable: 0=Disable, 1=Enable</description>
-              <bitRange>[8:8]</bitRange>
-              <access>read-write</access>
-              <enumeratedValues>
-                <enumeratedValue>
-                  <name>DISABLE</name>
-                  <value>0</value>
-                  <description>Disable</description>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>ENABLE</name>
-                  <value>1</value>
-                  <description>Enable</description>
-                </enumeratedValue>
-              </enumeratedValues>
-            </field>
-            <field>
               <name>STRIP7_IP</name>
               <description>STRIP7 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[7:7]</bitRange>
@@ -17825,24 +17807,6 @@
               <name>I2C0_APB</name>
               <description>I2C0 clock enable: 0=Disable, 1=Enable</description>
               <bitRange>[21:21]</bitRange>
-              <access>read-write</access>
-              <enumeratedValues>
-                <enumeratedValue>
-                  <name>DISABLE</name>
-                  <value>0</value>
-                  <description>Disable</description>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>ENABLE</name>
-                  <value>1</value>
-                  <description>Enable</description>
-                </enumeratedValue>
-              </enumeratedValues>
-            </field>
-            <field>
-              <name>STRIP8_APB</name>
-              <description>STRIP8 clock enable: 0=Disable, 1=Enable</description>
-              <bitRange>[20:20]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
@@ -20274,47 +20238,6 @@
                     <name>UART_IP_SRC</name>
                     <description>Clock source select for UART</description>
                     <bitRange>[17:16]</bitRange>
-                    <access>read-write</access>
-                    <enumeratedValues>
-                        <enumeratedValue>
-                            <name>PLL60M</name>
-                            <value>0</value>
-                            <description>From PLL60M</description>
-                        </enumeratedValue>
-                        <enumeratedValue>
-                            <name>XTAL24M</name>
-                            <value>1</value>
-                            <description>From XTAL24M</description>
-                        </enumeratedValue>
-                        <enumeratedValue>
-                            <name>RC24M</name>
-                            <value>2</value>
-                            <description>From RC24M</description>
-                        </enumeratedValue>
-                    </enumeratedValues>
-                </field>
-                <field>
-                    <name>STRIP8_APB_SRC</name>
-                    <description>Clock source select for strip IP[8] async bus</description>
-                    <bitRange>[14:14]</bitRange>
-                    <access>read-write</access>
-                    <enumeratedValues>
-                        <enumeratedValue>
-                            <name>60M</name>
-                            <value>0</value>
-                            <description>60M</description>
-                        </enumeratedValue>
-                        <enumeratedValue>
-                            <name>24M</name>
-                            <value>1</value>
-                            <description>24M</description>
-                        </enumeratedValue>
-                    </enumeratedValues>
-                </field>
-                <field>
-                    <name>STRIP8_IP_SRC</name>
-                    <description>Clock source select for strip IP[8]</description>
-                    <bitRange>[13:12]</bitRange>
                     <access>read-write</access>
                     <enumeratedValues>
                         <enumeratedValue>
@@ -29628,16 +29551,6 @@
       </interrupt>
     </peripheral>
 
-    <!-- STRIP8 -->
-    <peripheral derivedFrom="STRIP0">
-      <name>STRIP8</name>
-      <baseAddress>0x40101E00</baseAddress>
-      <interrupt>
-        <name>STRIP8</name>
-        <description>STRIP8 Interrupt</description>
-        <value>39</value>
-      </interrupt>
-    </peripheral>
     <!-- GPIO -->
     <peripheral>
       <!-- Description -->
