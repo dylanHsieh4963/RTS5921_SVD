@@ -3489,6 +3489,1995 @@
       </registers>
     </peripheral>
 
+    <!-- I3C -->
+    <peripheral>
+      <!-- Description -->
+      <name>I3C0</name>
+      <version>1.00</version>
+      <description>USB OTG Controller</description>
+      <groupName>I3C</groupName>
+      <headerStructName>I3C</headerStructName>
+      <baseAddress>0x40003000</baseAddress>
+      <size>32</size>
+      <access>read-write</access>
+
+      <!-- Address Range -->
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+
+      <!-- Interrup -->
+      <interrupt>
+        <name>I3C</name>
+        <description>I3C Interrupt</description>
+        <value>11</value>
+      </interrupt>
+
+      <!-- Registers -->
+      <registers>
+        <!-- CCR -->
+        <register>
+          <name>CCR</name>
+          <description>CONFIGURATION CONTROL REGISTER</description>
+          <addressOffset>0x00</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- INTRDIS -->
+            <field>
+              <name>INTRDIS</name>
+              <description>Interrupt Disable</description>
+              <bitRange>[9:9]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable interrupt</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable interrupt</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- I3CDIS -->
+            <field>
+              <name>I3CDIS</name>
+              <description>I3C Disable</description>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable I3C</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable I3C</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- SCTRL -->
+            <field>
+              <name>SCTRL</name>
+              <description>Secondary Control Mode</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable secondary control mode</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable secondary control mode</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- PCR -->
+            <field>
+              <name>PCR</name>
+              <description>Primary Control</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Not Primary Control</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Primary Control</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- MODE -->
+            <field>
+              <name>MODE</name>
+              <description>Mode Select</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>CONTROLLER</name>
+                  <description>I3C Controller</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>TARGET</name>
+                  <description>I3C Target</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <!-- IPCR -->
+        <register>
+          <name>IPCR</name>
+          <description>IXC PROTOCOL CONTROL REGISTER</description>
+          <addressOffset>0x04</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- JESD -->
+            <field>
+              <name>JESD</name>
+              <description>JESD Spec. Enable</description>
+              <bitRange>[30:30]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable JESD</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable JESD</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- PEC -->
+            <field>
+              <name>PEC</name>
+              <description>PEC CRC Enable</description>
+              <bitRange>[29:29]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable PEC CRC</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable PEC CRC</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- BRST -->
+            <field>
+              <name>BRST</name>
+              <description>Bus Reset Enable</description>
+              <bitRange>[28:28]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable bus reset</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable bus reset</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- BCLR -->
+            <field>
+              <name>BCLR</name>
+              <description>Bus Clear Enable</description>
+              <bitRange>[27:27]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable bus clear</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable bus clear</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- BLEN -->
+            <field>
+              <name>BLEN</name>
+              <description>BL Enable</description>
+              <bitRange>[26:26]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable BL</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable BL</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- PARDIS -->
+            <field>
+              <name>PARDIS</name>
+              <description>Parity Disable</description>
+              <bitRange>[25:25]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable Parity</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable Parity</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- INTEL -->
+            <field>
+              <name>INTEL</name>
+              <description>INTEL Spec. Enable</description>
+              <bitRange>[24:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable Intel spec.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable Intel spec.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- INTELDDR -->
+            <field>
+              <name>INTELDDR</name>
+              <description>INTEL Spec. Extend DDR Enable</description>
+              <bitRange>[23:23]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable Intel Spec. extend DDR</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable Intel Spec. extend DDR</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- INTELAS -->
+            <field>
+              <name>INTELAS</name>
+              <description>INTEL Spec. Extend AS Enable</description>
+              <bitRange>[22:22]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable Intel Spec. extend AS</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable Intel Spec. extend AS</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- INTELCCC -->
+            <field>
+              <name>INTELCCC</name>
+              <description>INTEL Spec. Extend CCC Enable</description>
+              <bitRange>[21:21]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable Intel Spec. extend CCC</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable Intel Spec. extend CCC</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- INTELGA -->
+            <field>
+              <name>INTELGA</name>
+              <description>INTEL Spec. Extend GA Enable</description>
+              <bitRange>[20:20]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable Intel Spec. extend GA</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable Intel Spec. extend GA</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- RTRYCNT -->
+            <field>
+              <name>RTRYCNT</name>
+              <description>Read Retry Count</description>
+              <bitRange>[17:16]</bitRange>
+            </field>
+            <!-- TEDIS -->
+            <field>
+              <name>TEDIS</name>
+              <description>TAGT Error Disable</description>
+              <bitRange>[7:7]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable target mode error</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable target mode error</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- CEDIS -->
+            <field>
+              <name>CEDIS</name>
+              <description>CTRL Error Disable</description>
+              <bitRange>[6:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable control mode error</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable control mode error</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- NAKDIS -->
+            <field>
+              <name>NAKDIS</name>
+              <description>RX NACK Disable</description>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable RX NACK</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable RX NACK</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- HDERPP -->
+            <field>
+              <name>HDERPP</name>
+              <description>Header Address turn to PP Timing Enable</description>
+              <bitRange>[4:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISBLE</name>
+                  <description>Disable header addr. turn to PP timing</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable header addr. turn to PP timing</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- FTOD -->
+            <field>
+              <name>FTOD</name>
+              <description>Force Timing = OD Enable</description>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISBLE</name>
+                  <description>Disable force timing</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable force timing</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- HDEXDIS -->
+            <field>
+              <name>HDEXDIS</name>
+              <description>HDR Exit Pattern Disable</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ENBLE</name>
+                  <description>HDR exit pattern enable</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>HDR exit pattern disable</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- I2CEN -->
+            <field>
+              <name>I2CEN</name>
+              <description>I2C Bus Enable</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISBLE</name>
+                  <description>I2C bus disable</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>I2C bus enable</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- CSTALL -->
+            <field>
+              <name>CSTALL</name>
+              <description>SCL Stall Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <!-- IOCR -->
+        <register>
+          <name>IOCR</name>
+          <description>I/O CONFIGURATION CONTROL REGISTER</description>
+          <addressOffset>0x08</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- DLPBK -->
+            <field>
+              <name>DLPBK</name>
+              <description>SDA LPBK Enable</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISBLE</name>
+                  <description>SDA LPBK disable</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>SDA LPBK enable</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- CLPBK -->
+            <field>
+              <name>CLPBK</name>
+              <description>SCL LPBK Enable</description>
+              <bitRange>[30:30]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISBLE</name>
+                  <description>SCL LPBK disable</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>SCL LPBK enable</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- SECERR -->
+            <field>
+              <name>SECERR</name>
+              <description>Indicated for I3C SEC HP Flow Occured an Error</description>
+              <bitRange>[29:29]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NONE</name>
+                  <description>Normal</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ERROR</name>
+                  <description>I3C SEC HP flow Error</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- SECING -->
+            <field>
+              <name>SECING</name>
+              <description>Indicated for I3C SEC HP Flow Running</description>
+              <bitRange>[28:28]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NONE</name>
+                  <description>Idle</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RUNNING</name>
+                  <description>I3C SEC HP flow running</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- TOIDLE -->
+            <field>
+              <name>BUSYTO</name>
+              <description>Turn to Idle when SCL/SDA hold for tIDLE</description>
+              <bitRange>[27:27]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NONE</name>
+                  <description>None</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>IDLE</name>
+                  <description>Turn to idle</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- SDADLY -->
+            <field>
+              <name>SDADLY</name>
+              <description>SDA Deslay Count</description>
+              <bitRange>[15:12]</bitRange>
+            </field>
+            <!-- SCLOD -->
+            <field>
+              <name>SCLOD</name>
+              <description>Force SCL in Open-Drain Status</description>
+              <bitRange>[3:3]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <!-- CSTR -->
+        <register>
+          <name>CSTR</name>
+          <description>CONTROL STRUCTURE REGISTER</description>
+          <addressOffset>0x10</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- FLUSH -->
+            <field>
+              <name>FLUSH</name>
+              <description>Flush BYFM/TXDA/RXDA and Recovery IXC Status</description>
+              <bitRange>[31:31]</bitRange>
+            </field>
+            <!-- BFLUSH -->
+            <field>
+              <name>BFLUSH</name>
+              <description>Flush BYFM FIFO</description>
+              <bitRange>[30:30]</bitRange>
+            </field>
+            <!-- TFLUSH -->
+            <field>
+              <name>TFLUSH</name>
+              <description>Flush TXDA FIFO</description>
+              <bitRange>[29:29]</bitRange>
+            </field>
+            <!-- RFLUSH -->
+            <field>
+              <name>RFLUSH</name>
+              <description>Flush RXDA/RCMD FIFO</description>
+              <bitRange>[28:28]</bitRange>
+            </field>
+            <!-- ASTART -->
+            <field>
+              <name>ASTART</name>
+              <description>Control structure async mode 0 flow start</description>
+              <bitRange>[2:2]</bitRange>
+            </field>
+            <!-- CDPIN -->
+            <field>
+              <name>CDPIN</name>
+              <description>CD Pin start</description>
+              <bitRange>[1:1]</bitRange>
+            </field>
+            <!-- START -->
+            <field>
+              <name>START</name>
+              <description>Control structure flow start</description>
+              <bitRange>[0:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <!-- CBDR -->
+        <register>
+          <name>CBDR</name>
+          <description>SCL BAUD RATE REGISTER</description>
+          <addressOffset>0x14</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- BDRFST -->
+            <field>
+              <name>BDRFST</name>
+              <description>Baud rate for the first header address</description>
+              <bitRange>[31:24]</bitRange>
+            </field>
+            <!-- BDRFPP -->
+            <field>
+              <name>BDRPP</name>
+              <description>Baud rate for PP</description>
+              <bitRange>[23:16]</bitRange>
+            </field>
+            <!-- BDROD -->
+            <field>
+              <name>BDROD</name>
+              <description>Baud rate for OD</description>
+              <bitRange>[15:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <!-- CSR -->
+        <register>
+          <name>CSR</name>
+          <description>CURRENT STATUS REGISTER</description>
+          <addressOffset>0x18</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- DDR -->
+            <field>
+              <name>DDR</name>
+              <description>HDR-DDR MODE</description>
+              <bitRange>[16:16]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- CCC -->
+            <field>
+              <name>CCC</name>
+              <description>RECEIVE A CCC CMD IN TARGET MODE</description>
+              <bitRange>[15:15]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- BCF -->
+            <field>
+              <name>BCF</name>
+              <description>BYFM CMD FIFO FULL</description>
+              <bitRange>[14:14]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- BCE -->
+            <field>
+              <name>BCE</name>
+              <description>BYFM CMD FIFO EMPTY</description>
+              <bitRange>[13:13]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- RXNAK -->
+            <field>
+              <name>RXNAK</name>
+              <description>RECIEVED NACK</description>
+              <bitRange>[12:12]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- TXUN -->
+            <field>
+              <name>TXUN</name>
+              <description>TXDA UBDERFLOW</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- TXF -->
+            <field>
+              <name>TXF</name>
+              <description>TXDA FULL</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- TXE -->
+            <field>
+              <name>TXE</name>
+              <description>TXDA EMPTY</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- RXDP -->
+            <field>
+              <name>RXDP</name>
+              <description>RX DATA DROP </description>
+              <bitRange>[6:6]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- RXNE -->
+            <field>
+              <name>RXNE</name>
+              <description>RX DATA NOT EMPTY </description>
+              <bitRange>[5:5]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- RXF -->
+            <field>
+              <name>RXF</name>
+              <description>RX DATA FULL </description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- AMODE -->
+            <field>
+              <name>AMODE</name>
+              <description>IN ASYNC MODE 0 </description>
+              <bitRange>[3:3]</bitRange>
+            </field>
+            <!-- ABUSY -->
+            <field>
+              <name>ABUSY</name>
+              <description>ASYNC MODE 0 BUSY </description>
+              <bitRange>[2:2]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- BBUSYN -->
+            <field>
+              <name>BBUSYN</name>
+              <description>BUS IDLE </description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- BUSY -->
+            <field>
+              <name>BUSY</name>
+              <description>BUSY </description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <!-- ISR -->
+        <register>
+          <name>ISR</name>
+          <description>INTERRUPT STATUS REGISTER</description>
+          <addressOffset>0x1C</addressOffset>
+          <size>32</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- TE5IS -->
+            <field>
+              <name>TE5IS</name>
+              <description>SDR target error type 5</description>
+              <bitRange>[29:29]</bitRange>
+            </field>
+            <!-- TE4IS -->
+            <field>
+              <name>TE4IS</name>
+              <description>SDR Target Error Type 4</description>
+              <bitRange>[28:28]</bitRange>
+            </field>
+            <!-- TE3IS -->
+            <field>
+              <name>TE3IS</name>
+              <description>SDR Target Error Type 3</description>
+              <bitRange>[27:27]</bitRange>
+            </field>
+            <!-- TE2IS -->
+            <field>
+              <name>TE2IS</name>
+              <description>SDR Target Error Type 2</description>
+              <bitRange>[26:26]</bitRange>
+            </field>
+            <!-- TE1IS -->
+            <field>
+              <name>TE1IS</name>
+              <description>SDR Target Error Type 1</description>
+              <bitRange>[25:25]</bitRange>
+            </field>
+            <!-- TE0IS -->
+            <field>
+              <name>TE0IS</name>
+              <description>SDR Target Error Type 0</description>
+              <bitRange>[24:24]</bitRange>
+            </field>
+            <!-- CE3IS -->
+            <field>
+              <name>CE3IS</name>
+              <description>SDR Controller Error Type 3</description>
+              <bitRange>[23:23]</bitRange>
+            </field>
+            <!-- CE2IS -->
+            <field>
+              <name>CE2IS</name>
+              <description>SDR Controller Error Type 2</description>
+              <bitRange>[22:22]</bitRange>
+            </field>
+            <!-- CE0IS -->
+            <field>
+              <name>CE0IS</name>
+              <description>SDR Controller Error Type 0</description>
+              <bitRange>[20:20]</bitRange>
+            </field>
+            <!-- DDRE -->
+            <field>
+              <name>DDRE</name>
+              <description>DDR Preamble / Parity / CRC Error</description>
+              <bitRange>[19:19]</bitRange>
+            </field>
+            <!-- STALLTO -->
+            <field>
+              <name>STALLTO</name>
+              <description>SCL Stall Timeout in CTRL Mode / BUS Buy Timeout in TAGT Mode</description>
+              <bitRange>[18:18]</bitRange>
+            </field>
+            <!-- BCLR -->
+            <field>
+              <name>BCLR</name>
+              <description>Bus Clear</description>
+              <bitRange>[17:17]</bitRange>
+            </field>
+            <!-- BRST -->
+            <field>
+              <name>BRST</name>
+              <description>Bus Reset</description>
+              <bitRange>[16:16]</bitRange>
+            </field>
+            <!-- DAF -->
+            <field>
+              <name>DAF</name>
+              <description>SDA Arbitration Fail</description>
+              <bitRange>[15:15]</bitRange>
+            </field>
+            <!-- RDNG -->
+            <field>
+              <name>RDNG</name>
+              <description>Read RXDA word unaligned</description>
+              <bitRange>[14:14]</bitRange>
+            </field>
+            <!-- PECE -->
+            <field>
+              <name>PECE</name>
+              <description>PEC CRC Error</description>
+              <bitRange>[13:13]</bitRange>
+            </field>
+            <!-- RETM -->
+            <field>
+              <name>RETM</name>
+              <description>Read Early Terminate Occur</description>
+              <bitRange>[12:12]</bitRange>
+            </field>
+            <!-- WETM -->
+            <field>
+              <name>WETM</name>
+              <description>Write Early Terminate Occur</description>
+              <bitRange>[11:11]</bitRange>
+            </field>
+            <!-- RXSEC -->
+            <field>
+              <name>RXSEC</name>
+              <description>Receieve Role REQ / Receieve CCC GETACCCR</description>
+              <bitRange>[10:10]</bitRange>
+            </field>
+            <!-- RXHJI -->
+            <field>
+              <name>RXHJI</name>
+              <description>Receieve Hot Join REQ</description>
+              <bitRange>[9:9]</bitRange>
+            </field>
+            <!-- RXIBI -->
+            <field>
+              <name>RXIBI</name>
+              <description>Receieve IBI REQ</description>
+              <bitRange>[8:8]</bitRange>
+            </field>
+            <!-- RXNAK -->
+            <field>
+              <name>RXNAK</name>
+              <description>Receieve NACK</description>
+              <bitRange>[7:7]</bitRange>
+            </field>
+            <!-- PARE -->
+            <field>
+              <name>PARE</name>
+              <description>PAR-bit Error</description>
+              <bitRange>[6:6]</bitRange>
+            </field>
+            <!-- BYFME -->
+            <field>
+              <name>BYFME</name>
+              <description>BYFME Error</description>
+              <bitRange>[5:5]</bitRange>
+            </field>
+            <!-- ECOM -->
+            <field>
+              <name>ECOM</name>
+              <description>Early Complete Transaction</description>
+              <bitRange>[4:4]</bitRange>
+            </field>
+            <!-- RXDP -->
+            <field>
+              <name>RXDP</name>
+              <description>RX Data Drop Occur</description>
+              <bitRange>[3:3]</bitRange>
+            </field>
+            <!-- TXF -->
+            <field>
+              <name>TXF</name>
+              <description>TXDA Full</description>
+              <bitRange>[2:2]</bitRange>
+            </field>
+            <!-- RXNE -->
+            <field>
+              <name>RXNE</name>
+              <description>RXDA Not Empty</description>
+              <bitRange>[1:1]</bitRange>
+            </field>
+            <!-- DONE -->
+            <field>
+              <name>DONE</name>
+              <description>I3C/I2C Transation is Done</description>
+              <bitRange>[0:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <!-- RISR -->
+        <register derivedFrom="ISR">
+          <name>RISR</name>
+          <description>INTERRUPT RAW STATUS REGISTER</description>
+          <addressOffset>0x20</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- IER -->
+        <register derivedFrom="RISR">
+          <name>IER</name>
+          <description>INTERRUPT ENABLE CONTROL REGISTER</description>
+          <addressOffset>0x24</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- ICR -->
+        <register derivedFrom="RISR">
+          <name>ICR</name>
+          <description>INTERRUPT CLEAR REGISTER</description>
+          <addressOffset>0x28</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- TRINF -->
+        <register>
+          <name>TRINF</name>
+          <description>TRANSACTION INFORMATION REGISTER</description>
+          <addressOffset>0x2C</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- RXINF -->
+            <field>
+              <name>RXINF</name>
+              <description>CCC_CMD for TAGT / IBI_MDB for CTRL</description>
+              <bitRange>[31:24]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- CCCDEF -->
+            <field>
+              <name>CCCDEF</name>
+              <description>CCC.DEFINING for TAGT</description>
+              <bitRange>[23:16]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- RXCCC -->
+            <field>
+              <name>RXCCC</name>
+              <description>REVEIVE A CCC CMD for TAGT</description>
+              <bitRange>[15:15]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- TXNSNUM -->
+            <field>
+              <name>TXNSNUM</name>
+              <description>Transacation for ROLE CTRL</description>
+              <bitRange>[13:8]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- RDA -->
+            <field>
+              <name>RDA</name>
+              <description>HDR-DDR REQ for TAGT / IBI or HJ or SEC REQ for CTRL</description>
+              <bitRange>[7:7]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- DA -->
+            <field>
+              <name>DA</name>
+              <description>HDR-DDR CMD Code / IBI or HJ or SEC REQ's DA for CTRL</description>
+              <bitRange>[6:0]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <!-- TBCR -->
+        <register>
+          <name>TBCR</name>
+          <description>BUS TIMING REGISTER</description>
+          <addressOffset>0x30</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- TIDLE -->
+            <field>
+              <name>TIDLE</name>
+              <description>Bus Idle Timing (tIDLE) Count</description>
+              <bitRange>[31:12]</bitRange>
+              <access>read-write</access>
+            </field>
+            <!-- TBUF -->
+            <field>
+              <name>TBUF</name>
+              <description>Bus Free Timing (tBUF) Count</description>
+              <bitRange>[11:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <!-- TINIT -->
+        <register>
+          <name>TINIT</name>
+          <description>INITIAL TIMING REGISTER</description>
+          <addressOffset>0x34</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- THIGHOD -->
+            <field>
+              <name>THIGHOD</name>
+              <description>SCL High Count for OD Timing</description>
+              <bitRange>[31:20]</bitRange>
+              <access>read-write</access>
+            </field>
+            <!-- TAVAL -->
+            <field>
+              <name>TAVAL</name>
+              <description>Bus Available Timing (tAVAL) Count</description>
+              <bitRange>[19:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <!-- TSSR0 -->
+        <register>
+          <name>TSSR0</name>
+          <description>TIMING START REGISTER 0</description>
+          <addressOffset>0x38</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- TCAS -->
+            <field>
+              <name>TCAS</name>
+              <description>tCAS Timing Count</description>
+              <bitRange>[31:24]</bitRange>
+              <access>read-write</access>
+            </field>
+            <!-- TDS -->
+            <field>
+              <name>TDS</name>
+              <description>tDS Timing Count</description>
+              <bitRange>[23:22]</bitRange>
+              <access>read-write</access>
+            </field>
+            <!-- THDSTA -->
+            <field>
+              <name>THDSTA</name>
+              <description>tHD_STA Timing Count</description>
+              <bitRange>[21:11]</bitRange>
+              <access>read-write</access>
+            </field>
+            <!-- TSUSTA -->
+            <field>
+              <name>TSUSTA</name>
+              <description>tSU_STA Timing Count</description>
+              <bitRange>[10:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <!-- TSSR1 -->
+        <register>
+          <name>TSSR1</name>
+          <description>TIMING STOP REGISTER 1</description>
+          <addressOffset>0x3C</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- TSUSTO -->
+            <field>
+              <name>TSUSTO</name>
+              <description>tSU_STO Timing Count</description>
+              <bitRange>[11:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <!-- TDLYR0 -->
+        <register>
+          <name>TDLYR0</name>
+          <description>TIMING DELAY REGISTER 0</description>
+          <addressOffset>0x50</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- RDGE -->
+            <field>
+              <name>RDGE</name>
+              <description>SDR RXDA Capture Edge when cr_9dge Set</description>
+              <bitRange>[31:31]</bitRange>
+              <access>read-write</access>
+            </field>
+            <!-- NINEDGE -->
+            <field>
+              <name>NINEDGE</name>
+              <description>SDR RXDA Capture Edge According to CR_RDGE</description>
+              <bitRange>[30:30]</bitRange>
+              <access>read-write</access>
+            </field>
+            <!-- ODLY -->
+            <field>
+              <name>ODLY</name>
+              <description>SDR Receieve Delay in OD mode</description>
+              <bitRange>[29:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <!-- PDLY -->
+            <field>
+              <name>PDLY</name>
+              <description>SDR Receieve Delay in PP mode</description>
+              <bitRange>[15:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <!-- CDLY -->
+            <field>
+              <name>CDLY</name>
+              <description>SCL Receieve Delay in PP mode</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <!-- TDLYR1 -->
+        <register>
+          <name>TDLYR1</name>
+          <description>TIMING DELAY REGISTER 1</description>
+          <addressOffset>0x54</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- RHDY -->
+            <field>
+              <name>RHDY</name>
+              <description>SDR RXDA Capture High Edge Delay Enable</description>
+              <bitRange>[31:31]</bitRange>
+              <access>read-write</access>
+            </field>
+            <!-- ADLY -->
+            <field>
+              <name>ADLY</name>
+              <description>SDR RX Delay for 9th Header/Data phase in OD mode</description>
+              <bitRange>[29:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <!-- DDRRDGE -->
+            <field>
+              <name>DDRRDGE</name>
+              <description>Capture Point in DDR mode</description>
+              <bitRange>[15:15]</bitRange>
+              <access>read-write</access>
+            </field>
+            <!-- DDRPDLY -->
+            <field>
+              <name>DDRPDLY</name>
+              <description>SDR Receieve Delay in DDR mode</description>
+              <bitRange>[14:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <!-- PREDLY -->
+            <field>
+              <name>PREDLY</name>
+              <description>SCL Low Delay Time before Preamble Phase in DDR Mode</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <!-- TRST -->
+        <register>
+          <name>TRST</name>
+          <description>TIMING BUS RESET REGISTER</description>
+          <addressOffset>0x58</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- BRST -->
+            <field>
+              <name>BRST</name>
+              <description>BUS Reset Timing</description>
+              <bitRange>[19:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <!-- TXFL -->
+        <register>
+          <name>TXFL</name>
+          <description>TXDA FIFO Level</description>
+          <addressOffset>0x70</addressOffset>
+          <size>32</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- RXFL -->
+        <register>
+          <name>RXFL</name>
+          <description>RXDA FIFO Level</description>
+          <addressOffset>0x74</addressOffset>
+          <size>32</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- EC -->
+        <register>
+          <name>EC</name>
+          <description>I3C TARGET EVENT BYTE REGISTER</description>
+          <addressOffset>0x80</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- IPLS -->
+            <field>
+              <name>IPLS</name>
+              <description>IBI PAYLOAD SIZE</description>
+              <bitRange>[31:24]</bitRange>
+              <access>read-write</access>
+            </field>
+            <!-- MPID -->
+            <field>
+              <name>MPID</name>
+              <description>I3C ID From CR_PIDH ADN CR_PIDL</description>
+              <bitRange>[23:23]</bitRange>
+              <access>read-write</access>
+            </field>
+            <!-- HJ -->
+            <field>
+              <name>HJ</name>
+              <description>HOT JOIN </description>
+              <bitRange>[3:3]</bitRange>
+              <access>read-write</access>
+            </field>
+            <!-- CR -->
+            <field>
+              <name>CR</name>
+              <description>CONTROL REGISTER BIT</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-write</access>
+            </field>
+            <!-- INT -->
+            <field>
+              <name>INT</name>
+              <description>INTERRUPT BIT</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <!-- ACTIVITY -->
+        <register>
+          <name>ACTIVITY</name>
+          <description>ACTIVITY STATE REGISTER</description>
+          <addressOffset>0x84</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- AS -->
+            <field>
+              <name>AS</name>
+              <description>IBI PAYLOAD SIZE</description>
+              <bitRange>[31:24]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>AS0</name>
+                  <description>1 us</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>AS1</name>
+                  <description>100 us</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>AS2</name>
+                  <description>2 ms</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>AS3</name>
+                  <description>50 ms</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <!-- MXL -->
+        <register>
+          <name>MXL</name>
+          <description>MAX R/W LENGTH REGISTER</description>
+          <addressOffset>0x88</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- MRL -->
+            <field>
+              <name>MRL</name>
+              <description>Max Read Length for SETMRL/GETMRL</description>
+              <bitRange>[31:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <!-- MWL -->
+            <field>
+              <name>MWL</name>
+              <description>Max WRITE Length for SETMWL/GETMWL</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <!-- PIDL -->
+        <register>
+          <name>PIDL</name>
+          <description>PIDL REGISTER</description>
+          <addressOffset>0x8C</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- PIDI -->
+            <field>
+              <name>PIDI</name>
+              <description>I3C.PID[15:0]</description>
+              <bitRange>[31:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <!-- BCR -->
+            <field>
+              <name>BCR</name>
+              <description>I3C.BCR</description>
+              <bitRange>[15:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <!-- DCR -->
+            <field>
+              <name>DCR</name>
+              <description>I3C.DCR</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <!-- PIDH -->
+        <register>
+          <name>PIDH</name>
+          <description>PIDH REGISTER</description>
+          <addressOffset>0x90</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- DSA -->
+        <register>
+          <name>DSA</name>
+          <description>DYNAMIC/STATIC ADDRESS REGISTER</description>
+          <addressOffset>0x94</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- DAADONE -->
+            <field>
+              <name>DAADONE</name>
+              <description>I3C Dynamic Address Assign Flow is Done</description>
+              <bitRange>[31:31]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- DAAING -->
+            <field>
+              <name>DAAING</name>
+              <description>I3C Dynamic Address Assign Flow is Running</description>
+              <bitRange>[30:30]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- STCADDR -->
+            <field>
+              <name>STCADDR</name>
+              <description>Static Address</description>
+              <bitRange>[17:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <!-- DA1RDIS -->
+            <field>
+              <name>DA1RDIS</name>
+              <description>SETDASA Format 2</description>
+              <bitRange>[7:7]</bitRange>
+              <access>read-write</access>
+            </field>
+            <!-- DYNADDR -->
+            <field>
+              <name>DYNADDR</name>
+              <description>DYNAMIC ADDRESS</description>
+              <bitRange>[6:0]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <!-- CCCST -->
+        <register>
+          <name>CCCST</name>
+          <description>DEVICE STATUS (GETSTATUS) REGISTER</description>
+          <addressOffset>0x98</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- STATUS -->
+            <field>
+              <name>STATUS</name>
+              <description>CCC: GETSTATUS</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <!-- MXDS -->
+        <register>
+          <name>MXDS</name>
+          <description>MAX DATA SPEED REGISTER</description>
+          <addressOffset>0x9C</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- MXW -->
+            <field>
+              <name>MXW</name>
+              <description>Transaction Value by CCC: GETMXDS</description>
+              <bitRange>[15:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <!-- MXR -->
+            <field>
+              <name>MXR</name>
+              <description>Reply Value by CCC: GETMXDSS</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <!-- BUSC -->
+        <register>
+          <name>BUSC</name>
+          <description>BUS CONTEXT REGISTER</description>
+          <addressOffset>0xA0</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- HID -->
+            <field>
+              <name>HID</name>
+              <description>CCC.SETHID</description>
+              <bitRange>[31:24]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- BUSCON -->
+            <field>
+              <name>BUSCON</name>
+              <description>Bus Context</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <!-- GPA -->
+        <register>
+          <name>GPA</name>
+          <description>GROUP ADDRESS REGISTER</description>
+          <addressOffset>0xA4</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- GPA2A -->
+            <field>
+              <name>GPA2A</name>
+              <description>Group Address 2 Assigned</description>
+              <bitRange>[23:23]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- GPA2 -->
+            <field>
+              <name>GPA2</name>
+              <description>Group Address 2 for TAGT Mode</description>
+              <bitRange>[22:16]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- GPA1A -->
+            <field>
+              <name>GPA1A</name>
+              <description>Group Address 1 Assigned</description>
+              <bitRange>[15:15]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- GPA1 -->
+            <field>
+              <name>GPA1</name>
+              <description>Group Address 1 for TAGT Mode</description>
+              <bitRange>[14:8]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- GPA0A -->
+            <field>
+              <name>GPA0A</name>
+              <description>Group Address 0 Assigned</description>
+              <bitRange>[7:7]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- GPA0 -->
+            <field>
+              <name>GPA0</name>
+              <description>Group Address 0 for TAGT Mode</description>
+              <bitRange>[6:0]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <!-- CASYN -->
+        <register>
+          <name>CASYN</name>
+          <description>CONTROLLER ASYN TIMING REGISTER</description>
+          <addressOffset>0xA8</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- ASYNFAIL -->
+            <field>
+              <name>ASYNFAIL</name>
+              <description>C_REF/C2 Counter Overflow</description>
+              <bitRange>[31:31]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- INTRASYN -->
+            <field>
+              <name>INTRASYN</name>
+              <description>ASYN IBI Finished</description>
+              <bitRange>[30:30]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- CC2 -->
+            <field>
+              <name>CC2</name>
+              <description>First SCL Positive Edge after IBI_ACK to First SCL Positive Edge after
+                T-Bit of IBI's MDB</description>
+              <bitRange>[23:16]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- CREF -->
+            <field>
+              <name>CREF</name>
+              <description>IBI to First SCL Positive after IBI_ACK</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <!-- TASYN -->
+        <register>
+          <name>TASYN</name>
+          <description>TARGET ASYN TIMING REGISTER</description>
+          <addressOffset>0xAC</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- TC2 -->
+            <field>
+              <name>TC2</name>
+              <description>First SCL Positive Edge after IBI_ACK to First SCL Positive Edge after
+                T-Bit of IBI's MDB</description>
+              <bitRange>[23:16]</bitRange>
+              <access>read-only</access>
+            </field>
+            <!-- TC1 -->
+            <field>
+              <name>TC1</name>
+              <description>IBI to First SCL Positive after IBI_ACK</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <!-- DCTRL -->
+        <register>
+          <name>DCTRL</name>
+          <description>DEVCTRL REGISTER</description>
+          <addressOffset>0xB0</addressOffset>
+          <size>32</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- DCAP -->
+        <register>
+          <name>DCAP</name>
+          <description>DEVCAP REGISTER</description>
+          <addressOffset>0xB4</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- DEVCAP -->
+            <field>
+              <name>DEVCAP</name>
+              <description>Data Payload for CCC.DEVCAP</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <!-- XTIME -->
+        <register>
+          <name>XTIME</name>
+          <description>EXCAHNGE TIMING SUPPORT INFORMATION REGISTER</description>
+          <addressOffset>0xB8</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- XTIME3 -->
+            <field>
+              <name>XTIME3</name>
+              <description>Data Byte (Supported Modes) for CCC.GETXTIME</description>
+              <bitRange>[31:24]</bitRange>
+              <access>read-write</access>
+            </field>
+            <!-- XTIME2 -->
+            <field>
+              <name>XTIME2</name>
+              <description>Data Byte (State) for CCC.GETXTIME</description>
+              <bitRange>[23:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <!-- XTIME1 -->
+            <field>
+              <name>XTIME1</name>
+              <description>Data Byte (Frequency) for CCC.GETXTIME</description>
+              <bitRange>[15:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <!-- XTIME0 -->
+            <field>
+              <name>XTIME0</name>
+              <description>Data Byte (Inaccuracy) for CCC.GETXTIME</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <!-- ENDXFER -->
+        <register>
+          <name>ENDXFER</name>
+          <description>ENDXFER EARLY TERMINATION PARAMETERS REGISTER</description>
+          <addressOffset>0xBC</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- ETMCRC -->
+            <field>
+              <name>ETMCRC</name>
+              <description>Data Byte (Supported Modes) for CCC.GETXTIME</description>
+              <bitRange>[7:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOCRC</name>
+                  <description>No CRC follows early termination request</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CRC</name>
+                  <description>CRC follows early termination request</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- WRETM -->
+            <field>
+              <name>WRETM</name>
+              <description>Enable HDR Write Early Termination Request</description>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable HDR Write Early Termination Request</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable HDR Write Early Termination Request</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- WRNACK -->
+            <field>
+              <name>WRNACK</name>
+              <description>Enable ACK-NACK Capability for Write Command</description>
+              <bitRange>[4:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable ACK-NACK Capability for Write Command</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable ACK-NACK Capability for Write Command</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <!-- MXLMIN -->
+        <register>
+          <name>MXLMIN</name>
+          <description>MRL/MWL DEFINED MINIMUM VALUE REGISTER</description>
+          <addressOffset>0xC0</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- MRLMIN -->
+            <field>
+              <name>MRLMIN</name>
+              <description>MRL Defined Minimum Value</description>
+              <bitRange>[31:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <!-- MWLMIN -->
+            <field>
+              <name>MWLMIN</name>
+              <description>MWL Defined Minimum Value</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <!-- MXDSRT -->
+        <register>
+          <name>MXDSRT</name>
+          <description>MAX DATA READTURN REGISTER</description>
+          <addressOffset>0xC4</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <!-- MXDSRTEN -->
+            <field>
+              <name>MXDSRTEN</name>
+              <description>Max Data Read turn Enable</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>No MAX read turn bytes</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>IP will provide 3-bytes read turn for CCC.GETMXDS</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- MXDSRT -->
+            <field>
+              <name>MXDSRT</name>
+              <description>3-BYTES MAX READ TURN</description>
+              <bitRange>[23:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <!-- RSTACT -->
+        <register>
+          <name>RSTACT</name>
+          <description>RSTACT REGISTER</description>
+          <addressOffset>0xC8</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- MEMDR -->
+        <register>
+          <name>MEMDR</name>
+          <description>DATA REGISTER 0</description>
+          <addressOffset>0xE0</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- RWCMD -->
+        <register>
+          <name>RWCMD</name>
+          <description>VENDOR DIRECT CCC FOR ACCESS TO CONTROL REGISTERS</description>
+          <addressOffset>0xEC</addressOffset>
+          <size>32</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- MDB -->
+        <register>
+          <name>MDB</name>
+          <description>MDB LIST REGISTERS</description>
+          <addressOffset>0xFC</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- CFR -->
+        <register>
+          <dim>16</dim>
+          <dimIncrement>4</dimIncrement>
+          <name>CFR[%s]</name>
+          <description>CONTROL BYFM FIFO REGISTERS</description>
+          <addressOffset>0x100</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- TDFR -->
+        <register>
+          <name>TDFR</name>
+          <description>TXDA FIFO REGISTERS</description>
+          <addressOffset>0x140</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+        <!-- RDFR -->
+        <!--
+        <register>
+		  <name>RDFR</name> 
+          <description>RXDA FIFO REGISTERS</description>
+          <addressOffset>0x180</addressOffset>
+          <size>32</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+		-->
+        <!-- RCFR -->
+        <register>
+          <name>RCFR</name>
+          <description>RX COMMAND REGISTERS</description>
+          <addressOffset>0x1C0</addressOffset>
+          <size>32</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+        </register>
+      </registers>
+    </peripheral>
+
     <!-- USB_OTG -->
     <peripheral>
       <!-- Description -->
